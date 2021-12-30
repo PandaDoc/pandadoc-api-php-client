@@ -30,7 +30,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 class CreateDocumentFromTemplateAndSend
 {
     // place your api key here
-    const API_Key = 'YOUR_API_KEY';
+    const API_KEY = 'YOUR_API_KEY';
 
     // you should have an `Full API Sample Document from PandaDoc Template`
     // onboarding template in your workspace just place its ID here
@@ -218,7 +218,7 @@ class CreateDocumentFromTemplateAndSend
     public static function run()
     {
         $config = Configuration::getDefaultConfiguration()
-            ->setApiKey('Authorization', self::API_Key)
+            ->setApiKey('Authorization', self::API_KEY)
             ->setApiKeyPrefix('Authorization', 'API-Key');
 
         $documentApiInstance = new DocumentsApi(null, $config);
