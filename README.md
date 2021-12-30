@@ -68,8 +68,8 @@ try {
  - **read+write**: Use `read+write` to create, send, delete, and download documents, and `read` to view templates and document details.
 
 ## Examples
-- [Create and send document from a template](https://github.com/PandaDoc/pandadoc-api-php-client/blob/main/examples/CreateFromTemplateAndSend.php)
-- [Create and send document from the pdf url](https://github.com/PandaDoc/pandadoc-api-php-client/blob/main/examples/CreateDocumentFromPdfUrlAndSend.php)
+- [Create and send document from a template](https://github.com/PandaDoc/pandadoc-api-php-client/blob/main/examples/CreateDocumentFromTemplateAndSend.php)
+- [Create and send document from the pdf url](https://github.com/PandaDoc/pandadoc-api-php-client/blob/main/examples/CreateDocumentFromPdByUrlAndSend.php)
 
 ## Docs
 ### Official PandaDoc public API docs
