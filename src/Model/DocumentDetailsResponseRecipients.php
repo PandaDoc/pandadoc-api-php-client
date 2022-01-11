@@ -65,7 +65,8 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
         'contactId' => 'string',
         'firstName' => 'string',
         'email' => 'string',
-        'hasCompleted' => 'bool'
+        'hasCompleted' => 'bool',
+        'sharedLink' => 'string'
     ];
 
     /**
@@ -84,7 +85,8 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
         'contactId' => null,
         'firstName' => null,
         'email' => null,
-        'hasCompleted' => null
+        'hasCompleted' => null,
+        'sharedLink' => null
     ];
 
     /**
@@ -122,7 +124,8 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
         'contactId' => 'contact_id',
         'firstName' => 'first_name',
         'email' => 'email',
-        'hasCompleted' => 'has_completed'
+        'hasCompleted' => 'has_completed',
+        'sharedLink' => 'shared_link'
     ];
 
     /**
@@ -139,7 +142,8 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
         'contactId' => 'setContactId',
         'firstName' => 'setFirstName',
         'email' => 'setEmail',
-        'hasCompleted' => 'setHasCompleted'
+        'hasCompleted' => 'setHasCompleted',
+        'sharedLink' => 'setSharedLink'
     ];
 
     /**
@@ -156,7 +160,8 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
         'contactId' => 'getContactId',
         'firstName' => 'getFirstName',
         'email' => 'getEmail',
-        'hasCompleted' => 'getHasCompleted'
+        'hasCompleted' => 'getHasCompleted',
+        'sharedLink' => 'getSharedLink'
     ];
 
     /**
@@ -225,6 +230,7 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
         $this->container['firstName'] = $data['firstName'] ?? null;
         $this->container['email'] = $data['email'] ?? null;
         $this->container['hasCompleted'] = $data['hasCompleted'] ?? null;
+        $this->container['sharedLink'] = $data['sharedLink'] ?? null;
     }
 
     /**
@@ -463,6 +469,30 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
     public function setHasCompleted($hasCompleted)
     {
         $this->container['hasCompleted'] = $hasCompleted;
+
+        return $this;
+    }
+
+    /**
+     * Gets sharedLink
+     *
+     * @return string|null
+     */
+    public function getSharedLink()
+    {
+        return $this->container['sharedLink'];
+    }
+
+    /**
+     * Sets sharedLink
+     *
+     * @param string|null $sharedLink sharedLink
+     *
+     * @return self
+     */
+    public function setSharedLink($sharedLink)
+    {
+        $this->container['sharedLink'] = $sharedLink;
 
         return $this;
     }

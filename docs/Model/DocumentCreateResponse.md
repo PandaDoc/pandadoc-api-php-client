@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** |  | [optional]
 **name** | **string** |  | [optional]
-**status** | **string** |  | [optional]
+**status** | [**\PandaDoc\Client\Model\DocumentStatusEnum**](DocumentStatusEnum.md) |  | [optional]
 **dateCreated** | **string** |  | [optional]
 **dateModified** | **string** |  | [optional]
 **expirationDate** | **string** |  | [optional]

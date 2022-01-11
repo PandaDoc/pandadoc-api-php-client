@@ -57,7 +57,7 @@ class DocumentStatusChangeRequest implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'status' => '\PandaDoc\Client\Model\DocumentStatusEnum',
+        'status' => '\PandaDoc\Client\Model\DocumentStatusRequestEnum',
         'note' => 'string',
         'notifyRecipients' => 'bool'
     ];
@@ -221,7 +221,7 @@ class DocumentStatusChangeRequest implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets status
      *
-     * @return \PandaDoc\Client\Model\DocumentStatusEnum
+     * @return \PandaDoc\Client\Model\DocumentStatusRequestEnum
      */
     public function getStatus()
     {
@@ -231,7 +231,7 @@ class DocumentStatusChangeRequest implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets status
      *
-     * @param \PandaDoc\Client\Model\DocumentStatusEnum $status status
+     * @param \PandaDoc\Client\Model\DocumentStatusRequestEnum $status status
      *
      * @return self
      */
