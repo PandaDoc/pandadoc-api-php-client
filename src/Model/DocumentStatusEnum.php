@@ -40,31 +40,31 @@ class DocumentStatusEnum
     /**
      * Possible values of this enum
      */
-    const NUMBER_0 = 0;
+    const DRAFT = 'document.draft';
 
-    const NUMBER_1 = 1;
+    const SENT = 'document.sent';
 
-    const NUMBER_2 = 2;
+    const COMPLETED = 'document.completed';
 
-    const NUMBER_3 = 3;
+    const UPLOADED = 'document.uploaded';
 
-    const NUMBER_4 = 4;
+    const ERROR = 'document.error';
 
-    const NUMBER_5 = 5;
+    const VIEWED = 'document.viewed';
 
-    const NUMBER_6 = 6;
+    const WAITING_APPROVAL = 'document.waiting_approval';
 
-    const NUMBER_7 = 7;
+    const APPROVED = 'document.approved';
 
-    const NUMBER_8 = 8;
+    const REJECTED = 'document.rejected';
 
-    const NUMBER_9 = 9;
+    const WAITING_PAY = 'document.waiting_pay';
 
-    const NUMBER_10 = 10;
+    const PAID = 'document.paid';
 
-    const NUMBER_11 = 11;
+    const VOIDED = 'document.voided';
 
-    const NUMBER_12 = 12;
+    const DECLINED = 'document.declined';
 
     /**
      * Gets allowable values of the enum
@@ -73,19 +73,19 @@ class DocumentStatusEnum
     public static function getAllowableEnumValues()
     {
         return [
-            self::NUMBER_0,
-            self::NUMBER_1,
-            self::NUMBER_2,
-            self::NUMBER_3,
-            self::NUMBER_4,
-            self::NUMBER_5,
-            self::NUMBER_6,
-            self::NUMBER_7,
-            self::NUMBER_8,
-            self::NUMBER_9,
-            self::NUMBER_10,
-            self::NUMBER_11,
-            self::NUMBER_12
+            self::DRAFT,
+            self::SENT,
+            self::COMPLETED,
+            self::UPLOADED,
+            self::ERROR,
+            self::VIEWED,
+            self::WAITING_APPROVAL,
+            self::APPROVED,
+            self::REJECTED,
+            self::WAITING_PAY,
+            self::PAID,
+            self::VOIDED,
+            self::DECLINED
         ];
     }
 }

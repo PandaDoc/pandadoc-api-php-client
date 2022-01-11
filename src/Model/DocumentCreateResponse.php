@@ -59,7 +59,7 @@ class DocumentCreateResponse implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $openAPITypes = [
         'id' => 'string',
         'name' => 'string',
-        'status' => 'string',
+        'status' => '\PandaDoc\Client\Model\DocumentStatusEnum',
         'dateCreated' => 'string',
         'dateModified' => 'string',
         'expirationDate' => 'string',
@@ -290,7 +290,7 @@ class DocumentCreateResponse implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets status
      *
-     * @return string|null
+     * @return \PandaDoc\Client\Model\DocumentStatusEnum|null
      */
     public function getStatus()
     {
@@ -300,7 +300,7 @@ class DocumentCreateResponse implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets status
      *
-     * @param string|null $status status
+     * @param \PandaDoc\Client\Model\DocumentStatusEnum|null $status status
      *
      * @return self
      */

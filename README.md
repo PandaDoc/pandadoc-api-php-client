@@ -19,7 +19,7 @@ or add the following to `composer.json`:
 ```json
 {
   "require": {
-    "pandadoc/php-client": "4.0.0"
+    "pandadoc/php-client": "4.1.0"
   }
 }
 ```

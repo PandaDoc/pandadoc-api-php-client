@@ -64,7 +64,8 @@ class DocumentSendResponse implements ModelInterface, ArrayAccess, \JsonSerializ
         'dateModified' => 'string',
         'expirationDate' => 'string',
         'version' => 'string',
-        'uuid' => 'string'
+        'uuid' => 'string',
+        'sharedLink' => 'string'
     ];
 
     /**
@@ -82,7 +83,8 @@ class DocumentSendResponse implements ModelInterface, ArrayAccess, \JsonSerializ
         'dateModified' => null,
         'expirationDate' => null,
         'version' => null,
-        'uuid' => null
+        'uuid' => null,
+        'sharedLink' => null
     ];
 
     /**
@@ -119,7 +121,8 @@ class DocumentSendResponse implements ModelInterface, ArrayAccess, \JsonSerializ
         'dateModified' => 'date_modified',
         'expirationDate' => 'expiration_date',
         'version' => 'version',
-        'uuid' => 'uuid'
+        'uuid' => 'uuid',
+        'sharedLink' => 'shared_link'
     ];
 
     /**
@@ -135,7 +138,8 @@ class DocumentSendResponse implements ModelInterface, ArrayAccess, \JsonSerializ
         'dateModified' => 'setDateModified',
         'expirationDate' => 'setExpirationDate',
         'version' => 'setVersion',
-        'uuid' => 'setUuid'
+        'uuid' => 'setUuid',
+        'sharedLink' => 'setSharedLink'
     ];
 
     /**
@@ -151,7 +155,8 @@ class DocumentSendResponse implements ModelInterface, ArrayAccess, \JsonSerializ
         'dateModified' => 'getDateModified',
         'expirationDate' => 'getExpirationDate',
         'version' => 'getVersion',
-        'uuid' => 'getUuid'
+        'uuid' => 'getUuid',
+        'sharedLink' => 'getSharedLink'
     ];
 
     /**
@@ -219,6 +224,7 @@ class DocumentSendResponse implements ModelInterface, ArrayAccess, \JsonSerializ
         $this->container['expirationDate'] = $data['expirationDate'] ?? null;
         $this->container['version'] = $data['version'] ?? null;
         $this->container['uuid'] = $data['uuid'] ?? null;
+        $this->container['sharedLink'] = $data['sharedLink'] ?? null;
     }
 
     /**
@@ -433,6 +439,30 @@ class DocumentSendResponse implements ModelInterface, ArrayAccess, \JsonSerializ
     public function setUuid($uuid)
     {
         $this->container['uuid'] = $uuid;
+
+        return $this;
+    }
+
+    /**
+     * Gets sharedLink
+     *
+     * @return string|null
+     */
+    public function getSharedLink()
+    {
+        return $this->container['sharedLink'];
+    }
+
+    /**
+     * Sets sharedLink
+     *
+     * @param string|null $sharedLink sharedLink
+     *
+     * @return self
+     */
+    public function setSharedLink($sharedLink)
+    {
+        $this->container['sharedLink'] = $sharedLink;
 
         return $this;
     }
