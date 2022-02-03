@@ -1,6 +1,6 @@
 <?php
 /**
- * DocumentCreateResponse
+ * DocumentCreateResponseLinks
  *
  * PHP version 7.3
  *
@@ -30,7 +30,7 @@ use \ArrayAccess;
 use \PandaDoc\Client\ObjectSerializer;
 
 /**
- * DocumentCreateResponse Class Doc Comment
+ * DocumentCreateResponseLinks Class Doc Comment
  *
  * @category Class
  * @package  PandaDoc\Client
@@ -40,7 +40,7 @@ use \PandaDoc\Client\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class DocumentCreateResponse implements ModelInterface, ArrayAccess, \JsonSerializable
+class DocumentCreateResponseLinks implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class DocumentCreateResponse implements ModelInterface, ArrayAccess, \JsonSerial
       *
       * @var string
       */
-    protected static $openAPIModelName = 'DocumentCreateResponse';
+    protected static $openAPIModelName = 'DocumentCreateResponse_links';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,15 +57,9 @@ class DocumentCreateResponse implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'string',
-        'name' => 'string',
-        'status' => '\PandaDoc\Client\Model\DocumentStatusEnum',
-        'dateCreated' => 'string',
-        'dateModified' => 'string',
-        'expirationDate' => 'string',
-        'uuid' => 'string',
-        'links' => '\PandaDoc\Client\Model\DocumentCreateResponseLinks[]',
-        'infoMessage' => 'string'
+        'rel' => 'string',
+        'href' => 'string',
+        'type' => 'string'
     ];
 
     /**
@@ -76,15 +70,9 @@ class DocumentCreateResponse implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'name' => null,
-        'status' => null,
-        'dateCreated' => null,
-        'dateModified' => null,
-        'expirationDate' => null,
-        'uuid' => null,
-        'links' => null,
-        'infoMessage' => null
+        'rel' => null,
+        'href' => null,
+        'type' => null
     ];
 
     /**
@@ -114,15 +102,9 @@ class DocumentCreateResponse implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'name' => 'name',
-        'status' => 'status',
-        'dateCreated' => 'date_created',
-        'dateModified' => 'date_modified',
-        'expirationDate' => 'expiration_date',
-        'uuid' => 'uuid',
-        'links' => 'links',
-        'infoMessage' => 'info_message'
+        'rel' => 'rel',
+        'href' => 'href',
+        'type' => 'type'
     ];
 
     /**
@@ -131,15 +113,9 @@ class DocumentCreateResponse implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'name' => 'setName',
-        'status' => 'setStatus',
-        'dateCreated' => 'setDateCreated',
-        'dateModified' => 'setDateModified',
-        'expirationDate' => 'setExpirationDate',
-        'uuid' => 'setUuid',
-        'links' => 'setLinks',
-        'infoMessage' => 'setInfoMessage'
+        'rel' => 'setRel',
+        'href' => 'setHref',
+        'type' => 'setType'
     ];
 
     /**
@@ -148,15 +124,9 @@ class DocumentCreateResponse implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'name' => 'getName',
-        'status' => 'getStatus',
-        'dateCreated' => 'getDateCreated',
-        'dateModified' => 'getDateModified',
-        'expirationDate' => 'getExpirationDate',
-        'uuid' => 'getUuid',
-        'links' => 'getLinks',
-        'infoMessage' => 'getInfoMessage'
+        'rel' => 'getRel',
+        'href' => 'getHref',
+        'type' => 'getType'
     ];
 
     /**
@@ -216,15 +186,9 @@ class DocumentCreateResponse implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['name'] = $data['name'] ?? null;
-        $this->container['status'] = $data['status'] ?? null;
-        $this->container['dateCreated'] = $data['dateCreated'] ?? null;
-        $this->container['dateModified'] = $data['dateModified'] ?? null;
-        $this->container['expirationDate'] = $data['expirationDate'] ?? null;
-        $this->container['uuid'] = $data['uuid'] ?? null;
-        $this->container['links'] = $data['links'] ?? null;
-        $this->container['infoMessage'] = $data['infoMessage'] ?? null;
+        $this->container['rel'] = $data['rel'] ?? null;
+        $this->container['href'] = $data['href'] ?? null;
+        $this->container['type'] = $data['type'] ?? null;
     }
 
     /**
@@ -252,217 +216,73 @@ class DocumentCreateResponse implements ModelInterface, ArrayAccess, \JsonSerial
 
 
     /**
-     * Gets id
+     * Gets rel
      *
      * @return string|null
      */
-    public function getId()
+    public function getRel()
     {
-        return $this->container['id'];
+        return $this->container['rel'];
     }
 
     /**
-     * Sets id
+     * Sets rel
      *
-     * @param string|null $id id
+     * @param string|null $rel rel
      *
      * @return self
      */
-    public function setId($id)
+    public function setRel($rel)
     {
-        $this->container['id'] = $id;
+        $this->container['rel'] = $rel;
 
         return $this;
     }
 
     /**
-     * Gets name
+     * Gets href
      *
      * @return string|null
      */
-    public function getName()
+    public function getHref()
     {
-        return $this->container['name'];
+        return $this->container['href'];
     }
 
     /**
-     * Sets name
+     * Sets href
      *
-     * @param string|null $name name
+     * @param string|null $href href
      *
      * @return self
      */
-    public function setName($name)
+    public function setHref($href)
     {
-        $this->container['name'] = $name;
+        $this->container['href'] = $href;
 
         return $this;
     }
 
     /**
-     * Gets status
-     *
-     * @return \PandaDoc\Client\Model\DocumentStatusEnum|null
-     */
-    public function getStatus()
-    {
-        return $this->container['status'];
-    }
-
-    /**
-     * Sets status
-     *
-     * @param \PandaDoc\Client\Model\DocumentStatusEnum|null $status status
-     *
-     * @return self
-     */
-    public function setStatus($status)
-    {
-        $this->container['status'] = $status;
-
-        return $this;
-    }
-
-    /**
-     * Gets dateCreated
+     * Gets type
      *
      * @return string|null
      */
-    public function getDateCreated()
+    public function getType()
     {
-        return $this->container['dateCreated'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets dateCreated
+     * Sets type
      *
-     * @param string|null $dateCreated dateCreated
+     * @param string|null $type type
      *
      * @return self
      */
-    public function setDateCreated($dateCreated)
+    public function setType($type)
     {
-        $this->container['dateCreated'] = $dateCreated;
-
-        return $this;
-    }
-
-    /**
-     * Gets dateModified
-     *
-     * @return string|null
-     */
-    public function getDateModified()
-    {
-        return $this->container['dateModified'];
-    }
-
-    /**
-     * Sets dateModified
-     *
-     * @param string|null $dateModified dateModified
-     *
-     * @return self
-     */
-    public function setDateModified($dateModified)
-    {
-        $this->container['dateModified'] = $dateModified;
-
-        return $this;
-    }
-
-    /**
-     * Gets expirationDate
-     *
-     * @return string|null
-     */
-    public function getExpirationDate()
-    {
-        return $this->container['expirationDate'];
-    }
-
-    /**
-     * Sets expirationDate
-     *
-     * @param string|null $expirationDate expirationDate
-     *
-     * @return self
-     */
-    public function setExpirationDate($expirationDate)
-    {
-        $this->container['expirationDate'] = $expirationDate;
-
-        return $this;
-    }
-
-    /**
-     * Gets uuid
-     *
-     * @return string|null
-     */
-    public function getUuid()
-    {
-        return $this->container['uuid'];
-    }
-
-    /**
-     * Sets uuid
-     *
-     * @param string|null $uuid uuid
-     *
-     * @return self
-     */
-    public function setUuid($uuid)
-    {
-        $this->container['uuid'] = $uuid;
-
-        return $this;
-    }
-
-    /**
-     * Gets links
-     *
-     * @return \PandaDoc\Client\Model\DocumentCreateResponseLinks[]|null
-     */
-    public function getLinks()
-    {
-        return $this->container['links'];
-    }
-
-    /**
-     * Sets links
-     *
-     * @param \PandaDoc\Client\Model\DocumentCreateResponseLinks[]|null $links links
-     *
-     * @return self
-     */
-    public function setLinks($links)
-    {
-        $this->container['links'] = $links;
-
-        return $this;
-    }
-
-    /**
-     * Gets infoMessage
-     *
-     * @return string|null
-     */
-    public function getInfoMessage()
-    {
-        return $this->container['infoMessage'];
-    }
-
-    /**
-     * Sets infoMessage
-     *
-     * @param string|null $infoMessage infoMessage
-     *
-     * @return self
-     */
-    public function setInfoMessage($infoMessage)
-    {
-        $this->container['infoMessage'] = $infoMessage;
+        $this->container['type'] = $type;
 
         return $this;
     }
