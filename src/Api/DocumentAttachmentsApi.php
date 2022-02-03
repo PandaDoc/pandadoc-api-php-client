@@ -796,7 +796,7 @@ class DocumentAttachmentsApi
      *
      * @throws \PandaDoc\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \PandaDoc\Client\Model\DocumentAttachmentResponse|object|object|object
+     * @return \PandaDoc\Client\Model\DocumentAttachmentResponse|object|object|object|object
      */
     public function detailsDocumentAttachment($id, $attachmentId)
     {
@@ -814,7 +814,7 @@ class DocumentAttachmentsApi
      *
      * @throws \PandaDoc\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \PandaDoc\Client\Model\DocumentAttachmentResponse|object|object|object, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \PandaDoc\Client\Model\DocumentAttachmentResponse|object|object|object|object, HTTP status code, HTTP response headers (array of strings)
      */
     public function detailsDocumentAttachmentWithHttpInfo($id, $attachmentId)
     {
@@ -892,6 +892,18 @@ class DocumentAttachmentsApi
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
+                case 409:
+                    if ('object' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, 'object', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 case 429:
                     if ('object' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
@@ -938,6 +950,14 @@ class DocumentAttachmentsApi
                     $e->setResponseObject($data);
                     break;
                 case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'object',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 409:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         'object',
@@ -1155,7 +1175,7 @@ class DocumentAttachmentsApi
      *
      * @throws \PandaDoc\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \SplFileObject|object|object|object
+     * @return \SplFileObject|object|object|object|object
      */
     public function downloadDocumentAttachment($id, $attachmentId)
     {
@@ -1173,7 +1193,7 @@ class DocumentAttachmentsApi
      *
      * @throws \PandaDoc\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \SplFileObject|object|object|object, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SplFileObject|object|object|object|object, HTTP status code, HTTP response headers (array of strings)
      */
     public function downloadDocumentAttachmentWithHttpInfo($id, $attachmentId)
     {
@@ -1251,6 +1271,18 @@ class DocumentAttachmentsApi
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
+                case 409:
+                    if ('object' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, 'object', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 case 429:
                     if ('object' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
@@ -1297,6 +1329,14 @@ class DocumentAttachmentsApi
                     $e->setResponseObject($data);
                     break;
                 case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'object',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 409:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         'object',
@@ -1513,7 +1553,7 @@ class DocumentAttachmentsApi
      *
      * @throws \PandaDoc\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \PandaDoc\Client\Model\DocumentAttachmentResponse[]|object|object|object
+     * @return \PandaDoc\Client\Model\DocumentAttachmentResponse[]|object|object|object|object
      */
     public function listDocumentAttachments($id)
     {
@@ -1530,7 +1570,7 @@ class DocumentAttachmentsApi
      *
      * @throws \PandaDoc\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \PandaDoc\Client\Model\DocumentAttachmentResponse[]|object|object|object, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \PandaDoc\Client\Model\DocumentAttachmentResponse[]|object|object|object|object, HTTP status code, HTTP response headers (array of strings)
      */
     public function listDocumentAttachmentsWithHttpInfo($id)
     {
@@ -1608,6 +1648,18 @@ class DocumentAttachmentsApi
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
+                case 409:
+                    if ('object' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, 'object', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 case 429:
                     if ('object' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
@@ -1654,6 +1706,14 @@ class DocumentAttachmentsApi
                     $e->setResponseObject($data);
                     break;
                 case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'object',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 409:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         'object',
