@@ -331,7 +331,7 @@ class ObjectSerializer
         }
 
         /** @psalm-suppress ParadoxicalCondition */
-        if (in_array($class, ['\DateTime', '\SplFileObject', 'array', 'bool', 'boolean', 'byte', 'double', 'float', 'int', 'integer', 'mixed', 'number', 'object', 'string', 'void'], true)) {
+        if (in_array($class, ['bool', 'boolean', 'int', 'integer', 'float', 'double', 'string', 'array', 'object', 'null'], true)) {
             settype($data, $class);
             return $data;
         }
