@@ -66,6 +66,8 @@ class DocumentStatusEnum
 
     const DECLINED = 'document.declined';
 
+    const EXTERNAL_REVIEW = 'document.external_review';
+
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -85,7 +87,8 @@ class DocumentStatusEnum
             self::WAITING_PAY,
             self::PAID,
             self::VOIDED,
-            self::DECLINED
+            self::DECLINED,
+            self::EXTERNAL_REVIEW
         ];
     }
 }
