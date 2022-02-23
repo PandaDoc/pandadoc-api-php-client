@@ -59,6 +59,7 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
     protected static $openAPITypes = [
         'recipientType' => 'string',
         'role' => 'string',
+        'roles' => 'string[]',
         'lastName' => 'string',
         'signingOrder' => 'mixed',
         'id' => 'string',
@@ -79,6 +80,7 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
     protected static $openAPIFormats = [
         'recipientType' => null,
         'role' => null,
+        'roles' => null,
         'lastName' => null,
         'signingOrder' => null,
         'id' => null,
@@ -118,6 +120,7 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
     protected static $attributeMap = [
         'recipientType' => 'recipient_type',
         'role' => 'role',
+        'roles' => 'roles',
         'lastName' => 'last_name',
         'signingOrder' => 'signing_order',
         'id' => 'id',
@@ -136,6 +139,7 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
     protected static $setters = [
         'recipientType' => 'setRecipientType',
         'role' => 'setRole',
+        'roles' => 'setRoles',
         'lastName' => 'setLastName',
         'signingOrder' => 'setSigningOrder',
         'id' => 'setId',
@@ -154,6 +158,7 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
     protected static $getters = [
         'recipientType' => 'getRecipientType',
         'role' => 'getRole',
+        'roles' => 'getRoles',
         'lastName' => 'getLastName',
         'signingOrder' => 'getSigningOrder',
         'id' => 'getId',
@@ -223,6 +228,7 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
     {
         $this->container['recipientType'] = $data['recipientType'] ?? null;
         $this->container['role'] = $data['role'] ?? null;
+        $this->container['roles'] = $data['roles'] ?? null;
         $this->container['lastName'] = $data['lastName'] ?? null;
         $this->container['signingOrder'] = $data['signingOrder'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
@@ -285,6 +291,7 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
      * Gets role
      *
      * @return string|null
+     * @deprecated
      */
     public function getRole()
     {
@@ -297,10 +304,35 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
      * @param string|null $role role
      *
      * @return self
+     * @deprecated
      */
     public function setRole($role)
     {
         $this->container['role'] = $role;
+
+        return $this;
+    }
+
+    /**
+     * Gets roles
+     *
+     * @return string[]|null
+     */
+    public function getRoles()
+    {
+        return $this->container['roles'];
+    }
+
+    /**
+     * Sets roles
+     *
+     * @param string[]|null $roles roles
+     *
+     * @return self
+     */
+    public function setRoles($roles)
+    {
+        $this->container['roles'] = $roles;
 
         return $this;
     }

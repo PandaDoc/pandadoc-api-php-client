@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **recipientType** | **string** |  | [optional]
 **role** | **string** |  | [optional]
+**roles** | **string[]** |  | [optional]
 **lastName** | **string** |  | [optional]
 **signingOrder** | **mixed** |  | [optional]
 **id** | **string** |  | [optional]

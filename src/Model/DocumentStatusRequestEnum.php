@@ -66,6 +66,8 @@ class DocumentStatusRequestEnum
 
     const NUMBER_12 = 12;
 
+    const NUMBER_13 = 13;
+
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -85,7 +87,8 @@ class DocumentStatusRequestEnum
             self::NUMBER_9,
             self::NUMBER_10,
             self::NUMBER_11,
-            self::NUMBER_12
+            self::NUMBER_12,
+            self::NUMBER_13
         ];
     }
 }
