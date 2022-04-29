@@ -12,14 +12,6 @@ use PandaDoc\Client\Model\DocumentCreateRequestRecipients;
 use PandaDoc\Client\Model\DocumentCreateResponse;
 use PandaDoc\Client\Model\DocumentSendRequest;
 use PandaDoc\Client\Model\PricingTableRequest;
-use PandaDoc\Client\Model\PricingTableRequestOptions;
-use PandaDoc\Client\Model\PricingTableRequestOptionsDiscount;
-use PandaDoc\Client\Model\PricingTableRequestOptionsTaxFirst;
-use PandaDoc\Client\Model\PricingTableRequestOptionsTaxSecond;
-use PandaDoc\Client\Model\PricingTableRequestRowData;
-use PandaDoc\Client\Model\PricingTableRequestRowDataDiscount;
-use PandaDoc\Client\Model\PricingTableRequestRowDataTaxFirst;
-use PandaDoc\Client\Model\PricingTableRequestRowDataTaxSecond;
 use PandaDoc\Client\Model\PricingTableRequestRowOptions;
 use PandaDoc\Client\Model\PricingTableRequestRows;
 use PandaDoc\Client\Model\PricingTableRequestSections;
@@ -51,28 +43,19 @@ class CreateDocumentFromTemplateAndSend
     {
         $pricingTable = new PricingTableRequest();
         $pricingTable->setName('Pricing Table 1')
-            ->setOptions(
-                (new PricingTableRequestOptions())
-                    ->setCurrency('USD')
-                    ->setDiscount(
-                        (new PricingTableRequestOptionsDiscount())
-                            ->setName('Global Discount')
-                            ->setType(PricingTableRequestOptionsDiscount::TYPE_ABSOLUTE)
-                            ->setValue(2.26)
-                    )
-                    ->setTaxFirst(
-                        (new PricingTableRequestOptionsTaxFirst())
-                            ->setName('Tax First')
-                            ->setType(PricingTableRequestOptionsTaxFirst::TYPE_PERCENT)
-                            ->setValue(2.26)
-                    )
-                    ->setTaxSecond(
-                        (new PricingTableRequestOptionsTaxSecond())
-                            ->setName('Tax Second')
-                            ->setType(PricingTableRequestOptionsTaxSecond::TYPE_PERCENT)
-                            ->setValue(2.26)
-                    )
-            )
+            ->setDataMerge(true)
+            ->setOptions([
+                'Discount' => [
+                    'type' => 'absolute',
+                    'name' => 'Global Discount',
+                    'value' => 10
+                ],
+                'Tax' => [
+                    'type' => 'percent',
+                    'name' => 'Tax First',
+                    'value' => 15
+                ]
+            ])
             ->setSections([
                 (new PricingTableRequestSections())
                     ->setTitle('Sample Section')
@@ -86,30 +69,22 @@ class CreateDocumentFromTemplateAndSend
                                     ->setOptionalSelected(true)
                                     ->setQtyEditable(true)
                             )
-                            ->setData(
-                                (new PricingTableRequestRowData())
-                                    ->setName('Toy Panda')
-                                    ->setDescription('Fluffy!')
-                                    ->setPrice(10.0)
-                                    ->setCost(8.5)
-                                    ->setQty(3)
-                                    ->setSku('toy_panda')
-                                    ->setDiscount(
-                                        (new PricingTableRequestRowDataDiscount())
-                                            ->setValue(7.5)
-                                            ->setType('percent')
-                                    )
-                                    ->setTaxFirst(
-                                        (new PricingTableRequestRowDataTaxFirst())
-                                            ->setValue(7.5)
-                                            ->setType('percent')
-                                    )
-                                    ->setTaxSecond(
-                                        (new PricingTableRequestRowDataTaxSecond())
-                                            ->setValue(7.5)
-                                            ->setType('percent')
-                                    )
-                            )
+                            ->setData([
+                                'Name' => 'Toy Panda',
+                                'Description' => 'Fluffy',
+                                'Price' => 10,
+                                'Cost' => 8.5,
+                                'QTY' => 3,
+                                'SKU' => 'toy_panda',
+                                'Discount' => [
+                                    'value' => 10,
+                                    'type' => 'percent'
+                                ],
+                                'Tax' => [
+                                    'value' => 10,
+                                    'type' => 'percent'
+                                ]
+                            ])
                             ->setCustomFields(null)
                     ])
             ]);
