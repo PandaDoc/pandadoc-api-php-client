@@ -58,7 +58,7 @@ class PricingTableRequestRows implements ModelInterface, ArrayAccess, \JsonSeria
       */
     protected static $openAPITypes = [
         'options' => '\PandaDoc\Client\Model\PricingTableRequestRowOptions',
-        'data' => '\PandaDoc\Client\Model\PricingTableRequestRowData',
+        'data' => 'object',
         'customFields' => 'object'
     ];
 
@@ -242,7 +242,7 @@ class PricingTableRequestRows implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets data
      *
-     * @return \PandaDoc\Client\Model\PricingTableRequestRowData|null
+     * @return object|null
      */
     public function getData()
     {
@@ -252,7 +252,7 @@ class PricingTableRequestRows implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets data
      *
-     * @param \PandaDoc\Client\Model\PricingTableRequestRowData|null $data data
+     * @param object|null $data data
      *
      * @return self
      */

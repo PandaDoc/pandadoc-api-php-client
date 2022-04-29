@@ -59,7 +59,7 @@ class PricingTableRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $openAPITypes = [
         'name' => 'string',
         'dataMerge' => 'bool',
-        'options' => '\PandaDoc\Client\Model\PricingTableRequestOptions',
+        'options' => 'object',
         'sections' => '\PandaDoc\Client\Model\PricingTableRequestSections[]'
     ];
 
@@ -275,7 +275,7 @@ class PricingTableRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets options
      *
-     * @return \PandaDoc\Client\Model\PricingTableRequestOptions|null
+     * @return object|null
      */
     public function getOptions()
     {
@@ -285,7 +285,7 @@ class PricingTableRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets options
      *
-     * @param \PandaDoc\Client\Model\PricingTableRequestOptions|null $options options
+     * @param object|null $options options
      *
      * @return self
      */

@@ -60,6 +60,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         'name' => 'string',
         'templateUuid' => 'string',
         'folderUuid' => 'string',
+        'owner' => 'array<string,string>',
         'recipients' => '\PandaDoc\Client\Model\DocumentCreateRequestRecipients[]',
         'tokens' => '\PandaDoc\Client\Model\DocumentCreateByTemplateRequestTokens[]',
         'fields' => 'object',
@@ -83,6 +84,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         'name' => null,
         'templateUuid' => null,
         'folderUuid' => null,
+        'owner' => null,
         'recipients' => null,
         'tokens' => null,
         'fields' => null,
@@ -125,6 +127,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         'name' => 'name',
         'templateUuid' => 'template_uuid',
         'folderUuid' => 'folder_uuid',
+        'owner' => 'owner',
         'recipients' => 'recipients',
         'tokens' => 'tokens',
         'fields' => 'fields',
@@ -146,6 +149,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         'name' => 'setName',
         'templateUuid' => 'setTemplateUuid',
         'folderUuid' => 'setFolderUuid',
+        'owner' => 'setOwner',
         'recipients' => 'setRecipients',
         'tokens' => 'setTokens',
         'fields' => 'setFields',
@@ -167,6 +171,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         'name' => 'getName',
         'templateUuid' => 'getTemplateUuid',
         'folderUuid' => 'getFolderUuid',
+        'owner' => 'getOwner',
         'recipients' => 'getRecipients',
         'tokens' => 'getTokens',
         'fields' => 'getFields',
@@ -239,6 +244,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         $this->container['name'] = $data['name'] ?? null;
         $this->container['templateUuid'] = $data['templateUuid'] ?? null;
         $this->container['folderUuid'] = $data['folderUuid'] ?? null;
+        $this->container['owner'] = $data['owner'] ?? null;
         $this->container['recipients'] = $data['recipients'] ?? null;
         $this->container['tokens'] = $data['tokens'] ?? null;
         $this->container['fields'] = $data['fields'] ?? null;
@@ -343,6 +349,30 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setFolderUuid($folderUuid)
     {
         $this->container['folderUuid'] = $folderUuid;
+
+        return $this;
+    }
+
+    /**
+     * Gets owner
+     *
+     * @return array<string,string>|null
+     */
+    public function getOwner()
+    {
+        return $this->container['owner'];
+    }
+
+    /**
+     * Sets owner
+     *
+     * @param array<string,string>|null $owner You can set an owner of a document as an `email` or `membership_id`
+     *
+     * @return self
+     */
+    public function setOwner($owner)
+    {
+        $this->container['owner'] = $owner;
 
         return $this;
     }
