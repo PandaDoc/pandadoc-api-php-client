@@ -637,7 +637,7 @@ $id = BhVzRcxH9Z2LgfPPGXFUBa; // string
 $folderUuid = BhVzRcxH9Z2LgfPPGXFUBa; // string | The UUID of the folder where the documents are stored.
 $formId = BhVzRcxH9Z2LgfPPGXFUBa; // string | Specify the form used for documents creation. This parameter can't be used with template_id.
 $membershipId = BhVzRcxH9Z2LgfPPGXFUBa; // string | Returns results where 'membership_id' is present in document as owner (should be member uuid)
-$metadata = 'metadata_example'; // string | Specify metadata to filter by in the format of `metadata_{metadata-key}={metadata-value}` such as `metadata_opportunity_id=2181432`. The `metadata_` prefix is always required.
+$metadata = ["metadata_opportunity_id=2181432","metadata_custom_key=custom_value"]; // string[] | Specify metadata to filter by in the format of `metadata_{metadata-key}={metadata-value}` such as `metadata_opportunity_id=2181432`. The `metadata_` prefix is always required.
 $modifiedFrom = 2021-10-27T15:22:23.132757Z; // string | Return results where the `date_modified` field (iso-8601) is greater than or equal to this value.
 $modifiedTo = 2021-10-27T15:22:23.132757Z; // string | Return results where the `date_modified` field (iso-8601) is less than this value.
 $orderBy = name; // \PandaDoc\Client\Model\DocumentOrderingFieldsEnum | Specify the order of documents to return. Use `value` (for example, `date_created`) for ASC and `-value` (for example, `-date_created`) for DESC.
@@ -671,7 +671,7 @@ Name | Type | Description  | Notes
  **folderUuid** | **string**| The UUID of the folder where the documents are stored. | [optional]
  **formId** | **string**| Specify the form used for documents creation. This parameter can&#39;t be used with template_id. | [optional]
  **membershipId** | **string**| Returns results where &#39;membership_id&#39; is present in document as owner (should be member uuid) | [optional]
- **metadata** | **string**| Specify metadata to filter by in the format of &#x60;metadata_{metadata-key}&#x3D;{metadata-value}&#x60; such as &#x60;metadata_opportunity_id&#x3D;2181432&#x60;. The &#x60;metadata_&#x60; prefix is always required. | [optional]
+ **metadata** | [**string[]**](../Model/string.md)| Specify metadata to filter by in the format of &#x60;metadata_{metadata-key}&#x3D;{metadata-value}&#x60; such as &#x60;metadata_opportunity_id&#x3D;2181432&#x60;. The &#x60;metadata_&#x60; prefix is always required. | [optional]
  **modifiedFrom** | **string**| Return results where the &#x60;date_modified&#x60; field (iso-8601) is greater than or equal to this value. | [optional]
  **modifiedTo** | **string**| Return results where the &#x60;date_modified&#x60; field (iso-8601) is less than this value. | [optional]
  **orderBy** | [**\PandaDoc\Client\Model\DocumentOrderingFieldsEnum**](../Model/.md)| Specify the order of documents to return. Use &#x60;value&#x60; (for example, &#x60;date_created&#x60;) for ASC and &#x60;-value&#x60; (for example, &#x60;-date_created&#x60;) for DESC. | [optional]
