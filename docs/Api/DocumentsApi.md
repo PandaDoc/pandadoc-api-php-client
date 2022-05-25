@@ -465,7 +465,7 @@ Name | Type | Description  | Notes
 ## `downloadDocument()`
 
 ```php
-downloadDocument($id, $watermarkColor, $watermarkFontSize, $watermarkOpacity, $watermarkText): \SplFileObject
+downloadDocument($id, $watermarkColor, $watermarkFontSize, $watermarkOpacity, $watermarkText, $separateFiles): \SplFileObject
 ```
 
 Document download
@@ -497,9 +497,10 @@ $watermarkColor = #FF5733; // string | HEX code (for example `#FF5733`).
 $watermarkFontSize = 12; // int | Font size of the watermark.
 $watermarkOpacity = 0.5; // float | In range 0.0-1.0
 $watermarkText = John Doe inc.; // string | Specify watermark text.
+$separateFiles = True; // bool | Set as `true` if you want to receive a zip file with all documents in separate when document transaction contains more than 1.
 
 try {
-    $result = $apiInstance->downloadDocument($id, $watermarkColor, $watermarkFontSize, $watermarkOpacity, $watermarkText);
+    $result = $apiInstance->downloadDocument($id, $watermarkColor, $watermarkFontSize, $watermarkOpacity, $watermarkText, $separateFiles);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DocumentsApi->downloadDocument: ', $e->getMessage(), PHP_EOL;
@@ -515,6 +516,7 @@ Name | Type | Description  | Notes
  **watermarkFontSize** | **int**| Font size of the watermark. | [optional]
  **watermarkOpacity** | **float**| In range 0.0-1.0 | [optional]
  **watermarkText** | **string**| Specify watermark text. | [optional]
+ **separateFiles** | **bool**| Set as &#x60;true&#x60; if you want to receive a zip file with all documents in separate when document transaction contains more than 1. | [optional]
 
 ### Return type
 
@@ -535,7 +537,7 @@ Name | Type | Description  | Notes
 ## `downloadProtectedDocument()`
 
 ```php
-downloadProtectedDocument($id): \SplFileObject
+downloadProtectedDocument($id, $separateFiles): \SplFileObject
 ```
 
 Download document protected
@@ -565,9 +567,10 @@ $apiInstance = new PandaDoc\Client\Api\DocumentsApi(
     $config
 );
 $id = Mebvyy3NGsGBnY2rPLkH84; // string | Specify document ID.
+$separateFiles = True; // bool | Set as `true` if you want to receive a zip file with all documents in separate when document transaction contains more than 1.
 
 try {
-    $result = $apiInstance->downloadProtectedDocument($id);
+    $result = $apiInstance->downloadProtectedDocument($id, $separateFiles);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DocumentsApi->downloadProtectedDocument: ', $e->getMessage(), PHP_EOL;
@@ -579,6 +582,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Specify document ID. |
+ **separateFiles** | **bool**| Set as &#x60;true&#x60; if you want to receive a zip file with all documents in separate when document transaction contains more than 1. | [optional]
 
 ### Return type
 
