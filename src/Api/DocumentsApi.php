@@ -2480,14 +2480,15 @@ class DocumentsApi
      * @param  int $watermarkFontSize Font size of the watermark. (optional)
      * @param  float $watermarkOpacity In range 0.0-1.0 (optional)
      * @param  string $watermarkText Specify watermark text. (optional)
+     * @param  bool $separateFiles Set as &#x60;true&#x60; if you want to receive a zip file with all documents in separate when document transaction contains more than 1. (optional)
      *
      * @throws \PandaDoc\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SplFileObject|object|object|object|object|object|object
      */
-    public function downloadDocument($id, $watermarkColor = null, $watermarkFontSize = null, $watermarkOpacity = null, $watermarkText = null)
+    public function downloadDocument($id, $watermarkColor = null, $watermarkFontSize = null, $watermarkOpacity = null, $watermarkText = null, $separateFiles = null)
     {
-        list($response) = $this->downloadDocumentWithHttpInfo($id, $watermarkColor, $watermarkFontSize, $watermarkOpacity, $watermarkText);
+        list($response) = $this->downloadDocumentWithHttpInfo($id, $watermarkColor, $watermarkFontSize, $watermarkOpacity, $watermarkText, $separateFiles);
         return $response;
     }
 
@@ -2501,14 +2502,15 @@ class DocumentsApi
      * @param  int $watermarkFontSize Font size of the watermark. (optional)
      * @param  float $watermarkOpacity In range 0.0-1.0 (optional)
      * @param  string $watermarkText Specify watermark text. (optional)
+     * @param  bool $separateFiles Set as &#x60;true&#x60; if you want to receive a zip file with all documents in separate when document transaction contains more than 1. (optional)
      *
      * @throws \PandaDoc\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject|object|object|object|object|object|object, HTTP status code, HTTP response headers (array of strings)
      */
-    public function downloadDocumentWithHttpInfo($id, $watermarkColor = null, $watermarkFontSize = null, $watermarkOpacity = null, $watermarkText = null)
+    public function downloadDocumentWithHttpInfo($id, $watermarkColor = null, $watermarkFontSize = null, $watermarkOpacity = null, $watermarkText = null, $separateFiles = null)
     {
-        $request = $this->downloadDocumentRequest($id, $watermarkColor, $watermarkFontSize, $watermarkOpacity, $watermarkText);
+        $request = $this->downloadDocumentRequest($id, $watermarkColor, $watermarkFontSize, $watermarkOpacity, $watermarkText, $separateFiles);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2718,13 +2720,14 @@ class DocumentsApi
      * @param  int $watermarkFontSize Font size of the watermark. (optional)
      * @param  float $watermarkOpacity In range 0.0-1.0 (optional)
      * @param  string $watermarkText Specify watermark text. (optional)
+     * @param  bool $separateFiles Set as &#x60;true&#x60; if you want to receive a zip file with all documents in separate when document transaction contains more than 1. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function downloadDocumentAsync($id, $watermarkColor = null, $watermarkFontSize = null, $watermarkOpacity = null, $watermarkText = null)
+    public function downloadDocumentAsync($id, $watermarkColor = null, $watermarkFontSize = null, $watermarkOpacity = null, $watermarkText = null, $separateFiles = null)
     {
-        return $this->downloadDocumentAsyncWithHttpInfo($id, $watermarkColor, $watermarkFontSize, $watermarkOpacity, $watermarkText)
+        return $this->downloadDocumentAsyncWithHttpInfo($id, $watermarkColor, $watermarkFontSize, $watermarkOpacity, $watermarkText, $separateFiles)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2742,14 +2745,15 @@ class DocumentsApi
      * @param  int $watermarkFontSize Font size of the watermark. (optional)
      * @param  float $watermarkOpacity In range 0.0-1.0 (optional)
      * @param  string $watermarkText Specify watermark text. (optional)
+     * @param  bool $separateFiles Set as &#x60;true&#x60; if you want to receive a zip file with all documents in separate when document transaction contains more than 1. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function downloadDocumentAsyncWithHttpInfo($id, $watermarkColor = null, $watermarkFontSize = null, $watermarkOpacity = null, $watermarkText = null)
+    public function downloadDocumentAsyncWithHttpInfo($id, $watermarkColor = null, $watermarkFontSize = null, $watermarkOpacity = null, $watermarkText = null, $separateFiles = null)
     {
         $returnType = '\SplFileObject';
-        $request = $this->downloadDocumentRequest($id, $watermarkColor, $watermarkFontSize, $watermarkOpacity, $watermarkText);
+        $request = $this->downloadDocumentRequest($id, $watermarkColor, $watermarkFontSize, $watermarkOpacity, $watermarkText, $separateFiles);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2792,11 +2796,12 @@ class DocumentsApi
      * @param  int $watermarkFontSize Font size of the watermark. (optional)
      * @param  float $watermarkOpacity In range 0.0-1.0 (optional)
      * @param  string $watermarkText Specify watermark text. (optional)
+     * @param  bool $separateFiles Set as &#x60;true&#x60; if you want to receive a zip file with all documents in separate when document transaction contains more than 1. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function downloadDocumentRequest($id, $watermarkColor = null, $watermarkFontSize = null, $watermarkOpacity = null, $watermarkText = null)
+    public function downloadDocumentRequest($id, $watermarkColor = null, $watermarkFontSize = null, $watermarkOpacity = null, $watermarkText = null, $separateFiles = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -2854,6 +2859,17 @@ class DocumentsApi
             }
             else {
                 $queryParams['watermark_text'] = $watermarkText;
+            }
+        }
+        // query params
+        if ($separateFiles !== null) {
+            if('form' === 'form' && is_array($separateFiles)) {
+                foreach($separateFiles as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['separate_files'] = $separateFiles;
             }
         }
 
@@ -2940,14 +2956,15 @@ class DocumentsApi
      * Download document protected
      *
      * @param  string $id Specify document ID. (required)
+     * @param  bool $separateFiles Set as &#x60;true&#x60; if you want to receive a zip file with all documents in separate when document transaction contains more than 1. (optional)
      *
      * @throws \PandaDoc\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SplFileObject|object|object|object|object|object
      */
-    public function downloadProtectedDocument($id)
+    public function downloadProtectedDocument($id, $separateFiles = null)
     {
-        list($response) = $this->downloadProtectedDocumentWithHttpInfo($id);
+        list($response) = $this->downloadProtectedDocumentWithHttpInfo($id, $separateFiles);
         return $response;
     }
 
@@ -2957,14 +2974,15 @@ class DocumentsApi
      * Download document protected
      *
      * @param  string $id Specify document ID. (required)
+     * @param  bool $separateFiles Set as &#x60;true&#x60; if you want to receive a zip file with all documents in separate when document transaction contains more than 1. (optional)
      *
      * @throws \PandaDoc\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject|object|object|object|object|object, HTTP status code, HTTP response headers (array of strings)
      */
-    public function downloadProtectedDocumentWithHttpInfo($id)
+    public function downloadProtectedDocumentWithHttpInfo($id, $separateFiles = null)
     {
-        $request = $this->downloadProtectedDocumentRequest($id);
+        $request = $this->downloadProtectedDocumentRequest($id, $separateFiles);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3150,13 +3168,14 @@ class DocumentsApi
      * Download document protected
      *
      * @param  string $id Specify document ID. (required)
+     * @param  bool $separateFiles Set as &#x60;true&#x60; if you want to receive a zip file with all documents in separate when document transaction contains more than 1. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function downloadProtectedDocumentAsync($id)
+    public function downloadProtectedDocumentAsync($id, $separateFiles = null)
     {
-        return $this->downloadProtectedDocumentAsyncWithHttpInfo($id)
+        return $this->downloadProtectedDocumentAsyncWithHttpInfo($id, $separateFiles)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3170,14 +3189,15 @@ class DocumentsApi
      * Download document protected
      *
      * @param  string $id Specify document ID. (required)
+     * @param  bool $separateFiles Set as &#x60;true&#x60; if you want to receive a zip file with all documents in separate when document transaction contains more than 1. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function downloadProtectedDocumentAsyncWithHttpInfo($id)
+    public function downloadProtectedDocumentAsyncWithHttpInfo($id, $separateFiles = null)
     {
         $returnType = '\SplFileObject';
-        $request = $this->downloadProtectedDocumentRequest($id);
+        $request = $this->downloadProtectedDocumentRequest($id, $separateFiles);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3216,11 +3236,12 @@ class DocumentsApi
      * Create request for operation 'downloadProtectedDocument'
      *
      * @param  string $id Specify document ID. (required)
+     * @param  bool $separateFiles Set as &#x60;true&#x60; if you want to receive a zip file with all documents in separate when document transaction contains more than 1. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function downloadProtectedDocumentRequest($id)
+    public function downloadProtectedDocumentRequest($id, $separateFiles = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -3236,6 +3257,17 @@ class DocumentsApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($separateFiles !== null) {
+            if('form' === 'form' && is_array($separateFiles)) {
+                foreach($separateFiles as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['separate_files'] = $separateFiles;
+            }
+        }
 
 
         // path params

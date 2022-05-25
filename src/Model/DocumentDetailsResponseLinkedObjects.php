@@ -59,7 +59,8 @@ class DocumentDetailsResponseLinkedObjects implements ModelInterface, ArrayAcces
     protected static $openAPITypes = [
         'provider' => 'string',
         'entityType' => 'string',
-        'entityId' => 'string'
+        'entityId' => 'string',
+        'id' => 'string'
     ];
 
     /**
@@ -72,7 +73,8 @@ class DocumentDetailsResponseLinkedObjects implements ModelInterface, ArrayAcces
     protected static $openAPIFormats = [
         'provider' => null,
         'entityType' => null,
-        'entityId' => null
+        'entityId' => null,
+        'id' => null
     ];
 
     /**
@@ -104,7 +106,8 @@ class DocumentDetailsResponseLinkedObjects implements ModelInterface, ArrayAcces
     protected static $attributeMap = [
         'provider' => 'provider',
         'entityType' => 'entity_type',
-        'entityId' => 'entity_id'
+        'entityId' => 'entity_id',
+        'id' => 'id'
     ];
 
     /**
@@ -115,7 +118,8 @@ class DocumentDetailsResponseLinkedObjects implements ModelInterface, ArrayAcces
     protected static $setters = [
         'provider' => 'setProvider',
         'entityType' => 'setEntityType',
-        'entityId' => 'setEntityId'
+        'entityId' => 'setEntityId',
+        'id' => 'setId'
     ];
 
     /**
@@ -126,7 +130,8 @@ class DocumentDetailsResponseLinkedObjects implements ModelInterface, ArrayAcces
     protected static $getters = [
         'provider' => 'getProvider',
         'entityType' => 'getEntityType',
-        'entityId' => 'getEntityId'
+        'entityId' => 'getEntityId',
+        'id' => 'getId'
     ];
 
     /**
@@ -189,6 +194,7 @@ class DocumentDetailsResponseLinkedObjects implements ModelInterface, ArrayAcces
         $this->container['provider'] = $data['provider'] ?? null;
         $this->container['entityType'] = $data['entityType'] ?? null;
         $this->container['entityId'] = $data['entityId'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
     }
 
     /**
@@ -283,6 +289,30 @@ class DocumentDetailsResponseLinkedObjects implements ModelInterface, ArrayAcces
     public function setEntityId($entityId)
     {
         $this->container['entityId'] = $entityId;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     *
+     * @return string|null
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param string|null $id id
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
 
         return $this;
     }
