@@ -19,7 +19,7 @@ or add the following to `composer.json`:
 ```json
 {
   "require": {
-    "pandadoc/php-client": "5.1.0"
+    "pandadoc/php-client": "5.2.0"
   }
 }
 ```
@@ -124,6 +124,14 @@ Class | Method | HTTP request | Description
 *TemplatesApi* | [**deleteTemplate**](docs/Api/TemplatesApi.md#deletetemplate) | **DELETE** /public/v1/templates/{id} | Delete Template
 *TemplatesApi* | [**detailsTemplate**](docs/Api/TemplatesApi.md#detailstemplate) | **GET** /public/v1/templates/{id}/details | Details Template
 *TemplatesApi* | [**listTemplates**](docs/Api/TemplatesApi.md#listtemplates) | **GET** /public/v1/templates | List Templates
+*WebhookEventsApi* | [**detailsWebhookEvent**](docs/Api/WebhookEventsApi.md#detailswebhookevent) | **GET** /public/v1/webhook-events/{id} | Get webhook event by uuid
+*WebhookEventsApi* | [**listWebhookEvent**](docs/Api/WebhookEventsApi.md#listwebhookevent) | **GET** /public/v1/webhook-events | Get webhook event page
+*WebhookSubscriptionsApi* | [**createWebhookSubscription**](docs/Api/WebhookSubscriptionsApi.md#createwebhooksubscription) | **POST** /public/v1/webhook-subscriptions | Create webhook subscription
+*WebhookSubscriptionsApi* | [**deleteWebhookSubscription**](docs/Api/WebhookSubscriptionsApi.md#deletewebhooksubscription) | **DELETE** /public/v1/webhook-subscriptions/{id} | Delete webhook subscription
+*WebhookSubscriptionsApi* | [**detailsWebhookSubscription**](docs/Api/WebhookSubscriptionsApi.md#detailswebhooksubscription) | **GET** /public/v1/webhook-subscriptions/{id} | Get webhook subscription by uuid
+*WebhookSubscriptionsApi* | [**listWebhookSubscriptions**](docs/Api/WebhookSubscriptionsApi.md#listwebhooksubscriptions) | **GET** /public/v1/webhook-subscriptions | Get all webhook subscriptions
+*WebhookSubscriptionsApi* | [**updateWebhookSubscription**](docs/Api/WebhookSubscriptionsApi.md#updatewebhooksubscription) | **PATCH** /public/v1/webhook-subscriptions/{id} | Update webhook subscription
+*WebhookSubscriptionsApi* | [**updateWebhookSubscriptionSharedKey**](docs/Api/WebhookSubscriptionsApi.md#updatewebhooksubscriptionsharedkey) | **PATCH** /public/v1/webhook-subscriptions/{id}/shared-key | Regenerate webhook subscription shared key
 
 
 ## License
