@@ -1,6 +1,6 @@
 <?php
 /**
- * DocumentSendRequest
+ * DocumentUpdateRequestRecipients
  *
  * PHP version 7.3
  *
@@ -30,7 +30,7 @@ use \ArrayAccess;
 use \PandaDoc\Client\ObjectSerializer;
 
 /**
- * DocumentSendRequest Class Doc Comment
+ * DocumentUpdateRequestRecipients Class Doc Comment
  *
  * @category Class
  * @package  PandaDoc\Client
@@ -40,7 +40,7 @@ use \PandaDoc\Client\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class DocumentUpdateRequestRecipients implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
       *
       * @var string
       */
-    protected static $openAPIModelName = 'DocumentSendRequest';
+    protected static $openAPIModelName = 'DocumentUpdateRequest_recipients';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,10 +57,10 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'message' => 'string',
-        'subject' => 'string',
-        'silent' => 'bool',
-        'sender' => 'array<string,string>'
+        'id' => 'string',
+        'email' => 'string',
+        'firstName' => 'string',
+        'lastName' => 'string'
     ];
 
     /**
@@ -71,10 +71,10 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'message' => null,
-        'subject' => null,
-        'silent' => null,
-        'sender' => null
+        'id' => null,
+        'email' => null,
+        'firstName' => null,
+        'lastName' => null
     ];
 
     /**
@@ -104,10 +104,10 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
-        'message' => 'message',
-        'subject' => 'subject',
-        'silent' => 'silent',
-        'sender' => 'sender'
+        'id' => 'id',
+        'email' => 'email',
+        'firstName' => 'first_name',
+        'lastName' => 'last_name'
     ];
 
     /**
@@ -116,10 +116,10 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'message' => 'setMessage',
-        'subject' => 'setSubject',
-        'silent' => 'setSilent',
-        'sender' => 'setSender'
+        'id' => 'setId',
+        'email' => 'setEmail',
+        'firstName' => 'setFirstName',
+        'lastName' => 'setLastName'
     ];
 
     /**
@@ -128,10 +128,10 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
-        'message' => 'getMessage',
-        'subject' => 'getSubject',
-        'silent' => 'getSilent',
-        'sender' => 'getSender'
+        'id' => 'getId',
+        'email' => 'getEmail',
+        'firstName' => 'getFirstName',
+        'lastName' => 'getLastName'
     ];
 
     /**
@@ -191,10 +191,10 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(array $data = null)
     {
-        $this->container['message'] = $data['message'] ?? null;
-        $this->container['subject'] = $data['subject'] ?? null;
-        $this->container['silent'] = $data['silent'] ?? null;
-        $this->container['sender'] = $data['sender'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['email'] = $data['email'] ?? null;
+        $this->container['firstName'] = $data['firstName'] ?? null;
+        $this->container['lastName'] = $data['lastName'] ?? null;
     }
 
     /**
@@ -222,97 +222,97 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
 
 
     /**
-     * Gets message
+     * Gets id
      *
      * @return string|null
      */
-    public function getMessage()
+    public function getId()
     {
-        return $this->container['message'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets message
+     * Sets id
      *
-     * @param string|null $message A message that will be sent by email with a link to a document to sign.
+     * @param string|null $id id
      *
      * @return self
      */
-    public function setMessage($message)
+    public function setId($id)
     {
-        $this->container['message'] = $message;
+        $this->container['id'] = $id;
 
         return $this;
     }
 
     /**
-     * Gets subject
+     * Gets email
      *
      * @return string|null
      */
-    public function getSubject()
+    public function getEmail()
     {
-        return $this->container['subject'];
+        return $this->container['email'];
     }
 
     /**
-     * Sets subject
+     * Sets email
      *
-     * @param string|null $subject Value that will be used as the email subject.
+     * @param string|null $email email
      *
      * @return self
      */
-    public function setSubject($subject)
+    public function setEmail($email)
     {
-        $this->container['subject'] = $subject;
+        $this->container['email'] = $email;
 
         return $this;
     }
 
     /**
-     * Gets silent
+     * Gets firstName
      *
-     * @return bool|null
+     * @return string|null
      */
-    public function getSilent()
+    public function getFirstName()
     {
-        return $this->container['silent'];
+        return $this->container['firstName'];
     }
 
     /**
-     * Sets silent
+     * Sets firstName
      *
-     * @param bool|null $silent Disables sent, viewed, comment, and completed email notifications for document recipients and the document sender. By default, notifications emails are sent for specific actions. If set as true, it won't affect the \"Approve document\" email notification sent to the Approver.
+     * @param string|null $firstName firstName
      *
      * @return self
      */
-    public function setSilent($silent)
+    public function setFirstName($firstName)
     {
-        $this->container['silent'] = $silent;
+        $this->container['firstName'] = $firstName;
 
         return $this;
     }
 
     /**
-     * Gets sender
+     * Gets lastName
      *
-     * @return array<string,string>|null
+     * @return string|null
      */
-    public function getSender()
+    public function getLastName()
     {
-        return $this->container['sender'];
+        return $this->container['lastName'];
     }
 
     /**
-     * Sets sender
+     * Sets lastName
      *
-     * @param array<string,string>|null $sender You can set a sender of a document as an `email` or `membership_id`
+     * @param string|null $lastName lastName
      *
      * @return self
      */
-    public function setSender($sender)
+    public function setLastName($lastName)
     {
-        $this->container['sender'] = $sender;
+        $this->container['lastName'] = $lastName;
 
         return $this;
     }

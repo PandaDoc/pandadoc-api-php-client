@@ -1,6 +1,6 @@
 <?php
 /**
- * DocumentSendRequest
+ * DocumentUpdateRequest
  *
  * PHP version 7.3
  *
@@ -30,7 +30,7 @@ use \ArrayAccess;
 use \PandaDoc\Client\ObjectSerializer;
 
 /**
- * DocumentSendRequest Class Doc Comment
+ * DocumentUpdateRequest Class Doc Comment
  *
  * @category Class
  * @package  PandaDoc\Client
@@ -40,7 +40,7 @@ use \PandaDoc\Client\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class DocumentUpdateRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
       *
       * @var string
       */
-    protected static $openAPIModelName = 'DocumentSendRequest';
+    protected static $openAPIModelName = 'DocumentUpdateRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,10 +57,11 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'message' => 'string',
-        'subject' => 'string',
-        'silent' => 'bool',
-        'sender' => 'array<string,string>'
+        'recipients' => '\PandaDoc\Client\Model\DocumentUpdateRequestRecipients[]',
+        'fields' => 'object',
+        'tokens' => '\PandaDoc\Client\Model\DocumentCreateByTemplateRequestTokens[]',
+        'metadata' => 'object',
+        'pricingTables' => '\PandaDoc\Client\Model\PricingTableRequest[]'
     ];
 
     /**
@@ -71,10 +72,11 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'message' => null,
-        'subject' => null,
-        'silent' => null,
-        'sender' => null
+        'recipients' => null,
+        'fields' => null,
+        'tokens' => null,
+        'metadata' => null,
+        'pricingTables' => null
     ];
 
     /**
@@ -104,10 +106,11 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
-        'message' => 'message',
-        'subject' => 'subject',
-        'silent' => 'silent',
-        'sender' => 'sender'
+        'recipients' => 'recipients',
+        'fields' => 'fields',
+        'tokens' => 'tokens',
+        'metadata' => 'metadata',
+        'pricingTables' => 'pricing_tables'
     ];
 
     /**
@@ -116,10 +119,11 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'message' => 'setMessage',
-        'subject' => 'setSubject',
-        'silent' => 'setSilent',
-        'sender' => 'setSender'
+        'recipients' => 'setRecipients',
+        'fields' => 'setFields',
+        'tokens' => 'setTokens',
+        'metadata' => 'setMetadata',
+        'pricingTables' => 'setPricingTables'
     ];
 
     /**
@@ -128,10 +132,11 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
-        'message' => 'getMessage',
-        'subject' => 'getSubject',
-        'silent' => 'getSilent',
-        'sender' => 'getSender'
+        'recipients' => 'getRecipients',
+        'fields' => 'getFields',
+        'tokens' => 'getTokens',
+        'metadata' => 'getMetadata',
+        'pricingTables' => 'getPricingTables'
     ];
 
     /**
@@ -191,10 +196,11 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(array $data = null)
     {
-        $this->container['message'] = $data['message'] ?? null;
-        $this->container['subject'] = $data['subject'] ?? null;
-        $this->container['silent'] = $data['silent'] ?? null;
-        $this->container['sender'] = $data['sender'] ?? null;
+        $this->container['recipients'] = $data['recipients'] ?? null;
+        $this->container['fields'] = $data['fields'] ?? null;
+        $this->container['tokens'] = $data['tokens'] ?? null;
+        $this->container['metadata'] = $data['metadata'] ?? null;
+        $this->container['pricingTables'] = $data['pricingTables'] ?? null;
     }
 
     /**
@@ -222,97 +228,121 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
 
 
     /**
-     * Gets message
+     * Gets recipients
      *
-     * @return string|null
+     * @return \PandaDoc\Client\Model\DocumentUpdateRequestRecipients[]|null
      */
-    public function getMessage()
+    public function getRecipients()
     {
-        return $this->container['message'];
+        return $this->container['recipients'];
     }
 
     /**
-     * Sets message
+     * Sets recipients
      *
-     * @param string|null $message A message that will be sent by email with a link to a document to sign.
+     * @param \PandaDoc\Client\Model\DocumentUpdateRequestRecipients[]|null $recipients The list of recipients you're sending the document to. The ID or email are required. If the ID is passed, an existing recipient will be updated. If the email is passed, a new recipient will be added to CC.
      *
      * @return self
      */
-    public function setMessage($message)
+    public function setRecipients($recipients)
     {
-        $this->container['message'] = $message;
+        $this->container['recipients'] = $recipients;
 
         return $this;
     }
 
     /**
-     * Gets subject
+     * Gets fields
      *
-     * @return string|null
+     * @return object|null
      */
-    public function getSubject()
+    public function getFields()
     {
-        return $this->container['subject'];
+        return $this->container['fields'];
     }
 
     /**
-     * Sets subject
+     * Sets fields
      *
-     * @param string|null $subject Value that will be used as the email subject.
+     * @param object|null $fields You may pass a list of fields/values which exist in a document. Please use `Merge Field` property of the fields like the key.
      *
      * @return self
      */
-    public function setSubject($subject)
+    public function setFields($fields)
     {
-        $this->container['subject'] = $subject;
+        $this->container['fields'] = $fields;
 
         return $this;
     }
 
     /**
-     * Gets silent
+     * Gets tokens
      *
-     * @return bool|null
+     * @return \PandaDoc\Client\Model\DocumentCreateByTemplateRequestTokens[]|null
      */
-    public function getSilent()
+    public function getTokens()
     {
-        return $this->container['silent'];
+        return $this->container['tokens'];
     }
 
     /**
-     * Sets silent
+     * Sets tokens
      *
-     * @param bool|null $silent Disables sent, viewed, comment, and completed email notifications for document recipients and the document sender. By default, notifications emails are sent for specific actions. If set as true, it won't affect the \"Approve document\" email notification sent to the Approver.
+     * @param \PandaDoc\Client\Model\DocumentCreateByTemplateRequestTokens[]|null $tokens You can pass a list of tokens/values. If a token name exists in a document then the value will be updated. Otherwise, a new token will be added to the document.
      *
      * @return self
      */
-    public function setSilent($silent)
+    public function setTokens($tokens)
     {
-        $this->container['silent'] = $silent;
+        $this->container['tokens'] = $tokens;
 
         return $this;
     }
 
     /**
-     * Gets sender
+     * Gets metadata
      *
-     * @return array<string,string>|null
+     * @return object|null
      */
-    public function getSender()
+    public function getMetadata()
     {
-        return $this->container['sender'];
+        return $this->container['metadata'];
     }
 
     /**
-     * Sets sender
+     * Sets metadata
      *
-     * @param array<string,string>|null $sender You can set a sender of a document as an `email` or `membership_id`
+     * @param object|null $metadata You can pass arbitrary data in the key-value format to associate custom information with a document. This information is returned in any API requests for the document details by id. If metadata exists in a document then the value will be updated. Otherwise, metadata will be added to the document.
      *
      * @return self
      */
-    public function setSender($sender)
+    public function setMetadata($metadata)
     {
-        $this->container['sender'] = $sender;
+        $this->container['metadata'] = $metadata;
+
+        return $this;
+    }
+
+    /**
+     * Gets pricingTables
+     *
+     * @return \PandaDoc\Client\Model\PricingTableRequest[]|null
+     */
+    public function getPricingTables()
+    {
+        return $this->container['pricingTables'];
+    }
+
+    /**
+     * Sets pricingTables
+     *
+     * @param \PandaDoc\Client\Model\PricingTableRequest[]|null $pricingTables pricingTables
+     *
+     * @return self
+     */
+    public function setPricingTables($pricingTables)
+    {
+        $this->container['pricingTables'] = $pricingTables;
 
         return $this;
     }
