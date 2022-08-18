@@ -19,7 +19,7 @@ or add the following to `composer.json`:
 ```json
 {
   "require": {
-    "pandadoc/php-client": "5.2.0"
+    "pandadoc/php-client": "5.3.0"
   }
 }
 ```
@@ -110,6 +110,7 @@ Class | Method | HTTP request | Description
 *DocumentsApi* | [**statusDocument**](docs/Api/DocumentsApi.md#statusdocument) | **GET** /public/v1/documents/{id} | Document status
 *DocumentsApi* | [**transferAllDocumentsOwnership**](docs/Api/DocumentsApi.md#transferalldocumentsownership) | **PATCH** /public/v1/documents/ownership | Transfer all documents ownership
 *DocumentsApi* | [**transferDocumentOwnership**](docs/Api/DocumentsApi.md#transferdocumentownership) | **PATCH** /public/v1/documents/{id}/ownership | Update document ownership
+*DocumentsApi* | [**updateDocument**](docs/Api/DocumentsApi.md#updatedocument) | **PATCH** /public/v1/documents/{id} | Update Document only in the draft status
 *FoldersAPIApi* | [**createDocumentFolder**](docs/Api/FoldersAPIApi.md#createdocumentfolder) | **POST** /public/v1/documents/folders | Create Documents Folder
 *FoldersAPIApi* | [**createTemplateFolder**](docs/Api/FoldersAPIApi.md#createtemplatefolder) | **POST** /public/v1/templates/folders | Create Templates Folder
 *FoldersAPIApi* | [**listDocumentFolders**](docs/Api/FoldersAPIApi.md#listdocumentfolders) | **GET** /public/v1/documents/folders | List Documents Folders

@@ -19,6 +19,7 @@ Method | HTTP request | Description
 [**statusDocument()**](DocumentsApi.md#statusDocument) | **GET** /public/v1/documents/{id} | Document status
 [**transferAllDocumentsOwnership()**](DocumentsApi.md#transferAllDocumentsOwnership) | **PATCH** /public/v1/documents/ownership | Transfer all documents ownership
 [**transferDocumentOwnership()**](DocumentsApi.md#transferDocumentOwnership) | **PATCH** /public/v1/documents/{id}/ownership | Update document ownership
+[**updateDocument()**](DocumentsApi.md#updateDocument) | **PATCH** /public/v1/documents/{id} | Update Document only in the draft status
 
 
 ## `changeDocumentStatus()`
@@ -997,6 +998,69 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Specify document ID. |
  **documentTransferOwnershipRequest** | [**\PandaDoc\Client\Model\DocumentTransferOwnershipRequest**](../Model/DocumentTransferOwnershipRequest.md)|  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey), [oauth2](../../README.md#oauth2)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to README]](../../README.md)
+
+## `updateDocument()`
+
+```php
+updateDocument($id, $documentUpdateRequest)
+```
+
+Update Document only in the draft status
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: apiKey
+$config = PandaDoc\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Setup prefix (e.g. Bearer) for API key, if needed
+$config = PandaDoc\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'API-Key');
+
+// Configure OAuth2 access token for authorization: oauth2
+// $config = PandaDoc\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new PandaDoc\Client\Api\DocumentsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = BhVzRcxH9Z2LgfPPGXFUBa; // string | Document ID
+$documentUpdateRequest = new \PandaDoc\Client\Model\DocumentUpdateRequest(); // \PandaDoc\Client\Model\DocumentUpdateRequest
+
+try {
+    $apiInstance->updateDocument($id, $documentUpdateRequest);
+} catch (Exception $e) {
+    echo 'Exception when calling DocumentsApi->updateDocument: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Document ID |
+ **documentUpdateRequest** | [**\PandaDoc\Client\Model\DocumentUpdateRequest**](../Model/DocumentUpdateRequest.md)|  |
 
 ### Return type
 
