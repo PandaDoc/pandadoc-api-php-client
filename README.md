@@ -19,7 +19,7 @@ or add the following to `composer.json`:
 ```json
 {
   "require": {
-    "pandadoc/php-client": "5.4.0"
+    "pandadoc/php-client": "5.4.1"
   }
 }
 ```
@@ -102,7 +102,7 @@ Class | Method | HTTP request | Description
 *DocumentsApi* | [**deleteDocument**](docs/Api/DocumentsApi.md#deletedocument) | **DELETE** /public/v1/documents/{id} | Delete document by id
 *DocumentsApi* | [**deleteLinkedObject**](docs/Api/DocumentsApi.md#deletelinkedobject) | **DELETE** /public/v1/documents/{id}/linked-objects/{linked_object_id} | Delete Linked Object
 *DocumentsApi* | [**detailsDocument**](docs/Api/DocumentsApi.md#detailsdocument) | **GET** /public/v1/documents/{id}/details | Document details
-*DocumentsApi* | [**documentMoveToFolder**](docs/Api/DocumentsApi.md#documentmovetofolder) | **DELETE** /public/v1/documents/{id}/move-to-folder/{folder_id} | Document move to folder
+*DocumentsApi* | [**documentMoveToFolder**](docs/Api/DocumentsApi.md#documentmovetofolder) | **POST** /public/v1/documents/{id}/move-to-folder/{folder_id} | Document move to folder
 *DocumentsApi* | [**downloadDocument**](docs/Api/DocumentsApi.md#downloaddocument) | **GET** /public/v1/documents/{id}/download | Document download
 *DocumentsApi* | [**downloadProtectedDocument**](docs/Api/DocumentsApi.md#downloadprotecteddocument) | **GET** /public/v1/documents/{id}/download-protected | Download document protected
 *DocumentsApi* | [**listDocuments**](docs/Api/DocumentsApi.md#listdocuments) | **GET** /public/v1/documents | List documents
