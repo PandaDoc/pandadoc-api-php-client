@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**deleteDocument()**](DocumentsApi.md#deleteDocument) | **DELETE** /public/v1/documents/{id} | Delete document by id
 [**deleteLinkedObject()**](DocumentsApi.md#deleteLinkedObject) | **DELETE** /public/v1/documents/{id}/linked-objects/{linked_object_id} | Delete Linked Object
 [**detailsDocument()**](DocumentsApi.md#detailsDocument) | **GET** /public/v1/documents/{id}/details | Document details
+[**documentMoveToFolder()**](DocumentsApi.md#documentMoveToFolder) | **DELETE** /public/v1/documents/{id}/move-to-folder/{folder_id} | Document move to folder
 [**downloadDocument()**](DocumentsApi.md#downloadDocument) | **GET** /public/v1/documents/{id}/download | Document download
 [**downloadProtectedDocument()**](DocumentsApi.md#downloadProtectedDocument) | **GET** /public/v1/documents/{id}/download-protected | Download document protected
 [**listDocuments()**](DocumentsApi.md#listDocuments) | **GET** /public/v1/documents | List documents
@@ -450,6 +451,69 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\PandaDoc\Client\Model\DocumentDetailsResponse**](../Model/DocumentDetailsResponse.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey), [oauth2](../../README.md#oauth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to README]](../../README.md)
+
+## `documentMoveToFolder()`
+
+```php
+documentMoveToFolder($id, $folderId)
+```
+
+Document move to folder
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: apiKey
+$config = PandaDoc\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Setup prefix (e.g. Bearer) for API key, if needed
+$config = PandaDoc\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'API-Key');
+
+// Configure OAuth2 access token for authorization: oauth2
+// $config = PandaDoc\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new PandaDoc\Client\Api\DocumentsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = ZPeAfcpzr9aiVs5vqUf6jg; // string | Specify document ID.
+$folderId = ZPeAfcpzr9aiVs5vqUf6jg; // string | Specify folder ID.
+
+try {
+    $apiInstance->documentMoveToFolder($id, $folderId);
+} catch (Exception $e) {
+    echo 'Exception when calling DocumentsApi->documentMoveToFolder: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Specify document ID. |
+ **folderId** | **string**| Specify folder ID. |
+
+### Return type
+
+void (empty response body)
 
 ### Authorization
 
