@@ -19,7 +19,7 @@ or add the following to `composer.json`:
 ```json
 {
   "require": {
-    "pandadoc/php-client": "5.2.0"
+    "pandadoc/php-client": "5.4.0"
   }
 }
 ```
@@ -102,6 +102,7 @@ Class | Method | HTTP request | Description
 *DocumentsApi* | [**deleteDocument**](docs/Api/DocumentsApi.md#deletedocument) | **DELETE** /public/v1/documents/{id} | Delete document by id
 *DocumentsApi* | [**deleteLinkedObject**](docs/Api/DocumentsApi.md#deletelinkedobject) | **DELETE** /public/v1/documents/{id}/linked-objects/{linked_object_id} | Delete Linked Object
 *DocumentsApi* | [**detailsDocument**](docs/Api/DocumentsApi.md#detailsdocument) | **GET** /public/v1/documents/{id}/details | Document details
+*DocumentsApi* | [**documentMoveToFolder**](docs/Api/DocumentsApi.md#documentmovetofolder) | **DELETE** /public/v1/documents/{id}/move-to-folder/{folder_id} | Document move to folder
 *DocumentsApi* | [**downloadDocument**](docs/Api/DocumentsApi.md#downloaddocument) | **GET** /public/v1/documents/{id}/download | Document download
 *DocumentsApi* | [**downloadProtectedDocument**](docs/Api/DocumentsApi.md#downloadprotecteddocument) | **GET** /public/v1/documents/{id}/download-protected | Download document protected
 *DocumentsApi* | [**listDocuments**](docs/Api/DocumentsApi.md#listdocuments) | **GET** /public/v1/documents | List documents
@@ -110,6 +111,7 @@ Class | Method | HTTP request | Description
 *DocumentsApi* | [**statusDocument**](docs/Api/DocumentsApi.md#statusdocument) | **GET** /public/v1/documents/{id} | Document status
 *DocumentsApi* | [**transferAllDocumentsOwnership**](docs/Api/DocumentsApi.md#transferalldocumentsownership) | **PATCH** /public/v1/documents/ownership | Transfer all documents ownership
 *DocumentsApi* | [**transferDocumentOwnership**](docs/Api/DocumentsApi.md#transferdocumentownership) | **PATCH** /public/v1/documents/{id}/ownership | Update document ownership
+*DocumentsApi* | [**updateDocument**](docs/Api/DocumentsApi.md#updatedocument) | **PATCH** /public/v1/documents/{id} | Update Document only in the draft status
 *FoldersAPIApi* | [**createDocumentFolder**](docs/Api/FoldersAPIApi.md#createdocumentfolder) | **POST** /public/v1/documents/folders | Create Documents Folder
 *FoldersAPIApi* | [**createTemplateFolder**](docs/Api/FoldersAPIApi.md#createtemplatefolder) | **POST** /public/v1/templates/folders | Create Templates Folder
 *FoldersAPIApi* | [**listDocumentFolders**](docs/Api/FoldersAPIApi.md#listdocumentfolders) | **GET** /public/v1/documents/folders | List Documents Folders
