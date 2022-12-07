@@ -353,7 +353,7 @@ class DocumentAttachmentResponseCreatedBy implements ModelInterface, ArrayAccess
      *
      * @return boolean
      */
-    #[ReturnTypeWillChange]
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -366,7 +366,7 @@ class DocumentAttachmentResponseCreatedBy implements ModelInterface, ArrayAccess
      *
      * @return mixed|null
      */
-    #[ReturnTypeWillChange]
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -380,7 +380,7 @@ class DocumentAttachmentResponseCreatedBy implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    #[ReturnTypeWillChange]
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -397,7 +397,7 @@ class DocumentAttachmentResponseCreatedBy implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    #[ReturnTypeWillChange]
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
@@ -410,7 +410,7 @@ class DocumentAttachmentResponseCreatedBy implements ModelInterface, ArrayAccess
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
-    #[ReturnTypeWillChange]
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
