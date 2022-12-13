@@ -58,7 +58,9 @@ class TemplateDetailsResponsePreassignedPerson implements ModelInterface, ArrayA
       */
     protected static $openAPITypes = [
         'email' => 'string',
-        'type' => 'string'
+        'type' => 'string',
+        'placeholderName' => 'string',
+        'placeholderSource' => 'string'
     ];
 
     /**
@@ -70,7 +72,9 @@ class TemplateDetailsResponsePreassignedPerson implements ModelInterface, ArrayA
       */
     protected static $openAPIFormats = [
         'email' => null,
-        'type' => null
+        'type' => null,
+        'placeholderName' => null,
+        'placeholderSource' => null
     ];
 
     /**
@@ -101,7 +105,9 @@ class TemplateDetailsResponsePreassignedPerson implements ModelInterface, ArrayA
      */
     protected static $attributeMap = [
         'email' => 'email',
-        'type' => 'type'
+        'type' => 'type',
+        'placeholderName' => 'placeholder_name',
+        'placeholderSource' => 'placeholder_source'
     ];
 
     /**
@@ -111,7 +117,9 @@ class TemplateDetailsResponsePreassignedPerson implements ModelInterface, ArrayA
      */
     protected static $setters = [
         'email' => 'setEmail',
-        'type' => 'setType'
+        'type' => 'setType',
+        'placeholderName' => 'setPlaceholderName',
+        'placeholderSource' => 'setPlaceholderSource'
     ];
 
     /**
@@ -121,7 +129,9 @@ class TemplateDetailsResponsePreassignedPerson implements ModelInterface, ArrayA
      */
     protected static $getters = [
         'email' => 'getEmail',
-        'type' => 'getType'
+        'type' => 'getType',
+        'placeholderName' => 'getPlaceholderName',
+        'placeholderSource' => 'getPlaceholderSource'
     ];
 
     /**
@@ -183,6 +193,8 @@ class TemplateDetailsResponsePreassignedPerson implements ModelInterface, ArrayA
     {
         $this->container['email'] = $data['email'] ?? null;
         $this->container['type'] = $data['type'] ?? null;
+        $this->container['placeholderName'] = $data['placeholderName'] ?? null;
+        $this->container['placeholderSource'] = $data['placeholderSource'] ?? null;
     }
 
     /**
@@ -253,6 +265,54 @@ class TemplateDetailsResponsePreassignedPerson implements ModelInterface, ArrayA
     public function setType($type)
     {
         $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets placeholderName
+     *
+     * @return string|null
+     */
+    public function getPlaceholderName()
+    {
+        return $this->container['placeholderName'];
+    }
+
+    /**
+     * Sets placeholderName
+     *
+     * @param string|null $placeholderName placeholderName
+     *
+     * @return self
+     */
+    public function setPlaceholderName($placeholderName)
+    {
+        $this->container['placeholderName'] = $placeholderName;
+
+        return $this;
+    }
+
+    /**
+     * Gets placeholderSource
+     *
+     * @return string|null
+     */
+    public function getPlaceholderSource()
+    {
+        return $this->container['placeholderSource'];
+    }
+
+    /**
+     * Sets placeholderSource
+     *
+     * @param string|null $placeholderSource placeholderSource
+     *
+     * @return self
+     */
+    public function setPlaceholderSource($placeholderSource)
+    {
+        $this->container['placeholderSource'] = $placeholderSource;
 
         return $this;
     }
