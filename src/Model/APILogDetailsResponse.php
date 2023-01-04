@@ -106,6 +106,7 @@ class APILogDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPITypes()
     {
         return self::$openAPITypes;
@@ -116,6 +117,7 @@ class APILogDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPIFormats()
     {
         return self::$openAPIFormats;
@@ -200,6 +202,7 @@ class APILogDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function attributeMap()
     {
         return self::$attributeMap;
@@ -210,6 +213,7 @@ class APILogDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function setters()
     {
         return self::$setters;
@@ -220,6 +224,7 @@ class APILogDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function getters()
     {
         return self::$getters;
@@ -230,6 +235,7 @@ class APILogDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function getModelName()
     {
         return self::$openAPIModelName;
@@ -274,6 +280,7 @@ class APILogDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return array invalid properties with reasons
      */
+    #[\ReturnTypeWillChange]
     public function listInvalidProperties()
     {
         $invalidProperties = [];
@@ -287,6 +294,7 @@ class APILogDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return bool True if all properties are valid
      */
+    #[\ReturnTypeWillChange]
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
@@ -298,6 +306,7 @@ class APILogDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getId()
     {
         return $this->container['id'];
@@ -310,6 +319,7 @@ class APILogDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setId($id)
     {
         $this->container['id'] = $id;
@@ -322,6 +332,7 @@ class APILogDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getUrl()
     {
         return $this->container['url'];
@@ -334,6 +345,7 @@ class APILogDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setUrl($url)
     {
         $this->container['url'] = $url;
@@ -346,6 +358,7 @@ class APILogDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getMethod()
     {
         return $this->container['method'];
@@ -358,6 +371,7 @@ class APILogDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setMethod($method)
     {
         $this->container['method'] = $method;
@@ -370,6 +384,7 @@ class APILogDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return int|null
      */
+    #[\ReturnTypeWillChange]
     public function getStatus()
     {
         return $this->container['status'];
@@ -382,6 +397,7 @@ class APILogDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setStatus($status)
     {
         $this->container['status'] = $status;
@@ -394,6 +410,7 @@ class APILogDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getRequestTime()
     {
         return $this->container['requestTime'];
@@ -406,6 +423,7 @@ class APILogDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setRequestTime($requestTime)
     {
         $this->container['requestTime'] = $requestTime;
@@ -418,6 +436,7 @@ class APILogDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getResponseTime()
     {
         return $this->container['responseTime'];
@@ -430,6 +449,7 @@ class APILogDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setResponseTime($responseTime)
     {
         $this->container['responseTime'] = $responseTime;
@@ -442,6 +462,7 @@ class APILogDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return object|null
      */
+    #[\ReturnTypeWillChange]
     public function getResponseBody()
     {
         return $this->container['responseBody'];
@@ -454,6 +475,7 @@ class APILogDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setResponseBody($responseBody)
     {
         $this->container['responseBody'] = $responseBody;
@@ -466,6 +488,7 @@ class APILogDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getQueryParamsString()
     {
         return $this->container['queryParamsString'];
@@ -478,6 +501,7 @@ class APILogDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setQueryParamsString($queryParamsString)
     {
         $this->container['queryParamsString'] = $queryParamsString;
@@ -490,6 +514,7 @@ class APILogDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return object|null
      */
+    #[\ReturnTypeWillChange]
     public function getQueryParamsObject()
     {
         return $this->container['queryParamsObject'];
@@ -502,6 +527,7 @@ class APILogDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setQueryParamsObject($queryParamsObject)
     {
         $this->container['queryParamsObject'] = $queryParamsObject;
@@ -514,6 +540,7 @@ class APILogDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return object|null
      */
+    #[\ReturnTypeWillChange]
     public function getRequestBody()
     {
         return $this->container['requestBody'];
@@ -526,6 +553,7 @@ class APILogDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setRequestBody($requestBody)
     {
         $this->container['requestBody'] = $requestBody;
@@ -538,6 +566,7 @@ class APILogDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getTokenType()
     {
         return $this->container['tokenType'];
@@ -550,6 +579,7 @@ class APILogDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setTokenType($tokenType)
     {
         $this->container['tokenType'] = $tokenType;
@@ -562,6 +592,7 @@ class APILogDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getApplication()
     {
         return $this->container['application'];
@@ -574,6 +605,7 @@ class APILogDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setApplication($application)
     {
         $this->container['application'] = $application;
@@ -586,6 +618,7 @@ class APILogDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getKey()
     {
         return $this->container['key'];
@@ -598,6 +631,7 @@ class APILogDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setKey($key)
     {
         $this->container['key'] = $key;
@@ -610,6 +644,7 @@ class APILogDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getRequestId()
     {
         return $this->container['requestId'];
@@ -622,6 +657,7 @@ class APILogDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setRequestId($requestId)
     {
         $this->container['requestId'] = $requestId;
@@ -634,6 +670,7 @@ class APILogDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getUserEmail()
     {
         return $this->container['userEmail'];
@@ -646,6 +683,7 @@ class APILogDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setUserEmail($userEmail)
     {
         $this->container['userEmail'] = $userEmail;
@@ -658,6 +696,7 @@ class APILogDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getUserId()
     {
         return $this->container['userId'];
@@ -670,6 +709,7 @@ class APILogDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setUserId($userId)
     {
         $this->container['userId'] = $userId;
@@ -683,6 +723,7 @@ class APILogDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -695,6 +736,7 @@ class APILogDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -708,6 +750,7 @@ class APILogDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -724,6 +767,7 @@ class APILogDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
@@ -736,6 +780,7 @@ class APILogDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
@@ -746,6 +791,7 @@ class APILogDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function __toString()
     {
         return json_encode(
@@ -759,6 +805,7 @@ class APILogDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));

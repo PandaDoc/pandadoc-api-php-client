@@ -72,6 +72,7 @@ class DocumentStatusEnum
      * Gets allowable values of the enum
      * @return string[]
      */
+    #[\ReturnTypeWillChange]
     public static function getAllowableEnumValues()
     {
         return [

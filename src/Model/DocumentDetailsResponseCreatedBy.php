@@ -86,6 +86,7 @@ class DocumentDetailsResponseCreatedBy implements ModelInterface, ArrayAccess, \
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPITypes()
     {
         return self::$openAPITypes;
@@ -96,6 +97,7 @@ class DocumentDetailsResponseCreatedBy implements ModelInterface, ArrayAccess, \
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPIFormats()
     {
         return self::$openAPIFormats;
@@ -150,6 +152,7 @@ class DocumentDetailsResponseCreatedBy implements ModelInterface, ArrayAccess, \
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function attributeMap()
     {
         return self::$attributeMap;
@@ -160,6 +163,7 @@ class DocumentDetailsResponseCreatedBy implements ModelInterface, ArrayAccess, \
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function setters()
     {
         return self::$setters;
@@ -170,6 +174,7 @@ class DocumentDetailsResponseCreatedBy implements ModelInterface, ArrayAccess, \
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function getters()
     {
         return self::$getters;
@@ -180,6 +185,7 @@ class DocumentDetailsResponseCreatedBy implements ModelInterface, ArrayAccess, \
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function getModelName()
     {
         return self::$openAPIModelName;
@@ -214,6 +220,7 @@ class DocumentDetailsResponseCreatedBy implements ModelInterface, ArrayAccess, \
      *
      * @return array invalid properties with reasons
      */
+    #[\ReturnTypeWillChange]
     public function listInvalidProperties()
     {
         $invalidProperties = [];
@@ -227,6 +234,7 @@ class DocumentDetailsResponseCreatedBy implements ModelInterface, ArrayAccess, \
      *
      * @return bool True if all properties are valid
      */
+    #[\ReturnTypeWillChange]
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
@@ -238,6 +246,7 @@ class DocumentDetailsResponseCreatedBy implements ModelInterface, ArrayAccess, \
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getId()
     {
         return $this->container['id'];
@@ -250,6 +259,7 @@ class DocumentDetailsResponseCreatedBy implements ModelInterface, ArrayAccess, \
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setId($id)
     {
         $this->container['id'] = $id;
@@ -262,6 +272,7 @@ class DocumentDetailsResponseCreatedBy implements ModelInterface, ArrayAccess, \
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getMembershipId()
     {
         return $this->container['membershipId'];
@@ -274,6 +285,7 @@ class DocumentDetailsResponseCreatedBy implements ModelInterface, ArrayAccess, \
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setMembershipId($membershipId)
     {
         $this->container['membershipId'] = $membershipId;
@@ -286,6 +298,7 @@ class DocumentDetailsResponseCreatedBy implements ModelInterface, ArrayAccess, \
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getEmail()
     {
         return $this->container['email'];
@@ -298,6 +311,7 @@ class DocumentDetailsResponseCreatedBy implements ModelInterface, ArrayAccess, \
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setEmail($email)
     {
         $this->container['email'] = $email;
@@ -310,6 +324,7 @@ class DocumentDetailsResponseCreatedBy implements ModelInterface, ArrayAccess, \
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getFirstName()
     {
         return $this->container['firstName'];
@@ -322,6 +337,7 @@ class DocumentDetailsResponseCreatedBy implements ModelInterface, ArrayAccess, \
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setFirstName($firstName)
     {
         $this->container['firstName'] = $firstName;
@@ -334,6 +350,7 @@ class DocumentDetailsResponseCreatedBy implements ModelInterface, ArrayAccess, \
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getLastName()
     {
         return $this->container['lastName'];
@@ -346,6 +363,7 @@ class DocumentDetailsResponseCreatedBy implements ModelInterface, ArrayAccess, \
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setLastName($lastName)
     {
         $this->container['lastName'] = $lastName;
@@ -358,6 +376,7 @@ class DocumentDetailsResponseCreatedBy implements ModelInterface, ArrayAccess, \
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getAvatar()
     {
         return $this->container['avatar'];
@@ -370,6 +389,7 @@ class DocumentDetailsResponseCreatedBy implements ModelInterface, ArrayAccess, \
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setAvatar($avatar)
     {
         $this->container['avatar'] = $avatar;
@@ -383,6 +403,7 @@ class DocumentDetailsResponseCreatedBy implements ModelInterface, ArrayAccess, \
      *
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -395,6 +416,7 @@ class DocumentDetailsResponseCreatedBy implements ModelInterface, ArrayAccess, \
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -408,6 +430,7 @@ class DocumentDetailsResponseCreatedBy implements ModelInterface, ArrayAccess, \
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -424,6 +447,7 @@ class DocumentDetailsResponseCreatedBy implements ModelInterface, ArrayAccess, \
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
@@ -436,6 +460,7 @@ class DocumentDetailsResponseCreatedBy implements ModelInterface, ArrayAccess, \
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
@@ -446,6 +471,7 @@ class DocumentDetailsResponseCreatedBy implements ModelInterface, ArrayAccess, \
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function __toString()
     {
         return json_encode(
@@ -459,6 +485,7 @@ class DocumentDetailsResponseCreatedBy implements ModelInterface, ArrayAccess, \
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));

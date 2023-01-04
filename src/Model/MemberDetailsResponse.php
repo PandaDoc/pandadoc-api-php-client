@@ -100,6 +100,7 @@ class MemberDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPITypes()
     {
         return self::$openAPITypes;
@@ -110,6 +111,7 @@ class MemberDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPIFormats()
     {
         return self::$openAPIFormats;
@@ -185,6 +187,7 @@ class MemberDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function attributeMap()
     {
         return self::$attributeMap;
@@ -195,6 +198,7 @@ class MemberDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function setters()
     {
         return self::$setters;
@@ -205,6 +209,7 @@ class MemberDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function getters()
     {
         return self::$getters;
@@ -215,6 +220,7 @@ class MemberDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function getModelName()
     {
         return self::$openAPIModelName;
@@ -256,6 +262,7 @@ class MemberDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return array invalid properties with reasons
      */
+    #[\ReturnTypeWillChange]
     public function listInvalidProperties()
     {
         $invalidProperties = [];
@@ -269,6 +276,7 @@ class MemberDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return bool True if all properties are valid
      */
+    #[\ReturnTypeWillChange]
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
@@ -280,6 +288,7 @@ class MemberDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getUserId()
     {
         return $this->container['userId'];
@@ -292,6 +301,7 @@ class MemberDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setUserId($userId)
     {
         $this->container['userId'] = $userId;
@@ -304,6 +314,7 @@ class MemberDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getMembershipId()
     {
         return $this->container['membershipId'];
@@ -316,6 +327,7 @@ class MemberDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setMembershipId($membershipId)
     {
         $this->container['membershipId'] = $membershipId;
@@ -328,6 +340,7 @@ class MemberDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getEmail()
     {
         return $this->container['email'];
@@ -340,6 +353,7 @@ class MemberDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setEmail($email)
     {
         $this->container['email'] = $email;
@@ -352,6 +366,7 @@ class MemberDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getFirstName()
     {
         return $this->container['firstName'];
@@ -364,6 +379,7 @@ class MemberDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setFirstName($firstName)
     {
         $this->container['firstName'] = $firstName;
@@ -376,6 +392,7 @@ class MemberDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getLastName()
     {
         return $this->container['lastName'];
@@ -388,6 +405,7 @@ class MemberDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setLastName($lastName)
     {
         $this->container['lastName'] = $lastName;
@@ -400,6 +418,7 @@ class MemberDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return bool|null
      */
+    #[\ReturnTypeWillChange]
     public function getIsActive()
     {
         return $this->container['isActive'];
@@ -412,6 +431,7 @@ class MemberDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setIsActive($isActive)
     {
         $this->container['isActive'] = $isActive;
@@ -424,6 +444,7 @@ class MemberDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getWorkspace()
     {
         return $this->container['workspace'];
@@ -436,6 +457,7 @@ class MemberDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setWorkspace($workspace)
     {
         $this->container['workspace'] = $workspace;
@@ -448,6 +470,7 @@ class MemberDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getWorkspaceName()
     {
         return $this->container['workspaceName'];
@@ -460,6 +483,7 @@ class MemberDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setWorkspaceName($workspaceName)
     {
         $this->container['workspaceName'] = $workspaceName;
@@ -472,6 +496,7 @@ class MemberDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return bool|null
      */
+    #[\ReturnTypeWillChange]
     public function getEmailsVerified()
     {
         return $this->container['emailsVerified'];
@@ -484,6 +509,7 @@ class MemberDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setEmailsVerified($emailsVerified)
     {
         $this->container['emailsVerified'] = $emailsVerified;
@@ -496,6 +522,7 @@ class MemberDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getRole()
     {
         return $this->container['role'];
@@ -508,6 +535,7 @@ class MemberDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setRole($role)
     {
         $this->container['role'] = $role;
@@ -520,6 +548,7 @@ class MemberDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getUserLicense()
     {
         return $this->container['userLicense'];
@@ -532,6 +561,7 @@ class MemberDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setUserLicense($userLicense)
     {
         $this->container['userLicense'] = $userLicense;
@@ -544,6 +574,7 @@ class MemberDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getDateCreated()
     {
         return $this->container['dateCreated'];
@@ -556,6 +587,7 @@ class MemberDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setDateCreated($dateCreated)
     {
         $this->container['dateCreated'] = $dateCreated;
@@ -568,6 +600,7 @@ class MemberDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getDateModified()
     {
         return $this->container['dateModified'];
@@ -580,6 +613,7 @@ class MemberDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setDateModified($dateModified)
     {
         $this->container['dateModified'] = $dateModified;
@@ -593,6 +627,7 @@ class MemberDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -605,6 +640,7 @@ class MemberDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -618,6 +654,7 @@ class MemberDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -634,6 +671,7 @@ class MemberDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
@@ -646,6 +684,7 @@ class MemberDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
@@ -656,6 +695,7 @@ class MemberDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function __toString()
     {
         return json_encode(
@@ -669,6 +709,7 @@ class MemberDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));

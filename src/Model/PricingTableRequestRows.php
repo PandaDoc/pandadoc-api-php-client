@@ -80,6 +80,7 @@ class PricingTableRequestRows implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPITypes()
     {
         return self::$openAPITypes;
@@ -90,6 +91,7 @@ class PricingTableRequestRows implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPIFormats()
     {
         return self::$openAPIFormats;
@@ -135,6 +137,7 @@ class PricingTableRequestRows implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function attributeMap()
     {
         return self::$attributeMap;
@@ -145,6 +148,7 @@ class PricingTableRequestRows implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function setters()
     {
         return self::$setters;
@@ -155,6 +159,7 @@ class PricingTableRequestRows implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function getters()
     {
         return self::$getters;
@@ -165,6 +170,7 @@ class PricingTableRequestRows implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function getModelName()
     {
         return self::$openAPIModelName;
@@ -196,6 +202,7 @@ class PricingTableRequestRows implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return array invalid properties with reasons
      */
+    #[\ReturnTypeWillChange]
     public function listInvalidProperties()
     {
         $invalidProperties = [];
@@ -209,6 +216,7 @@ class PricingTableRequestRows implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return bool True if all properties are valid
      */
+    #[\ReturnTypeWillChange]
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
@@ -220,6 +228,7 @@ class PricingTableRequestRows implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return \PandaDoc\Client\Model\PricingTableRequestRowOptions|null
      */
+    #[\ReturnTypeWillChange]
     public function getOptions()
     {
         return $this->container['options'];
@@ -232,6 +241,7 @@ class PricingTableRequestRows implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setOptions($options)
     {
         $this->container['options'] = $options;
@@ -244,6 +254,7 @@ class PricingTableRequestRows implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return object|null
      */
+    #[\ReturnTypeWillChange]
     public function getData()
     {
         return $this->container['data'];
@@ -256,6 +267,7 @@ class PricingTableRequestRows implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setData($data)
     {
         $this->container['data'] = $data;
@@ -268,6 +280,7 @@ class PricingTableRequestRows implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return object|null
      */
+    #[\ReturnTypeWillChange]
     public function getCustomFields()
     {
         return $this->container['customFields'];
@@ -280,6 +293,7 @@ class PricingTableRequestRows implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setCustomFields($customFields)
     {
         $this->container['customFields'] = $customFields;
@@ -293,6 +307,7 @@ class PricingTableRequestRows implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -305,6 +320,7 @@ class PricingTableRequestRows implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -318,6 +334,7 @@ class PricingTableRequestRows implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -334,6 +351,7 @@ class PricingTableRequestRows implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
@@ -346,6 +364,7 @@ class PricingTableRequestRows implements ModelInterface, ArrayAccess, \JsonSeria
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
@@ -356,6 +375,7 @@ class PricingTableRequestRows implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function __toString()
     {
         return json_encode(
@@ -369,6 +389,7 @@ class PricingTableRequestRows implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));

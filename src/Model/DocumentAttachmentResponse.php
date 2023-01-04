@@ -82,6 +82,7 @@ class DocumentAttachmentResponse implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPITypes()
     {
         return self::$openAPITypes;
@@ -92,6 +93,7 @@ class DocumentAttachmentResponse implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPIFormats()
     {
         return self::$openAPIFormats;
@@ -140,6 +142,7 @@ class DocumentAttachmentResponse implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function attributeMap()
     {
         return self::$attributeMap;
@@ -150,6 +153,7 @@ class DocumentAttachmentResponse implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function setters()
     {
         return self::$setters;
@@ -160,6 +164,7 @@ class DocumentAttachmentResponse implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function getters()
     {
         return self::$getters;
@@ -170,6 +175,7 @@ class DocumentAttachmentResponse implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function getModelName()
     {
         return self::$openAPIModelName;
@@ -202,6 +208,7 @@ class DocumentAttachmentResponse implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return array invalid properties with reasons
      */
+    #[\ReturnTypeWillChange]
     public function listInvalidProperties()
     {
         $invalidProperties = [];
@@ -215,6 +222,7 @@ class DocumentAttachmentResponse implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return bool True if all properties are valid
      */
+    #[\ReturnTypeWillChange]
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
@@ -226,6 +234,7 @@ class DocumentAttachmentResponse implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getUuid()
     {
         return $this->container['uuid'];
@@ -238,6 +247,7 @@ class DocumentAttachmentResponse implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setUuid($uuid)
     {
         $this->container['uuid'] = $uuid;
@@ -250,6 +260,7 @@ class DocumentAttachmentResponse implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getDateCreated()
     {
         return $this->container['dateCreated'];
@@ -262,6 +273,7 @@ class DocumentAttachmentResponse implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setDateCreated($dateCreated)
     {
         $this->container['dateCreated'] = $dateCreated;
@@ -274,6 +286,7 @@ class DocumentAttachmentResponse implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return \PandaDoc\Client\Model\DocumentAttachmentResponseCreatedBy|null
      */
+    #[\ReturnTypeWillChange]
     public function getCreatedBy()
     {
         return $this->container['createdBy'];
@@ -286,6 +299,7 @@ class DocumentAttachmentResponse implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setCreatedBy($createdBy)
     {
         $this->container['createdBy'] = $createdBy;
@@ -298,6 +312,7 @@ class DocumentAttachmentResponse implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getName()
     {
         return $this->container['name'];
@@ -310,6 +325,7 @@ class DocumentAttachmentResponse implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setName($name)
     {
         $this->container['name'] = $name;
@@ -323,6 +339,7 @@ class DocumentAttachmentResponse implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -335,6 +352,7 @@ class DocumentAttachmentResponse implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -348,6 +366,7 @@ class DocumentAttachmentResponse implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -364,6 +383,7 @@ class DocumentAttachmentResponse implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
@@ -376,6 +396,7 @@ class DocumentAttachmentResponse implements ModelInterface, ArrayAccess, \JsonSe
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
@@ -386,6 +407,7 @@ class DocumentAttachmentResponse implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function __toString()
     {
         return json_encode(
@@ -399,6 +421,7 @@ class DocumentAttachmentResponse implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
