@@ -80,6 +80,7 @@ class DocumentStatusChangeRequest implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPITypes()
     {
         return self::$openAPITypes;
@@ -90,6 +91,7 @@ class DocumentStatusChangeRequest implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPIFormats()
     {
         return self::$openAPIFormats;
@@ -135,6 +137,7 @@ class DocumentStatusChangeRequest implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function attributeMap()
     {
         return self::$attributeMap;
@@ -145,6 +148,7 @@ class DocumentStatusChangeRequest implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function setters()
     {
         return self::$setters;
@@ -155,6 +159,7 @@ class DocumentStatusChangeRequest implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function getters()
     {
         return self::$getters;
@@ -165,6 +170,7 @@ class DocumentStatusChangeRequest implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function getModelName()
     {
         return self::$openAPIModelName;
@@ -196,6 +202,7 @@ class DocumentStatusChangeRequest implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return array invalid properties with reasons
      */
+    #[\ReturnTypeWillChange]
     public function listInvalidProperties()
     {
         $invalidProperties = [];
@@ -212,6 +219,7 @@ class DocumentStatusChangeRequest implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return bool True if all properties are valid
      */
+    #[\ReturnTypeWillChange]
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
@@ -223,6 +231,7 @@ class DocumentStatusChangeRequest implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return \PandaDoc\Client\Model\DocumentStatusRequestEnum
      */
+    #[\ReturnTypeWillChange]
     public function getStatus()
     {
         return $this->container['status'];
@@ -235,6 +244,7 @@ class DocumentStatusChangeRequest implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setStatus($status)
     {
         $this->container['status'] = $status;
@@ -247,6 +257,7 @@ class DocumentStatusChangeRequest implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getNote()
     {
         return $this->container['note'];
@@ -259,6 +270,7 @@ class DocumentStatusChangeRequest implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setNote($note)
     {
         $this->container['note'] = $note;
@@ -271,6 +283,7 @@ class DocumentStatusChangeRequest implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return bool|null
      */
+    #[\ReturnTypeWillChange]
     public function getNotifyRecipients()
     {
         return $this->container['notifyRecipients'];
@@ -283,6 +296,7 @@ class DocumentStatusChangeRequest implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setNotifyRecipients($notifyRecipients)
     {
         $this->container['notifyRecipients'] = $notifyRecipients;
@@ -296,6 +310,7 @@ class DocumentStatusChangeRequest implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -308,6 +323,7 @@ class DocumentStatusChangeRequest implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -321,6 +337,7 @@ class DocumentStatusChangeRequest implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -337,6 +354,7 @@ class DocumentStatusChangeRequest implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
@@ -349,6 +367,7 @@ class DocumentStatusChangeRequest implements ModelInterface, ArrayAccess, \JsonS
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
@@ -359,6 +378,7 @@ class DocumentStatusChangeRequest implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function __toString()
     {
         return json_encode(
@@ -372,6 +392,7 @@ class DocumentStatusChangeRequest implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));

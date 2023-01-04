@@ -98,6 +98,7 @@ class WebhookEventDetailsResponse implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPITypes()
     {
         return self::$openAPITypes;
@@ -108,6 +109,7 @@ class WebhookEventDetailsResponse implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPIFormats()
     {
         return self::$openAPIFormats;
@@ -180,6 +182,7 @@ class WebhookEventDetailsResponse implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function attributeMap()
     {
         return self::$attributeMap;
@@ -190,6 +193,7 @@ class WebhookEventDetailsResponse implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function setters()
     {
         return self::$setters;
@@ -200,6 +204,7 @@ class WebhookEventDetailsResponse implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function getters()
     {
         return self::$getters;
@@ -210,6 +215,7 @@ class WebhookEventDetailsResponse implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function getModelName()
     {
         return self::$openAPIModelName;
@@ -250,6 +256,7 @@ class WebhookEventDetailsResponse implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return array invalid properties with reasons
      */
+    #[\ReturnTypeWillChange]
     public function listInvalidProperties()
     {
         $invalidProperties = [];
@@ -263,6 +270,7 @@ class WebhookEventDetailsResponse implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return bool True if all properties are valid
      */
+    #[\ReturnTypeWillChange]
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
@@ -274,6 +282,7 @@ class WebhookEventDetailsResponse implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getUuid()
     {
         return $this->container['uuid'];
@@ -286,6 +295,7 @@ class WebhookEventDetailsResponse implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setUuid($uuid)
     {
         $this->container['uuid'] = $uuid;
@@ -298,6 +308,7 @@ class WebhookEventDetailsResponse implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getName()
     {
         return $this->container['name'];
@@ -310,6 +321,7 @@ class WebhookEventDetailsResponse implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setName($name)
     {
         $this->container['name'] = $name;
@@ -322,6 +334,7 @@ class WebhookEventDetailsResponse implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return \PandaDoc\Client\Model\WebhookEventTriggerEnum|null
      */
+    #[\ReturnTypeWillChange]
     public function getType()
     {
         return $this->container['type'];
@@ -334,6 +347,7 @@ class WebhookEventDetailsResponse implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setType($type)
     {
         $this->container['type'] = $type;
@@ -346,6 +360,7 @@ class WebhookEventDetailsResponse implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return int|null
      */
+    #[\ReturnTypeWillChange]
     public function getHttpStatusCode()
     {
         return $this->container['httpStatusCode'];
@@ -358,6 +373,7 @@ class WebhookEventDetailsResponse implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setHttpStatusCode($httpStatusCode)
     {
         $this->container['httpStatusCode'] = $httpStatusCode;
@@ -370,6 +386,7 @@ class WebhookEventDetailsResponse implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return \PandaDoc\Client\Model\WebhookEventErrorEnum|null
      */
+    #[\ReturnTypeWillChange]
     public function getError()
     {
         return $this->container['error'];
@@ -382,6 +399,7 @@ class WebhookEventDetailsResponse implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setError($error)
     {
         $this->container['error'] = $error;
@@ -394,6 +412,7 @@ class WebhookEventDetailsResponse implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return \DateTime|null
      */
+    #[\ReturnTypeWillChange]
     public function getDeliveryTime()
     {
         return $this->container['deliveryTime'];
@@ -406,6 +425,7 @@ class WebhookEventDetailsResponse implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setDeliveryTime($deliveryTime)
     {
         $this->container['deliveryTime'] = $deliveryTime;
@@ -418,6 +438,7 @@ class WebhookEventDetailsResponse implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getUrl()
     {
         return $this->container['url'];
@@ -430,6 +451,7 @@ class WebhookEventDetailsResponse implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setUrl($url)
     {
         $this->container['url'] = $url;
@@ -442,6 +464,7 @@ class WebhookEventDetailsResponse implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getSignature()
     {
         return $this->container['signature'];
@@ -454,6 +477,7 @@ class WebhookEventDetailsResponse implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setSignature($signature)
     {
         $this->container['signature'] = $signature;
@@ -466,6 +490,7 @@ class WebhookEventDetailsResponse implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getRequestBody()
     {
         return $this->container['requestBody'];
@@ -478,6 +503,7 @@ class WebhookEventDetailsResponse implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setRequestBody($requestBody)
     {
         $this->container['requestBody'] = $requestBody;
@@ -490,6 +516,7 @@ class WebhookEventDetailsResponse implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getResponseBody()
     {
         return $this->container['responseBody'];
@@ -502,6 +529,7 @@ class WebhookEventDetailsResponse implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setResponseBody($responseBody)
     {
         $this->container['responseBody'] = $responseBody;
@@ -514,6 +542,7 @@ class WebhookEventDetailsResponse implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getResponseHeaders()
     {
         return $this->container['responseHeaders'];
@@ -526,6 +555,7 @@ class WebhookEventDetailsResponse implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setResponseHeaders($responseHeaders)
     {
         $this->container['responseHeaders'] = $responseHeaders;
@@ -538,6 +568,7 @@ class WebhookEventDetailsResponse implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return \DateTime|null
      */
+    #[\ReturnTypeWillChange]
     public function getEventTime()
     {
         return $this->container['eventTime'];
@@ -550,6 +581,7 @@ class WebhookEventDetailsResponse implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setEventTime($eventTime)
     {
         $this->container['eventTime'] = $eventTime;
@@ -563,6 +595,7 @@ class WebhookEventDetailsResponse implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -575,6 +608,7 @@ class WebhookEventDetailsResponse implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -588,6 +622,7 @@ class WebhookEventDetailsResponse implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -604,6 +639,7 @@ class WebhookEventDetailsResponse implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
@@ -616,6 +652,7 @@ class WebhookEventDetailsResponse implements ModelInterface, ArrayAccess, \JsonS
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
@@ -626,6 +663,7 @@ class WebhookEventDetailsResponse implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function __toString()
     {
         return json_encode(
@@ -639,6 +677,7 @@ class WebhookEventDetailsResponse implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));

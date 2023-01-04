@@ -88,6 +88,7 @@ class DocumentCreateByPdfRequest implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPITypes()
     {
         return self::$openAPITypes;
@@ -98,6 +99,7 @@ class DocumentCreateByPdfRequest implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPIFormats()
     {
         return self::$openAPIFormats;
@@ -155,6 +157,7 @@ class DocumentCreateByPdfRequest implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function attributeMap()
     {
         return self::$attributeMap;
@@ -165,6 +168,7 @@ class DocumentCreateByPdfRequest implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function setters()
     {
         return self::$setters;
@@ -175,6 +179,7 @@ class DocumentCreateByPdfRequest implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function getters()
     {
         return self::$getters;
@@ -185,6 +190,7 @@ class DocumentCreateByPdfRequest implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function getModelName()
     {
         return self::$openAPIModelName;
@@ -220,6 +226,7 @@ class DocumentCreateByPdfRequest implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return array invalid properties with reasons
      */
+    #[\ReturnTypeWillChange]
     public function listInvalidProperties()
     {
         $invalidProperties = [];
@@ -239,6 +246,7 @@ class DocumentCreateByPdfRequest implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return bool True if all properties are valid
      */
+    #[\ReturnTypeWillChange]
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
@@ -250,6 +258,7 @@ class DocumentCreateByPdfRequest implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function getUrl()
     {
         return $this->container['url'];
@@ -262,6 +271,7 @@ class DocumentCreateByPdfRequest implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setUrl($url)
     {
         $this->container['url'] = $url;
@@ -274,6 +284,7 @@ class DocumentCreateByPdfRequest implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return \PandaDoc\Client\Model\DocumentCreateByTemplateRequestRecipients[]
      */
+    #[\ReturnTypeWillChange]
     public function getRecipients()
     {
         return $this->container['recipients'];
@@ -286,6 +297,7 @@ class DocumentCreateByPdfRequest implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setRecipients($recipients)
     {
         $this->container['recipients'] = $recipients;
@@ -298,6 +310,7 @@ class DocumentCreateByPdfRequest implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return bool|null
      */
+    #[\ReturnTypeWillChange]
     public function getParseFormFields()
     {
         return $this->container['parseFormFields'];
@@ -310,6 +323,7 @@ class DocumentCreateByPdfRequest implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setParseFormFields($parseFormFields)
     {
         $this->container['parseFormFields'] = $parseFormFields;
@@ -322,6 +336,7 @@ class DocumentCreateByPdfRequest implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getName()
     {
         return $this->container['name'];
@@ -334,6 +349,7 @@ class DocumentCreateByPdfRequest implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setName($name)
     {
         $this->container['name'] = $name;
@@ -346,6 +362,7 @@ class DocumentCreateByPdfRequest implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return string[]|null
      */
+    #[\ReturnTypeWillChange]
     public function getTags()
     {
         return $this->container['tags'];
@@ -358,6 +375,7 @@ class DocumentCreateByPdfRequest implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setTags($tags)
     {
         $this->container['tags'] = $tags;
@@ -370,6 +388,7 @@ class DocumentCreateByPdfRequest implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return object|null
      */
+    #[\ReturnTypeWillChange]
     public function getFields()
     {
         return $this->container['fields'];
@@ -382,6 +401,7 @@ class DocumentCreateByPdfRequest implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setFields($fields)
     {
         $this->container['fields'] = $fields;
@@ -394,6 +414,7 @@ class DocumentCreateByPdfRequest implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return object|null
      */
+    #[\ReturnTypeWillChange]
     public function getMetadata()
     {
         return $this->container['metadata'];
@@ -406,6 +427,7 @@ class DocumentCreateByPdfRequest implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setMetadata($metadata)
     {
         $this->container['metadata'] = $metadata;
@@ -419,6 +441,7 @@ class DocumentCreateByPdfRequest implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -431,6 +454,7 @@ class DocumentCreateByPdfRequest implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -444,6 +468,7 @@ class DocumentCreateByPdfRequest implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -460,6 +485,7 @@ class DocumentCreateByPdfRequest implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
@@ -472,6 +498,7 @@ class DocumentCreateByPdfRequest implements ModelInterface, ArrayAccess, \JsonSe
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
@@ -482,6 +509,7 @@ class DocumentCreateByPdfRequest implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function __toString()
     {
         return json_encode(
@@ -495,6 +523,7 @@ class DocumentCreateByPdfRequest implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));

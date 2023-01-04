@@ -112,6 +112,7 @@ class PricingTablesResponseItems implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPITypes()
     {
         return self::$openAPITypes;
@@ -122,6 +123,7 @@ class PricingTablesResponseItems implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPIFormats()
     {
         return self::$openAPIFormats;
@@ -215,6 +217,7 @@ class PricingTablesResponseItems implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function attributeMap()
     {
         return self::$attributeMap;
@@ -225,6 +228,7 @@ class PricingTablesResponseItems implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function setters()
     {
         return self::$setters;
@@ -235,6 +239,7 @@ class PricingTablesResponseItems implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function getters()
     {
         return self::$getters;
@@ -245,6 +250,7 @@ class PricingTablesResponseItems implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function getModelName()
     {
         return self::$openAPIModelName;
@@ -292,6 +298,7 @@ class PricingTablesResponseItems implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return array invalid properties with reasons
      */
+    #[\ReturnTypeWillChange]
     public function listInvalidProperties()
     {
         $invalidProperties = [];
@@ -305,6 +312,7 @@ class PricingTablesResponseItems implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return bool True if all properties are valid
      */
+    #[\ReturnTypeWillChange]
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
@@ -316,6 +324,7 @@ class PricingTablesResponseItems implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getId()
     {
         return $this->container['id'];
@@ -328,6 +337,7 @@ class PricingTablesResponseItems implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setId($id)
     {
         $this->container['id'] = $id;
@@ -340,6 +350,7 @@ class PricingTablesResponseItems implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getSku()
     {
         return $this->container['sku'];
@@ -352,6 +363,7 @@ class PricingTablesResponseItems implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setSku($sku)
     {
         $this->container['sku'] = $sku;
@@ -364,6 +376,7 @@ class PricingTablesResponseItems implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getQty()
     {
         return $this->container['qty'];
@@ -376,6 +389,7 @@ class PricingTablesResponseItems implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setQty($qty)
     {
         $this->container['qty'] = $qty;
@@ -388,6 +402,7 @@ class PricingTablesResponseItems implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getName()
     {
         return $this->container['name'];
@@ -400,6 +415,7 @@ class PricingTablesResponseItems implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setName($name)
     {
         $this->container['name'] = $name;
@@ -412,6 +428,7 @@ class PricingTablesResponseItems implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getCost()
     {
         return $this->container['cost'];
@@ -424,6 +441,7 @@ class PricingTablesResponseItems implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setCost($cost)
     {
         $this->container['cost'] = $cost;
@@ -436,6 +454,7 @@ class PricingTablesResponseItems implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getPrice()
     {
         return $this->container['price'];
@@ -448,6 +467,7 @@ class PricingTablesResponseItems implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setPrice($price)
     {
         $this->container['price'] = $price;
@@ -460,6 +480,7 @@ class PricingTablesResponseItems implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getDescription()
     {
         return $this->container['description'];
@@ -472,6 +493,7 @@ class PricingTablesResponseItems implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setDescription($description)
     {
         $this->container['description'] = $description;
@@ -484,6 +506,7 @@ class PricingTablesResponseItems implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return object|null
      */
+    #[\ReturnTypeWillChange]
     public function getCustomFields()
     {
         return $this->container['customFields'];
@@ -496,6 +519,7 @@ class PricingTablesResponseItems implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setCustomFields($customFields)
     {
         $this->container['customFields'] = $customFields;
@@ -508,6 +532,7 @@ class PricingTablesResponseItems implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return object|null
      */
+    #[\ReturnTypeWillChange]
     public function getCustomColumns()
     {
         return $this->container['customColumns'];
@@ -520,6 +545,7 @@ class PricingTablesResponseItems implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setCustomColumns($customColumns)
     {
         $this->container['customColumns'] = $customColumns;
@@ -532,6 +558,7 @@ class PricingTablesResponseItems implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return \PandaDoc\Client\Model\PricingTablesResponseDiscount|null
      */
+    #[\ReturnTypeWillChange]
     public function getDiscount()
     {
         return $this->container['discount'];
@@ -544,6 +571,7 @@ class PricingTablesResponseItems implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setDiscount($discount)
     {
         $this->container['discount'] = $discount;
@@ -556,6 +584,7 @@ class PricingTablesResponseItems implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return \PandaDoc\Client\Model\PricingTablesResponseDiscount|null
      */
+    #[\ReturnTypeWillChange]
     public function getTaxFirst()
     {
         return $this->container['taxFirst'];
@@ -568,6 +597,7 @@ class PricingTablesResponseItems implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setTaxFirst($taxFirst)
     {
         $this->container['taxFirst'] = $taxFirst;
@@ -580,6 +610,7 @@ class PricingTablesResponseItems implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return \PandaDoc\Client\Model\PricingTablesResponseDiscount|null
      */
+    #[\ReturnTypeWillChange]
     public function getTaxSecond()
     {
         return $this->container['taxSecond'];
@@ -592,6 +623,7 @@ class PricingTablesResponseItems implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setTaxSecond($taxSecond)
     {
         $this->container['taxSecond'] = $taxSecond;
@@ -604,6 +636,7 @@ class PricingTablesResponseItems implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getSubtotal()
     {
         return $this->container['subtotal'];
@@ -616,6 +649,7 @@ class PricingTablesResponseItems implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setSubtotal($subtotal)
     {
         $this->container['subtotal'] = $subtotal;
@@ -628,6 +662,7 @@ class PricingTablesResponseItems implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return \PandaDoc\Client\Model\PricingTablesResponseOptions|null
      */
+    #[\ReturnTypeWillChange]
     public function getOptions()
     {
         return $this->container['options'];
@@ -640,6 +675,7 @@ class PricingTablesResponseItems implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setOptions($options)
     {
         $this->container['options'] = $options;
@@ -652,6 +688,7 @@ class PricingTablesResponseItems implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getSalePrice()
     {
         return $this->container['salePrice'];
@@ -664,6 +701,7 @@ class PricingTablesResponseItems implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setSalePrice($salePrice)
     {
         $this->container['salePrice'] = $salePrice;
@@ -676,6 +714,7 @@ class PricingTablesResponseItems implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return object|null
      */
+    #[\ReturnTypeWillChange]
     public function getTaxes()
     {
         return $this->container['taxes'];
@@ -688,6 +727,7 @@ class PricingTablesResponseItems implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setTaxes($taxes)
     {
         $this->container['taxes'] = $taxes;
@@ -700,6 +740,7 @@ class PricingTablesResponseItems implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return object|null
      */
+    #[\ReturnTypeWillChange]
     public function getDiscounts()
     {
         return $this->container['discounts'];
@@ -712,6 +753,7 @@ class PricingTablesResponseItems implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setDiscounts($discounts)
     {
         $this->container['discounts'] = $discounts;
@@ -724,6 +766,7 @@ class PricingTablesResponseItems implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return object|null
      */
+    #[\ReturnTypeWillChange]
     public function getFees()
     {
         return $this->container['fees'];
@@ -736,6 +779,7 @@ class PricingTablesResponseItems implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setFees($fees)
     {
         $this->container['fees'] = $fees;
@@ -748,6 +792,7 @@ class PricingTablesResponseItems implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return object|null
      */
+    #[\ReturnTypeWillChange]
     public function getMergedData()
     {
         return $this->container['mergedData'];
@@ -760,6 +805,7 @@ class PricingTablesResponseItems implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setMergedData($mergedData)
     {
         $this->container['mergedData'] = $mergedData;
@@ -773,6 +819,7 @@ class PricingTablesResponseItems implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -785,6 +832,7 @@ class PricingTablesResponseItems implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -798,6 +846,7 @@ class PricingTablesResponseItems implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -814,6 +863,7 @@ class PricingTablesResponseItems implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
@@ -826,6 +876,7 @@ class PricingTablesResponseItems implements ModelInterface, ArrayAccess, \JsonSe
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
@@ -836,6 +887,7 @@ class PricingTablesResponseItems implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function __toString()
     {
         return json_encode(
@@ -849,6 +901,7 @@ class PricingTablesResponseItems implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));

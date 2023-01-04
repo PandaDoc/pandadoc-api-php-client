@@ -78,6 +78,7 @@ class DocumentDetailsResponseGrandTotal implements ModelInterface, ArrayAccess, 
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPITypes()
     {
         return self::$openAPITypes;
@@ -88,6 +89,7 @@ class DocumentDetailsResponseGrandTotal implements ModelInterface, ArrayAccess, 
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPIFormats()
     {
         return self::$openAPIFormats;
@@ -130,6 +132,7 @@ class DocumentDetailsResponseGrandTotal implements ModelInterface, ArrayAccess, 
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function attributeMap()
     {
         return self::$attributeMap;
@@ -140,6 +143,7 @@ class DocumentDetailsResponseGrandTotal implements ModelInterface, ArrayAccess, 
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function setters()
     {
         return self::$setters;
@@ -150,6 +154,7 @@ class DocumentDetailsResponseGrandTotal implements ModelInterface, ArrayAccess, 
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function getters()
     {
         return self::$getters;
@@ -160,6 +165,7 @@ class DocumentDetailsResponseGrandTotal implements ModelInterface, ArrayAccess, 
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function getModelName()
     {
         return self::$openAPIModelName;
@@ -190,6 +196,7 @@ class DocumentDetailsResponseGrandTotal implements ModelInterface, ArrayAccess, 
      *
      * @return array invalid properties with reasons
      */
+    #[\ReturnTypeWillChange]
     public function listInvalidProperties()
     {
         $invalidProperties = [];
@@ -203,6 +210,7 @@ class DocumentDetailsResponseGrandTotal implements ModelInterface, ArrayAccess, 
      *
      * @return bool True if all properties are valid
      */
+    #[\ReturnTypeWillChange]
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
@@ -214,6 +222,7 @@ class DocumentDetailsResponseGrandTotal implements ModelInterface, ArrayAccess, 
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getAmount()
     {
         return $this->container['amount'];
@@ -226,6 +235,7 @@ class DocumentDetailsResponseGrandTotal implements ModelInterface, ArrayAccess, 
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setAmount($amount)
     {
         $this->container['amount'] = $amount;
@@ -238,6 +248,7 @@ class DocumentDetailsResponseGrandTotal implements ModelInterface, ArrayAccess, 
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getCurrency()
     {
         return $this->container['currency'];
@@ -250,6 +261,7 @@ class DocumentDetailsResponseGrandTotal implements ModelInterface, ArrayAccess, 
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setCurrency($currency)
     {
         $this->container['currency'] = $currency;
@@ -263,6 +275,7 @@ class DocumentDetailsResponseGrandTotal implements ModelInterface, ArrayAccess, 
      *
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -275,6 +288,7 @@ class DocumentDetailsResponseGrandTotal implements ModelInterface, ArrayAccess, 
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -288,6 +302,7 @@ class DocumentDetailsResponseGrandTotal implements ModelInterface, ArrayAccess, 
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -304,6 +319,7 @@ class DocumentDetailsResponseGrandTotal implements ModelInterface, ArrayAccess, 
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
@@ -316,6 +332,7 @@ class DocumentDetailsResponseGrandTotal implements ModelInterface, ArrayAccess, 
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
@@ -326,6 +343,7 @@ class DocumentDetailsResponseGrandTotal implements ModelInterface, ArrayAccess, 
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function __toString()
     {
         return json_encode(
@@ -339,6 +357,7 @@ class DocumentDetailsResponseGrandTotal implements ModelInterface, ArrayAccess, 
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));

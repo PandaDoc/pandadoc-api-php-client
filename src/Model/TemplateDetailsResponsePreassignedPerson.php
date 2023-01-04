@@ -82,6 +82,7 @@ class TemplateDetailsResponsePreassignedPerson implements ModelInterface, ArrayA
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPITypes()
     {
         return self::$openAPITypes;
@@ -92,6 +93,7 @@ class TemplateDetailsResponsePreassignedPerson implements ModelInterface, ArrayA
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPIFormats()
     {
         return self::$openAPIFormats;
@@ -140,6 +142,7 @@ class TemplateDetailsResponsePreassignedPerson implements ModelInterface, ArrayA
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function attributeMap()
     {
         return self::$attributeMap;
@@ -150,6 +153,7 @@ class TemplateDetailsResponsePreassignedPerson implements ModelInterface, ArrayA
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function setters()
     {
         return self::$setters;
@@ -160,6 +164,7 @@ class TemplateDetailsResponsePreassignedPerson implements ModelInterface, ArrayA
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function getters()
     {
         return self::$getters;
@@ -170,6 +175,7 @@ class TemplateDetailsResponsePreassignedPerson implements ModelInterface, ArrayA
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function getModelName()
     {
         return self::$openAPIModelName;
@@ -202,6 +208,7 @@ class TemplateDetailsResponsePreassignedPerson implements ModelInterface, ArrayA
      *
      * @return array invalid properties with reasons
      */
+    #[\ReturnTypeWillChange]
     public function listInvalidProperties()
     {
         $invalidProperties = [];
@@ -215,6 +222,7 @@ class TemplateDetailsResponsePreassignedPerson implements ModelInterface, ArrayA
      *
      * @return bool True if all properties are valid
      */
+    #[\ReturnTypeWillChange]
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
@@ -226,6 +234,7 @@ class TemplateDetailsResponsePreassignedPerson implements ModelInterface, ArrayA
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getEmail()
     {
         return $this->container['email'];
@@ -238,6 +247,7 @@ class TemplateDetailsResponsePreassignedPerson implements ModelInterface, ArrayA
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setEmail($email)
     {
         $this->container['email'] = $email;
@@ -250,6 +260,7 @@ class TemplateDetailsResponsePreassignedPerson implements ModelInterface, ArrayA
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getType()
     {
         return $this->container['type'];
@@ -262,6 +273,7 @@ class TemplateDetailsResponsePreassignedPerson implements ModelInterface, ArrayA
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setType($type)
     {
         $this->container['type'] = $type;
@@ -274,6 +286,7 @@ class TemplateDetailsResponsePreassignedPerson implements ModelInterface, ArrayA
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getPlaceholderName()
     {
         return $this->container['placeholderName'];
@@ -286,6 +299,7 @@ class TemplateDetailsResponsePreassignedPerson implements ModelInterface, ArrayA
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setPlaceholderName($placeholderName)
     {
         $this->container['placeholderName'] = $placeholderName;
@@ -298,6 +312,7 @@ class TemplateDetailsResponsePreassignedPerson implements ModelInterface, ArrayA
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getPlaceholderSource()
     {
         return $this->container['placeholderSource'];
@@ -310,6 +325,7 @@ class TemplateDetailsResponsePreassignedPerson implements ModelInterface, ArrayA
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setPlaceholderSource($placeholderSource)
     {
         $this->container['placeholderSource'] = $placeholderSource;
@@ -323,6 +339,7 @@ class TemplateDetailsResponsePreassignedPerson implements ModelInterface, ArrayA
      *
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -335,6 +352,7 @@ class TemplateDetailsResponsePreassignedPerson implements ModelInterface, ArrayA
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -348,6 +366,7 @@ class TemplateDetailsResponsePreassignedPerson implements ModelInterface, ArrayA
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -364,6 +383,7 @@ class TemplateDetailsResponsePreassignedPerson implements ModelInterface, ArrayA
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
@@ -376,6 +396,7 @@ class TemplateDetailsResponsePreassignedPerson implements ModelInterface, ArrayA
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
@@ -386,6 +407,7 @@ class TemplateDetailsResponsePreassignedPerson implements ModelInterface, ArrayA
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function __toString()
     {
         return json_encode(
@@ -399,6 +421,7 @@ class TemplateDetailsResponsePreassignedPerson implements ModelInterface, ArrayA
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));

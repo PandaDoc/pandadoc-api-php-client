@@ -82,6 +82,7 @@ class WebhookSubscriptionCreateRequest implements ModelInterface, ArrayAccess, \
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPITypes()
     {
         return self::$openAPITypes;
@@ -92,6 +93,7 @@ class WebhookSubscriptionCreateRequest implements ModelInterface, ArrayAccess, \
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPIFormats()
     {
         return self::$openAPIFormats;
@@ -140,6 +142,7 @@ class WebhookSubscriptionCreateRequest implements ModelInterface, ArrayAccess, \
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function attributeMap()
     {
         return self::$attributeMap;
@@ -150,6 +153,7 @@ class WebhookSubscriptionCreateRequest implements ModelInterface, ArrayAccess, \
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function setters()
     {
         return self::$setters;
@@ -160,6 +164,7 @@ class WebhookSubscriptionCreateRequest implements ModelInterface, ArrayAccess, \
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function getters()
     {
         return self::$getters;
@@ -170,6 +175,7 @@ class WebhookSubscriptionCreateRequest implements ModelInterface, ArrayAccess, \
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function getModelName()
     {
         return self::$openAPIModelName;
@@ -202,6 +208,7 @@ class WebhookSubscriptionCreateRequest implements ModelInterface, ArrayAccess, \
      *
      * @return array invalid properties with reasons
      */
+    #[\ReturnTypeWillChange]
     public function listInvalidProperties()
     {
         $invalidProperties = [];
@@ -224,6 +231,7 @@ class WebhookSubscriptionCreateRequest implements ModelInterface, ArrayAccess, \
      *
      * @return bool True if all properties are valid
      */
+    #[\ReturnTypeWillChange]
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
@@ -235,6 +243,7 @@ class WebhookSubscriptionCreateRequest implements ModelInterface, ArrayAccess, \
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function getName()
     {
         return $this->container['name'];
@@ -247,6 +256,7 @@ class WebhookSubscriptionCreateRequest implements ModelInterface, ArrayAccess, \
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setName($name)
     {
         $this->container['name'] = $name;
@@ -259,6 +269,7 @@ class WebhookSubscriptionCreateRequest implements ModelInterface, ArrayAccess, \
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function getUrl()
     {
         return $this->container['url'];
@@ -271,6 +282,7 @@ class WebhookSubscriptionCreateRequest implements ModelInterface, ArrayAccess, \
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setUrl($url)
     {
         $this->container['url'] = $url;
@@ -283,6 +295,7 @@ class WebhookSubscriptionCreateRequest implements ModelInterface, ArrayAccess, \
      *
      * @return \PandaDoc\Client\Model\WebhookSubscriptionPayloadEnum[]|null
      */
+    #[\ReturnTypeWillChange]
     public function getPayload()
     {
         return $this->container['payload'];
@@ -295,6 +308,7 @@ class WebhookSubscriptionCreateRequest implements ModelInterface, ArrayAccess, \
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setPayload($payload)
     {
         $this->container['payload'] = $payload;
@@ -307,6 +321,7 @@ class WebhookSubscriptionCreateRequest implements ModelInterface, ArrayAccess, \
      *
      * @return \PandaDoc\Client\Model\WebhookSubscriptionTriggerEnum[]
      */
+    #[\ReturnTypeWillChange]
     public function getTriggers()
     {
         return $this->container['triggers'];
@@ -319,6 +334,7 @@ class WebhookSubscriptionCreateRequest implements ModelInterface, ArrayAccess, \
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setTriggers($triggers)
     {
         $this->container['triggers'] = $triggers;
@@ -332,6 +348,7 @@ class WebhookSubscriptionCreateRequest implements ModelInterface, ArrayAccess, \
      *
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -344,6 +361,7 @@ class WebhookSubscriptionCreateRequest implements ModelInterface, ArrayAccess, \
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -357,6 +375,7 @@ class WebhookSubscriptionCreateRequest implements ModelInterface, ArrayAccess, \
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -373,6 +392,7 @@ class WebhookSubscriptionCreateRequest implements ModelInterface, ArrayAccess, \
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
@@ -385,6 +405,7 @@ class WebhookSubscriptionCreateRequest implements ModelInterface, ArrayAccess, \
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
@@ -395,6 +416,7 @@ class WebhookSubscriptionCreateRequest implements ModelInterface, ArrayAccess, \
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function __toString()
     {
         return json_encode(
@@ -408,6 +430,7 @@ class WebhookSubscriptionCreateRequest implements ModelInterface, ArrayAccess, \
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));

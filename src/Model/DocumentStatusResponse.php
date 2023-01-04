@@ -92,6 +92,7 @@ class DocumentStatusResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPITypes()
     {
         return self::$openAPITypes;
@@ -102,6 +103,7 @@ class DocumentStatusResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPIFormats()
     {
         return self::$openAPIFormats;
@@ -165,6 +167,7 @@ class DocumentStatusResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function attributeMap()
     {
         return self::$attributeMap;
@@ -175,6 +178,7 @@ class DocumentStatusResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function setters()
     {
         return self::$setters;
@@ -185,6 +189,7 @@ class DocumentStatusResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function getters()
     {
         return self::$getters;
@@ -195,6 +200,7 @@ class DocumentStatusResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function getModelName()
     {
         return self::$openAPIModelName;
@@ -232,6 +238,7 @@ class DocumentStatusResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return array invalid properties with reasons
      */
+    #[\ReturnTypeWillChange]
     public function listInvalidProperties()
     {
         $invalidProperties = [];
@@ -245,6 +252,7 @@ class DocumentStatusResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return bool True if all properties are valid
      */
+    #[\ReturnTypeWillChange]
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
@@ -256,6 +264,7 @@ class DocumentStatusResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getId()
     {
         return $this->container['id'];
@@ -268,6 +277,7 @@ class DocumentStatusResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setId($id)
     {
         $this->container['id'] = $id;
@@ -280,6 +290,7 @@ class DocumentStatusResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getName()
     {
         return $this->container['name'];
@@ -292,6 +303,7 @@ class DocumentStatusResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setName($name)
     {
         $this->container['name'] = $name;
@@ -304,6 +316,7 @@ class DocumentStatusResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getStatus()
     {
         return $this->container['status'];
@@ -316,6 +329,7 @@ class DocumentStatusResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setStatus($status)
     {
         $this->container['status'] = $status;
@@ -328,6 +342,7 @@ class DocumentStatusResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getDateCreated()
     {
         return $this->container['dateCreated'];
@@ -340,6 +355,7 @@ class DocumentStatusResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setDateCreated($dateCreated)
     {
         $this->container['dateCreated'] = $dateCreated;
@@ -352,6 +368,7 @@ class DocumentStatusResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getDateModified()
     {
         return $this->container['dateModified'];
@@ -364,6 +381,7 @@ class DocumentStatusResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setDateModified($dateModified)
     {
         $this->container['dateModified'] = $dateModified;
@@ -376,6 +394,7 @@ class DocumentStatusResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getDateCompleted()
     {
         return $this->container['dateCompleted'];
@@ -388,6 +407,7 @@ class DocumentStatusResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setDateCompleted($dateCompleted)
     {
         $this->container['dateCompleted'] = $dateCompleted;
@@ -400,6 +420,7 @@ class DocumentStatusResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getExpirationDate()
     {
         return $this->container['expirationDate'];
@@ -412,6 +433,7 @@ class DocumentStatusResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setExpirationDate($expirationDate)
     {
         $this->container['expirationDate'] = $expirationDate;
@@ -424,6 +446,7 @@ class DocumentStatusResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getVersion()
     {
         return $this->container['version'];
@@ -436,6 +459,7 @@ class DocumentStatusResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setVersion($version)
     {
         $this->container['version'] = $version;
@@ -448,6 +472,7 @@ class DocumentStatusResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getUuid()
     {
         return $this->container['uuid'];
@@ -460,6 +485,7 @@ class DocumentStatusResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setUuid($uuid)
     {
         $this->container['uuid'] = $uuid;
@@ -473,6 +499,7 @@ class DocumentStatusResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -485,6 +512,7 @@ class DocumentStatusResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -498,6 +526,7 @@ class DocumentStatusResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -514,6 +543,7 @@ class DocumentStatusResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
@@ -526,6 +556,7 @@ class DocumentStatusResponse implements ModelInterface, ArrayAccess, \JsonSerial
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
@@ -536,6 +567,7 @@ class DocumentStatusResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function __toString()
     {
         return json_encode(
@@ -549,6 +581,7 @@ class DocumentStatusResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));

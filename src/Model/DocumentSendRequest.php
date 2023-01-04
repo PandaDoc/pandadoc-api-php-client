@@ -82,6 +82,7 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPITypes()
     {
         return self::$openAPITypes;
@@ -92,6 +93,7 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPIFormats()
     {
         return self::$openAPIFormats;
@@ -140,6 +142,7 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function attributeMap()
     {
         return self::$attributeMap;
@@ -150,6 +153,7 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function setters()
     {
         return self::$setters;
@@ -160,6 +164,7 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function getters()
     {
         return self::$getters;
@@ -170,6 +175,7 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function getModelName()
     {
         return self::$openAPIModelName;
@@ -202,6 +208,7 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return array invalid properties with reasons
      */
+    #[\ReturnTypeWillChange]
     public function listInvalidProperties()
     {
         $invalidProperties = [];
@@ -215,6 +222,7 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return bool True if all properties are valid
      */
+    #[\ReturnTypeWillChange]
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
@@ -226,6 +234,7 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getMessage()
     {
         return $this->container['message'];
@@ -238,6 +247,7 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setMessage($message)
     {
         $this->container['message'] = $message;
@@ -250,6 +260,7 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getSubject()
     {
         return $this->container['subject'];
@@ -262,6 +273,7 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setSubject($subject)
     {
         $this->container['subject'] = $subject;
@@ -274,6 +286,7 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return bool|null
      */
+    #[\ReturnTypeWillChange]
     public function getSilent()
     {
         return $this->container['silent'];
@@ -286,6 +299,7 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setSilent($silent)
     {
         $this->container['silent'] = $silent;
@@ -298,6 +312,7 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return array<string,string>|null
      */
+    #[\ReturnTypeWillChange]
     public function getSender()
     {
         return $this->container['sender'];
@@ -310,6 +325,7 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setSender($sender)
     {
         $this->container['sender'] = $sender;
@@ -323,6 +339,7 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -335,6 +352,7 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -348,6 +366,7 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -364,6 +383,7 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
@@ -376,6 +396,7 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
@@ -386,6 +407,7 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function __toString()
     {
         return json_encode(
@@ -399,6 +421,7 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));

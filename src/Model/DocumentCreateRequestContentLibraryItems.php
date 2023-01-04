@@ -82,6 +82,7 @@ class DocumentCreateRequestContentLibraryItems implements ModelInterface, ArrayA
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPITypes()
     {
         return self::$openAPITypes;
@@ -92,6 +93,7 @@ class DocumentCreateRequestContentLibraryItems implements ModelInterface, ArrayA
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPIFormats()
     {
         return self::$openAPIFormats;
@@ -140,6 +142,7 @@ class DocumentCreateRequestContentLibraryItems implements ModelInterface, ArrayA
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function attributeMap()
     {
         return self::$attributeMap;
@@ -150,6 +153,7 @@ class DocumentCreateRequestContentLibraryItems implements ModelInterface, ArrayA
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function setters()
     {
         return self::$setters;
@@ -160,6 +164,7 @@ class DocumentCreateRequestContentLibraryItems implements ModelInterface, ArrayA
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function getters()
     {
         return self::$getters;
@@ -170,6 +175,7 @@ class DocumentCreateRequestContentLibraryItems implements ModelInterface, ArrayA
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function getModelName()
     {
         return self::$openAPIModelName;
@@ -202,6 +208,7 @@ class DocumentCreateRequestContentLibraryItems implements ModelInterface, ArrayA
      *
      * @return array invalid properties with reasons
      */
+    #[\ReturnTypeWillChange]
     public function listInvalidProperties()
     {
         $invalidProperties = [];
@@ -218,6 +225,7 @@ class DocumentCreateRequestContentLibraryItems implements ModelInterface, ArrayA
      *
      * @return bool True if all properties are valid
      */
+    #[\ReturnTypeWillChange]
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
@@ -229,6 +237,7 @@ class DocumentCreateRequestContentLibraryItems implements ModelInterface, ArrayA
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function getId()
     {
         return $this->container['id'];
@@ -241,6 +250,7 @@ class DocumentCreateRequestContentLibraryItems implements ModelInterface, ArrayA
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setId($id)
     {
         $this->container['id'] = $id;
@@ -253,6 +263,7 @@ class DocumentCreateRequestContentLibraryItems implements ModelInterface, ArrayA
      *
      * @return \PandaDoc\Client\Model\PricingTableRequest[]|null
      */
+    #[\ReturnTypeWillChange]
     public function getPricingTables()
     {
         return $this->container['pricingTables'];
@@ -265,6 +276,7 @@ class DocumentCreateRequestContentLibraryItems implements ModelInterface, ArrayA
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setPricingTables($pricingTables)
     {
         $this->container['pricingTables'] = $pricingTables;
@@ -277,6 +289,7 @@ class DocumentCreateRequestContentLibraryItems implements ModelInterface, ArrayA
      *
      * @return object|null
      */
+    #[\ReturnTypeWillChange]
     public function getFields()
     {
         return $this->container['fields'];
@@ -289,6 +302,7 @@ class DocumentCreateRequestContentLibraryItems implements ModelInterface, ArrayA
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setFields($fields)
     {
         $this->container['fields'] = $fields;
@@ -301,6 +315,7 @@ class DocumentCreateRequestContentLibraryItems implements ModelInterface, ArrayA
      *
      * @return \PandaDoc\Client\Model\DocumentCreateByTemplateRequestRecipients[]|null
      */
+    #[\ReturnTypeWillChange]
     public function getRecipients()
     {
         return $this->container['recipients'];
@@ -313,6 +328,7 @@ class DocumentCreateRequestContentLibraryItems implements ModelInterface, ArrayA
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setRecipients($recipients)
     {
         $this->container['recipients'] = $recipients;
@@ -326,6 +342,7 @@ class DocumentCreateRequestContentLibraryItems implements ModelInterface, ArrayA
      *
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -338,6 +355,7 @@ class DocumentCreateRequestContentLibraryItems implements ModelInterface, ArrayA
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -351,6 +369,7 @@ class DocumentCreateRequestContentLibraryItems implements ModelInterface, ArrayA
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -367,6 +386,7 @@ class DocumentCreateRequestContentLibraryItems implements ModelInterface, ArrayA
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
@@ -379,6 +399,7 @@ class DocumentCreateRequestContentLibraryItems implements ModelInterface, ArrayA
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
@@ -389,6 +410,7 @@ class DocumentCreateRequestContentLibraryItems implements ModelInterface, ArrayA
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function __toString()
     {
         return json_encode(
@@ -402,6 +424,7 @@ class DocumentCreateRequestContentLibraryItems implements ModelInterface, ArrayA
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));

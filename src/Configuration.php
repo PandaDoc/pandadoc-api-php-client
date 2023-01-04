@@ -88,7 +88,7 @@ class Configuration
      *
      * @var string
      */
-    protected $userAgent = 'pandadoc_php_client/5.5.0';
+    protected $userAgent = 'pandadoc_php_client/5.5.1';
 
     /**
      * Debug switch (default set to false)
@@ -127,6 +127,7 @@ class Configuration
      *
      * @return $this
      */
+    #[\ReturnTypeWillChange]
     public function setApiKey($apiKeyIdentifier, $key)
     {
         $this->apiKeys[$apiKeyIdentifier] = $key;
@@ -140,6 +141,7 @@ class Configuration
      *
      * @return null|string API key or token
      */
+    #[\ReturnTypeWillChange]
     public function getApiKey($apiKeyIdentifier)
     {
         return isset($this->apiKeys[$apiKeyIdentifier]) ? $this->apiKeys[$apiKeyIdentifier] : null;
@@ -153,6 +155,7 @@ class Configuration
      *
      * @return $this
      */
+    #[\ReturnTypeWillChange]
     public function setApiKeyPrefix($apiKeyIdentifier, $prefix)
     {
         $this->apiKeyPrefixes[$apiKeyIdentifier] = $prefix;
@@ -166,6 +169,7 @@ class Configuration
      *
      * @return null|string
      */
+    #[\ReturnTypeWillChange]
     public function getApiKeyPrefix($apiKeyIdentifier)
     {
         return isset($this->apiKeyPrefixes[$apiKeyIdentifier]) ? $this->apiKeyPrefixes[$apiKeyIdentifier] : null;
@@ -178,6 +182,7 @@ class Configuration
      *
      * @return $this
      */
+    #[\ReturnTypeWillChange]
     public function setAccessToken($accessToken)
     {
         $this->accessToken = $accessToken;
@@ -189,6 +194,7 @@ class Configuration
      *
      * @return string Access token for OAuth
      */
+    #[\ReturnTypeWillChange]
     public function getAccessToken()
     {
         return $this->accessToken;
@@ -201,6 +207,7 @@ class Configuration
      *
      * @return $this
      */
+    #[\ReturnTypeWillChange]
     public function setUsername($username)
     {
         $this->username = $username;
@@ -212,6 +219,7 @@ class Configuration
      *
      * @return string Username for HTTP basic authentication
      */
+    #[\ReturnTypeWillChange]
     public function getUsername()
     {
         return $this->username;
@@ -224,6 +232,7 @@ class Configuration
      *
      * @return $this
      */
+    #[\ReturnTypeWillChange]
     public function setPassword($password)
     {
         $this->password = $password;
@@ -235,6 +244,7 @@ class Configuration
      *
      * @return string Password for HTTP basic authentication
      */
+    #[\ReturnTypeWillChange]
     public function getPassword()
     {
         return $this->password;
@@ -247,6 +257,7 @@ class Configuration
      *
      * @return $this
      */
+    #[\ReturnTypeWillChange]
     public function setHost($host)
     {
         $this->host = $host;
@@ -258,6 +269,7 @@ class Configuration
      *
      * @return string Host
      */
+    #[\ReturnTypeWillChange]
     public function getHost()
     {
         return $this->host;
@@ -271,6 +283,7 @@ class Configuration
      * @throws \InvalidArgumentException
      * @return $this
      */
+    #[\ReturnTypeWillChange]
     public function setUserAgent($userAgent)
     {
         if (!is_string($userAgent)) {
@@ -286,6 +299,7 @@ class Configuration
      *
      * @return string user agent
      */
+    #[\ReturnTypeWillChange]
     public function getUserAgent()
     {
         return $this->userAgent;
@@ -298,6 +312,7 @@ class Configuration
      *
      * @return $this
      */
+    #[\ReturnTypeWillChange]
     public function setDebug($debug)
     {
         $this->debug = $debug;
@@ -309,6 +324,7 @@ class Configuration
      *
      * @return bool
      */
+    #[\ReturnTypeWillChange]
     public function getDebug()
     {
         return $this->debug;
@@ -321,6 +337,7 @@ class Configuration
      *
      * @return $this
      */
+    #[\ReturnTypeWillChange]
     public function setDebugFile($debugFile)
     {
         $this->debugFile = $debugFile;
@@ -332,6 +349,7 @@ class Configuration
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function getDebugFile()
     {
         return $this->debugFile;
@@ -344,6 +362,7 @@ class Configuration
      *
      * @return $this
      */
+    #[\ReturnTypeWillChange]
     public function setTempFolderPath($tempFolderPath)
     {
         $this->tempFolderPath = $tempFolderPath;
@@ -355,6 +374,7 @@ class Configuration
      *
      * @return string Temp folder path
      */
+    #[\ReturnTypeWillChange]
     public function getTempFolderPath()
     {
         return $this->tempFolderPath;
@@ -365,6 +385,7 @@ class Configuration
      *
      * @return Configuration
      */
+    #[\ReturnTypeWillChange]
     public static function getDefaultConfiguration()
     {
         if (self::$defaultConfiguration === null) {
@@ -381,6 +402,7 @@ class Configuration
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public static function setDefaultConfiguration(Configuration $config)
     {
         self::$defaultConfiguration = $config;
@@ -391,13 +413,14 @@ class Configuration
      *
      * @return string The report for debugging
      */
+    #[\ReturnTypeWillChange]
     public static function toDebugReport()
     {
         $report  = 'PHP SDK (PandaDoc\Client) Debug Report:' . PHP_EOL;
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
         $report .= '    The version of the OpenAPI document: 5.5.0' . PHP_EOL;
-        $report .= '    SDK Package Version: 5.5.0' . PHP_EOL;
+        $report .= '    SDK Package Version: 5.5.1' . PHP_EOL;
         $report .= '    Temp Folder Path: ' . self::getDefaultConfiguration()->getTempFolderPath() . PHP_EOL;
 
         return $report;
@@ -410,6 +433,7 @@ class Configuration
      *
      * @return null|string API key with the prefix
      */
+    #[\ReturnTypeWillChange]
     public function getApiKeyWithPrefix($apiKeyIdentifier)
     {
         $prefix = $this->getApiKeyPrefix($apiKeyIdentifier);
@@ -433,6 +457,7 @@ class Configuration
      *
      * @return array an array of host settings
      */
+    #[\ReturnTypeWillChange]
     public function getHostSettings()
     {
         return [
@@ -450,6 +475,7 @@ class Configuration
      * @param array|null $variables hash of variable and the corresponding value (optional)
      * @return string URL based on host settings
      */
+    #[\ReturnTypeWillChange]
     public function getHostFromSettings($index, $variables = null)
     {
         if (null === $variables) {

@@ -96,6 +96,7 @@ class DocumentCreateByTemplateRequest implements ModelInterface, ArrayAccess, \J
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPITypes()
     {
         return self::$openAPITypes;
@@ -106,6 +107,7 @@ class DocumentCreateByTemplateRequest implements ModelInterface, ArrayAccess, \J
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPIFormats()
     {
         return self::$openAPIFormats;
@@ -175,6 +177,7 @@ class DocumentCreateByTemplateRequest implements ModelInterface, ArrayAccess, \J
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function attributeMap()
     {
         return self::$attributeMap;
@@ -185,6 +188,7 @@ class DocumentCreateByTemplateRequest implements ModelInterface, ArrayAccess, \J
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function setters()
     {
         return self::$setters;
@@ -195,6 +199,7 @@ class DocumentCreateByTemplateRequest implements ModelInterface, ArrayAccess, \J
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function getters()
     {
         return self::$getters;
@@ -205,6 +210,7 @@ class DocumentCreateByTemplateRequest implements ModelInterface, ArrayAccess, \J
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function getModelName()
     {
         return self::$openAPIModelName;
@@ -244,6 +250,7 @@ class DocumentCreateByTemplateRequest implements ModelInterface, ArrayAccess, \J
      *
      * @return array invalid properties with reasons
      */
+    #[\ReturnTypeWillChange]
     public function listInvalidProperties()
     {
         $invalidProperties = [];
@@ -266,6 +273,7 @@ class DocumentCreateByTemplateRequest implements ModelInterface, ArrayAccess, \J
      *
      * @return bool True if all properties are valid
      */
+    #[\ReturnTypeWillChange]
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
@@ -277,6 +285,7 @@ class DocumentCreateByTemplateRequest implements ModelInterface, ArrayAccess, \J
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function getName()
     {
         return $this->container['name'];
@@ -289,6 +298,7 @@ class DocumentCreateByTemplateRequest implements ModelInterface, ArrayAccess, \J
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setName($name)
     {
         $this->container['name'] = $name;
@@ -301,6 +311,7 @@ class DocumentCreateByTemplateRequest implements ModelInterface, ArrayAccess, \J
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function getTemplateUuid()
     {
         return $this->container['templateUuid'];
@@ -313,6 +324,7 @@ class DocumentCreateByTemplateRequest implements ModelInterface, ArrayAccess, \J
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setTemplateUuid($templateUuid)
     {
         $this->container['templateUuid'] = $templateUuid;
@@ -325,6 +337,7 @@ class DocumentCreateByTemplateRequest implements ModelInterface, ArrayAccess, \J
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getFolderUuid()
     {
         return $this->container['folderUuid'];
@@ -337,6 +350,7 @@ class DocumentCreateByTemplateRequest implements ModelInterface, ArrayAccess, \J
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setFolderUuid($folderUuid)
     {
         $this->container['folderUuid'] = $folderUuid;
@@ -349,6 +363,7 @@ class DocumentCreateByTemplateRequest implements ModelInterface, ArrayAccess, \J
      *
      * @return \PandaDoc\Client\Model\DocumentCreateByTemplateRequestRecipients[]
      */
+    #[\ReturnTypeWillChange]
     public function getRecipients()
     {
         return $this->container['recipients'];
@@ -361,6 +376,7 @@ class DocumentCreateByTemplateRequest implements ModelInterface, ArrayAccess, \J
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setRecipients($recipients)
     {
         $this->container['recipients'] = $recipients;
@@ -373,6 +389,7 @@ class DocumentCreateByTemplateRequest implements ModelInterface, ArrayAccess, \J
      *
      * @return \PandaDoc\Client\Model\DocumentCreateByTemplateRequestTokens[]|null
      */
+    #[\ReturnTypeWillChange]
     public function getTokens()
     {
         return $this->container['tokens'];
@@ -385,6 +402,7 @@ class DocumentCreateByTemplateRequest implements ModelInterface, ArrayAccess, \J
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setTokens($tokens)
     {
         $this->container['tokens'] = $tokens;
@@ -397,6 +415,7 @@ class DocumentCreateByTemplateRequest implements ModelInterface, ArrayAccess, \J
      *
      * @return object|null
      */
+    #[\ReturnTypeWillChange]
     public function getFields()
     {
         return $this->container['fields'];
@@ -409,6 +428,7 @@ class DocumentCreateByTemplateRequest implements ModelInterface, ArrayAccess, \J
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setFields($fields)
     {
         $this->container['fields'] = $fields;
@@ -421,6 +441,7 @@ class DocumentCreateByTemplateRequest implements ModelInterface, ArrayAccess, \J
      *
      * @return object|null
      */
+    #[\ReturnTypeWillChange]
     public function getMetadata()
     {
         return $this->container['metadata'];
@@ -433,6 +454,7 @@ class DocumentCreateByTemplateRequest implements ModelInterface, ArrayAccess, \J
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setMetadata($metadata)
     {
         $this->container['metadata'] = $metadata;
@@ -445,6 +467,7 @@ class DocumentCreateByTemplateRequest implements ModelInterface, ArrayAccess, \J
      *
      * @return string[]|null
      */
+    #[\ReturnTypeWillChange]
     public function getTags()
     {
         return $this->container['tags'];
@@ -457,6 +480,7 @@ class DocumentCreateByTemplateRequest implements ModelInterface, ArrayAccess, \J
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setTags($tags)
     {
         $this->container['tags'] = $tags;
@@ -469,6 +493,7 @@ class DocumentCreateByTemplateRequest implements ModelInterface, ArrayAccess, \J
      *
      * @return \PandaDoc\Client\Model\DocumentCreateByTemplateRequestImages[]|null
      */
+    #[\ReturnTypeWillChange]
     public function getImages()
     {
         return $this->container['images'];
@@ -481,6 +506,7 @@ class DocumentCreateByTemplateRequest implements ModelInterface, ArrayAccess, \J
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setImages($images)
     {
         $this->container['images'] = $images;
@@ -493,6 +519,7 @@ class DocumentCreateByTemplateRequest implements ModelInterface, ArrayAccess, \J
      *
      * @return \PandaDoc\Client\Model\PricingTableRequest[]|null
      */
+    #[\ReturnTypeWillChange]
     public function getPricingTables()
     {
         return $this->container['pricingTables'];
@@ -505,6 +532,7 @@ class DocumentCreateByTemplateRequest implements ModelInterface, ArrayAccess, \J
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setPricingTables($pricingTables)
     {
         $this->container['pricingTables'] = $pricingTables;
@@ -517,6 +545,7 @@ class DocumentCreateByTemplateRequest implements ModelInterface, ArrayAccess, \J
      *
      * @return \PandaDoc\Client\Model\DocumentCreateByTemplateRequestContentPlaceholders[]|null
      */
+    #[\ReturnTypeWillChange]
     public function getContentPlaceholders()
     {
         return $this->container['contentPlaceholders'];
@@ -529,6 +558,7 @@ class DocumentCreateByTemplateRequest implements ModelInterface, ArrayAccess, \J
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setContentPlaceholders($contentPlaceholders)
     {
         $this->container['contentPlaceholders'] = $contentPlaceholders;
@@ -542,6 +572,7 @@ class DocumentCreateByTemplateRequest implements ModelInterface, ArrayAccess, \J
      *
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -554,6 +585,7 @@ class DocumentCreateByTemplateRequest implements ModelInterface, ArrayAccess, \J
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -567,6 +599,7 @@ class DocumentCreateByTemplateRequest implements ModelInterface, ArrayAccess, \J
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -583,6 +616,7 @@ class DocumentCreateByTemplateRequest implements ModelInterface, ArrayAccess, \J
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
@@ -595,6 +629,7 @@ class DocumentCreateByTemplateRequest implements ModelInterface, ArrayAccess, \J
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
@@ -605,6 +640,7 @@ class DocumentCreateByTemplateRequest implements ModelInterface, ArrayAccess, \J
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function __toString()
     {
         return json_encode(
@@ -618,6 +654,7 @@ class DocumentCreateByTemplateRequest implements ModelInterface, ArrayAccess, \J
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));

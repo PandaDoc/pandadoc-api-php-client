@@ -86,6 +86,7 @@ class WebhookEventItemResponse implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPITypes()
     {
         return self::$openAPITypes;
@@ -96,6 +97,7 @@ class WebhookEventItemResponse implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPIFormats()
     {
         return self::$openAPIFormats;
@@ -150,6 +152,7 @@ class WebhookEventItemResponse implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function attributeMap()
     {
         return self::$attributeMap;
@@ -160,6 +163,7 @@ class WebhookEventItemResponse implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function setters()
     {
         return self::$setters;
@@ -170,6 +174,7 @@ class WebhookEventItemResponse implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function getters()
     {
         return self::$getters;
@@ -180,6 +185,7 @@ class WebhookEventItemResponse implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function getModelName()
     {
         return self::$openAPIModelName;
@@ -214,6 +220,7 @@ class WebhookEventItemResponse implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return array invalid properties with reasons
      */
+    #[\ReturnTypeWillChange]
     public function listInvalidProperties()
     {
         $invalidProperties = [];
@@ -227,6 +234,7 @@ class WebhookEventItemResponse implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return bool True if all properties are valid
      */
+    #[\ReturnTypeWillChange]
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
@@ -238,6 +246,7 @@ class WebhookEventItemResponse implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getUuid()
     {
         return $this->container['uuid'];
@@ -250,6 +259,7 @@ class WebhookEventItemResponse implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setUuid($uuid)
     {
         $this->container['uuid'] = $uuid;
@@ -262,6 +272,7 @@ class WebhookEventItemResponse implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getName()
     {
         return $this->container['name'];
@@ -274,6 +285,7 @@ class WebhookEventItemResponse implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setName($name)
     {
         $this->container['name'] = $name;
@@ -286,6 +298,7 @@ class WebhookEventItemResponse implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return \PandaDoc\Client\Model\WebhookEventTriggerEnum|null
      */
+    #[\ReturnTypeWillChange]
     public function getType()
     {
         return $this->container['type'];
@@ -298,6 +311,7 @@ class WebhookEventItemResponse implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setType($type)
     {
         $this->container['type'] = $type;
@@ -310,6 +324,7 @@ class WebhookEventItemResponse implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return int|null
      */
+    #[\ReturnTypeWillChange]
     public function getHttpStatusCode()
     {
         return $this->container['httpStatusCode'];
@@ -322,6 +337,7 @@ class WebhookEventItemResponse implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setHttpStatusCode($httpStatusCode)
     {
         $this->container['httpStatusCode'] = $httpStatusCode;
@@ -334,6 +350,7 @@ class WebhookEventItemResponse implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return \PandaDoc\Client\Model\WebhookEventErrorEnum|null
      */
+    #[\ReturnTypeWillChange]
     public function getError()
     {
         return $this->container['error'];
@@ -346,6 +363,7 @@ class WebhookEventItemResponse implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setError($error)
     {
         $this->container['error'] = $error;
@@ -358,6 +376,7 @@ class WebhookEventItemResponse implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return \DateTime|null
      */
+    #[\ReturnTypeWillChange]
     public function getDeliveryTime()
     {
         return $this->container['deliveryTime'];
@@ -370,6 +389,7 @@ class WebhookEventItemResponse implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setDeliveryTime($deliveryTime)
     {
         $this->container['deliveryTime'] = $deliveryTime;
@@ -383,6 +403,7 @@ class WebhookEventItemResponse implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -395,6 +416,7 @@ class WebhookEventItemResponse implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -408,6 +430,7 @@ class WebhookEventItemResponse implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -424,6 +447,7 @@ class WebhookEventItemResponse implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
@@ -436,6 +460,7 @@ class WebhookEventItemResponse implements ModelInterface, ArrayAccess, \JsonSeri
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
@@ -446,6 +471,7 @@ class WebhookEventItemResponse implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function __toString()
     {
         return json_encode(
@@ -459,6 +485,7 @@ class WebhookEventItemResponse implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));

@@ -96,6 +96,7 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPITypes()
     {
         return self::$openAPITypes;
@@ -106,6 +107,7 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPIFormats()
     {
         return self::$openAPIFormats;
@@ -175,6 +177,7 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function attributeMap()
     {
         return self::$attributeMap;
@@ -185,6 +188,7 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function setters()
     {
         return self::$setters;
@@ -195,6 +199,7 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function getters()
     {
         return self::$getters;
@@ -205,6 +210,7 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function getModelName()
     {
         return self::$openAPIModelName;
@@ -244,6 +250,7 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
      *
      * @return array invalid properties with reasons
      */
+    #[\ReturnTypeWillChange]
     public function listInvalidProperties()
     {
         $invalidProperties = [];
@@ -257,6 +264,7 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
      *
      * @return bool True if all properties are valid
      */
+    #[\ReturnTypeWillChange]
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
@@ -268,6 +276,7 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getRecipientType()
     {
         return $this->container['recipientType'];
@@ -280,6 +289,7 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setRecipientType($recipientType)
     {
         $this->container['recipientType'] = $recipientType;
@@ -293,6 +303,7 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
      * @return string|null
      * @deprecated
      */
+    #[\ReturnTypeWillChange]
     public function getRole()
     {
         return $this->container['role'];
@@ -306,6 +317,7 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
      * @return self
      * @deprecated
      */
+    #[\ReturnTypeWillChange]
     public function setRole($role)
     {
         $this->container['role'] = $role;
@@ -318,6 +330,7 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
      *
      * @return string[]|null
      */
+    #[\ReturnTypeWillChange]
     public function getRoles()
     {
         return $this->container['roles'];
@@ -330,6 +343,7 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setRoles($roles)
     {
         $this->container['roles'] = $roles;
@@ -342,6 +356,7 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getLastName()
     {
         return $this->container['lastName'];
@@ -354,6 +369,7 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setLastName($lastName)
     {
         $this->container['lastName'] = $lastName;
@@ -366,6 +382,7 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function getSigningOrder()
     {
         return $this->container['signingOrder'];
@@ -378,6 +395,7 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setSigningOrder($signingOrder)
     {
         $this->container['signingOrder'] = $signingOrder;
@@ -390,6 +408,7 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getId()
     {
         return $this->container['id'];
@@ -402,6 +421,7 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setId($id)
     {
         $this->container['id'] = $id;
@@ -414,6 +434,7 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getContactId()
     {
         return $this->container['contactId'];
@@ -426,6 +447,7 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setContactId($contactId)
     {
         $this->container['contactId'] = $contactId;
@@ -438,6 +460,7 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getFirstName()
     {
         return $this->container['firstName'];
@@ -450,6 +473,7 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setFirstName($firstName)
     {
         $this->container['firstName'] = $firstName;
@@ -462,6 +486,7 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getEmail()
     {
         return $this->container['email'];
@@ -474,6 +499,7 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setEmail($email)
     {
         $this->container['email'] = $email;
@@ -486,6 +512,7 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
      *
      * @return bool|null
      */
+    #[\ReturnTypeWillChange]
     public function getHasCompleted()
     {
         return $this->container['hasCompleted'];
@@ -498,6 +525,7 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setHasCompleted($hasCompleted)
     {
         $this->container['hasCompleted'] = $hasCompleted;
@@ -510,6 +538,7 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getSharedLink()
     {
         return $this->container['sharedLink'];
@@ -522,6 +551,7 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setSharedLink($sharedLink)
     {
         $this->container['sharedLink'] = $sharedLink;
@@ -535,6 +565,7 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
      *
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -547,6 +578,7 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -560,6 +592,7 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -576,6 +609,7 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
@@ -588,6 +622,7 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
@@ -598,6 +633,7 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function __toString()
     {
         return json_encode(
@@ -611,6 +647,7 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
