@@ -84,6 +84,7 @@ class TemplatesFolderListResponseResults implements ModelInterface, ArrayAccess,
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPITypes()
     {
         return self::$openAPITypes;
@@ -94,6 +95,7 @@ class TemplatesFolderListResponseResults implements ModelInterface, ArrayAccess,
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPIFormats()
     {
         return self::$openAPIFormats;
@@ -145,6 +147,7 @@ class TemplatesFolderListResponseResults implements ModelInterface, ArrayAccess,
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function attributeMap()
     {
         return self::$attributeMap;
@@ -155,6 +158,7 @@ class TemplatesFolderListResponseResults implements ModelInterface, ArrayAccess,
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function setters()
     {
         return self::$setters;
@@ -165,6 +169,7 @@ class TemplatesFolderListResponseResults implements ModelInterface, ArrayAccess,
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function getters()
     {
         return self::$getters;
@@ -175,6 +180,7 @@ class TemplatesFolderListResponseResults implements ModelInterface, ArrayAccess,
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function getModelName()
     {
         return self::$openAPIModelName;
@@ -208,6 +214,7 @@ class TemplatesFolderListResponseResults implements ModelInterface, ArrayAccess,
      *
      * @return array invalid properties with reasons
      */
+    #[\ReturnTypeWillChange]
     public function listInvalidProperties()
     {
         $invalidProperties = [];
@@ -221,6 +228,7 @@ class TemplatesFolderListResponseResults implements ModelInterface, ArrayAccess,
      *
      * @return bool True if all properties are valid
      */
+    #[\ReturnTypeWillChange]
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
@@ -232,6 +240,7 @@ class TemplatesFolderListResponseResults implements ModelInterface, ArrayAccess,
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getUuid()
     {
         return $this->container['uuid'];
@@ -244,6 +253,7 @@ class TemplatesFolderListResponseResults implements ModelInterface, ArrayAccess,
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setUuid($uuid)
     {
         $this->container['uuid'] = $uuid;
@@ -256,6 +266,7 @@ class TemplatesFolderListResponseResults implements ModelInterface, ArrayAccess,
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getName()
     {
         return $this->container['name'];
@@ -268,6 +279,7 @@ class TemplatesFolderListResponseResults implements ModelInterface, ArrayAccess,
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setName($name)
     {
         $this->container['name'] = $name;
@@ -280,6 +292,7 @@ class TemplatesFolderListResponseResults implements ModelInterface, ArrayAccess,
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getDateCreated()
     {
         return $this->container['dateCreated'];
@@ -292,6 +305,7 @@ class TemplatesFolderListResponseResults implements ModelInterface, ArrayAccess,
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setDateCreated($dateCreated)
     {
         $this->container['dateCreated'] = $dateCreated;
@@ -304,6 +318,7 @@ class TemplatesFolderListResponseResults implements ModelInterface, ArrayAccess,
      *
      * @return bool|null
      */
+    #[\ReturnTypeWillChange]
     public function getHasFolders()
     {
         return $this->container['hasFolders'];
@@ -316,6 +331,7 @@ class TemplatesFolderListResponseResults implements ModelInterface, ArrayAccess,
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setHasFolders($hasFolders)
     {
         $this->container['hasFolders'] = $hasFolders;
@@ -328,6 +344,7 @@ class TemplatesFolderListResponseResults implements ModelInterface, ArrayAccess,
      *
      * @return bool|null
      */
+    #[\ReturnTypeWillChange]
     public function getHasItems()
     {
         return $this->container['hasItems'];
@@ -340,6 +357,7 @@ class TemplatesFolderListResponseResults implements ModelInterface, ArrayAccess,
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setHasItems($hasItems)
     {
         $this->container['hasItems'] = $hasItems;
@@ -353,6 +371,7 @@ class TemplatesFolderListResponseResults implements ModelInterface, ArrayAccess,
      *
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -365,6 +384,7 @@ class TemplatesFolderListResponseResults implements ModelInterface, ArrayAccess,
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -378,6 +398,7 @@ class TemplatesFolderListResponseResults implements ModelInterface, ArrayAccess,
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -394,6 +415,7 @@ class TemplatesFolderListResponseResults implements ModelInterface, ArrayAccess,
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
@@ -406,6 +428,7 @@ class TemplatesFolderListResponseResults implements ModelInterface, ArrayAccess,
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
@@ -416,6 +439,7 @@ class TemplatesFolderListResponseResults implements ModelInterface, ArrayAccess,
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function __toString()
     {
         return json_encode(
@@ -429,6 +453,7 @@ class TemplatesFolderListResponseResults implements ModelInterface, ArrayAccess,
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));

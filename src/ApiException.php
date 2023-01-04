@@ -79,6 +79,7 @@ class ApiException extends Exception
      *
      * @return string[]|null HTTP response header
      */
+    #[\ReturnTypeWillChange]
     public function getResponseHeaders()
     {
         return $this->responseHeaders;
@@ -89,6 +90,7 @@ class ApiException extends Exception
      *
      * @return \stdClass|string|null HTTP body of the server response either as \stdClass or string
      */
+    #[\ReturnTypeWillChange]
     public function getResponseBody()
     {
         return $this->responseBody;
@@ -111,6 +113,7 @@ class ApiException extends Exception
      *
      * @return mixed the deserialized response object
      */
+    #[\ReturnTypeWillChange]
     public function getResponseObject()
     {
         return $this->responseObject;

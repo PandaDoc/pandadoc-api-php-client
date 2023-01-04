@@ -76,6 +76,7 @@ class WebhookSubscriptionSharedKeyResponse implements ModelInterface, ArrayAcces
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPITypes()
     {
         return self::$openAPITypes;
@@ -86,6 +87,7 @@ class WebhookSubscriptionSharedKeyResponse implements ModelInterface, ArrayAcces
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPIFormats()
     {
         return self::$openAPIFormats;
@@ -125,6 +127,7 @@ class WebhookSubscriptionSharedKeyResponse implements ModelInterface, ArrayAcces
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function attributeMap()
     {
         return self::$attributeMap;
@@ -135,6 +138,7 @@ class WebhookSubscriptionSharedKeyResponse implements ModelInterface, ArrayAcces
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function setters()
     {
         return self::$setters;
@@ -145,6 +149,7 @@ class WebhookSubscriptionSharedKeyResponse implements ModelInterface, ArrayAcces
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function getters()
     {
         return self::$getters;
@@ -155,6 +160,7 @@ class WebhookSubscriptionSharedKeyResponse implements ModelInterface, ArrayAcces
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function getModelName()
     {
         return self::$openAPIModelName;
@@ -184,6 +190,7 @@ class WebhookSubscriptionSharedKeyResponse implements ModelInterface, ArrayAcces
      *
      * @return array invalid properties with reasons
      */
+    #[\ReturnTypeWillChange]
     public function listInvalidProperties()
     {
         $invalidProperties = [];
@@ -197,6 +204,7 @@ class WebhookSubscriptionSharedKeyResponse implements ModelInterface, ArrayAcces
      *
      * @return bool True if all properties are valid
      */
+    #[\ReturnTypeWillChange]
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
@@ -208,6 +216,7 @@ class WebhookSubscriptionSharedKeyResponse implements ModelInterface, ArrayAcces
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getSharedKey()
     {
         return $this->container['sharedKey'];
@@ -220,6 +229,7 @@ class WebhookSubscriptionSharedKeyResponse implements ModelInterface, ArrayAcces
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setSharedKey($sharedKey)
     {
         $this->container['sharedKey'] = $sharedKey;
@@ -233,6 +243,7 @@ class WebhookSubscriptionSharedKeyResponse implements ModelInterface, ArrayAcces
      *
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -245,6 +256,7 @@ class WebhookSubscriptionSharedKeyResponse implements ModelInterface, ArrayAcces
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -258,6 +270,7 @@ class WebhookSubscriptionSharedKeyResponse implements ModelInterface, ArrayAcces
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -274,6 +287,7 @@ class WebhookSubscriptionSharedKeyResponse implements ModelInterface, ArrayAcces
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
@@ -286,6 +300,7 @@ class WebhookSubscriptionSharedKeyResponse implements ModelInterface, ArrayAcces
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
@@ -296,6 +311,7 @@ class WebhookSubscriptionSharedKeyResponse implements ModelInterface, ArrayAcces
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function __toString()
     {
         return json_encode(
@@ -309,6 +325,7 @@ class WebhookSubscriptionSharedKeyResponse implements ModelInterface, ArrayAcces
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));

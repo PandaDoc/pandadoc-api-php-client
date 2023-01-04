@@ -88,6 +88,7 @@ class DocumentListResponseResults implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPITypes()
     {
         return self::$openAPITypes;
@@ -98,6 +99,7 @@ class DocumentListResponseResults implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPIFormats()
     {
         return self::$openAPIFormats;
@@ -155,6 +157,7 @@ class DocumentListResponseResults implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function attributeMap()
     {
         return self::$attributeMap;
@@ -165,6 +168,7 @@ class DocumentListResponseResults implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function setters()
     {
         return self::$setters;
@@ -175,6 +179,7 @@ class DocumentListResponseResults implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function getters()
     {
         return self::$getters;
@@ -185,6 +190,7 @@ class DocumentListResponseResults implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function getModelName()
     {
         return self::$openAPIModelName;
@@ -220,6 +226,7 @@ class DocumentListResponseResults implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return array invalid properties with reasons
      */
+    #[\ReturnTypeWillChange]
     public function listInvalidProperties()
     {
         $invalidProperties = [];
@@ -233,6 +240,7 @@ class DocumentListResponseResults implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return bool True if all properties are valid
      */
+    #[\ReturnTypeWillChange]
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
@@ -244,6 +252,7 @@ class DocumentListResponseResults implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getId()
     {
         return $this->container['id'];
@@ -256,6 +265,7 @@ class DocumentListResponseResults implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setId($id)
     {
         $this->container['id'] = $id;
@@ -268,6 +278,7 @@ class DocumentListResponseResults implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getName()
     {
         return $this->container['name'];
@@ -280,6 +291,7 @@ class DocumentListResponseResults implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setName($name)
     {
         $this->container['name'] = $name;
@@ -292,6 +304,7 @@ class DocumentListResponseResults implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getStatus()
     {
         return $this->container['status'];
@@ -304,6 +317,7 @@ class DocumentListResponseResults implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setStatus($status)
     {
         $this->container['status'] = $status;
@@ -316,6 +330,7 @@ class DocumentListResponseResults implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getDateCreated()
     {
         return $this->container['dateCreated'];
@@ -328,6 +343,7 @@ class DocumentListResponseResults implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setDateCreated($dateCreated)
     {
         $this->container['dateCreated'] = $dateCreated;
@@ -340,6 +356,7 @@ class DocumentListResponseResults implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getDateModified()
     {
         return $this->container['dateModified'];
@@ -352,6 +369,7 @@ class DocumentListResponseResults implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setDateModified($dateModified)
     {
         $this->container['dateModified'] = $dateModified;
@@ -364,6 +382,7 @@ class DocumentListResponseResults implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getExpirationDate()
     {
         return $this->container['expirationDate'];
@@ -376,6 +395,7 @@ class DocumentListResponseResults implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setExpirationDate($expirationDate)
     {
         $this->container['expirationDate'] = $expirationDate;
@@ -388,6 +408,7 @@ class DocumentListResponseResults implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getVersion()
     {
         return $this->container['version'];
@@ -400,6 +421,7 @@ class DocumentListResponseResults implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setVersion($version)
     {
         $this->container['version'] = $version;
@@ -413,6 +435,7 @@ class DocumentListResponseResults implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -425,6 +448,7 @@ class DocumentListResponseResults implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -438,6 +462,7 @@ class DocumentListResponseResults implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -454,6 +479,7 @@ class DocumentListResponseResults implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
@@ -466,6 +492,7 @@ class DocumentListResponseResults implements ModelInterface, ArrayAccess, \JsonS
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
@@ -476,6 +503,7 @@ class DocumentListResponseResults implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function __toString()
     {
         return json_encode(
@@ -489,6 +517,7 @@ class DocumentListResponseResults implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));

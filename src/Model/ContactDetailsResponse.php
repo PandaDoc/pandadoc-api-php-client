@@ -96,6 +96,7 @@ class ContactDetailsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPITypes()
     {
         return self::$openAPITypes;
@@ -106,6 +107,7 @@ class ContactDetailsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPIFormats()
     {
         return self::$openAPIFormats;
@@ -175,6 +177,7 @@ class ContactDetailsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function attributeMap()
     {
         return self::$attributeMap;
@@ -185,6 +188,7 @@ class ContactDetailsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function setters()
     {
         return self::$setters;
@@ -195,6 +199,7 @@ class ContactDetailsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function getters()
     {
         return self::$getters;
@@ -205,6 +210,7 @@ class ContactDetailsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function getModelName()
     {
         return self::$openAPIModelName;
@@ -244,6 +250,7 @@ class ContactDetailsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return array invalid properties with reasons
      */
+    #[\ReturnTypeWillChange]
     public function listInvalidProperties()
     {
         $invalidProperties = [];
@@ -257,6 +264,7 @@ class ContactDetailsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return bool True if all properties are valid
      */
+    #[\ReturnTypeWillChange]
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
@@ -268,6 +276,7 @@ class ContactDetailsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getId()
     {
         return $this->container['id'];
@@ -280,6 +289,7 @@ class ContactDetailsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setId($id)
     {
         $this->container['id'] = $id;
@@ -292,6 +302,7 @@ class ContactDetailsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getEmail()
     {
         return $this->container['email'];
@@ -304,6 +315,7 @@ class ContactDetailsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setEmail($email)
     {
         $this->container['email'] = $email;
@@ -316,6 +328,7 @@ class ContactDetailsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getFirstName()
     {
         return $this->container['firstName'];
@@ -328,6 +341,7 @@ class ContactDetailsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setFirstName($firstName)
     {
         $this->container['firstName'] = $firstName;
@@ -340,6 +354,7 @@ class ContactDetailsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getLastName()
     {
         return $this->container['lastName'];
@@ -352,6 +367,7 @@ class ContactDetailsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setLastName($lastName)
     {
         $this->container['lastName'] = $lastName;
@@ -364,6 +380,7 @@ class ContactDetailsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getCompany()
     {
         return $this->container['company'];
@@ -376,6 +393,7 @@ class ContactDetailsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setCompany($company)
     {
         $this->container['company'] = $company;
@@ -388,6 +406,7 @@ class ContactDetailsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getJobTitle()
     {
         return $this->container['jobTitle'];
@@ -400,6 +419,7 @@ class ContactDetailsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setJobTitle($jobTitle)
     {
         $this->container['jobTitle'] = $jobTitle;
@@ -412,6 +432,7 @@ class ContactDetailsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getPhone()
     {
         return $this->container['phone'];
@@ -424,6 +445,7 @@ class ContactDetailsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setPhone($phone)
     {
         $this->container['phone'] = $phone;
@@ -436,6 +458,7 @@ class ContactDetailsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getState()
     {
         return $this->container['state'];
@@ -448,6 +471,7 @@ class ContactDetailsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setState($state)
     {
         $this->container['state'] = $state;
@@ -460,6 +484,7 @@ class ContactDetailsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getStreetAddress()
     {
         return $this->container['streetAddress'];
@@ -472,6 +497,7 @@ class ContactDetailsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setStreetAddress($streetAddress)
     {
         $this->container['streetAddress'] = $streetAddress;
@@ -484,6 +510,7 @@ class ContactDetailsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getCity()
     {
         return $this->container['city'];
@@ -496,6 +523,7 @@ class ContactDetailsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setCity($city)
     {
         $this->container['city'] = $city;
@@ -508,6 +536,7 @@ class ContactDetailsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getPostalCode()
     {
         return $this->container['postalCode'];
@@ -520,6 +549,7 @@ class ContactDetailsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setPostalCode($postalCode)
     {
         $this->container['postalCode'] = $postalCode;
@@ -533,6 +563,7 @@ class ContactDetailsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -545,6 +576,7 @@ class ContactDetailsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -558,6 +590,7 @@ class ContactDetailsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -574,6 +607,7 @@ class ContactDetailsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
@@ -586,6 +620,7 @@ class ContactDetailsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
@@ -596,6 +631,7 @@ class ContactDetailsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function __toString()
     {
         return json_encode(
@@ -609,6 +645,7 @@ class ContactDetailsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));

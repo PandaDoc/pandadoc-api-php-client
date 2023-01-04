@@ -78,6 +78,7 @@ class DocumentCreateRequestImages implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPITypes()
     {
         return self::$openAPITypes;
@@ -88,6 +89,7 @@ class DocumentCreateRequestImages implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPIFormats()
     {
         return self::$openAPIFormats;
@@ -130,6 +132,7 @@ class DocumentCreateRequestImages implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function attributeMap()
     {
         return self::$attributeMap;
@@ -140,6 +143,7 @@ class DocumentCreateRequestImages implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function setters()
     {
         return self::$setters;
@@ -150,6 +154,7 @@ class DocumentCreateRequestImages implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function getters()
     {
         return self::$getters;
@@ -160,6 +165,7 @@ class DocumentCreateRequestImages implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function getModelName()
     {
         return self::$openAPIModelName;
@@ -190,6 +196,7 @@ class DocumentCreateRequestImages implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return array invalid properties with reasons
      */
+    #[\ReturnTypeWillChange]
     public function listInvalidProperties()
     {
         $invalidProperties = [];
@@ -209,6 +216,7 @@ class DocumentCreateRequestImages implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return bool True if all properties are valid
      */
+    #[\ReturnTypeWillChange]
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
@@ -220,6 +228,7 @@ class DocumentCreateRequestImages implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return string[]
      */
+    #[\ReturnTypeWillChange]
     public function getUrls()
     {
         return $this->container['urls'];
@@ -232,6 +241,7 @@ class DocumentCreateRequestImages implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setUrls($urls)
     {
         $this->container['urls'] = $urls;
@@ -244,6 +254,7 @@ class DocumentCreateRequestImages implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function getName()
     {
         return $this->container['name'];
@@ -256,6 +267,7 @@ class DocumentCreateRequestImages implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setName($name)
     {
         $this->container['name'] = $name;
@@ -269,6 +281,7 @@ class DocumentCreateRequestImages implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -281,6 +294,7 @@ class DocumentCreateRequestImages implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -294,6 +308,7 @@ class DocumentCreateRequestImages implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -310,6 +325,7 @@ class DocumentCreateRequestImages implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
@@ -322,6 +338,7 @@ class DocumentCreateRequestImages implements ModelInterface, ArrayAccess, \JsonS
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
@@ -332,6 +349,7 @@ class DocumentCreateRequestImages implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function __toString()
     {
         return json_encode(
@@ -345,6 +363,7 @@ class DocumentCreateRequestImages implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));

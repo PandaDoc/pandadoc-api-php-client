@@ -102,6 +102,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPITypes()
     {
         return self::$openAPITypes;
@@ -112,6 +113,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPIFormats()
     {
         return self::$openAPIFormats;
@@ -190,6 +192,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function attributeMap()
     {
         return self::$attributeMap;
@@ -200,6 +203,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function setters()
     {
         return self::$setters;
@@ -210,6 +214,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function getters()
     {
         return self::$getters;
@@ -220,6 +225,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function getModelName()
     {
         return self::$openAPIModelName;
@@ -262,6 +268,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return array invalid properties with reasons
      */
+    #[\ReturnTypeWillChange]
     public function listInvalidProperties()
     {
         $invalidProperties = [];
@@ -275,6 +282,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return bool True if all properties are valid
      */
+    #[\ReturnTypeWillChange]
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
@@ -286,6 +294,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getName()
     {
         return $this->container['name'];
@@ -298,6 +307,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setName($name)
     {
         $this->container['name'] = $name;
@@ -310,6 +320,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getTemplateUuid()
     {
         return $this->container['templateUuid'];
@@ -322,6 +333,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setTemplateUuid($templateUuid)
     {
         $this->container['templateUuid'] = $templateUuid;
@@ -334,6 +346,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getFolderUuid()
     {
         return $this->container['folderUuid'];
@@ -346,6 +359,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setFolderUuid($folderUuid)
     {
         $this->container['folderUuid'] = $folderUuid;
@@ -358,6 +372,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return array<string,string>|null
      */
+    #[\ReturnTypeWillChange]
     public function getOwner()
     {
         return $this->container['owner'];
@@ -370,6 +385,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setOwner($owner)
     {
         $this->container['owner'] = $owner;
@@ -382,6 +398,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return \PandaDoc\Client\Model\DocumentCreateRequestRecipients[]|null
      */
+    #[\ReturnTypeWillChange]
     public function getRecipients()
     {
         return $this->container['recipients'];
@@ -394,6 +411,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setRecipients($recipients)
     {
         $this->container['recipients'] = $recipients;
@@ -406,6 +424,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return \PandaDoc\Client\Model\DocumentCreateByTemplateRequestTokens[]|null
      */
+    #[\ReturnTypeWillChange]
     public function getTokens()
     {
         return $this->container['tokens'];
@@ -418,6 +437,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setTokens($tokens)
     {
         $this->container['tokens'] = $tokens;
@@ -430,6 +450,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return object|null
      */
+    #[\ReturnTypeWillChange]
     public function getFields()
     {
         return $this->container['fields'];
@@ -442,6 +463,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setFields($fields)
     {
         $this->container['fields'] = $fields;
@@ -454,6 +476,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return object|null
      */
+    #[\ReturnTypeWillChange]
     public function getMetadata()
     {
         return $this->container['metadata'];
@@ -466,6 +489,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setMetadata($metadata)
     {
         $this->container['metadata'] = $metadata;
@@ -478,6 +502,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return string[]|null
      */
+    #[\ReturnTypeWillChange]
     public function getTags()
     {
         return $this->container['tags'];
@@ -490,6 +515,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setTags($tags)
     {
         $this->container['tags'] = $tags;
@@ -502,6 +528,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return \PandaDoc\Client\Model\DocumentCreateRequestImages[]|null
      */
+    #[\ReturnTypeWillChange]
     public function getImages()
     {
         return $this->container['images'];
@@ -514,6 +541,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setImages($images)
     {
         $this->container['images'] = $images;
@@ -526,6 +554,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return \PandaDoc\Client\Model\PricingTableRequest[]|null
      */
+    #[\ReturnTypeWillChange]
     public function getPricingTables()
     {
         return $this->container['pricingTables'];
@@ -538,6 +567,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setPricingTables($pricingTables)
     {
         $this->container['pricingTables'] = $pricingTables;
@@ -550,6 +580,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return \PandaDoc\Client\Model\DocumentCreateRequestContentPlaceholders[]|null
      */
+    #[\ReturnTypeWillChange]
     public function getContentPlaceholders()
     {
         return $this->container['contentPlaceholders'];
@@ -562,6 +593,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setContentPlaceholders($contentPlaceholders)
     {
         $this->container['contentPlaceholders'] = $contentPlaceholders;
@@ -574,6 +606,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getUrl()
     {
         return $this->container['url'];
@@ -586,6 +619,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setUrl($url)
     {
         $this->container['url'] = $url;
@@ -598,6 +632,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return bool|null
      */
+    #[\ReturnTypeWillChange]
     public function getParseFormFields()
     {
         return $this->container['parseFormFields'];
@@ -610,6 +645,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setParseFormFields($parseFormFields)
     {
         $this->container['parseFormFields'] = $parseFormFields;
@@ -623,6 +659,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -635,6 +672,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -648,6 +686,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -664,6 +703,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
@@ -676,6 +716,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
@@ -686,6 +727,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function __toString()
     {
         return json_encode(
@@ -699,6 +741,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));

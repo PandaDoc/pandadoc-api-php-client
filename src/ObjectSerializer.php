@@ -60,6 +60,7 @@ class ObjectSerializer
      *
      * @return scalar|object|array|null serialized form of $data
      */
+    #[\ReturnTypeWillChange]
     public static function sanitizeForSerialization($data, $type = null, $format = null)
     {
         if (is_scalar($data) || null === $data) {
@@ -118,6 +119,7 @@ class ObjectSerializer
      *
      * @return string the sanitized filename
      */
+    #[\ReturnTypeWillChange]
     public static function sanitizeFilename($filename)
     {
         if (preg_match("/.*[\/\\\\](.*)$/", $filename, $match)) {
@@ -134,6 +136,7 @@ class ObjectSerializer
      *
      * @return string the shorten timestamp
      */
+    #[\ReturnTypeWillChange]
     public static function sanitizeTimestamp($timestamp)
     {
         if (!is_string($timestamp)) return $timestamp;
@@ -149,6 +152,7 @@ class ObjectSerializer
      *
      * @return string the serialized object
      */
+    #[\ReturnTypeWillChange]
     public static function toPathValue($value)
     {
         return rawurlencode(self::toString($value));
@@ -164,6 +168,7 @@ class ObjectSerializer
      *
      * @return string the serialized object
      */
+    #[\ReturnTypeWillChange]
     public static function toQueryValue($object)
     {
         if (is_array($object)) {
@@ -182,6 +187,7 @@ class ObjectSerializer
      *
      * @return string the header string
      */
+    #[\ReturnTypeWillChange]
     public static function toHeaderValue($value)
     {
         $callable = [$value, 'toHeaderValue'];
@@ -201,6 +207,7 @@ class ObjectSerializer
      *
      * @return string the form string
      */
+    #[\ReturnTypeWillChange]
     public static function toFormValue($value)
     {
         if ($value instanceof \SplFileObject) {
@@ -220,6 +227,7 @@ class ObjectSerializer
      *
      * @return string the header string
      */
+    #[\ReturnTypeWillChange]
     public static function toString($value)
     {
         if ($value instanceof \DateTime) { // datetime in ISO8601 format
@@ -241,6 +249,7 @@ class ObjectSerializer
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public static function serializeCollection(array $collection, $style, $allowCollectionFormatMulti = false)
     {
         if ($allowCollectionFormatMulti && ('multi' === $style)) {
@@ -278,6 +287,7 @@ class ObjectSerializer
      *
      * @return object|array|null a single or an array of $class instances
      */
+    #[\ReturnTypeWillChange]
     public static function deserialize($data, $class, $httpHeaders = null)
     {
         if (null === $data) {

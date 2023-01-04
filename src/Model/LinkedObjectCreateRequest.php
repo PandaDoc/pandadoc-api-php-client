@@ -80,6 +80,7 @@ class LinkedObjectCreateRequest implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPITypes()
     {
         return self::$openAPITypes;
@@ -90,6 +91,7 @@ class LinkedObjectCreateRequest implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPIFormats()
     {
         return self::$openAPIFormats;
@@ -135,6 +137,7 @@ class LinkedObjectCreateRequest implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function attributeMap()
     {
         return self::$attributeMap;
@@ -145,6 +148,7 @@ class LinkedObjectCreateRequest implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function setters()
     {
         return self::$setters;
@@ -155,6 +159,7 @@ class LinkedObjectCreateRequest implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function getters()
     {
         return self::$getters;
@@ -165,6 +170,7 @@ class LinkedObjectCreateRequest implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function getModelName()
     {
         return self::$openAPIModelName;
@@ -196,6 +202,7 @@ class LinkedObjectCreateRequest implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return array invalid properties with reasons
      */
+    #[\ReturnTypeWillChange]
     public function listInvalidProperties()
     {
         $invalidProperties = [];
@@ -218,6 +225,7 @@ class LinkedObjectCreateRequest implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return bool True if all properties are valid
      */
+    #[\ReturnTypeWillChange]
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
@@ -229,6 +237,7 @@ class LinkedObjectCreateRequest implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function getProvider()
     {
         return $this->container['provider'];
@@ -241,6 +250,7 @@ class LinkedObjectCreateRequest implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setProvider($provider)
     {
         $this->container['provider'] = $provider;
@@ -253,6 +263,7 @@ class LinkedObjectCreateRequest implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function getEntityType()
     {
         return $this->container['entityType'];
@@ -265,6 +276,7 @@ class LinkedObjectCreateRequest implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setEntityType($entityType)
     {
         $this->container['entityType'] = $entityType;
@@ -277,6 +289,7 @@ class LinkedObjectCreateRequest implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function getEntityId()
     {
         return $this->container['entityId'];
@@ -289,6 +302,7 @@ class LinkedObjectCreateRequest implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setEntityId($entityId)
     {
         $this->container['entityId'] = $entityId;
@@ -302,6 +316,7 @@ class LinkedObjectCreateRequest implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -314,6 +329,7 @@ class LinkedObjectCreateRequest implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -327,6 +343,7 @@ class LinkedObjectCreateRequest implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -343,6 +360,7 @@ class LinkedObjectCreateRequest implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
@@ -355,6 +373,7 @@ class LinkedObjectCreateRequest implements ModelInterface, ArrayAccess, \JsonSer
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
@@ -365,6 +384,7 @@ class LinkedObjectCreateRequest implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function __toString()
     {
         return json_encode(
@@ -378,6 +398,7 @@ class LinkedObjectCreateRequest implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));

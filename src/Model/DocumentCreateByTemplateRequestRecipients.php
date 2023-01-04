@@ -84,6 +84,7 @@ class DocumentCreateByTemplateRequestRecipients implements ModelInterface, Array
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPITypes()
     {
         return self::$openAPITypes;
@@ -94,6 +95,7 @@ class DocumentCreateByTemplateRequestRecipients implements ModelInterface, Array
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPIFormats()
     {
         return self::$openAPIFormats;
@@ -145,6 +147,7 @@ class DocumentCreateByTemplateRequestRecipients implements ModelInterface, Array
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function attributeMap()
     {
         return self::$attributeMap;
@@ -155,6 +158,7 @@ class DocumentCreateByTemplateRequestRecipients implements ModelInterface, Array
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function setters()
     {
         return self::$setters;
@@ -165,6 +169,7 @@ class DocumentCreateByTemplateRequestRecipients implements ModelInterface, Array
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function getters()
     {
         return self::$getters;
@@ -175,6 +180,7 @@ class DocumentCreateByTemplateRequestRecipients implements ModelInterface, Array
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function getModelName()
     {
         return self::$openAPIModelName;
@@ -208,6 +214,7 @@ class DocumentCreateByTemplateRequestRecipients implements ModelInterface, Array
      *
      * @return array invalid properties with reasons
      */
+    #[\ReturnTypeWillChange]
     public function listInvalidProperties()
     {
         $invalidProperties = [];
@@ -224,6 +231,7 @@ class DocumentCreateByTemplateRequestRecipients implements ModelInterface, Array
      *
      * @return bool True if all properties are valid
      */
+    #[\ReturnTypeWillChange]
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
@@ -235,6 +243,7 @@ class DocumentCreateByTemplateRequestRecipients implements ModelInterface, Array
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function getEmail()
     {
         return $this->container['email'];
@@ -247,6 +256,7 @@ class DocumentCreateByTemplateRequestRecipients implements ModelInterface, Array
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setEmail($email)
     {
         $this->container['email'] = $email;
@@ -259,6 +269,7 @@ class DocumentCreateByTemplateRequestRecipients implements ModelInterface, Array
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getFirstName()
     {
         return $this->container['firstName'];
@@ -271,6 +282,7 @@ class DocumentCreateByTemplateRequestRecipients implements ModelInterface, Array
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setFirstName($firstName)
     {
         $this->container['firstName'] = $firstName;
@@ -283,6 +295,7 @@ class DocumentCreateByTemplateRequestRecipients implements ModelInterface, Array
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getLastName()
     {
         return $this->container['lastName'];
@@ -295,6 +308,7 @@ class DocumentCreateByTemplateRequestRecipients implements ModelInterface, Array
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setLastName($lastName)
     {
         $this->container['lastName'] = $lastName;
@@ -307,6 +321,7 @@ class DocumentCreateByTemplateRequestRecipients implements ModelInterface, Array
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getRole()
     {
         return $this->container['role'];
@@ -319,6 +334,7 @@ class DocumentCreateByTemplateRequestRecipients implements ModelInterface, Array
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setRole($role)
     {
         $this->container['role'] = $role;
@@ -331,6 +347,7 @@ class DocumentCreateByTemplateRequestRecipients implements ModelInterface, Array
      *
      * @return int|null
      */
+    #[\ReturnTypeWillChange]
     public function getSigningOrder()
     {
         return $this->container['signingOrder'];
@@ -343,6 +360,7 @@ class DocumentCreateByTemplateRequestRecipients implements ModelInterface, Array
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setSigningOrder($signingOrder)
     {
         $this->container['signingOrder'] = $signingOrder;
@@ -356,6 +374,7 @@ class DocumentCreateByTemplateRequestRecipients implements ModelInterface, Array
      *
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -368,6 +387,7 @@ class DocumentCreateByTemplateRequestRecipients implements ModelInterface, Array
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -381,6 +401,7 @@ class DocumentCreateByTemplateRequestRecipients implements ModelInterface, Array
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -397,6 +418,7 @@ class DocumentCreateByTemplateRequestRecipients implements ModelInterface, Array
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
@@ -409,6 +431,7 @@ class DocumentCreateByTemplateRequestRecipients implements ModelInterface, Array
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
@@ -419,6 +442,7 @@ class DocumentCreateByTemplateRequestRecipients implements ModelInterface, Array
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function __toString()
     {
         return json_encode(
@@ -432,6 +456,7 @@ class DocumentCreateByTemplateRequestRecipients implements ModelInterface, Array
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));

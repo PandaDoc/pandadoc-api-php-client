@@ -114,6 +114,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPITypes()
     {
         return self::$openAPITypes;
@@ -124,6 +125,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPIFormats()
     {
         return self::$openAPIFormats;
@@ -220,6 +222,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function attributeMap()
     {
         return self::$attributeMap;
@@ -230,6 +233,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function setters()
     {
         return self::$setters;
@@ -240,6 +244,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function getters()
     {
         return self::$getters;
@@ -250,6 +255,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function getModelName()
     {
         return self::$openAPIModelName;
@@ -298,6 +304,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return array invalid properties with reasons
      */
+    #[\ReturnTypeWillChange]
     public function listInvalidProperties()
     {
         $invalidProperties = [];
@@ -311,6 +318,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return bool True if all properties are valid
      */
+    #[\ReturnTypeWillChange]
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
@@ -322,6 +330,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getId()
     {
         return $this->container['id'];
@@ -334,6 +343,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setId($id)
     {
         $this->container['id'] = $id;
@@ -346,6 +356,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getName()
     {
         return $this->container['name'];
@@ -358,6 +369,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setName($name)
     {
         $this->container['name'] = $name;
@@ -370,6 +382,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function getAutonumberingSequenceNamePrefix()
     {
         return $this->container['autonumberingSequenceNamePrefix'];
@@ -382,6 +395,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setAutonumberingSequenceNamePrefix($autonumberingSequenceNamePrefix)
     {
         $this->container['autonumberingSequenceNamePrefix'] = $autonumberingSequenceNamePrefix;
@@ -394,6 +408,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getDateCreated()
     {
         return $this->container['dateCreated'];
@@ -406,6 +421,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setDateCreated($dateCreated)
     {
         $this->container['dateCreated'] = $dateCreated;
@@ -418,6 +434,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getDateModified()
     {
         return $this->container['dateModified'];
@@ -430,6 +447,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setDateModified($dateModified)
     {
         $this->container['dateModified'] = $dateModified;
@@ -442,6 +460,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getDateCompleted()
     {
         return $this->container['dateCompleted'];
@@ -454,6 +473,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setDateCompleted($dateCompleted)
     {
         $this->container['dateCompleted'] = $dateCompleted;
@@ -466,6 +486,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return \PandaDoc\Client\Model\DocumentDetailsResponseCreatedBy|null
      */
+    #[\ReturnTypeWillChange]
     public function getCreatedBy()
     {
         return $this->container['createdBy'];
@@ -478,6 +499,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setCreatedBy($createdBy)
     {
         $this->container['createdBy'] = $createdBy;
@@ -490,6 +512,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return \PandaDoc\Client\Model\DocumentDetailsResponseTemplate|null
      */
+    #[\ReturnTypeWillChange]
     public function getTemplate()
     {
         return $this->container['template'];
@@ -502,6 +525,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setTemplate($template)
     {
         $this->container['template'] = $template;
@@ -514,6 +538,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function getExpirationDate()
     {
         return $this->container['expirationDate'];
@@ -526,6 +551,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setExpirationDate($expirationDate)
     {
         $this->container['expirationDate'] = $expirationDate;
@@ -538,6 +564,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return object|null
      */
+    #[\ReturnTypeWillChange]
     public function getMetadata()
     {
         return $this->container['metadata'];
@@ -550,6 +577,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setMetadata($metadata)
     {
         $this->container['metadata'] = $metadata;
@@ -562,6 +590,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return object[]|null
      */
+    #[\ReturnTypeWillChange]
     public function getTokens()
     {
         return $this->container['tokens'];
@@ -574,6 +603,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setTokens($tokens)
     {
         $this->container['tokens'] = $tokens;
@@ -586,6 +616,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return object[]|null
      */
+    #[\ReturnTypeWillChange]
     public function getFields()
     {
         return $this->container['fields'];
@@ -598,6 +629,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setFields($fields)
     {
         $this->container['fields'] = $fields;
@@ -610,6 +642,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return \PandaDoc\Client\Model\PricingTablesResponse|null
      */
+    #[\ReturnTypeWillChange]
     public function getPricing()
     {
         return $this->container['pricing'];
@@ -622,6 +655,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setPricing($pricing)
     {
         $this->container['pricing'] = $pricing;
@@ -634,6 +668,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getVersion()
     {
         return $this->container['version'];
@@ -646,6 +681,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setVersion($version)
     {
         $this->container['version'] = $version;
@@ -658,6 +694,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return string[]|null
      */
+    #[\ReturnTypeWillChange]
     public function getTags()
     {
         return $this->container['tags'];
@@ -670,6 +707,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setTags($tags)
     {
         $this->container['tags'] = $tags;
@@ -682,6 +720,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function getSentBy()
     {
         return $this->container['sentBy'];
@@ -694,6 +733,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setSentBy($sentBy)
     {
         $this->container['sentBy'] = $sentBy;
@@ -706,6 +746,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return \PandaDoc\Client\Model\DocumentDetailsResponseRecipients[]|null
      */
+    #[\ReturnTypeWillChange]
     public function getRecipients()
     {
         return $this->container['recipients'];
@@ -718,6 +759,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setRecipients($recipients)
     {
         $this->container['recipients'] = $recipients;
@@ -730,6 +772,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return \PandaDoc\Client\Model\DocumentDetailsResponseGrandTotal|null
      */
+    #[\ReturnTypeWillChange]
     public function getGrandTotal()
     {
         return $this->container['grandTotal'];
@@ -742,6 +785,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setGrandTotal($grandTotal)
     {
         $this->container['grandTotal'] = $grandTotal;
@@ -754,6 +798,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return \PandaDoc\Client\Model\DocumentDetailsResponseLinkedObjects[]|null
      */
+    #[\ReturnTypeWillChange]
     public function getLinkedObjects()
     {
         return $this->container['linkedObjects'];
@@ -766,6 +811,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setLinkedObjects($linkedObjects)
     {
         $this->container['linkedObjects'] = $linkedObjects;
@@ -778,6 +824,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return string|null
      */
+    #[\ReturnTypeWillChange]
     public function getStatus()
     {
         return $this->container['status'];
@@ -790,6 +837,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setStatus($status)
     {
         $this->container['status'] = $status;
@@ -803,6 +851,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -815,6 +864,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -828,6 +878,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -844,6 +895,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
@@ -856,6 +908,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
@@ -866,6 +919,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function __toString()
     {
         return json_encode(
@@ -879,6 +933,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));

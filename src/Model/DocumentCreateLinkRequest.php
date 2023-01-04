@@ -78,6 +78,7 @@ class DocumentCreateLinkRequest implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPITypes()
     {
         return self::$openAPITypes;
@@ -88,6 +89,7 @@ class DocumentCreateLinkRequest implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function openAPIFormats()
     {
         return self::$openAPIFormats;
@@ -130,6 +132,7 @@ class DocumentCreateLinkRequest implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function attributeMap()
     {
         return self::$attributeMap;
@@ -140,6 +143,7 @@ class DocumentCreateLinkRequest implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function setters()
     {
         return self::$setters;
@@ -150,6 +154,7 @@ class DocumentCreateLinkRequest implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public static function getters()
     {
         return self::$getters;
@@ -160,6 +165,7 @@ class DocumentCreateLinkRequest implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function getModelName()
     {
         return self::$openAPIModelName;
@@ -190,6 +196,7 @@ class DocumentCreateLinkRequest implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return array invalid properties with reasons
      */
+    #[\ReturnTypeWillChange]
     public function listInvalidProperties()
     {
         $invalidProperties = [];
@@ -206,6 +213,7 @@ class DocumentCreateLinkRequest implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return bool True if all properties are valid
      */
+    #[\ReturnTypeWillChange]
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
@@ -217,6 +225,7 @@ class DocumentCreateLinkRequest implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function getRecipient()
     {
         return $this->container['recipient'];
@@ -229,6 +238,7 @@ class DocumentCreateLinkRequest implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setRecipient($recipient)
     {
         $this->container['recipient'] = $recipient;
@@ -241,6 +251,7 @@ class DocumentCreateLinkRequest implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return float|null
      */
+    #[\ReturnTypeWillChange]
     public function getLifetime()
     {
         return $this->container['lifetime'];
@@ -253,6 +264,7 @@ class DocumentCreateLinkRequest implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
+    #[\ReturnTypeWillChange]
     public function setLifetime($lifetime)
     {
         $this->container['lifetime'] = $lifetime;
@@ -266,6 +278,7 @@ class DocumentCreateLinkRequest implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -278,6 +291,7 @@ class DocumentCreateLinkRequest implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -291,6 +305,7 @@ class DocumentCreateLinkRequest implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -307,6 +322,7 @@ class DocumentCreateLinkRequest implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
@@ -319,6 +335,7 @@ class DocumentCreateLinkRequest implements ModelInterface, ArrayAccess, \JsonSer
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
@@ -329,6 +346,7 @@ class DocumentCreateLinkRequest implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function __toString()
     {
         return json_encode(
@@ -342,6 +360,7 @@ class DocumentCreateLinkRequest implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
