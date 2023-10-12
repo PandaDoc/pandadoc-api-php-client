@@ -1,6 +1,6 @@
 <?php
 /**
- * DocumentSendRequest
+ * DocumentSendRequestForwardingSettings
  *
  * PHP version 7.3
  *
@@ -30,9 +30,10 @@ use \ArrayAccess;
 use \PandaDoc\Client\ObjectSerializer;
 
 /**
- * DocumentSendRequest Class Doc Comment
+ * DocumentSendRequestForwardingSettings Class Doc Comment
  *
  * @category Class
+ * @description Forwarding settings
  * @package  PandaDoc\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -40,7 +41,7 @@ use \PandaDoc\Client\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class DocumentSendRequestForwardingSettings implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +50,7 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
       *
       * @var string
       */
-    protected static $openAPIModelName = 'DocumentSendRequest';
+    protected static $openAPIModelName = 'DocumentSendRequest_forwarding_settings';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,12 +58,8 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'message' => 'string',
-        'subject' => 'string',
-        'silent' => 'bool',
-        'sender' => 'array<string,string>',
-        'forwardingSettings' => '\PandaDoc\Client\Model\DocumentSendRequestForwardingSettings',
-        'selectedApprovers' => '\PandaDoc\Client\Model\DocumentSendRequestSelectedApprovers'
+        'forwardingAllowed' => 'bool',
+        'forwardingWithReassigningAllowed' => 'bool'
     ];
 
     /**
@@ -73,12 +70,8 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'message' => null,
-        'subject' => null,
-        'silent' => null,
-        'sender' => null,
-        'forwardingSettings' => null,
-        'selectedApprovers' => null
+        'forwardingAllowed' => null,
+        'forwardingWithReassigningAllowed' => null
     ];
 
     /**
@@ -110,12 +103,8 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
-        'message' => 'message',
-        'subject' => 'subject',
-        'silent' => 'silent',
-        'sender' => 'sender',
-        'forwardingSettings' => 'forwarding_settings',
-        'selectedApprovers' => 'selected_approvers'
+        'forwardingAllowed' => 'forwarding_allowed',
+        'forwardingWithReassigningAllowed' => 'forwarding_with_reassigning_allowed'
     ];
 
     /**
@@ -124,12 +113,8 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'message' => 'setMessage',
-        'subject' => 'setSubject',
-        'silent' => 'setSilent',
-        'sender' => 'setSender',
-        'forwardingSettings' => 'setForwardingSettings',
-        'selectedApprovers' => 'setSelectedApprovers'
+        'forwardingAllowed' => 'setForwardingAllowed',
+        'forwardingWithReassigningAllowed' => 'setForwardingWithReassigningAllowed'
     ];
 
     /**
@@ -138,12 +123,8 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
-        'message' => 'getMessage',
-        'subject' => 'getSubject',
-        'silent' => 'getSilent',
-        'sender' => 'getSender',
-        'forwardingSettings' => 'getForwardingSettings',
-        'selectedApprovers' => 'getSelectedApprovers'
+        'forwardingAllowed' => 'getForwardingAllowed',
+        'forwardingWithReassigningAllowed' => 'getForwardingWithReassigningAllowed'
     ];
 
     /**
@@ -207,12 +188,8 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(array $data = null)
     {
-        $this->container['message'] = $data['message'] ?? null;
-        $this->container['subject'] = $data['subject'] ?? null;
-        $this->container['silent'] = $data['silent'] ?? null;
-        $this->container['sender'] = $data['sender'] ?? null;
-        $this->container['forwardingSettings'] = $data['forwardingSettings'] ?? null;
-        $this->container['selectedApprovers'] = $data['selectedApprovers'] ?? null;
+        $this->container['forwardingAllowed'] = $data['forwardingAllowed'] ?? null;
+        $this->container['forwardingWithReassigningAllowed'] = $data['forwardingWithReassigningAllowed'] ?? null;
     }
 
     /**
@@ -242,157 +219,53 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
 
 
     /**
-     * Gets message
-     *
-     * @return string|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getMessage()
-    {
-        return $this->container['message'];
-    }
-
-    /**
-     * Sets message
-     *
-     * @param string|null $message A message that will be sent by email with a link to a document to sign.
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setMessage($message)
-    {
-        $this->container['message'] = $message;
-
-        return $this;
-    }
-
-    /**
-     * Gets subject
-     *
-     * @return string|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getSubject()
-    {
-        return $this->container['subject'];
-    }
-
-    /**
-     * Sets subject
-     *
-     * @param string|null $subject Value that will be used as the email subject.
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setSubject($subject)
-    {
-        $this->container['subject'] = $subject;
-
-        return $this;
-    }
-
-    /**
-     * Gets silent
+     * Gets forwardingAllowed
      *
      * @return bool|null
      */
     #[\ReturnTypeWillChange]
-    public function getSilent()
+    public function getForwardingAllowed()
     {
-        return $this->container['silent'];
+        return $this->container['forwardingAllowed'];
     }
 
     /**
-     * Sets silent
+     * Sets forwardingAllowed
      *
-     * @param bool|null $silent Disables sent, viewed, comment, and completed email notifications for document recipients and the document sender. By default, notifications emails are sent for specific actions. If set as true, it won't affect the \"Approve document\" email notification sent to the Approver.
+     * @param bool|null $forwardingAllowed Allow forwarding
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setSilent($silent)
+    public function setForwardingAllowed($forwardingAllowed)
     {
-        $this->container['silent'] = $silent;
+        $this->container['forwardingAllowed'] = $forwardingAllowed;
 
         return $this;
     }
 
     /**
-     * Gets sender
+     * Gets forwardingWithReassigningAllowed
      *
-     * @return array<string,string>|null
+     * @return bool|null
      */
     #[\ReturnTypeWillChange]
-    public function getSender()
+    public function getForwardingWithReassigningAllowed()
     {
-        return $this->container['sender'];
+        return $this->container['forwardingWithReassigningAllowed'];
     }
 
     /**
-     * Sets sender
+     * Sets forwardingWithReassigningAllowed
      *
-     * @param array<string,string>|null $sender You can set a sender of a document as an `email` or `membership_id`
+     * @param bool|null $forwardingWithReassigningAllowed Allow forwarding with reassigning
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setSender($sender)
+    public function setForwardingWithReassigningAllowed($forwardingWithReassigningAllowed)
     {
-        $this->container['sender'] = $sender;
-
-        return $this;
-    }
-
-    /**
-     * Gets forwardingSettings
-     *
-     * @return \PandaDoc\Client\Model\DocumentSendRequestForwardingSettings|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getForwardingSettings()
-    {
-        return $this->container['forwardingSettings'];
-    }
-
-    /**
-     * Sets forwardingSettings
-     *
-     * @param \PandaDoc\Client\Model\DocumentSendRequestForwardingSettings|null $forwardingSettings forwardingSettings
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setForwardingSettings($forwardingSettings)
-    {
-        $this->container['forwardingSettings'] = $forwardingSettings;
-
-        return $this;
-    }
-
-    /**
-     * Gets selectedApprovers
-     *
-     * @return \PandaDoc\Client\Model\DocumentSendRequestSelectedApprovers|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getSelectedApprovers()
-    {
-        return $this->container['selectedApprovers'];
-    }
-
-    /**
-     * Sets selectedApprovers
-     *
-     * @param \PandaDoc\Client\Model\DocumentSendRequestSelectedApprovers|null $selectedApprovers selectedApprovers
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setSelectedApprovers($selectedApprovers)
-    {
-        $this->container['selectedApprovers'] = $selectedApprovers;
+        $this->container['forwardingWithReassigningAllowed'] = $forwardingWithReassigningAllowed;
 
         return $this;
     }
