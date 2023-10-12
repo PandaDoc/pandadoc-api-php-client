@@ -1,6 +1,6 @@
 <?php
 /**
- * DocumentSendRequest
+ * DocumentRecipientCreateRequest
  *
  * PHP version 7.3
  *
@@ -30,7 +30,7 @@ use \ArrayAccess;
 use \PandaDoc\Client\ObjectSerializer;
 
 /**
- * DocumentSendRequest Class Doc Comment
+ * DocumentRecipientCreateRequest Class Doc Comment
  *
  * @category Class
  * @package  PandaDoc\Client
@@ -40,7 +40,7 @@ use \PandaDoc\Client\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class DocumentRecipientCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
       *
       * @var string
       */
-    protected static $openAPIModelName = 'DocumentSendRequest';
+    protected static $openAPIModelName = 'DocumentRecipientCreateRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,12 +57,8 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'message' => 'string',
-        'subject' => 'string',
-        'silent' => 'bool',
-        'sender' => 'array<string,string>',
-        'forwardingSettings' => '\PandaDoc\Client\Model\DocumentSendRequestForwardingSettings',
-        'selectedApprovers' => '\PandaDoc\Client\Model\DocumentSendRequestSelectedApprovers'
+        'id' => 'string',
+        'kind' => 'string'
     ];
 
     /**
@@ -73,12 +69,8 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'message' => null,
-        'subject' => null,
-        'silent' => null,
-        'sender' => null,
-        'forwardingSettings' => null,
-        'selectedApprovers' => null
+        'id' => null,
+        'kind' => null
     ];
 
     /**
@@ -110,12 +102,8 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
-        'message' => 'message',
-        'subject' => 'subject',
-        'silent' => 'silent',
-        'sender' => 'sender',
-        'forwardingSettings' => 'forwarding_settings',
-        'selectedApprovers' => 'selected_approvers'
+        'id' => 'id',
+        'kind' => 'kind'
     ];
 
     /**
@@ -124,12 +112,8 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'message' => 'setMessage',
-        'subject' => 'setSubject',
-        'silent' => 'setSilent',
-        'sender' => 'setSender',
-        'forwardingSettings' => 'setForwardingSettings',
-        'selectedApprovers' => 'setSelectedApprovers'
+        'id' => 'setId',
+        'kind' => 'setKind'
     ];
 
     /**
@@ -138,12 +122,8 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
-        'message' => 'getMessage',
-        'subject' => 'getSubject',
-        'silent' => 'getSilent',
-        'sender' => 'getSender',
-        'forwardingSettings' => 'getForwardingSettings',
-        'selectedApprovers' => 'getSelectedApprovers'
+        'id' => 'getId',
+        'kind' => 'getKind'
     ];
 
     /**
@@ -191,6 +171,22 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
         return self::$openAPIModelName;
     }
 
+    const KIND_CONTACT = 'contact';
+    const KIND_CONTACT_GROUP = 'contact_group';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    #[\ReturnTypeWillChange]
+    public function getKindAllowableValues()
+    {
+        return [
+            self::KIND_CONTACT,
+            self::KIND_CONTACT_GROUP,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -207,12 +203,8 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(array $data = null)
     {
-        $this->container['message'] = $data['message'] ?? null;
-        $this->container['subject'] = $data['subject'] ?? null;
-        $this->container['silent'] = $data['silent'] ?? null;
-        $this->container['sender'] = $data['sender'] ?? null;
-        $this->container['forwardingSettings'] = $data['forwardingSettings'] ?? null;
-        $this->container['selectedApprovers'] = $data['selectedApprovers'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['kind'] = $data['kind'] ?? null;
     }
 
     /**
@@ -224,6 +216,21 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        if ($this->container['id'] === null) {
+            $invalidProperties[] = "'id' can't be null";
+        }
+        if ($this->container['kind'] === null) {
+            $invalidProperties[] = "'kind' can't be null";
+        }
+        $allowedValues = $this->getKindAllowableValues();
+        if (!is_null($this->container['kind']) && !in_array($this->container['kind'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'kind', must be one of '%s'",
+                $this->container['kind'],
+                implode("', '", $allowedValues)
+            );
+        }
 
         return $invalidProperties;
     }
@@ -242,157 +249,63 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
 
 
     /**
-     * Gets message
+     * Gets id
      *
-     * @return string|null
+     * @return string
      */
     #[\ReturnTypeWillChange]
-    public function getMessage()
+    public function getId()
     {
-        return $this->container['message'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets message
+     * Sets id
      *
-     * @param string|null $message A message that will be sent by email with a link to a document to sign.
+     * @param string $id id
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setMessage($message)
+    public function setId($id)
     {
-        $this->container['message'] = $message;
+        $this->container['id'] = $id;
 
         return $this;
     }
 
     /**
-     * Gets subject
+     * Gets kind
      *
-     * @return string|null
+     * @return string
      */
     #[\ReturnTypeWillChange]
-    public function getSubject()
+    public function getKind()
     {
-        return $this->container['subject'];
+        return $this->container['kind'];
     }
 
     /**
-     * Sets subject
+     * Sets kind
      *
-     * @param string|null $subject Value that will be used as the email subject.
+     * @param string $kind kind
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setSubject($subject)
+    public function setKind($kind)
     {
-        $this->container['subject'] = $subject;
-
-        return $this;
-    }
-
-    /**
-     * Gets silent
-     *
-     * @return bool|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getSilent()
-    {
-        return $this->container['silent'];
-    }
-
-    /**
-     * Sets silent
-     *
-     * @param bool|null $silent Disables sent, viewed, comment, and completed email notifications for document recipients and the document sender. By default, notifications emails are sent for specific actions. If set as true, it won't affect the \"Approve document\" email notification sent to the Approver.
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setSilent($silent)
-    {
-        $this->container['silent'] = $silent;
-
-        return $this;
-    }
-
-    /**
-     * Gets sender
-     *
-     * @return array<string,string>|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getSender()
-    {
-        return $this->container['sender'];
-    }
-
-    /**
-     * Sets sender
-     *
-     * @param array<string,string>|null $sender You can set a sender of a document as an `email` or `membership_id`
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setSender($sender)
-    {
-        $this->container['sender'] = $sender;
-
-        return $this;
-    }
-
-    /**
-     * Gets forwardingSettings
-     *
-     * @return \PandaDoc\Client\Model\DocumentSendRequestForwardingSettings|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getForwardingSettings()
-    {
-        return $this->container['forwardingSettings'];
-    }
-
-    /**
-     * Sets forwardingSettings
-     *
-     * @param \PandaDoc\Client\Model\DocumentSendRequestForwardingSettings|null $forwardingSettings forwardingSettings
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setForwardingSettings($forwardingSettings)
-    {
-        $this->container['forwardingSettings'] = $forwardingSettings;
-
-        return $this;
-    }
-
-    /**
-     * Gets selectedApprovers
-     *
-     * @return \PandaDoc\Client\Model\DocumentSendRequestSelectedApprovers|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getSelectedApprovers()
-    {
-        return $this->container['selectedApprovers'];
-    }
-
-    /**
-     * Sets selectedApprovers
-     *
-     * @param \PandaDoc\Client\Model\DocumentSendRequestSelectedApprovers|null $selectedApprovers selectedApprovers
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setSelectedApprovers($selectedApprovers)
-    {
-        $this->container['selectedApprovers'] = $selectedApprovers;
+        $allowedValues = $this->getKindAllowableValues();
+        if (!in_array($kind, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'kind', must be one of '%s'",
+                    $kind,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['kind'] = $kind;
 
         return $this;
     }

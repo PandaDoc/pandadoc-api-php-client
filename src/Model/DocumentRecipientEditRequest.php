@@ -1,6 +1,6 @@
 <?php
 /**
- * DocumentSendRequest
+ * DocumentRecipientEditRequest
  *
  * PHP version 7.3
  *
@@ -30,7 +30,7 @@ use \ArrayAccess;
 use \PandaDoc\Client\ObjectSerializer;
 
 /**
- * DocumentSendRequest Class Doc Comment
+ * DocumentRecipientEditRequest Class Doc Comment
  *
  * @category Class
  * @package  PandaDoc\Client
@@ -40,7 +40,7 @@ use \PandaDoc\Client\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class DocumentRecipientEditRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
       *
       * @var string
       */
-    protected static $openAPIModelName = 'DocumentSendRequest';
+    protected static $openAPIModelName = 'DocumentRecipientEditRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,12 +57,16 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'message' => 'string',
-        'subject' => 'string',
-        'silent' => 'bool',
-        'sender' => 'array<string,string>',
-        'forwardingSettings' => '\PandaDoc\Client\Model\DocumentSendRequestForwardingSettings',
-        'selectedApprovers' => '\PandaDoc\Client\Model\DocumentSendRequestSelectedApprovers'
+        'email' => 'string',
+        'firstName' => 'string',
+        'lastName' => 'string',
+        'company' => 'string',
+        'jobTitle' => 'string',
+        'phone' => 'string',
+        'state' => 'string',
+        'streetAddress' => 'string',
+        'city' => 'string',
+        'postalCode' => 'string'
     ];
 
     /**
@@ -73,12 +77,16 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'message' => null,
-        'subject' => null,
-        'silent' => null,
-        'sender' => null,
-        'forwardingSettings' => null,
-        'selectedApprovers' => null
+        'email' => null,
+        'firstName' => null,
+        'lastName' => null,
+        'company' => null,
+        'jobTitle' => null,
+        'phone' => null,
+        'state' => null,
+        'streetAddress' => null,
+        'city' => null,
+        'postalCode' => null
     ];
 
     /**
@@ -110,12 +118,16 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
-        'message' => 'message',
-        'subject' => 'subject',
-        'silent' => 'silent',
-        'sender' => 'sender',
-        'forwardingSettings' => 'forwarding_settings',
-        'selectedApprovers' => 'selected_approvers'
+        'email' => 'email',
+        'firstName' => 'first_name',
+        'lastName' => 'last_name',
+        'company' => 'company',
+        'jobTitle' => 'job_title',
+        'phone' => 'phone',
+        'state' => 'state',
+        'streetAddress' => 'street_address',
+        'city' => 'city',
+        'postalCode' => 'postal_code'
     ];
 
     /**
@@ -124,12 +136,16 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'message' => 'setMessage',
-        'subject' => 'setSubject',
-        'silent' => 'setSilent',
-        'sender' => 'setSender',
-        'forwardingSettings' => 'setForwardingSettings',
-        'selectedApprovers' => 'setSelectedApprovers'
+        'email' => 'setEmail',
+        'firstName' => 'setFirstName',
+        'lastName' => 'setLastName',
+        'company' => 'setCompany',
+        'jobTitle' => 'setJobTitle',
+        'phone' => 'setPhone',
+        'state' => 'setState',
+        'streetAddress' => 'setStreetAddress',
+        'city' => 'setCity',
+        'postalCode' => 'setPostalCode'
     ];
 
     /**
@@ -138,12 +154,16 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
-        'message' => 'getMessage',
-        'subject' => 'getSubject',
-        'silent' => 'getSilent',
-        'sender' => 'getSender',
-        'forwardingSettings' => 'getForwardingSettings',
-        'selectedApprovers' => 'getSelectedApprovers'
+        'email' => 'getEmail',
+        'firstName' => 'getFirstName',
+        'lastName' => 'getLastName',
+        'company' => 'getCompany',
+        'jobTitle' => 'getJobTitle',
+        'phone' => 'getPhone',
+        'state' => 'getState',
+        'streetAddress' => 'getStreetAddress',
+        'city' => 'getCity',
+        'postalCode' => 'getPostalCode'
     ];
 
     /**
@@ -207,12 +227,16 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(array $data = null)
     {
-        $this->container['message'] = $data['message'] ?? null;
-        $this->container['subject'] = $data['subject'] ?? null;
-        $this->container['silent'] = $data['silent'] ?? null;
-        $this->container['sender'] = $data['sender'] ?? null;
-        $this->container['forwardingSettings'] = $data['forwardingSettings'] ?? null;
-        $this->container['selectedApprovers'] = $data['selectedApprovers'] ?? null;
+        $this->container['email'] = $data['email'] ?? null;
+        $this->container['firstName'] = $data['firstName'] ?? null;
+        $this->container['lastName'] = $data['lastName'] ?? null;
+        $this->container['company'] = $data['company'] ?? null;
+        $this->container['jobTitle'] = $data['jobTitle'] ?? null;
+        $this->container['phone'] = $data['phone'] ?? null;
+        $this->container['state'] = $data['state'] ?? null;
+        $this->container['streetAddress'] = $data['streetAddress'] ?? null;
+        $this->container['city'] = $data['city'] ?? null;
+        $this->container['postalCode'] = $data['postalCode'] ?? null;
     }
 
     /**
@@ -242,157 +266,261 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
 
 
     /**
-     * Gets message
+     * Gets email
      *
      * @return string|null
      */
     #[\ReturnTypeWillChange]
-    public function getMessage()
+    public function getEmail()
     {
-        return $this->container['message'];
+        return $this->container['email'];
     }
 
     /**
-     * Sets message
+     * Sets email
      *
-     * @param string|null $message A message that will be sent by email with a link to a document to sign.
+     * @param string|null $email email
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setMessage($message)
+    public function setEmail($email)
     {
-        $this->container['message'] = $message;
+        $this->container['email'] = $email;
 
         return $this;
     }
 
     /**
-     * Gets subject
+     * Gets firstName
      *
      * @return string|null
      */
     #[\ReturnTypeWillChange]
-    public function getSubject()
+    public function getFirstName()
     {
-        return $this->container['subject'];
+        return $this->container['firstName'];
     }
 
     /**
-     * Sets subject
+     * Sets firstName
      *
-     * @param string|null $subject Value that will be used as the email subject.
+     * @param string|null $firstName firstName
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setSubject($subject)
+    public function setFirstName($firstName)
     {
-        $this->container['subject'] = $subject;
+        $this->container['firstName'] = $firstName;
 
         return $this;
     }
 
     /**
-     * Gets silent
+     * Gets lastName
      *
-     * @return bool|null
+     * @return string|null
      */
     #[\ReturnTypeWillChange]
-    public function getSilent()
+    public function getLastName()
     {
-        return $this->container['silent'];
+        return $this->container['lastName'];
     }
 
     /**
-     * Sets silent
+     * Sets lastName
      *
-     * @param bool|null $silent Disables sent, viewed, comment, and completed email notifications for document recipients and the document sender. By default, notifications emails are sent for specific actions. If set as true, it won't affect the \"Approve document\" email notification sent to the Approver.
+     * @param string|null $lastName lastName
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setSilent($silent)
+    public function setLastName($lastName)
     {
-        $this->container['silent'] = $silent;
+        $this->container['lastName'] = $lastName;
 
         return $this;
     }
 
     /**
-     * Gets sender
+     * Gets company
      *
-     * @return array<string,string>|null
+     * @return string|null
      */
     #[\ReturnTypeWillChange]
-    public function getSender()
+    public function getCompany()
     {
-        return $this->container['sender'];
+        return $this->container['company'];
     }
 
     /**
-     * Sets sender
+     * Sets company
      *
-     * @param array<string,string>|null $sender You can set a sender of a document as an `email` or `membership_id`
+     * @param string|null $company company
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setSender($sender)
+    public function setCompany($company)
     {
-        $this->container['sender'] = $sender;
+        $this->container['company'] = $company;
 
         return $this;
     }
 
     /**
-     * Gets forwardingSettings
+     * Gets jobTitle
      *
-     * @return \PandaDoc\Client\Model\DocumentSendRequestForwardingSettings|null
+     * @return string|null
      */
     #[\ReturnTypeWillChange]
-    public function getForwardingSettings()
+    public function getJobTitle()
     {
-        return $this->container['forwardingSettings'];
+        return $this->container['jobTitle'];
     }
 
     /**
-     * Sets forwardingSettings
+     * Sets jobTitle
      *
-     * @param \PandaDoc\Client\Model\DocumentSendRequestForwardingSettings|null $forwardingSettings forwardingSettings
+     * @param string|null $jobTitle jobTitle
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setForwardingSettings($forwardingSettings)
+    public function setJobTitle($jobTitle)
     {
-        $this->container['forwardingSettings'] = $forwardingSettings;
+        $this->container['jobTitle'] = $jobTitle;
 
         return $this;
     }
 
     /**
-     * Gets selectedApprovers
+     * Gets phone
      *
-     * @return \PandaDoc\Client\Model\DocumentSendRequestSelectedApprovers|null
+     * @return string|null
      */
     #[\ReturnTypeWillChange]
-    public function getSelectedApprovers()
+    public function getPhone()
     {
-        return $this->container['selectedApprovers'];
+        return $this->container['phone'];
     }
 
     /**
-     * Sets selectedApprovers
+     * Sets phone
      *
-     * @param \PandaDoc\Client\Model\DocumentSendRequestSelectedApprovers|null $selectedApprovers selectedApprovers
+     * @param string|null $phone phone
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setSelectedApprovers($selectedApprovers)
+    public function setPhone($phone)
     {
-        $this->container['selectedApprovers'] = $selectedApprovers;
+        $this->container['phone'] = $phone;
+
+        return $this;
+    }
+
+    /**
+     * Gets state
+     *
+     * @return string|null
+     */
+    #[\ReturnTypeWillChange]
+    public function getState()
+    {
+        return $this->container['state'];
+    }
+
+    /**
+     * Sets state
+     *
+     * @param string|null $state state
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setState($state)
+    {
+        $this->container['state'] = $state;
+
+        return $this;
+    }
+
+    /**
+     * Gets streetAddress
+     *
+     * @return string|null
+     */
+    #[\ReturnTypeWillChange]
+    public function getStreetAddress()
+    {
+        return $this->container['streetAddress'];
+    }
+
+    /**
+     * Sets streetAddress
+     *
+     * @param string|null $streetAddress streetAddress
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setStreetAddress($streetAddress)
+    {
+        $this->container['streetAddress'] = $streetAddress;
+
+        return $this;
+    }
+
+    /**
+     * Gets city
+     *
+     * @return string|null
+     */
+    #[\ReturnTypeWillChange]
+    public function getCity()
+    {
+        return $this->container['city'];
+    }
+
+    /**
+     * Sets city
+     *
+     * @param string|null $city city
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setCity($city)
+    {
+        $this->container['city'] = $city;
+
+        return $this;
+    }
+
+    /**
+     * Gets postalCode
+     *
+     * @return string|null
+     */
+    #[\ReturnTypeWillChange]
+    public function getPostalCode()
+    {
+        return $this->container['postalCode'];
+    }
+
+    /**
+     * Sets postalCode
+     *
+     * @param string|null $postalCode postalCode
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setPostalCode($postalCode)
+    {
+        $this->container['postalCode'] = $postalCode;
 
         return $this;
     }

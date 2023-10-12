@@ -19,7 +19,7 @@ or add the following to `composer.json`:
 ```json
 {
   "require": {
-    "pandadoc/php-client": "5.5.1"
+    "pandadoc/php-client": "5.7.0"
   }
 }
 ```
@@ -95,6 +95,10 @@ Class | Method | HTTP request | Description
 *DocumentAttachmentsApi* | [**detailsDocumentAttachment**](docs/Api/DocumentAttachmentsApi.md#detailsdocumentattachment) | **GET** /public/v1/documents/{id}/attachments/{attachment_id} | Document Attachment Details
 *DocumentAttachmentsApi* | [**downloadDocumentAttachment**](docs/Api/DocumentAttachmentsApi.md#downloaddocumentattachment) | **GET** /public/v1/documents/{id}/attachments/{attachment_id}/download | Document Attachment Download
 *DocumentAttachmentsApi* | [**listDocumentAttachments**](docs/Api/DocumentAttachmentsApi.md#listdocumentattachments) | **GET** /public/v1/documents/{id}/attachments | Document Attachment List
+*DocumentRecipientsApi* | [**addDocumentRecipient**](docs/Api/DocumentRecipientsApi.md#adddocumentrecipient) | **POST** /public/v1/documents/{id}/recipients | Add Document Recipient
+*DocumentRecipientsApi* | [**deleteDocumentRecipient**](docs/Api/DocumentRecipientsApi.md#deletedocumentrecipient) | **DELETE** /public/v1/documents/{id}/recipients/{recipient_id} | Delete Document Recipient
+*DocumentRecipientsApi* | [**editDocumentRecipient**](docs/Api/DocumentRecipientsApi.md#editdocumentrecipient) | **PATCH** /public/v1/documents/{id}/recipients/{recipient_id} | Edit Document Recipient
+*DocumentRecipientsApi* | [**reassignDocumentRecipient**](docs/Api/DocumentRecipientsApi.md#reassigndocumentrecipient) | **POST** /public/v1/documents/{id}/recipients/{recipient_id}/reassign | Reassign Document Recipient
 *DocumentsApi* | [**changeDocumentStatus**](docs/Api/DocumentsApi.md#changedocumentstatus) | **PATCH** /public/v1/documents/{id}/status | Document status change
 *DocumentsApi* | [**createDocument**](docs/Api/DocumentsApi.md#createdocument) | **POST** /public/v1/documents | Create document
 *DocumentsApi* | [**createDocumentLink**](docs/Api/DocumentsApi.md#createdocumentlink) | **POST** /public/v1/documents/{id}/session | Create a Document Link

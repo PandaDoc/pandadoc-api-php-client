@@ -1,6 +1,6 @@
 <?php
 /**
- * DocumentSendRequest
+ * DocumentSendRequestSelectedApproversSteps
  *
  * PHP version 7.3
  *
@@ -30,7 +30,7 @@ use \ArrayAccess;
 use \PandaDoc\Client\ObjectSerializer;
 
 /**
- * DocumentSendRequest Class Doc Comment
+ * DocumentSendRequestSelectedApproversSteps Class Doc Comment
  *
  * @category Class
  * @package  PandaDoc\Client
@@ -40,7 +40,7 @@ use \PandaDoc\Client\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class DocumentSendRequestSelectedApproversSteps implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
       *
       * @var string
       */
-    protected static $openAPIModelName = 'DocumentSendRequest';
+    protected static $openAPIModelName = 'DocumentSendRequest_selected_approvers_steps';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,12 +57,8 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'message' => 'string',
-        'subject' => 'string',
-        'silent' => 'bool',
-        'sender' => 'array<string,string>',
-        'forwardingSettings' => '\PandaDoc\Client\Model\DocumentSendRequestForwardingSettings',
-        'selectedApprovers' => '\PandaDoc\Client\Model\DocumentSendRequestSelectedApprovers'
+        'id' => 'string',
+        'group' => '\PandaDoc\Client\Model\DocumentSendRequestSelectedApproversGroup'
     ];
 
     /**
@@ -73,12 +69,8 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'message' => null,
-        'subject' => null,
-        'silent' => null,
-        'sender' => null,
-        'forwardingSettings' => null,
-        'selectedApprovers' => null
+        'id' => null,
+        'group' => null
     ];
 
     /**
@@ -110,12 +102,8 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
-        'message' => 'message',
-        'subject' => 'subject',
-        'silent' => 'silent',
-        'sender' => 'sender',
-        'forwardingSettings' => 'forwarding_settings',
-        'selectedApprovers' => 'selected_approvers'
+        'id' => 'id',
+        'group' => 'group'
     ];
 
     /**
@@ -124,12 +112,8 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'message' => 'setMessage',
-        'subject' => 'setSubject',
-        'silent' => 'setSilent',
-        'sender' => 'setSender',
-        'forwardingSettings' => 'setForwardingSettings',
-        'selectedApprovers' => 'setSelectedApprovers'
+        'id' => 'setId',
+        'group' => 'setGroup'
     ];
 
     /**
@@ -138,12 +122,8 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
-        'message' => 'getMessage',
-        'subject' => 'getSubject',
-        'silent' => 'getSilent',
-        'sender' => 'getSender',
-        'forwardingSettings' => 'getForwardingSettings',
-        'selectedApprovers' => 'getSelectedApprovers'
+        'id' => 'getId',
+        'group' => 'getGroup'
     ];
 
     /**
@@ -207,12 +187,8 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(array $data = null)
     {
-        $this->container['message'] = $data['message'] ?? null;
-        $this->container['subject'] = $data['subject'] ?? null;
-        $this->container['silent'] = $data['silent'] ?? null;
-        $this->container['sender'] = $data['sender'] ?? null;
-        $this->container['forwardingSettings'] = $data['forwardingSettings'] ?? null;
-        $this->container['selectedApprovers'] = $data['selectedApprovers'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['group'] = $data['group'] ?? null;
     }
 
     /**
@@ -225,6 +201,12 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         $invalidProperties = [];
 
+        if ($this->container['id'] === null) {
+            $invalidProperties[] = "'id' can't be null";
+        }
+        if ($this->container['group'] === null) {
+            $invalidProperties[] = "'group' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -242,157 +224,53 @@ class DocumentSendRequest implements ModelInterface, ArrayAccess, \JsonSerializa
 
 
     /**
-     * Gets message
+     * Gets id
      *
-     * @return string|null
+     * @return string
      */
     #[\ReturnTypeWillChange]
-    public function getMessage()
+    public function getId()
     {
-        return $this->container['message'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets message
+     * Sets id
      *
-     * @param string|null $message A message that will be sent by email with a link to a document to sign.
+     * @param string $id Step ID
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setMessage($message)
+    public function setId($id)
     {
-        $this->container['message'] = $message;
+        $this->container['id'] = $id;
 
         return $this;
     }
 
     /**
-     * Gets subject
+     * Gets group
      *
-     * @return string|null
+     * @return \PandaDoc\Client\Model\DocumentSendRequestSelectedApproversGroup
      */
     #[\ReturnTypeWillChange]
-    public function getSubject()
+    public function getGroup()
     {
-        return $this->container['subject'];
+        return $this->container['group'];
     }
 
     /**
-     * Sets subject
+     * Sets group
      *
-     * @param string|null $subject Value that will be used as the email subject.
+     * @param \PandaDoc\Client\Model\DocumentSendRequestSelectedApproversGroup $group group
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setSubject($subject)
+    public function setGroup($group)
     {
-        $this->container['subject'] = $subject;
-
-        return $this;
-    }
-
-    /**
-     * Gets silent
-     *
-     * @return bool|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getSilent()
-    {
-        return $this->container['silent'];
-    }
-
-    /**
-     * Sets silent
-     *
-     * @param bool|null $silent Disables sent, viewed, comment, and completed email notifications for document recipients and the document sender. By default, notifications emails are sent for specific actions. If set as true, it won't affect the \"Approve document\" email notification sent to the Approver.
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setSilent($silent)
-    {
-        $this->container['silent'] = $silent;
-
-        return $this;
-    }
-
-    /**
-     * Gets sender
-     *
-     * @return array<string,string>|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getSender()
-    {
-        return $this->container['sender'];
-    }
-
-    /**
-     * Sets sender
-     *
-     * @param array<string,string>|null $sender You can set a sender of a document as an `email` or `membership_id`
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setSender($sender)
-    {
-        $this->container['sender'] = $sender;
-
-        return $this;
-    }
-
-    /**
-     * Gets forwardingSettings
-     *
-     * @return \PandaDoc\Client\Model\DocumentSendRequestForwardingSettings|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getForwardingSettings()
-    {
-        return $this->container['forwardingSettings'];
-    }
-
-    /**
-     * Sets forwardingSettings
-     *
-     * @param \PandaDoc\Client\Model\DocumentSendRequestForwardingSettings|null $forwardingSettings forwardingSettings
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setForwardingSettings($forwardingSettings)
-    {
-        $this->container['forwardingSettings'] = $forwardingSettings;
-
-        return $this;
-    }
-
-    /**
-     * Gets selectedApprovers
-     *
-     * @return \PandaDoc\Client\Model\DocumentSendRequestSelectedApprovers|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getSelectedApprovers()
-    {
-        return $this->container['selectedApprovers'];
-    }
-
-    /**
-     * Sets selectedApprovers
-     *
-     * @param \PandaDoc\Client\Model\DocumentSendRequestSelectedApprovers|null $selectedApprovers selectedApprovers
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setSelectedApprovers($selectedApprovers)
-    {
-        $this->container['selectedApprovers'] = $selectedApprovers;
+        $this->container['group'] = $group;
 
         return $this;
     }
