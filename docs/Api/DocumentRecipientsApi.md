@@ -13,7 +13,7 @@ Method | HTTP request | Description
 ## `addDocumentRecipient()`
 
 ```php
-addDocumentRecipient($id, $documentRecipientCreateRequest)
+addDocumentRecipient($id, $documentRecipientCreateRequest): \PandaDoc\Client\Model\InlineResponse200
 ```
 
 Add Document Recipient
@@ -46,7 +46,8 @@ $id = BhVzRcxH9Z2LgfPPGXFUBa; // string | Document UUID
 $documentRecipientCreateRequest = new \PandaDoc\Client\Model\DocumentRecipientCreateRequest(); // \PandaDoc\Client\Model\DocumentRecipientCreateRequest
 
 try {
-    $apiInstance->addDocumentRecipient($id, $documentRecipientCreateRequest);
+    $result = $apiInstance->addDocumentRecipient($id, $documentRecipientCreateRequest);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DocumentRecipientsApi->addDocumentRecipient: ', $e->getMessage(), PHP_EOL;
 }
@@ -61,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**\PandaDoc\Client\Model\InlineResponse200**](../Model/InlineResponse200.md)
 
 ### Authorization
 
@@ -210,7 +211,7 @@ void (empty response body)
 ## `reassignDocumentRecipient()`
 
 ```php
-reassignDocumentRecipient($id, $recipientId, $documentRecipientCreateRequest)
+reassignDocumentRecipient($id, $recipientId, $documentRecipientCreateRequest): object
 ```
 
 Reassign Document Recipient
@@ -244,7 +245,8 @@ $recipientId = tf5dGS3Tmu3cj228ao6fnc; // string | Recipient UUID
 $documentRecipientCreateRequest = new \PandaDoc\Client\Model\DocumentRecipientCreateRequest(); // \PandaDoc\Client\Model\DocumentRecipientCreateRequest
 
 try {
-    $apiInstance->reassignDocumentRecipient($id, $recipientId, $documentRecipientCreateRequest);
+    $result = $apiInstance->reassignDocumentRecipient($id, $recipientId, $documentRecipientCreateRequest);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DocumentRecipientsApi->reassignDocumentRecipient: ', $e->getMessage(), PHP_EOL;
 }
@@ -260,7 +262,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
