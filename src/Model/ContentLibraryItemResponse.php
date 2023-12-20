@@ -61,11 +61,12 @@ class ContentLibraryItemResponse implements ModelInterface, ArrayAccess, \JsonSe
         'name' => 'string',
         'dateCreated' => 'string',
         'dateModified' => 'string',
+        'contentDateModified' => 'string',
         'createdBy' => '\PandaDoc\Client\Model\ContentLibraryItemResponseCreatedBy',
         'metadata' => 'object',
         'tokens' => 'object[]',
         'fields' => 'object[]',
-        'pricing' => '\PandaDoc\Client\Model\PricingTablesResponse',
+        'pricing' => '\PandaDoc\Client\Model\PricingResponse',
         'tags' => 'string[]',
         'roles' => 'object[]',
         'version' => 'string',
@@ -85,6 +86,7 @@ class ContentLibraryItemResponse implements ModelInterface, ArrayAccess, \JsonSe
         'name' => null,
         'dateCreated' => null,
         'dateModified' => null,
+        'contentDateModified' => null,
         'createdBy' => null,
         'metadata' => null,
         'tokens' => null,
@@ -130,6 +132,7 @@ class ContentLibraryItemResponse implements ModelInterface, ArrayAccess, \JsonSe
         'name' => 'name',
         'dateCreated' => 'date_created',
         'dateModified' => 'date_modified',
+        'contentDateModified' => 'content_date_modified',
         'createdBy' => 'created_by',
         'metadata' => 'metadata',
         'tokens' => 'tokens',
@@ -152,6 +155,7 @@ class ContentLibraryItemResponse implements ModelInterface, ArrayAccess, \JsonSe
         'name' => 'setName',
         'dateCreated' => 'setDateCreated',
         'dateModified' => 'setDateModified',
+        'contentDateModified' => 'setContentDateModified',
         'createdBy' => 'setCreatedBy',
         'metadata' => 'setMetadata',
         'tokens' => 'setTokens',
@@ -174,6 +178,7 @@ class ContentLibraryItemResponse implements ModelInterface, ArrayAccess, \JsonSe
         'name' => 'getName',
         'dateCreated' => 'getDateCreated',
         'dateModified' => 'getDateModified',
+        'contentDateModified' => 'getContentDateModified',
         'createdBy' => 'getCreatedBy',
         'metadata' => 'getMetadata',
         'tokens' => 'getTokens',
@@ -251,6 +256,7 @@ class ContentLibraryItemResponse implements ModelInterface, ArrayAccess, \JsonSe
         $this->container['name'] = $data['name'] ?? null;
         $this->container['dateCreated'] = $data['dateCreated'] ?? null;
         $this->container['dateModified'] = $data['dateModified'] ?? null;
+        $this->container['contentDateModified'] = $data['contentDateModified'] ?? null;
         $this->container['createdBy'] = $data['createdBy'] ?? null;
         $this->container['metadata'] = $data['metadata'] ?? null;
         $this->container['tokens'] = $data['tokens'] ?? null;
@@ -394,6 +400,32 @@ class ContentLibraryItemResponse implements ModelInterface, ArrayAccess, \JsonSe
     }
 
     /**
+     * Gets contentDateModified
+     *
+     * @return string|null
+     */
+    #[\ReturnTypeWillChange]
+    public function getContentDateModified()
+    {
+        return $this->container['contentDateModified'];
+    }
+
+    /**
+     * Sets contentDateModified
+     *
+     * @param string|null $contentDateModified contentDateModified
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setContentDateModified($contentDateModified)
+    {
+        $this->container['contentDateModified'] = $contentDateModified;
+
+        return $this;
+    }
+
+    /**
      * Gets createdBy
      *
      * @return \PandaDoc\Client\Model\ContentLibraryItemResponseCreatedBy|null
@@ -500,7 +532,7 @@ class ContentLibraryItemResponse implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets pricing
      *
-     * @return \PandaDoc\Client\Model\PricingTablesResponse|null
+     * @return \PandaDoc\Client\Model\PricingResponse|null
      */
     #[\ReturnTypeWillChange]
     public function getPricing()
@@ -511,7 +543,7 @@ class ContentLibraryItemResponse implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets pricing
      *
-     * @param \PandaDoc\Client\Model\PricingTablesResponse|null $pricing pricing
+     * @param \PandaDoc\Client\Model\PricingResponse|null $pricing pricing
      *
      * @return self
      */

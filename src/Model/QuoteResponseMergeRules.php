@@ -1,6 +1,6 @@
 <?php
 /**
- * PricingTablesResponseTables
+ * QuoteResponseMergeRules
  *
  * PHP version 7.3
  *
@@ -30,7 +30,7 @@ use \ArrayAccess;
 use \PandaDoc\Client\ObjectSerializer;
 
 /**
- * PricingTablesResponseTables Class Doc Comment
+ * QuoteResponseMergeRules Class Doc Comment
  *
  * @category Class
  * @package  PandaDoc\Client
@@ -40,7 +40,7 @@ use \PandaDoc\Client\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class PricingTablesResponseTables implements ModelInterface, ArrayAccess, \JsonSerializable
+class QuoteResponseMergeRules implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class PricingTablesResponseTables implements ModelInterface, ArrayAccess, \JsonS
       *
       * @var string
       */
-    protected static $openAPIModelName = 'PricingTablesResponse_tables';
+    protected static $openAPIModelName = 'QuoteResponse_merge_rules';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,13 +57,10 @@ class PricingTablesResponseTables implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'name' => 'string',
         'id' => 'string',
-        'total' => 'string',
-        'isIncludedInTotal' => 'bool',
-        'summary' => '\PandaDoc\Client\Model\PricingTablesResponseSummary',
-        'items' => '\PandaDoc\Client\Model\PricingTablesResponseItems[]',
-        'currency' => 'string'
+        'enabled' => 'bool',
+        'action' => '\PandaDoc\Client\Model\QuoteResponseAction',
+        'condition' => '\PandaDoc\Client\Model\QuoteResponseCondition'
     ];
 
     /**
@@ -74,13 +71,10 @@ class PricingTablesResponseTables implements ModelInterface, ArrayAccess, \JsonS
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'name' => null,
         'id' => null,
-        'total' => null,
-        'isIncludedInTotal' => null,
-        'summary' => null,
-        'items' => null,
-        'currency' => null
+        'enabled' => null,
+        'action' => null,
+        'condition' => null
     ];
 
     /**
@@ -112,13 +106,10 @@ class PricingTablesResponseTables implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
         'id' => 'id',
-        'total' => 'total',
-        'isIncludedInTotal' => 'is_included_in_total',
-        'summary' => 'summary',
-        'items' => 'items',
-        'currency' => 'currency'
+        'enabled' => 'enabled',
+        'action' => 'action',
+        'condition' => 'condition'
     ];
 
     /**
@@ -127,13 +118,10 @@ class PricingTablesResponseTables implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
         'id' => 'setId',
-        'total' => 'setTotal',
-        'isIncludedInTotal' => 'setIsIncludedInTotal',
-        'summary' => 'setSummary',
-        'items' => 'setItems',
-        'currency' => 'setCurrency'
+        'enabled' => 'setEnabled',
+        'action' => 'setAction',
+        'condition' => 'setCondition'
     ];
 
     /**
@@ -142,13 +130,10 @@ class PricingTablesResponseTables implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
         'id' => 'getId',
-        'total' => 'getTotal',
-        'isIncludedInTotal' => 'getIsIncludedInTotal',
-        'summary' => 'getSummary',
-        'items' => 'getItems',
-        'currency' => 'getCurrency'
+        'enabled' => 'getEnabled',
+        'action' => 'getAction',
+        'condition' => 'getCondition'
     ];
 
     /**
@@ -212,13 +197,10 @@ class PricingTablesResponseTables implements ModelInterface, ArrayAccess, \JsonS
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = $data['name'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
-        $this->container['total'] = $data['total'] ?? null;
-        $this->container['isIncludedInTotal'] = $data['isIncludedInTotal'] ?? null;
-        $this->container['summary'] = $data['summary'] ?? null;
-        $this->container['items'] = $data['items'] ?? null;
-        $this->container['currency'] = $data['currency'] ?? null;
+        $this->container['enabled'] = $data['enabled'] ?? null;
+        $this->container['action'] = $data['action'] ?? null;
+        $this->container['condition'] = $data['condition'] ?? null;
     }
 
     /**
@@ -248,32 +230,6 @@ class PricingTablesResponseTables implements ModelInterface, ArrayAccess, \JsonS
 
 
     /**
-     * Gets name
-     *
-     * @return string|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string|null $name name
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
      * Gets id
      *
      * @return string|null
@@ -300,131 +256,79 @@ class PricingTablesResponseTables implements ModelInterface, ArrayAccess, \JsonS
     }
 
     /**
-     * Gets total
-     *
-     * @return string|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getTotal()
-    {
-        return $this->container['total'];
-    }
-
-    /**
-     * Sets total
-     *
-     * @param string|null $total total
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setTotal($total)
-    {
-        $this->container['total'] = $total;
-
-        return $this;
-    }
-
-    /**
-     * Gets isIncludedInTotal
+     * Gets enabled
      *
      * @return bool|null
      */
     #[\ReturnTypeWillChange]
-    public function getIsIncludedInTotal()
+    public function getEnabled()
     {
-        return $this->container['isIncludedInTotal'];
+        return $this->container['enabled'];
     }
 
     /**
-     * Sets isIncludedInTotal
+     * Sets enabled
      *
-     * @param bool|null $isIncludedInTotal isIncludedInTotal
+     * @param bool|null $enabled enabled
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setIsIncludedInTotal($isIncludedInTotal)
+    public function setEnabled($enabled)
     {
-        $this->container['isIncludedInTotal'] = $isIncludedInTotal;
+        $this->container['enabled'] = $enabled;
 
         return $this;
     }
 
     /**
-     * Gets summary
+     * Gets action
      *
-     * @return \PandaDoc\Client\Model\PricingTablesResponseSummary|null
+     * @return \PandaDoc\Client\Model\QuoteResponseAction|null
      */
     #[\ReturnTypeWillChange]
-    public function getSummary()
+    public function getAction()
     {
-        return $this->container['summary'];
+        return $this->container['action'];
     }
 
     /**
-     * Sets summary
+     * Sets action
      *
-     * @param \PandaDoc\Client\Model\PricingTablesResponseSummary|null $summary summary
+     * @param \PandaDoc\Client\Model\QuoteResponseAction|null $action action
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setSummary($summary)
+    public function setAction($action)
     {
-        $this->container['summary'] = $summary;
+        $this->container['action'] = $action;
 
         return $this;
     }
 
     /**
-     * Gets items
+     * Gets condition
      *
-     * @return \PandaDoc\Client\Model\PricingTablesResponseItems[]|null
+     * @return \PandaDoc\Client\Model\QuoteResponseCondition|null
      */
     #[\ReturnTypeWillChange]
-    public function getItems()
+    public function getCondition()
     {
-        return $this->container['items'];
+        return $this->container['condition'];
     }
 
     /**
-     * Sets items
+     * Sets condition
      *
-     * @param \PandaDoc\Client\Model\PricingTablesResponseItems[]|null $items items
+     * @param \PandaDoc\Client\Model\QuoteResponseCondition|null $condition condition
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setItems($items)
+    public function setCondition($condition)
     {
-        $this->container['items'] = $items;
-
-        return $this;
-    }
-
-    /**
-     * Gets currency
-     *
-     * @return string|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getCurrency()
-    {
-        return $this->container['currency'];
-    }
-
-    /**
-     * Sets currency
-     *
-     * @param string|null $currency currency
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setCurrency($currency)
-    {
-        $this->container['currency'] = $currency;
+        $this->container['condition'] = $condition;
 
         return $this;
     }

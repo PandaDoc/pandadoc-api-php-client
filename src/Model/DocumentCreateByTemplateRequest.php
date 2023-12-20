@@ -58,6 +58,7 @@ class DocumentCreateByTemplateRequest implements ModelInterface, ArrayAccess, \J
       */
     protected static $openAPITypes = [
         'name' => 'string',
+        'detectTitleVariables' => 'bool',
         'templateUuid' => 'string',
         'folderUuid' => 'string',
         'recipients' => '\PandaDoc\Client\Model\DocumentCreateByTemplateRequestRecipients[]',
@@ -79,6 +80,7 @@ class DocumentCreateByTemplateRequest implements ModelInterface, ArrayAccess, \J
       */
     protected static $openAPIFormats = [
         'name' => null,
+        'detectTitleVariables' => null,
         'templateUuid' => null,
         'folderUuid' => null,
         'recipients' => null,
@@ -121,6 +123,7 @@ class DocumentCreateByTemplateRequest implements ModelInterface, ArrayAccess, \J
      */
     protected static $attributeMap = [
         'name' => 'name',
+        'detectTitleVariables' => 'detect_title_variables',
         'templateUuid' => 'template_uuid',
         'folderUuid' => 'folder_uuid',
         'recipients' => 'recipients',
@@ -140,6 +143,7 @@ class DocumentCreateByTemplateRequest implements ModelInterface, ArrayAccess, \J
      */
     protected static $setters = [
         'name' => 'setName',
+        'detectTitleVariables' => 'setDetectTitleVariables',
         'templateUuid' => 'setTemplateUuid',
         'folderUuid' => 'setFolderUuid',
         'recipients' => 'setRecipients',
@@ -159,6 +163,7 @@ class DocumentCreateByTemplateRequest implements ModelInterface, ArrayAccess, \J
      */
     protected static $getters = [
         'name' => 'getName',
+        'detectTitleVariables' => 'getDetectTitleVariables',
         'templateUuid' => 'getTemplateUuid',
         'folderUuid' => 'getFolderUuid',
         'recipients' => 'getRecipients',
@@ -233,6 +238,7 @@ class DocumentCreateByTemplateRequest implements ModelInterface, ArrayAccess, \J
     public function __construct(array $data = null)
     {
         $this->container['name'] = $data['name'] ?? null;
+        $this->container['detectTitleVariables'] = $data['detectTitleVariables'] ?? null;
         $this->container['templateUuid'] = $data['templateUuid'] ?? null;
         $this->container['folderUuid'] = $data['folderUuid'] ?? null;
         $this->container['recipients'] = $data['recipients'] ?? null;
@@ -255,9 +261,6 @@ class DocumentCreateByTemplateRequest implements ModelInterface, ArrayAccess, \J
     {
         $invalidProperties = [];
 
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
         if ($this->container['templateUuid'] === null) {
             $invalidProperties[] = "'templateUuid' can't be null";
         }
@@ -283,7 +286,7 @@ class DocumentCreateByTemplateRequest implements ModelInterface, ArrayAccess, \J
     /**
      * Gets name
      *
-     * @return string
+     * @return string|null
      */
     #[\ReturnTypeWillChange]
     public function getName()
@@ -294,7 +297,7 @@ class DocumentCreateByTemplateRequest implements ModelInterface, ArrayAccess, \J
     /**
      * Sets name
      *
-     * @param string $name Name the document you are creating.
+     * @param string|null $name Name the document you are creating. If name is not passed, the template name is used.
      *
      * @return self
      */
@@ -302,6 +305,32 @@ class DocumentCreateByTemplateRequest implements ModelInterface, ArrayAccess, \J
     public function setName($name)
     {
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets detectTitleVariables
+     *
+     * @return bool|null
+     */
+    #[\ReturnTypeWillChange]
+    public function getDetectTitleVariables()
+    {
+        return $this->container['detectTitleVariables'];
+    }
+
+    /**
+     * Sets detectTitleVariables
+     *
+     * @param bool|null $detectTitleVariables Set this parameter as true if you want to detect title variables in the document.
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setDetectTitleVariables($detectTitleVariables)
+    {
+        $this->container['detectTitleVariables'] = $detectTitleVariables;
 
         return $this;
     }

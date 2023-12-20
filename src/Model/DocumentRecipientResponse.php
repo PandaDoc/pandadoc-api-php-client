@@ -1,6 +1,6 @@
 <?php
 /**
- * DocumentUpdateRequest
+ * DocumentRecipientResponse
  *
  * PHP version 7.3
  *
@@ -30,7 +30,7 @@ use \ArrayAccess;
 use \PandaDoc\Client\ObjectSerializer;
 
 /**
- * DocumentUpdateRequest Class Doc Comment
+ * DocumentRecipientResponse Class Doc Comment
  *
  * @category Class
  * @package  PandaDoc\Client
@@ -40,7 +40,7 @@ use \PandaDoc\Client\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class DocumentUpdateRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class DocumentRecipientResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class DocumentUpdateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       *
       * @var string
       */
-    protected static $openAPIModelName = 'DocumentUpdateRequest';
+    protected static $openAPIModelName = 'DocumentRecipientResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,12 +57,7 @@ class DocumentUpdateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'name' => 'string',
-        'recipients' => '\PandaDoc\Client\Model\DocumentUpdateRequestRecipients[]',
-        'fields' => 'object',
-        'tokens' => '\PandaDoc\Client\Model\DocumentCreateByTemplateRequestTokens[]',
-        'metadata' => 'object',
-        'pricingTables' => '\PandaDoc\Client\Model\PricingTableRequest[]'
+        'recipientId' => 'string'
     ];
 
     /**
@@ -73,12 +68,7 @@ class DocumentUpdateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'name' => null,
-        'recipients' => null,
-        'fields' => null,
-        'tokens' => null,
-        'metadata' => null,
-        'pricingTables' => null
+        'recipientId' => null
     ];
 
     /**
@@ -110,12 +100,7 @@ class DocumentUpdateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
-        'recipients' => 'recipients',
-        'fields' => 'fields',
-        'tokens' => 'tokens',
-        'metadata' => 'metadata',
-        'pricingTables' => 'pricing_tables'
+        'recipientId' => 'recipient_id'
     ];
 
     /**
@@ -124,12 +109,7 @@ class DocumentUpdateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'recipients' => 'setRecipients',
-        'fields' => 'setFields',
-        'tokens' => 'setTokens',
-        'metadata' => 'setMetadata',
-        'pricingTables' => 'setPricingTables'
+        'recipientId' => 'setRecipientId'
     ];
 
     /**
@@ -138,12 +118,7 @@ class DocumentUpdateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'recipients' => 'getRecipients',
-        'fields' => 'getFields',
-        'tokens' => 'getTokens',
-        'metadata' => 'getMetadata',
-        'pricingTables' => 'getPricingTables'
+        'recipientId' => 'getRecipientId'
     ];
 
     /**
@@ -207,12 +182,7 @@ class DocumentUpdateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = $data['name'] ?? null;
-        $this->container['recipients'] = $data['recipients'] ?? null;
-        $this->container['fields'] = $data['fields'] ?? null;
-        $this->container['tokens'] = $data['tokens'] ?? null;
-        $this->container['metadata'] = $data['metadata'] ?? null;
-        $this->container['pricingTables'] = $data['pricingTables'] ?? null;
+        $this->container['recipientId'] = $data['recipientId'] ?? null;
     }
 
     /**
@@ -242,157 +212,27 @@ class DocumentUpdateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
 
 
     /**
-     * Gets name
+     * Gets recipientId
      *
      * @return string|null
      */
     #[\ReturnTypeWillChange]
-    public function getName()
+    public function getRecipientId()
     {
-        return $this->container['name'];
+        return $this->container['recipientId'];
     }
 
     /**
-     * Sets name
+     * Sets recipientId
      *
-     * @param string|null $name The name of the document.
+     * @param string|null $recipientId recipientId
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setName($name)
+    public function setRecipientId($recipientId)
     {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets recipients
-     *
-     * @return \PandaDoc\Client\Model\DocumentUpdateRequestRecipients[]|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getRecipients()
-    {
-        return $this->container['recipients'];
-    }
-
-    /**
-     * Sets recipients
-     *
-     * @param \PandaDoc\Client\Model\DocumentUpdateRequestRecipients[]|null $recipients The list of recipients you're sending the document to. The ID or email are required. If the ID is passed, an existing recipient will be updated. If the email is passed, a new recipient will be added to CC.
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setRecipients($recipients)
-    {
-        $this->container['recipients'] = $recipients;
-
-        return $this;
-    }
-
-    /**
-     * Gets fields
-     *
-     * @return object|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getFields()
-    {
-        return $this->container['fields'];
-    }
-
-    /**
-     * Sets fields
-     *
-     * @param object|null $fields You may pass a list of fields/values which exist in a document. Please use `Merge Field` property of the fields like the key.
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setFields($fields)
-    {
-        $this->container['fields'] = $fields;
-
-        return $this;
-    }
-
-    /**
-     * Gets tokens
-     *
-     * @return \PandaDoc\Client\Model\DocumentCreateByTemplateRequestTokens[]|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getTokens()
-    {
-        return $this->container['tokens'];
-    }
-
-    /**
-     * Sets tokens
-     *
-     * @param \PandaDoc\Client\Model\DocumentCreateByTemplateRequestTokens[]|null $tokens You can pass a list of tokens/values. If a token name exists in a document then the value will be updated. Otherwise, a new token will be added to the document.
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setTokens($tokens)
-    {
-        $this->container['tokens'] = $tokens;
-
-        return $this;
-    }
-
-    /**
-     * Gets metadata
-     *
-     * @return object|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getMetadata()
-    {
-        return $this->container['metadata'];
-    }
-
-    /**
-     * Sets metadata
-     *
-     * @param object|null $metadata You can pass arbitrary data in the key-value format to associate custom information with a document. This information is returned in any API requests for the document details by id. If metadata exists in a document then the value will be updated. Otherwise, metadata will be added to the document.
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setMetadata($metadata)
-    {
-        $this->container['metadata'] = $metadata;
-
-        return $this;
-    }
-
-    /**
-     * Gets pricingTables
-     *
-     * @return \PandaDoc\Client\Model\PricingTableRequest[]|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getPricingTables()
-    {
-        return $this->container['pricingTables'];
-    }
-
-    /**
-     * Sets pricingTables
-     *
-     * @param \PandaDoc\Client\Model\PricingTableRequest[]|null $pricingTables pricingTables
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setPricingTables($pricingTables)
-    {
-        $this->container['pricingTables'] = $pricingTables;
+        $this->container['recipientId'] = $recipientId;
 
         return $this;
     }

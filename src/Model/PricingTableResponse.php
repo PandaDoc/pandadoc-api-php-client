@@ -1,6 +1,6 @@
 <?php
 /**
- * DocumentDetailsResponseRecipients
+ * PricingTableResponse
  *
  * PHP version 7.3
  *
@@ -30,7 +30,7 @@ use \ArrayAccess;
 use \PandaDoc\Client\ObjectSerializer;
 
 /**
- * DocumentDetailsResponseRecipients Class Doc Comment
+ * PricingTableResponse Class Doc Comment
  *
  * @category Class
  * @package  PandaDoc\Client
@@ -40,7 +40,7 @@ use \PandaDoc\Client\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, \JsonSerializable
+class PricingTableResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
       *
       * @var string
       */
-    protected static $openAPIModelName = 'DocumentDetailsResponse_recipients';
+    protected static $openAPIModelName = 'PricingTableResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,18 +57,13 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
       * @var string[]
       */
     protected static $openAPITypes = [
-        'recipientType' => 'string',
-        'role' => 'string',
-        'roles' => 'string[]',
-        'lastName' => 'string',
-        'signingOrder' => 'mixed',
+        'name' => 'string',
         'id' => 'string',
-        'contactId' => 'string',
-        'firstName' => 'string',
-        'email' => 'string',
-        'hasCompleted' => 'bool',
-        'sharedLink' => 'string',
-        'signatureDate' => 'string'
+        'total' => 'string',
+        'isIncludedInTotal' => 'bool',
+        'summary' => '\PandaDoc\Client\Model\PricingTableResponseSummary',
+        'items' => '\PandaDoc\Client\Model\PricingTableResponseItems[]',
+        'currency' => 'string'
     ];
 
     /**
@@ -79,18 +74,13 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'recipientType' => null,
-        'role' => null,
-        'roles' => null,
-        'lastName' => null,
-        'signingOrder' => null,
+        'name' => null,
         'id' => null,
-        'contactId' => null,
-        'firstName' => null,
-        'email' => null,
-        'hasCompleted' => null,
-        'sharedLink' => null,
-        'signatureDate' => null
+        'total' => null,
+        'isIncludedInTotal' => null,
+        'summary' => null,
+        'items' => null,
+        'currency' => null
     ];
 
     /**
@@ -122,18 +112,13 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $attributeMap = [
-        'recipientType' => 'recipient_type',
-        'role' => 'role',
-        'roles' => 'roles',
-        'lastName' => 'last_name',
-        'signingOrder' => 'signing_order',
+        'name' => 'name',
         'id' => 'id',
-        'contactId' => 'contact_id',
-        'firstName' => 'first_name',
-        'email' => 'email',
-        'hasCompleted' => 'has_completed',
-        'sharedLink' => 'shared_link',
-        'signatureDate' => 'signature_date'
+        'total' => 'total',
+        'isIncludedInTotal' => 'is_included_in_total',
+        'summary' => 'summary',
+        'items' => 'items',
+        'currency' => 'currency'
     ];
 
     /**
@@ -142,18 +127,13 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
-        'recipientType' => 'setRecipientType',
-        'role' => 'setRole',
-        'roles' => 'setRoles',
-        'lastName' => 'setLastName',
-        'signingOrder' => 'setSigningOrder',
+        'name' => 'setName',
         'id' => 'setId',
-        'contactId' => 'setContactId',
-        'firstName' => 'setFirstName',
-        'email' => 'setEmail',
-        'hasCompleted' => 'setHasCompleted',
-        'sharedLink' => 'setSharedLink',
-        'signatureDate' => 'setSignatureDate'
+        'total' => 'setTotal',
+        'isIncludedInTotal' => 'setIsIncludedInTotal',
+        'summary' => 'setSummary',
+        'items' => 'setItems',
+        'currency' => 'setCurrency'
     ];
 
     /**
@@ -162,18 +142,13 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $getters = [
-        'recipientType' => 'getRecipientType',
-        'role' => 'getRole',
-        'roles' => 'getRoles',
-        'lastName' => 'getLastName',
-        'signingOrder' => 'getSigningOrder',
+        'name' => 'getName',
         'id' => 'getId',
-        'contactId' => 'getContactId',
-        'firstName' => 'getFirstName',
-        'email' => 'getEmail',
-        'hasCompleted' => 'getHasCompleted',
-        'sharedLink' => 'getSharedLink',
-        'signatureDate' => 'getSignatureDate'
+        'total' => 'getTotal',
+        'isIncludedInTotal' => 'getIsIncludedInTotal',
+        'summary' => 'getSummary',
+        'items' => 'getItems',
+        'currency' => 'getCurrency'
     ];
 
     /**
@@ -237,18 +212,13 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
      */
     public function __construct(array $data = null)
     {
-        $this->container['recipientType'] = $data['recipientType'] ?? null;
-        $this->container['role'] = $data['role'] ?? null;
-        $this->container['roles'] = $data['roles'] ?? null;
-        $this->container['lastName'] = $data['lastName'] ?? null;
-        $this->container['signingOrder'] = $data['signingOrder'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
-        $this->container['contactId'] = $data['contactId'] ?? null;
-        $this->container['firstName'] = $data['firstName'] ?? null;
-        $this->container['email'] = $data['email'] ?? null;
-        $this->container['hasCompleted'] = $data['hasCompleted'] ?? null;
-        $this->container['sharedLink'] = $data['sharedLink'] ?? null;
-        $this->container['signatureDate'] = $data['signatureDate'] ?? null;
+        $this->container['total'] = $data['total'] ?? null;
+        $this->container['isIncludedInTotal'] = $data['isIncludedInTotal'] ?? null;
+        $this->container['summary'] = $data['summary'] ?? null;
+        $this->container['items'] = $data['items'] ?? null;
+        $this->container['currency'] = $data['currency'] ?? null;
     }
 
     /**
@@ -278,133 +248,27 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
 
 
     /**
-     * Gets recipientType
+     * Gets name
      *
      * @return string|null
      */
     #[\ReturnTypeWillChange]
-    public function getRecipientType()
+    public function getName()
     {
-        return $this->container['recipientType'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets recipientType
+     * Sets name
      *
-     * @param string|null $recipientType recipientType
+     * @param string|null $name name
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setRecipientType($recipientType)
+    public function setName($name)
     {
-        $this->container['recipientType'] = $recipientType;
-
-        return $this;
-    }
-
-    /**
-     * Gets role
-     *
-     * @return string|null
-     * @deprecated
-     */
-    #[\ReturnTypeWillChange]
-    public function getRole()
-    {
-        return $this->container['role'];
-    }
-
-    /**
-     * Sets role
-     *
-     * @param string|null $role role
-     *
-     * @return self
-     * @deprecated
-     */
-    #[\ReturnTypeWillChange]
-    public function setRole($role)
-    {
-        $this->container['role'] = $role;
-
-        return $this;
-    }
-
-    /**
-     * Gets roles
-     *
-     * @return string[]|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getRoles()
-    {
-        return $this->container['roles'];
-    }
-
-    /**
-     * Sets roles
-     *
-     * @param string[]|null $roles roles
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setRoles($roles)
-    {
-        $this->container['roles'] = $roles;
-
-        return $this;
-    }
-
-    /**
-     * Gets lastName
-     *
-     * @return string|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getLastName()
-    {
-        return $this->container['lastName'];
-    }
-
-    /**
-     * Sets lastName
-     *
-     * @param string|null $lastName lastName
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setLastName($lastName)
-    {
-        $this->container['lastName'] = $lastName;
-
-        return $this;
-    }
-
-    /**
-     * Gets signingOrder
-     *
-     * @return mixed|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getSigningOrder()
-    {
-        return $this->container['signingOrder'];
-    }
-
-    /**
-     * Sets signingOrder
-     *
-     * @param mixed|null $signingOrder signingOrder
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setSigningOrder($signingOrder)
-    {
-        $this->container['signingOrder'] = $signingOrder;
+        $this->container['name'] = $name;
 
         return $this;
     }
@@ -436,157 +300,131 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
     }
 
     /**
-     * Gets contactId
+     * Gets total
      *
      * @return string|null
      */
     #[\ReturnTypeWillChange]
-    public function getContactId()
+    public function getTotal()
     {
-        return $this->container['contactId'];
+        return $this->container['total'];
     }
 
     /**
-     * Sets contactId
+     * Sets total
      *
-     * @param string|null $contactId contactId
+     * @param string|null $total total
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setContactId($contactId)
+    public function setTotal($total)
     {
-        $this->container['contactId'] = $contactId;
+        $this->container['total'] = $total;
 
         return $this;
     }
 
     /**
-     * Gets firstName
-     *
-     * @return string|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getFirstName()
-    {
-        return $this->container['firstName'];
-    }
-
-    /**
-     * Sets firstName
-     *
-     * @param string|null $firstName firstName
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setFirstName($firstName)
-    {
-        $this->container['firstName'] = $firstName;
-
-        return $this;
-    }
-
-    /**
-     * Gets email
-     *
-     * @return string|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getEmail()
-    {
-        return $this->container['email'];
-    }
-
-    /**
-     * Sets email
-     *
-     * @param string|null $email email
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setEmail($email)
-    {
-        $this->container['email'] = $email;
-
-        return $this;
-    }
-
-    /**
-     * Gets hasCompleted
+     * Gets isIncludedInTotal
      *
      * @return bool|null
      */
     #[\ReturnTypeWillChange]
-    public function getHasCompleted()
+    public function getIsIncludedInTotal()
     {
-        return $this->container['hasCompleted'];
+        return $this->container['isIncludedInTotal'];
     }
 
     /**
-     * Sets hasCompleted
+     * Sets isIncludedInTotal
      *
-     * @param bool|null $hasCompleted hasCompleted
+     * @param bool|null $isIncludedInTotal isIncludedInTotal
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setHasCompleted($hasCompleted)
+    public function setIsIncludedInTotal($isIncludedInTotal)
     {
-        $this->container['hasCompleted'] = $hasCompleted;
+        $this->container['isIncludedInTotal'] = $isIncludedInTotal;
 
         return $this;
     }
 
     /**
-     * Gets sharedLink
+     * Gets summary
      *
-     * @return string|null
+     * @return \PandaDoc\Client\Model\PricingTableResponseSummary|null
      */
     #[\ReturnTypeWillChange]
-    public function getSharedLink()
+    public function getSummary()
     {
-        return $this->container['sharedLink'];
+        return $this->container['summary'];
     }
 
     /**
-     * Sets sharedLink
+     * Sets summary
      *
-     * @param string|null $sharedLink sharedLink
+     * @param \PandaDoc\Client\Model\PricingTableResponseSummary|null $summary summary
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setSharedLink($sharedLink)
+    public function setSummary($summary)
     {
-        $this->container['sharedLink'] = $sharedLink;
+        $this->container['summary'] = $summary;
 
         return $this;
     }
 
     /**
-     * Gets signatureDate
+     * Gets items
      *
-     * @return string|null
+     * @return \PandaDoc\Client\Model\PricingTableResponseItems[]|null
      */
     #[\ReturnTypeWillChange]
-    public function getSignatureDate()
+    public function getItems()
     {
-        return $this->container['signatureDate'];
+        return $this->container['items'];
     }
 
     /**
-     * Sets signatureDate
+     * Sets items
      *
-     * @param string|null $signatureDate signatureDate
+     * @param \PandaDoc\Client\Model\PricingTableResponseItems[]|null $items items
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setSignatureDate($signatureDate)
+    public function setItems($items)
     {
-        $this->container['signatureDate'] = $signatureDate;
+        $this->container['items'] = $items;
+
+        return $this;
+    }
+
+    /**
+     * Gets currency
+     *
+     * @return string|null
+     */
+    #[\ReturnTypeWillChange]
+    public function getCurrency()
+    {
+        return $this->container['currency'];
+    }
+
+    /**
+     * Sets currency
+     *
+     * @param string|null $currency currency
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setCurrency($currency)
+    {
+        $this->container['currency'] = $currency;
 
         return $this;
     }

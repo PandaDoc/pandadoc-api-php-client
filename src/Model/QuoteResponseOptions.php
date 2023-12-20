@@ -1,6 +1,6 @@
 <?php
 /**
- * PricingTablesResponseDiscount
+ * QuoteResponseOptions
  *
  * PHP version 7.3
  *
@@ -30,7 +30,7 @@ use \ArrayAccess;
 use \PandaDoc\Client\ObjectSerializer;
 
 /**
- * PricingTablesResponseDiscount Class Doc Comment
+ * QuoteResponseOptions Class Doc Comment
  *
  * @category Class
  * @package  PandaDoc\Client
@@ -40,7 +40,7 @@ use \PandaDoc\Client\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class PricingTablesResponseDiscount implements ModelInterface, ArrayAccess, \JsonSerializable
+class QuoteResponseOptions implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class PricingTablesResponseDiscount implements ModelInterface, ArrayAccess, \Jso
       *
       * @var string
       */
-    protected static $openAPIModelName = 'PricingTablesResponse_discount';
+    protected static $openAPIModelName = 'QuoteResponse_options';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +57,8 @@ class PricingTablesResponseDiscount implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static $openAPITypes = [
-        'value' => 'string',
-        'type' => 'string'
+        'selected' => 'bool',
+        'qtyEditable' => 'bool'
     ];
 
     /**
@@ -69,8 +69,8 @@ class PricingTablesResponseDiscount implements ModelInterface, ArrayAccess, \Jso
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'value' => null,
-        'type' => null
+        'selected' => null,
+        'qtyEditable' => null
     ];
 
     /**
@@ -102,8 +102,8 @@ class PricingTablesResponseDiscount implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $attributeMap = [
-        'value' => 'value',
-        'type' => 'type'
+        'selected' => 'selected',
+        'qtyEditable' => 'qty_editable'
     ];
 
     /**
@@ -112,8 +112,8 @@ class PricingTablesResponseDiscount implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-        'value' => 'setValue',
-        'type' => 'setType'
+        'selected' => 'setSelected',
+        'qtyEditable' => 'setQtyEditable'
     ];
 
     /**
@@ -122,8 +122,8 @@ class PricingTablesResponseDiscount implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $getters = [
-        'value' => 'getValue',
-        'type' => 'getType'
+        'selected' => 'getSelected',
+        'qtyEditable' => 'getQtyEditable'
     ];
 
     /**
@@ -187,8 +187,8 @@ class PricingTablesResponseDiscount implements ModelInterface, ArrayAccess, \Jso
      */
     public function __construct(array $data = null)
     {
-        $this->container['value'] = $data['value'] ?? null;
-        $this->container['type'] = $data['type'] ?? null;
+        $this->container['selected'] = $data['selected'] ?? null;
+        $this->container['qtyEditable'] = $data['qtyEditable'] ?? null;
     }
 
     /**
@@ -218,53 +218,53 @@ class PricingTablesResponseDiscount implements ModelInterface, ArrayAccess, \Jso
 
 
     /**
-     * Gets value
+     * Gets selected
      *
-     * @return string|null
+     * @return bool|null
      */
     #[\ReturnTypeWillChange]
-    public function getValue()
+    public function getSelected()
     {
-        return $this->container['value'];
+        return $this->container['selected'];
     }
 
     /**
-     * Sets value
+     * Sets selected
      *
-     * @param string|null $value value
+     * @param bool|null $selected selected
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setValue($value)
+    public function setSelected($selected)
     {
-        $this->container['value'] = $value;
+        $this->container['selected'] = $selected;
 
         return $this;
     }
 
     /**
-     * Gets type
+     * Gets qtyEditable
      *
-     * @return string|null
+     * @return bool|null
      */
     #[\ReturnTypeWillChange]
-    public function getType()
+    public function getQtyEditable()
     {
-        return $this->container['type'];
+        return $this->container['qtyEditable'];
     }
 
     /**
-     * Sets type
+     * Sets qtyEditable
      *
-     * @param string|null $type type
+     * @param bool|null $qtyEditable qtyEditable
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setType($type)
+    public function setQtyEditable($qtyEditable)
     {
-        $this->container['type'] = $type;
+        $this->container['qtyEditable'] = $qtyEditable;
 
         return $this;
     }

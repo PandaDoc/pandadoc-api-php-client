@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse200
+ * QuoteResponseSections
  *
  * PHP version 7.3
  *
@@ -30,7 +30,7 @@ use \ArrayAccess;
 use \PandaDoc\Client\ObjectSerializer;
 
 /**
- * InlineResponse200 Class Doc Comment
+ * QuoteResponseSections Class Doc Comment
  *
  * @category Class
  * @package  PandaDoc\Client
@@ -40,7 +40,7 @@ use \PandaDoc\Client\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class InlineResponse200 implements ModelInterface, ArrayAccess, \JsonSerializable
+class QuoteResponseSections implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class InlineResponse200 implements ModelInterface, ArrayAccess, \JsonSerializabl
       *
       * @var string
       */
-    protected static $openAPIModelName = 'inline_response_200';
+    protected static $openAPIModelName = 'QuoteResponse_sections';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,7 +57,11 @@ class InlineResponse200 implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
-        'actorId' => 'string'
+        'id' => 'string',
+        'name' => 'string',
+        'summary' => '\PandaDoc\Client\Model\QuoteResponseSectionSummary',
+        'items' => '\PandaDoc\Client\Model\QuoteResponseSectionItem[]',
+        'total' => 'string'
     ];
 
     /**
@@ -68,7 +72,11 @@ class InlineResponse200 implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'actorId' => null
+        'id' => null,
+        'name' => null,
+        'summary' => null,
+        'items' => null,
+        'total' => null
     ];
 
     /**
@@ -100,7 +108,11 @@ class InlineResponse200 implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $attributeMap = [
-        'actorId' => 'actor_id'
+        'id' => 'id',
+        'name' => 'name',
+        'summary' => 'summary',
+        'items' => 'items',
+        'total' => 'total'
     ];
 
     /**
@@ -109,7 +121,11 @@ class InlineResponse200 implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $setters = [
-        'actorId' => 'setActorId'
+        'id' => 'setId',
+        'name' => 'setName',
+        'summary' => 'setSummary',
+        'items' => 'setItems',
+        'total' => 'setTotal'
     ];
 
     /**
@@ -118,7 +134,11 @@ class InlineResponse200 implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $getters = [
-        'actorId' => 'getActorId'
+        'id' => 'getId',
+        'name' => 'getName',
+        'summary' => 'getSummary',
+        'items' => 'getItems',
+        'total' => 'getTotal'
     ];
 
     /**
@@ -182,7 +202,11 @@ class InlineResponse200 implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     public function __construct(array $data = null)
     {
-        $this->container['actorId'] = $data['actorId'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['summary'] = $data['summary'] ?? null;
+        $this->container['items'] = $data['items'] ?? null;
+        $this->container['total'] = $data['total'] ?? null;
     }
 
     /**
@@ -212,27 +236,131 @@ class InlineResponse200 implements ModelInterface, ArrayAccess, \JsonSerializabl
 
 
     /**
-     * Gets actorId
+     * Gets id
      *
      * @return string|null
      */
     #[\ReturnTypeWillChange]
-    public function getActorId()
+    public function getId()
     {
-        return $this->container['actorId'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets actorId
+     * Sets id
      *
-     * @param string|null $actorId actorId
+     * @param string|null $id id
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setActorId($actorId)
+    public function setId($id)
     {
-        $this->container['actorId'] = $actorId;
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string|null
+     */
+    #[\ReturnTypeWillChange]
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string|null $name name
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets summary
+     *
+     * @return \PandaDoc\Client\Model\QuoteResponseSectionSummary|null
+     */
+    #[\ReturnTypeWillChange]
+    public function getSummary()
+    {
+        return $this->container['summary'];
+    }
+
+    /**
+     * Sets summary
+     *
+     * @param \PandaDoc\Client\Model\QuoteResponseSectionSummary|null $summary summary
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setSummary($summary)
+    {
+        $this->container['summary'] = $summary;
+
+        return $this;
+    }
+
+    /**
+     * Gets items
+     *
+     * @return \PandaDoc\Client\Model\QuoteResponseSectionItem[]|null
+     */
+    #[\ReturnTypeWillChange]
+    public function getItems()
+    {
+        return $this->container['items'];
+    }
+
+    /**
+     * Sets items
+     *
+     * @param \PandaDoc\Client\Model\QuoteResponseSectionItem[]|null $items items
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setItems($items)
+    {
+        $this->container['items'] = $items;
+
+        return $this;
+    }
+
+    /**
+     * Gets total
+     *
+     * @return string|null
+     */
+    #[\ReturnTypeWillChange]
+    public function getTotal()
+    {
+        return $this->container['total'];
+    }
+
+    /**
+     * Sets total
+     *
+     * @param string|null $total total
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setTotal($total)
+    {
+        $this->container['total'] = $total;
 
         return $this;
     }

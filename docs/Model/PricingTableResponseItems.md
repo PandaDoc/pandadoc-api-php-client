@@ -1,4 +1,4 @@
-# # PricingTablesResponseItems
+# # PricingTableResponseItems
 
 ## Properties
 
@@ -13,11 +13,11 @@ Name | Type | Description | Notes
 **description** | **string** |  | [optional]
 **customFields** | **object** |  | [optional]
 **customColumns** | **object** |  | [optional]
-**discount** | [**\PandaDoc\Client\Model\PricingTablesResponseDiscount**](PricingTablesResponseDiscount.md) |  | [optional]
-**taxFirst** | [**\PandaDoc\Client\Model\PricingTablesResponseDiscount**](PricingTablesResponseDiscount.md) |  | [optional]
-**taxSecond** | [**\PandaDoc\Client\Model\PricingTablesResponseDiscount**](PricingTablesResponseDiscount.md) |  | [optional]
+**discount** | [**\PandaDoc\Client\Model\PricingTableResponseDiscount**](PricingTableResponseDiscount.md) |  | [optional]
+**taxFirst** | [**\PandaDoc\Client\Model\PricingTableResponseDiscount**](PricingTableResponseDiscount.md) |  | [optional]
+**taxSecond** | [**\PandaDoc\Client\Model\PricingTableResponseDiscount**](PricingTableResponseDiscount.md) |  | [optional]
 **subtotal** | **string** |  | [optional]
-**options** | [**\PandaDoc\Client\Model\PricingTablesResponseOptions**](PricingTablesResponseOptions.md) |  | [optional]
+**options** | [**\PandaDoc\Client\Model\PricingTableResponseOptions**](PricingTableResponseOptions.md) |  | [optional]
 **salePrice** | **string** |  | [optional]
 **taxes** | **object** |  | [optional]
 **discounts** | **object** |  | [optional]

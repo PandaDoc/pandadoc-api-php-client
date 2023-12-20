@@ -1,6 +1,6 @@
 <?php
 /**
- * TemplateDetailsResponse
+ * QuoteResponseSummary
  *
  * PHP version 7.3
  *
@@ -30,7 +30,7 @@ use \ArrayAccess;
 use \PandaDoc\Client\ObjectSerializer;
 
 /**
- * TemplateDetailsResponse Class Doc Comment
+ * QuoteResponseSummary Class Doc Comment
  *
  * @category Class
  * @package  PandaDoc\Client
@@ -40,7 +40,7 @@ use \PandaDoc\Client\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class TemplateDetailsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
+class QuoteResponseSummary implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class TemplateDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
       *
       * @var string
       */
-    protected static $openAPIModelName = 'TemplateDetailsResponse';
+    protected static $openAPIModelName = 'QuoteResponseSummary';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,21 +57,20 @@ class TemplateDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'string',
-        'name' => 'string',
-        'dateCreated' => 'string',
-        'dateModified' => 'string',
-        'contentDateModified' => 'string',
-        'createdBy' => '\PandaDoc\Client\Model\ContentLibraryItemResponseCreatedBy',
-        'metadata' => 'object',
-        'tokens' => '\PandaDoc\Client\Model\TemplateDetailsResponseTokens[]',
-        'fields' => 'object[]',
-        'pricing' => '\PandaDoc\Client\Model\PricingResponse',
-        'tags' => 'string[]',
-        'roles' => '\PandaDoc\Client\Model\TemplateDetailsResponseRoles[]',
-        'version' => 'string',
-        'contentPlaceholders' => '\PandaDoc\Client\Model\TemplateDetailsResponseContentPlaceholders[]',
-        'images' => '\PandaDoc\Client\Model\TemplateDetailsResponseImages[]'
+        'total' => 'string',
+        'subtotal' => 'string',
+        'oneTimeSubtotal' => 'string',
+        'recurringSubtotal' => '\PandaDoc\Client\Model\QuoteResponseSummaryRecurringSubtotal[]',
+        'totalQty' => 'string',
+        'discounts' => 'array<string,\PandaDoc\Client\Model\QuoteResponseSummaryDiscounts>',
+        'taxes' => 'object',
+        'fees' => 'object',
+        'customFields' => 'array<string,string>',
+        'totalDiscount' => 'string',
+        'totalTax' => 'string',
+        'totalFee' => 'string',
+        'totalSavings' => 'string',
+        'totalContractValue' => 'string'
     ];
 
     /**
@@ -82,21 +81,20 @@ class TemplateDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'name' => null,
-        'dateCreated' => null,
-        'dateModified' => null,
-        'contentDateModified' => null,
-        'createdBy' => null,
-        'metadata' => null,
-        'tokens' => null,
-        'fields' => null,
-        'pricing' => null,
-        'tags' => null,
-        'roles' => null,
-        'version' => null,
-        'contentPlaceholders' => null,
-        'images' => null
+        'total' => null,
+        'subtotal' => null,
+        'oneTimeSubtotal' => null,
+        'recurringSubtotal' => null,
+        'totalQty' => null,
+        'discounts' => null,
+        'taxes' => null,
+        'fees' => null,
+        'customFields' => null,
+        'totalDiscount' => null,
+        'totalTax' => null,
+        'totalFee' => null,
+        'totalSavings' => null,
+        'totalContractValue' => null
     ];
 
     /**
@@ -128,21 +126,20 @@ class TemplateDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'name' => 'name',
-        'dateCreated' => 'date_created',
-        'dateModified' => 'date_modified',
-        'contentDateModified' => 'content_date_modified',
-        'createdBy' => 'created_by',
-        'metadata' => 'metadata',
-        'tokens' => 'tokens',
-        'fields' => 'fields',
-        'pricing' => 'pricing',
-        'tags' => 'tags',
-        'roles' => 'roles',
-        'version' => 'version',
-        'contentPlaceholders' => 'content_placeholders',
-        'images' => 'images'
+        'total' => 'total',
+        'subtotal' => 'subtotal',
+        'oneTimeSubtotal' => 'one_time_subtotal',
+        'recurringSubtotal' => 'recurring_subtotal',
+        'totalQty' => 'total_qty',
+        'discounts' => 'discounts',
+        'taxes' => 'taxes',
+        'fees' => 'fees',
+        'customFields' => 'custom_fields',
+        'totalDiscount' => 'total_discount',
+        'totalTax' => 'total_tax',
+        'totalFee' => 'total_fee',
+        'totalSavings' => 'total_savings',
+        'totalContractValue' => 'total_contract_value'
     ];
 
     /**
@@ -151,21 +148,20 @@ class TemplateDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'name' => 'setName',
-        'dateCreated' => 'setDateCreated',
-        'dateModified' => 'setDateModified',
-        'contentDateModified' => 'setContentDateModified',
-        'createdBy' => 'setCreatedBy',
-        'metadata' => 'setMetadata',
-        'tokens' => 'setTokens',
-        'fields' => 'setFields',
-        'pricing' => 'setPricing',
-        'tags' => 'setTags',
-        'roles' => 'setRoles',
-        'version' => 'setVersion',
-        'contentPlaceholders' => 'setContentPlaceholders',
-        'images' => 'setImages'
+        'total' => 'setTotal',
+        'subtotal' => 'setSubtotal',
+        'oneTimeSubtotal' => 'setOneTimeSubtotal',
+        'recurringSubtotal' => 'setRecurringSubtotal',
+        'totalQty' => 'setTotalQty',
+        'discounts' => 'setDiscounts',
+        'taxes' => 'setTaxes',
+        'fees' => 'setFees',
+        'customFields' => 'setCustomFields',
+        'totalDiscount' => 'setTotalDiscount',
+        'totalTax' => 'setTotalTax',
+        'totalFee' => 'setTotalFee',
+        'totalSavings' => 'setTotalSavings',
+        'totalContractValue' => 'setTotalContractValue'
     ];
 
     /**
@@ -174,21 +170,20 @@ class TemplateDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'name' => 'getName',
-        'dateCreated' => 'getDateCreated',
-        'dateModified' => 'getDateModified',
-        'contentDateModified' => 'getContentDateModified',
-        'createdBy' => 'getCreatedBy',
-        'metadata' => 'getMetadata',
-        'tokens' => 'getTokens',
-        'fields' => 'getFields',
-        'pricing' => 'getPricing',
-        'tags' => 'getTags',
-        'roles' => 'getRoles',
-        'version' => 'getVersion',
-        'contentPlaceholders' => 'getContentPlaceholders',
-        'images' => 'getImages'
+        'total' => 'getTotal',
+        'subtotal' => 'getSubtotal',
+        'oneTimeSubtotal' => 'getOneTimeSubtotal',
+        'recurringSubtotal' => 'getRecurringSubtotal',
+        'totalQty' => 'getTotalQty',
+        'discounts' => 'getDiscounts',
+        'taxes' => 'getTaxes',
+        'fees' => 'getFees',
+        'customFields' => 'getCustomFields',
+        'totalDiscount' => 'getTotalDiscount',
+        'totalTax' => 'getTotalTax',
+        'totalFee' => 'getTotalFee',
+        'totalSavings' => 'getTotalSavings',
+        'totalContractValue' => 'getTotalContractValue'
     ];
 
     /**
@@ -252,21 +247,20 @@ class TemplateDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['name'] = $data['name'] ?? null;
-        $this->container['dateCreated'] = $data['dateCreated'] ?? null;
-        $this->container['dateModified'] = $data['dateModified'] ?? null;
-        $this->container['contentDateModified'] = $data['contentDateModified'] ?? null;
-        $this->container['createdBy'] = $data['createdBy'] ?? null;
-        $this->container['metadata'] = $data['metadata'] ?? null;
-        $this->container['tokens'] = $data['tokens'] ?? null;
-        $this->container['fields'] = $data['fields'] ?? null;
-        $this->container['pricing'] = $data['pricing'] ?? null;
-        $this->container['tags'] = $data['tags'] ?? null;
-        $this->container['roles'] = $data['roles'] ?? null;
-        $this->container['version'] = $data['version'] ?? null;
-        $this->container['contentPlaceholders'] = $data['contentPlaceholders'] ?? null;
-        $this->container['images'] = $data['images'] ?? null;
+        $this->container['total'] = $data['total'] ?? null;
+        $this->container['subtotal'] = $data['subtotal'] ?? null;
+        $this->container['oneTimeSubtotal'] = $data['oneTimeSubtotal'] ?? null;
+        $this->container['recurringSubtotal'] = $data['recurringSubtotal'] ?? null;
+        $this->container['totalQty'] = $data['totalQty'] ?? null;
+        $this->container['discounts'] = $data['discounts'] ?? null;
+        $this->container['taxes'] = $data['taxes'] ?? null;
+        $this->container['fees'] = $data['fees'] ?? null;
+        $this->container['customFields'] = $data['customFields'] ?? null;
+        $this->container['totalDiscount'] = $data['totalDiscount'] ?? null;
+        $this->container['totalTax'] = $data['totalTax'] ?? null;
+        $this->container['totalFee'] = $data['totalFee'] ?? null;
+        $this->container['totalSavings'] = $data['totalSavings'] ?? null;
+        $this->container['totalContractValue'] = $data['totalContractValue'] ?? null;
     }
 
     /**
@@ -296,391 +290,365 @@ class TemplateDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
 
 
     /**
-     * Gets id
+     * Gets total
      *
      * @return string|null
      */
     #[\ReturnTypeWillChange]
-    public function getId()
+    public function getTotal()
     {
-        return $this->container['id'];
+        return $this->container['total'];
     }
 
     /**
-     * Sets id
+     * Sets total
      *
-     * @param string|null $id id
+     * @param string|null $total total
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setId($id)
+    public function setTotal($total)
     {
-        $this->container['id'] = $id;
+        $this->container['total'] = $total;
 
         return $this;
     }
 
     /**
-     * Gets name
+     * Gets subtotal
      *
      * @return string|null
      */
     #[\ReturnTypeWillChange]
-    public function getName()
+    public function getSubtotal()
     {
-        return $this->container['name'];
+        return $this->container['subtotal'];
     }
 
     /**
-     * Sets name
+     * Sets subtotal
      *
-     * @param string|null $name name
+     * @param string|null $subtotal subtotal
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setName($name)
+    public function setSubtotal($subtotal)
     {
-        $this->container['name'] = $name;
+        $this->container['subtotal'] = $subtotal;
 
         return $this;
     }
 
     /**
-     * Gets dateCreated
+     * Gets oneTimeSubtotal
      *
      * @return string|null
      */
     #[\ReturnTypeWillChange]
-    public function getDateCreated()
+    public function getOneTimeSubtotal()
     {
-        return $this->container['dateCreated'];
+        return $this->container['oneTimeSubtotal'];
     }
 
     /**
-     * Sets dateCreated
+     * Sets oneTimeSubtotal
      *
-     * @param string|null $dateCreated dateCreated
+     * @param string|null $oneTimeSubtotal oneTimeSubtotal
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setDateCreated($dateCreated)
+    public function setOneTimeSubtotal($oneTimeSubtotal)
     {
-        $this->container['dateCreated'] = $dateCreated;
+        $this->container['oneTimeSubtotal'] = $oneTimeSubtotal;
 
         return $this;
     }
 
     /**
-     * Gets dateModified
+     * Gets recurringSubtotal
+     *
+     * @return \PandaDoc\Client\Model\QuoteResponseSummaryRecurringSubtotal[]|null
+     */
+    #[\ReturnTypeWillChange]
+    public function getRecurringSubtotal()
+    {
+        return $this->container['recurringSubtotal'];
+    }
+
+    /**
+     * Sets recurringSubtotal
+     *
+     * @param \PandaDoc\Client\Model\QuoteResponseSummaryRecurringSubtotal[]|null $recurringSubtotal recurringSubtotal
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setRecurringSubtotal($recurringSubtotal)
+    {
+        $this->container['recurringSubtotal'] = $recurringSubtotal;
+
+        return $this;
+    }
+
+    /**
+     * Gets totalQty
      *
      * @return string|null
      */
     #[\ReturnTypeWillChange]
-    public function getDateModified()
+    public function getTotalQty()
     {
-        return $this->container['dateModified'];
+        return $this->container['totalQty'];
     }
 
     /**
-     * Sets dateModified
+     * Sets totalQty
      *
-     * @param string|null $dateModified dateModified
+     * @param string|null $totalQty totalQty
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setDateModified($dateModified)
+    public function setTotalQty($totalQty)
     {
-        $this->container['dateModified'] = $dateModified;
+        $this->container['totalQty'] = $totalQty;
 
         return $this;
     }
 
     /**
-     * Gets contentDateModified
+     * Gets discounts
      *
-     * @return string|null
+     * @return array<string,\PandaDoc\Client\Model\QuoteResponseSummaryDiscounts>|null
      */
     #[\ReturnTypeWillChange]
-    public function getContentDateModified()
+    public function getDiscounts()
     {
-        return $this->container['contentDateModified'];
+        return $this->container['discounts'];
     }
 
     /**
-     * Sets contentDateModified
+     * Sets discounts
      *
-     * @param string|null $contentDateModified contentDateModified
+     * @param array<string,\PandaDoc\Client\Model\QuoteResponseSummaryDiscounts>|null $discounts discounts
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setContentDateModified($contentDateModified)
+    public function setDiscounts($discounts)
     {
-        $this->container['contentDateModified'] = $contentDateModified;
+        $this->container['discounts'] = $discounts;
 
         return $this;
     }
 
     /**
-     * Gets createdBy
-     *
-     * @return \PandaDoc\Client\Model\ContentLibraryItemResponseCreatedBy|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getCreatedBy()
-    {
-        return $this->container['createdBy'];
-    }
-
-    /**
-     * Sets createdBy
-     *
-     * @param \PandaDoc\Client\Model\ContentLibraryItemResponseCreatedBy|null $createdBy createdBy
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setCreatedBy($createdBy)
-    {
-        $this->container['createdBy'] = $createdBy;
-
-        return $this;
-    }
-
-    /**
-     * Gets metadata
+     * Gets taxes
      *
      * @return object|null
      */
     #[\ReturnTypeWillChange]
-    public function getMetadata()
+    public function getTaxes()
     {
-        return $this->container['metadata'];
+        return $this->container['taxes'];
     }
 
     /**
-     * Sets metadata
+     * Sets taxes
      *
-     * @param object|null $metadata metadata
+     * @param object|null $taxes taxes
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setMetadata($metadata)
+    public function setTaxes($taxes)
     {
-        $this->container['metadata'] = $metadata;
+        $this->container['taxes'] = $taxes;
 
         return $this;
     }
 
     /**
-     * Gets tokens
+     * Gets fees
      *
-     * @return \PandaDoc\Client\Model\TemplateDetailsResponseTokens[]|null
+     * @return object|null
      */
     #[\ReturnTypeWillChange]
-    public function getTokens()
+    public function getFees()
     {
-        return $this->container['tokens'];
+        return $this->container['fees'];
     }
 
     /**
-     * Sets tokens
+     * Sets fees
      *
-     * @param \PandaDoc\Client\Model\TemplateDetailsResponseTokens[]|null $tokens tokens
+     * @param object|null $fees fees
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setTokens($tokens)
+    public function setFees($fees)
     {
-        $this->container['tokens'] = $tokens;
+        $this->container['fees'] = $fees;
 
         return $this;
     }
 
     /**
-     * Gets fields
+     * Gets customFields
      *
-     * @return object[]|null
+     * @return array<string,string>|null
      */
     #[\ReturnTypeWillChange]
-    public function getFields()
+    public function getCustomFields()
     {
-        return $this->container['fields'];
+        return $this->container['customFields'];
     }
 
     /**
-     * Sets fields
+     * Sets customFields
      *
-     * @param object[]|null $fields fields
+     * @param array<string,string>|null $customFields customFields
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setFields($fields)
+    public function setCustomFields($customFields)
     {
-        $this->container['fields'] = $fields;
+        $this->container['customFields'] = $customFields;
 
         return $this;
     }
 
     /**
-     * Gets pricing
-     *
-     * @return \PandaDoc\Client\Model\PricingResponse|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getPricing()
-    {
-        return $this->container['pricing'];
-    }
-
-    /**
-     * Sets pricing
-     *
-     * @param \PandaDoc\Client\Model\PricingResponse|null $pricing pricing
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setPricing($pricing)
-    {
-        $this->container['pricing'] = $pricing;
-
-        return $this;
-    }
-
-    /**
-     * Gets tags
-     *
-     * @return string[]|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getTags()
-    {
-        return $this->container['tags'];
-    }
-
-    /**
-     * Sets tags
-     *
-     * @param string[]|null $tags tags
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setTags($tags)
-    {
-        $this->container['tags'] = $tags;
-
-        return $this;
-    }
-
-    /**
-     * Gets roles
-     *
-     * @return \PandaDoc\Client\Model\TemplateDetailsResponseRoles[]|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getRoles()
-    {
-        return $this->container['roles'];
-    }
-
-    /**
-     * Sets roles
-     *
-     * @param \PandaDoc\Client\Model\TemplateDetailsResponseRoles[]|null $roles roles
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setRoles($roles)
-    {
-        $this->container['roles'] = $roles;
-
-        return $this;
-    }
-
-    /**
-     * Gets version
+     * Gets totalDiscount
      *
      * @return string|null
      */
     #[\ReturnTypeWillChange]
-    public function getVersion()
+    public function getTotalDiscount()
     {
-        return $this->container['version'];
+        return $this->container['totalDiscount'];
     }
 
     /**
-     * Sets version
+     * Sets totalDiscount
      *
-     * @param string|null $version version
+     * @param string|null $totalDiscount totalDiscount
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setVersion($version)
+    public function setTotalDiscount($totalDiscount)
     {
-        $this->container['version'] = $version;
+        $this->container['totalDiscount'] = $totalDiscount;
 
         return $this;
     }
 
     /**
-     * Gets contentPlaceholders
+     * Gets totalTax
      *
-     * @return \PandaDoc\Client\Model\TemplateDetailsResponseContentPlaceholders[]|null
+     * @return string|null
      */
     #[\ReturnTypeWillChange]
-    public function getContentPlaceholders()
+    public function getTotalTax()
     {
-        return $this->container['contentPlaceholders'];
+        return $this->container['totalTax'];
     }
 
     /**
-     * Sets contentPlaceholders
+     * Sets totalTax
      *
-     * @param \PandaDoc\Client\Model\TemplateDetailsResponseContentPlaceholders[]|null $contentPlaceholders contentPlaceholders
+     * @param string|null $totalTax totalTax
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setContentPlaceholders($contentPlaceholders)
+    public function setTotalTax($totalTax)
     {
-        $this->container['contentPlaceholders'] = $contentPlaceholders;
+        $this->container['totalTax'] = $totalTax;
 
         return $this;
     }
 
     /**
-     * Gets images
+     * Gets totalFee
      *
-     * @return \PandaDoc\Client\Model\TemplateDetailsResponseImages[]|null
+     * @return string|null
      */
     #[\ReturnTypeWillChange]
-    public function getImages()
+    public function getTotalFee()
     {
-        return $this->container['images'];
+        return $this->container['totalFee'];
     }
 
     /**
-     * Sets images
+     * Sets totalFee
      *
-     * @param \PandaDoc\Client\Model\TemplateDetailsResponseImages[]|null $images images
+     * @param string|null $totalFee totalFee
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setImages($images)
+    public function setTotalFee($totalFee)
     {
-        $this->container['images'] = $images;
+        $this->container['totalFee'] = $totalFee;
+
+        return $this;
+    }
+
+    /**
+     * Gets totalSavings
+     *
+     * @return string|null
+     */
+    #[\ReturnTypeWillChange]
+    public function getTotalSavings()
+    {
+        return $this->container['totalSavings'];
+    }
+
+    /**
+     * Sets totalSavings
+     *
+     * @param string|null $totalSavings totalSavings
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setTotalSavings($totalSavings)
+    {
+        $this->container['totalSavings'] = $totalSavings;
+
+        return $this;
+    }
+
+    /**
+     * Gets totalContractValue
+     *
+     * @return string|null
+     */
+    #[\ReturnTypeWillChange]
+    public function getTotalContractValue()
+    {
+        return $this->container['totalContractValue'];
+    }
+
+    /**
+     * Sets totalContractValue
+     *
+     * @param string|null $totalContractValue totalContractValue
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setTotalContractValue($totalContractValue)
+    {
+        $this->container['totalContractValue'] = $totalContractValue;
 
         return $this;
     }
