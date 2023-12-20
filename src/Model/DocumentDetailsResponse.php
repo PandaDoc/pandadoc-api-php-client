@@ -63,13 +63,14 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
         'dateCreated' => 'string',
         'dateModified' => 'string',
         'dateCompleted' => 'string',
+        'contentDateModified' => 'string',
         'createdBy' => '\PandaDoc\Client\Model\DocumentDetailsResponseCreatedBy',
         'template' => '\PandaDoc\Client\Model\DocumentDetailsResponseTemplate',
         'expirationDate' => 'mixed',
         'metadata' => 'object',
         'tokens' => 'object[]',
         'fields' => 'object[]',
-        'pricing' => '\PandaDoc\Client\Model\PricingTablesResponse',
+        'pricing' => '\PandaDoc\Client\Model\PricingResponse',
         'version' => 'string',
         'tags' => 'string[]',
         'sentBy' => 'mixed',
@@ -93,6 +94,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
         'dateCreated' => null,
         'dateModified' => null,
         'dateCompleted' => null,
+        'contentDateModified' => null,
         'createdBy' => null,
         'template' => null,
         'expirationDate' => null,
@@ -144,6 +146,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
         'dateCreated' => 'date_created',
         'dateModified' => 'date_modified',
         'dateCompleted' => 'date_completed',
+        'contentDateModified' => 'content_date_modified',
         'createdBy' => 'created_by',
         'template' => 'template',
         'expirationDate' => 'expiration_date',
@@ -172,6 +175,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
         'dateCreated' => 'setDateCreated',
         'dateModified' => 'setDateModified',
         'dateCompleted' => 'setDateCompleted',
+        'contentDateModified' => 'setContentDateModified',
         'createdBy' => 'setCreatedBy',
         'template' => 'setTemplate',
         'expirationDate' => 'setExpirationDate',
@@ -200,6 +204,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
         'dateCreated' => 'getDateCreated',
         'dateModified' => 'getDateModified',
         'dateCompleted' => 'getDateCompleted',
+        'contentDateModified' => 'getContentDateModified',
         'createdBy' => 'getCreatedBy',
         'template' => 'getTemplate',
         'expirationDate' => 'getExpirationDate',
@@ -283,6 +288,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
         $this->container['dateCreated'] = $data['dateCreated'] ?? null;
         $this->container['dateModified'] = $data['dateModified'] ?? null;
         $this->container['dateCompleted'] = $data['dateCompleted'] ?? null;
+        $this->container['contentDateModified'] = $data['contentDateModified'] ?? null;
         $this->container['createdBy'] = $data['createdBy'] ?? null;
         $this->container['template'] = $data['template'] ?? null;
         $this->container['expirationDate'] = $data['expirationDate'] ?? null;
@@ -482,6 +488,32 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
     }
 
     /**
+     * Gets contentDateModified
+     *
+     * @return string|null
+     */
+    #[\ReturnTypeWillChange]
+    public function getContentDateModified()
+    {
+        return $this->container['contentDateModified'];
+    }
+
+    /**
+     * Sets contentDateModified
+     *
+     * @param string|null $contentDateModified contentDateModified
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setContentDateModified($contentDateModified)
+    {
+        $this->container['contentDateModified'] = $contentDateModified;
+
+        return $this;
+    }
+
+    /**
      * Gets createdBy
      *
      * @return \PandaDoc\Client\Model\DocumentDetailsResponseCreatedBy|null
@@ -640,7 +672,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets pricing
      *
-     * @return \PandaDoc\Client\Model\PricingTablesResponse|null
+     * @return \PandaDoc\Client\Model\PricingResponse|null
      */
     #[\ReturnTypeWillChange]
     public function getPricing()
@@ -651,7 +683,7 @@ class DocumentDetailsResponse implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets pricing
      *
-     * @param \PandaDoc\Client\Model\PricingTablesResponse|null $pricing pricing
+     * @param \PandaDoc\Client\Model\PricingResponse|null $pricing pricing
      *
      * @return self
      */

@@ -1,6 +1,6 @@
 <?php
 /**
- * PricingTablesResponseSummary
+ * QuoteResponseSectionSummary
  *
  * PHP version 7.3
  *
@@ -30,7 +30,7 @@ use \ArrayAccess;
 use \PandaDoc\Client\ObjectSerializer;
 
 /**
- * PricingTablesResponseSummary Class Doc Comment
+ * QuoteResponseSectionSummary Class Doc Comment
  *
  * @category Class
  * @package  PandaDoc\Client
@@ -40,7 +40,7 @@ use \PandaDoc\Client\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class PricingTablesResponseSummary implements ModelInterface, ArrayAccess, \JsonSerializable
+class QuoteResponseSectionSummary implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class PricingTablesResponseSummary implements ModelInterface, ArrayAccess, \Json
       *
       * @var string
       */
-    protected static $openAPIModelName = 'PricingTablesResponse_summary';
+    protected static $openAPIModelName = 'QuoteResponseSectionSummary';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,10 +57,16 @@ class PricingTablesResponseSummary implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
-        'subtotal' => 'string',
         'total' => 'string',
-        'discount' => 'string',
-        'tax' => 'string'
+        'subtotal' => 'string',
+        'oneTimeSubtotal' => 'string',
+        'recurringSubtotal' => '\PandaDoc\Client\Model\QuoteResponseSummaryRecurringSubtotal[]',
+        'totalQty' => 'string',
+        'discounts' => 'object',
+        'taxes' => 'object',
+        'fees' => 'object',
+        'customFields' => 'array<string,string>',
+        'totalSectionValue' => 'string'
     ];
 
     /**
@@ -71,10 +77,16 @@ class PricingTablesResponseSummary implements ModelInterface, ArrayAccess, \Json
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'subtotal' => null,
         'total' => null,
-        'discount' => null,
-        'tax' => null
+        'subtotal' => null,
+        'oneTimeSubtotal' => null,
+        'recurringSubtotal' => null,
+        'totalQty' => null,
+        'discounts' => null,
+        'taxes' => null,
+        'fees' => null,
+        'customFields' => null,
+        'totalSectionValue' => null
     ];
 
     /**
@@ -106,10 +118,16 @@ class PricingTablesResponseSummary implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $attributeMap = [
-        'subtotal' => 'subtotal',
         'total' => 'total',
-        'discount' => 'discount',
-        'tax' => 'tax'
+        'subtotal' => 'subtotal',
+        'oneTimeSubtotal' => 'one_time_subtotal',
+        'recurringSubtotal' => 'recurring_subtotal',
+        'totalQty' => 'total_qty',
+        'discounts' => 'discounts',
+        'taxes' => 'taxes',
+        'fees' => 'fees',
+        'customFields' => 'custom_fields',
+        'totalSectionValue' => 'total_section_value'
     ];
 
     /**
@@ -118,10 +136,16 @@ class PricingTablesResponseSummary implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $setters = [
-        'subtotal' => 'setSubtotal',
         'total' => 'setTotal',
-        'discount' => 'setDiscount',
-        'tax' => 'setTax'
+        'subtotal' => 'setSubtotal',
+        'oneTimeSubtotal' => 'setOneTimeSubtotal',
+        'recurringSubtotal' => 'setRecurringSubtotal',
+        'totalQty' => 'setTotalQty',
+        'discounts' => 'setDiscounts',
+        'taxes' => 'setTaxes',
+        'fees' => 'setFees',
+        'customFields' => 'setCustomFields',
+        'totalSectionValue' => 'setTotalSectionValue'
     ];
 
     /**
@@ -130,10 +154,16 @@ class PricingTablesResponseSummary implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $getters = [
-        'subtotal' => 'getSubtotal',
         'total' => 'getTotal',
-        'discount' => 'getDiscount',
-        'tax' => 'getTax'
+        'subtotal' => 'getSubtotal',
+        'oneTimeSubtotal' => 'getOneTimeSubtotal',
+        'recurringSubtotal' => 'getRecurringSubtotal',
+        'totalQty' => 'getTotalQty',
+        'discounts' => 'getDiscounts',
+        'taxes' => 'getTaxes',
+        'fees' => 'getFees',
+        'customFields' => 'getCustomFields',
+        'totalSectionValue' => 'getTotalSectionValue'
     ];
 
     /**
@@ -197,10 +227,16 @@ class PricingTablesResponseSummary implements ModelInterface, ArrayAccess, \Json
      */
     public function __construct(array $data = null)
     {
-        $this->container['subtotal'] = $data['subtotal'] ?? null;
         $this->container['total'] = $data['total'] ?? null;
-        $this->container['discount'] = $data['discount'] ?? null;
-        $this->container['tax'] = $data['tax'] ?? null;
+        $this->container['subtotal'] = $data['subtotal'] ?? null;
+        $this->container['oneTimeSubtotal'] = $data['oneTimeSubtotal'] ?? null;
+        $this->container['recurringSubtotal'] = $data['recurringSubtotal'] ?? null;
+        $this->container['totalQty'] = $data['totalQty'] ?? null;
+        $this->container['discounts'] = $data['discounts'] ?? null;
+        $this->container['taxes'] = $data['taxes'] ?? null;
+        $this->container['fees'] = $data['fees'] ?? null;
+        $this->container['customFields'] = $data['customFields'] ?? null;
+        $this->container['totalSectionValue'] = $data['totalSectionValue'] ?? null;
     }
 
     /**
@@ -230,32 +266,6 @@ class PricingTablesResponseSummary implements ModelInterface, ArrayAccess, \Json
 
 
     /**
-     * Gets subtotal
-     *
-     * @return string|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getSubtotal()
-    {
-        return $this->container['subtotal'];
-    }
-
-    /**
-     * Sets subtotal
-     *
-     * @param string|null $subtotal subtotal
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setSubtotal($subtotal)
-    {
-        $this->container['subtotal'] = $subtotal;
-
-        return $this;
-    }
-
-    /**
      * Gets total
      *
      * @return string|null
@@ -282,53 +292,235 @@ class PricingTablesResponseSummary implements ModelInterface, ArrayAccess, \Json
     }
 
     /**
-     * Gets discount
+     * Gets subtotal
      *
      * @return string|null
      */
     #[\ReturnTypeWillChange]
-    public function getDiscount()
+    public function getSubtotal()
     {
-        return $this->container['discount'];
+        return $this->container['subtotal'];
     }
 
     /**
-     * Sets discount
+     * Sets subtotal
      *
-     * @param string|null $discount discount
+     * @param string|null $subtotal subtotal
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setDiscount($discount)
+    public function setSubtotal($subtotal)
     {
-        $this->container['discount'] = $discount;
+        $this->container['subtotal'] = $subtotal;
 
         return $this;
     }
 
     /**
-     * Gets tax
+     * Gets oneTimeSubtotal
      *
      * @return string|null
      */
     #[\ReturnTypeWillChange]
-    public function getTax()
+    public function getOneTimeSubtotal()
     {
-        return $this->container['tax'];
+        return $this->container['oneTimeSubtotal'];
     }
 
     /**
-     * Sets tax
+     * Sets oneTimeSubtotal
      *
-     * @param string|null $tax tax
+     * @param string|null $oneTimeSubtotal oneTimeSubtotal
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setTax($tax)
+    public function setOneTimeSubtotal($oneTimeSubtotal)
     {
-        $this->container['tax'] = $tax;
+        $this->container['oneTimeSubtotal'] = $oneTimeSubtotal;
+
+        return $this;
+    }
+
+    /**
+     * Gets recurringSubtotal
+     *
+     * @return \PandaDoc\Client\Model\QuoteResponseSummaryRecurringSubtotal[]|null
+     */
+    #[\ReturnTypeWillChange]
+    public function getRecurringSubtotal()
+    {
+        return $this->container['recurringSubtotal'];
+    }
+
+    /**
+     * Sets recurringSubtotal
+     *
+     * @param \PandaDoc\Client\Model\QuoteResponseSummaryRecurringSubtotal[]|null $recurringSubtotal recurringSubtotal
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setRecurringSubtotal($recurringSubtotal)
+    {
+        $this->container['recurringSubtotal'] = $recurringSubtotal;
+
+        return $this;
+    }
+
+    /**
+     * Gets totalQty
+     *
+     * @return string|null
+     */
+    #[\ReturnTypeWillChange]
+    public function getTotalQty()
+    {
+        return $this->container['totalQty'];
+    }
+
+    /**
+     * Sets totalQty
+     *
+     * @param string|null $totalQty totalQty
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setTotalQty($totalQty)
+    {
+        $this->container['totalQty'] = $totalQty;
+
+        return $this;
+    }
+
+    /**
+     * Gets discounts
+     *
+     * @return object|null
+     */
+    #[\ReturnTypeWillChange]
+    public function getDiscounts()
+    {
+        return $this->container['discounts'];
+    }
+
+    /**
+     * Sets discounts
+     *
+     * @param object|null $discounts discounts
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setDiscounts($discounts)
+    {
+        $this->container['discounts'] = $discounts;
+
+        return $this;
+    }
+
+    /**
+     * Gets taxes
+     *
+     * @return object|null
+     */
+    #[\ReturnTypeWillChange]
+    public function getTaxes()
+    {
+        return $this->container['taxes'];
+    }
+
+    /**
+     * Sets taxes
+     *
+     * @param object|null $taxes taxes
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setTaxes($taxes)
+    {
+        $this->container['taxes'] = $taxes;
+
+        return $this;
+    }
+
+    /**
+     * Gets fees
+     *
+     * @return object|null
+     */
+    #[\ReturnTypeWillChange]
+    public function getFees()
+    {
+        return $this->container['fees'];
+    }
+
+    /**
+     * Sets fees
+     *
+     * @param object|null $fees fees
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setFees($fees)
+    {
+        $this->container['fees'] = $fees;
+
+        return $this;
+    }
+
+    /**
+     * Gets customFields
+     *
+     * @return array<string,string>|null
+     */
+    #[\ReturnTypeWillChange]
+    public function getCustomFields()
+    {
+        return $this->container['customFields'];
+    }
+
+    /**
+     * Sets customFields
+     *
+     * @param array<string,string>|null $customFields customFields
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setCustomFields($customFields)
+    {
+        $this->container['customFields'] = $customFields;
+
+        return $this;
+    }
+
+    /**
+     * Gets totalSectionValue
+     *
+     * @return string|null
+     */
+    #[\ReturnTypeWillChange]
+    public function getTotalSectionValue()
+    {
+        return $this->container['totalSectionValue'];
+    }
+
+    /**
+     * Sets totalSectionValue
+     *
+     * @param string|null $totalSectionValue totalSectionValue
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setTotalSectionValue($totalSectionValue)
+    {
+        $this->container['totalSectionValue'] = $totalSectionValue;
 
         return $this;
     }

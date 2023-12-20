@@ -1,6 +1,6 @@
 <?php
 /**
- * DocumentUpdateRequest
+ * PricingTableResponseSummary
  *
  * PHP version 7.3
  *
@@ -30,7 +30,7 @@ use \ArrayAccess;
 use \PandaDoc\Client\ObjectSerializer;
 
 /**
- * DocumentUpdateRequest Class Doc Comment
+ * PricingTableResponseSummary Class Doc Comment
  *
  * @category Class
  * @package  PandaDoc\Client
@@ -40,7 +40,7 @@ use \PandaDoc\Client\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class DocumentUpdateRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class PricingTableResponseSummary implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class DocumentUpdateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       *
       * @var string
       */
-    protected static $openAPIModelName = 'DocumentUpdateRequest';
+    protected static $openAPIModelName = 'PricingTableResponse_summary';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,12 +57,10 @@ class DocumentUpdateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'name' => 'string',
-        'recipients' => '\PandaDoc\Client\Model\DocumentUpdateRequestRecipients[]',
-        'fields' => 'object',
-        'tokens' => '\PandaDoc\Client\Model\DocumentCreateByTemplateRequestTokens[]',
-        'metadata' => 'object',
-        'pricingTables' => '\PandaDoc\Client\Model\PricingTableRequest[]'
+        'subtotal' => 'string',
+        'total' => 'string',
+        'discount' => 'string',
+        'tax' => 'string'
     ];
 
     /**
@@ -73,12 +71,10 @@ class DocumentUpdateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'name' => null,
-        'recipients' => null,
-        'fields' => null,
-        'tokens' => null,
-        'metadata' => null,
-        'pricingTables' => null
+        'subtotal' => null,
+        'total' => null,
+        'discount' => null,
+        'tax' => null
     ];
 
     /**
@@ -110,12 +106,10 @@ class DocumentUpdateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
-        'recipients' => 'recipients',
-        'fields' => 'fields',
-        'tokens' => 'tokens',
-        'metadata' => 'metadata',
-        'pricingTables' => 'pricing_tables'
+        'subtotal' => 'subtotal',
+        'total' => 'total',
+        'discount' => 'discount',
+        'tax' => 'tax'
     ];
 
     /**
@@ -124,12 +118,10 @@ class DocumentUpdateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'recipients' => 'setRecipients',
-        'fields' => 'setFields',
-        'tokens' => 'setTokens',
-        'metadata' => 'setMetadata',
-        'pricingTables' => 'setPricingTables'
+        'subtotal' => 'setSubtotal',
+        'total' => 'setTotal',
+        'discount' => 'setDiscount',
+        'tax' => 'setTax'
     ];
 
     /**
@@ -138,12 +130,10 @@ class DocumentUpdateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'recipients' => 'getRecipients',
-        'fields' => 'getFields',
-        'tokens' => 'getTokens',
-        'metadata' => 'getMetadata',
-        'pricingTables' => 'getPricingTables'
+        'subtotal' => 'getSubtotal',
+        'total' => 'getTotal',
+        'discount' => 'getDiscount',
+        'tax' => 'getTax'
     ];
 
     /**
@@ -207,12 +197,10 @@ class DocumentUpdateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = $data['name'] ?? null;
-        $this->container['recipients'] = $data['recipients'] ?? null;
-        $this->container['fields'] = $data['fields'] ?? null;
-        $this->container['tokens'] = $data['tokens'] ?? null;
-        $this->container['metadata'] = $data['metadata'] ?? null;
-        $this->container['pricingTables'] = $data['pricingTables'] ?? null;
+        $this->container['subtotal'] = $data['subtotal'] ?? null;
+        $this->container['total'] = $data['total'] ?? null;
+        $this->container['discount'] = $data['discount'] ?? null;
+        $this->container['tax'] = $data['tax'] ?? null;
     }
 
     /**
@@ -242,157 +230,105 @@ class DocumentUpdateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
 
 
     /**
-     * Gets name
+     * Gets subtotal
      *
      * @return string|null
      */
     #[\ReturnTypeWillChange]
-    public function getName()
+    public function getSubtotal()
     {
-        return $this->container['name'];
+        return $this->container['subtotal'];
     }
 
     /**
-     * Sets name
+     * Sets subtotal
      *
-     * @param string|null $name The name of the document.
+     * @param string|null $subtotal subtotal
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setName($name)
+    public function setSubtotal($subtotal)
     {
-        $this->container['name'] = $name;
+        $this->container['subtotal'] = $subtotal;
 
         return $this;
     }
 
     /**
-     * Gets recipients
+     * Gets total
      *
-     * @return \PandaDoc\Client\Model\DocumentUpdateRequestRecipients[]|null
+     * @return string|null
      */
     #[\ReturnTypeWillChange]
-    public function getRecipients()
+    public function getTotal()
     {
-        return $this->container['recipients'];
+        return $this->container['total'];
     }
 
     /**
-     * Sets recipients
+     * Sets total
      *
-     * @param \PandaDoc\Client\Model\DocumentUpdateRequestRecipients[]|null $recipients The list of recipients you're sending the document to. The ID or email are required. If the ID is passed, an existing recipient will be updated. If the email is passed, a new recipient will be added to CC.
+     * @param string|null $total total
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setRecipients($recipients)
+    public function setTotal($total)
     {
-        $this->container['recipients'] = $recipients;
+        $this->container['total'] = $total;
 
         return $this;
     }
 
     /**
-     * Gets fields
+     * Gets discount
      *
-     * @return object|null
+     * @return string|null
      */
     #[\ReturnTypeWillChange]
-    public function getFields()
+    public function getDiscount()
     {
-        return $this->container['fields'];
+        return $this->container['discount'];
     }
 
     /**
-     * Sets fields
+     * Sets discount
      *
-     * @param object|null $fields You may pass a list of fields/values which exist in a document. Please use `Merge Field` property of the fields like the key.
+     * @param string|null $discount discount
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setFields($fields)
+    public function setDiscount($discount)
     {
-        $this->container['fields'] = $fields;
+        $this->container['discount'] = $discount;
 
         return $this;
     }
 
     /**
-     * Gets tokens
+     * Gets tax
      *
-     * @return \PandaDoc\Client\Model\DocumentCreateByTemplateRequestTokens[]|null
+     * @return string|null
      */
     #[\ReturnTypeWillChange]
-    public function getTokens()
+    public function getTax()
     {
-        return $this->container['tokens'];
+        return $this->container['tax'];
     }
 
     /**
-     * Sets tokens
+     * Sets tax
      *
-     * @param \PandaDoc\Client\Model\DocumentCreateByTemplateRequestTokens[]|null $tokens You can pass a list of tokens/values. If a token name exists in a document then the value will be updated. Otherwise, a new token will be added to the document.
+     * @param string|null $tax tax
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setTokens($tokens)
+    public function setTax($tax)
     {
-        $this->container['tokens'] = $tokens;
-
-        return $this;
-    }
-
-    /**
-     * Gets metadata
-     *
-     * @return object|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getMetadata()
-    {
-        return $this->container['metadata'];
-    }
-
-    /**
-     * Sets metadata
-     *
-     * @param object|null $metadata You can pass arbitrary data in the key-value format to associate custom information with a document. This information is returned in any API requests for the document details by id. If metadata exists in a document then the value will be updated. Otherwise, metadata will be added to the document.
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setMetadata($metadata)
-    {
-        $this->container['metadata'] = $metadata;
-
-        return $this;
-    }
-
-    /**
-     * Gets pricingTables
-     *
-     * @return \PandaDoc\Client\Model\PricingTableRequest[]|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getPricingTables()
-    {
-        return $this->container['pricingTables'];
-    }
-
-    /**
-     * Sets pricingTables
-     *
-     * @param \PandaDoc\Client\Model\PricingTableRequest[]|null $pricingTables pricingTables
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setPricingTables($pricingTables)
-    {
-        $this->container['pricingTables'] = $pricingTables;
+        $this->container['tax'] = $tax;
 
         return $this;
     }

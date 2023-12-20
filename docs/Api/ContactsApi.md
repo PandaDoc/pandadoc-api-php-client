@@ -199,7 +199,7 @@ Name | Type | Description  | Notes
 ## `listContacts()`
 
 ```php
-listContacts(): \PandaDoc\Client\Model\ContactListResponse
+listContacts($email): \PandaDoc\Client\Model\ContactListResponse
 ```
 
 List contacts
@@ -226,9 +226,10 @@ $apiInstance = new PandaDoc\Client\Api\ContactsApi(
     new GuzzleHttp\Client(),
     $config
 );
+$email = josh@example.com; // string | Optional search parameter. Filter results by exact match.
 
 try {
-    $result = $apiInstance->listContacts();
+    $result = $apiInstance->listContacts($email);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContactsApi->listContacts: ', $e->getMessage(), PHP_EOL;
@@ -237,7 +238,9 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **email** | **string**| Optional search parameter. Filter results by exact match. | [optional]
 
 ### Return type
 

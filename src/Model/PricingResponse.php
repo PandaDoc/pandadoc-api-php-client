@@ -1,6 +1,6 @@
 <?php
 /**
- * PricingTablesResponse
+ * PricingResponse
  *
  * PHP version 7.3
  *
@@ -30,7 +30,7 @@ use \ArrayAccess;
 use \PandaDoc\Client\ObjectSerializer;
 
 /**
- * PricingTablesResponse Class Doc Comment
+ * PricingResponse Class Doc Comment
  *
  * @category Class
  * @package  PandaDoc\Client
@@ -40,7 +40,7 @@ use \PandaDoc\Client\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class PricingTablesResponse implements ModelInterface, ArrayAccess, \JsonSerializable
+class PricingResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class PricingTablesResponse implements ModelInterface, ArrayAccess, \JsonSeriali
       *
       * @var string
       */
-    protected static $openAPIModelName = 'PricingTablesResponse';
+    protected static $openAPIModelName = 'PricingResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,7 +57,8 @@ class PricingTablesResponse implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'tables' => '\PandaDoc\Client\Model\PricingTablesResponseTables[]',
+        'tables' => '\PandaDoc\Client\Model\PricingTableResponse[]',
+        'quotes' => '\PandaDoc\Client\Model\QuoteResponse[]',
         'total' => 'string'
     ];
 
@@ -70,6 +71,7 @@ class PricingTablesResponse implements ModelInterface, ArrayAccess, \JsonSeriali
       */
     protected static $openAPIFormats = [
         'tables' => null,
+        'quotes' => null,
         'total' => null
     ];
 
@@ -103,6 +105,7 @@ class PricingTablesResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     protected static $attributeMap = [
         'tables' => 'tables',
+        'quotes' => 'quotes',
         'total' => 'total'
     ];
 
@@ -113,6 +116,7 @@ class PricingTablesResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     protected static $setters = [
         'tables' => 'setTables',
+        'quotes' => 'setQuotes',
         'total' => 'setTotal'
     ];
 
@@ -123,6 +127,7 @@ class PricingTablesResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     protected static $getters = [
         'tables' => 'getTables',
+        'quotes' => 'getQuotes',
         'total' => 'getTotal'
     ];
 
@@ -188,6 +193,7 @@ class PricingTablesResponse implements ModelInterface, ArrayAccess, \JsonSeriali
     public function __construct(array $data = null)
     {
         $this->container['tables'] = $data['tables'] ?? null;
+        $this->container['quotes'] = $data['quotes'] ?? null;
         $this->container['total'] = $data['total'] ?? null;
     }
 
@@ -220,7 +226,7 @@ class PricingTablesResponse implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets tables
      *
-     * @return \PandaDoc\Client\Model\PricingTablesResponseTables[]|null
+     * @return \PandaDoc\Client\Model\PricingTableResponse[]|null
      */
     #[\ReturnTypeWillChange]
     public function getTables()
@@ -231,7 +237,7 @@ class PricingTablesResponse implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets tables
      *
-     * @param \PandaDoc\Client\Model\PricingTablesResponseTables[]|null $tables tables
+     * @param \PandaDoc\Client\Model\PricingTableResponse[]|null $tables tables
      *
      * @return self
      */
@@ -239,6 +245,32 @@ class PricingTablesResponse implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setTables($tables)
     {
         $this->container['tables'] = $tables;
+
+        return $this;
+    }
+
+    /**
+     * Gets quotes
+     *
+     * @return \PandaDoc\Client\Model\QuoteResponse[]|null
+     */
+    #[\ReturnTypeWillChange]
+    public function getQuotes()
+    {
+        return $this->container['quotes'];
+    }
+
+    /**
+     * Sets quotes
+     *
+     * @param \PandaDoc\Client\Model\QuoteResponse[]|null $quotes quotes
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setQuotes($quotes)
+    {
+        $this->container['quotes'] = $quotes;
 
         return $this;
     }

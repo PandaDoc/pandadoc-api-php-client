@@ -13,7 +13,7 @@ Method | HTTP request | Description
 ## `addDocumentRecipient()`
 
 ```php
-addDocumentRecipient($id, $documentRecipientCreateRequest): \PandaDoc\Client\Model\InlineResponse200
+addDocumentRecipient($id, $documentRecipientCreateRequest): \PandaDoc\Client\Model\DocumentRecipientResponse
 ```
 
 Add Document Recipient
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\PandaDoc\Client\Model\InlineResponse200**](../Model/InlineResponse200.md)
+[**\PandaDoc\Client\Model\DocumentRecipientResponse**](../Model/DocumentRecipientResponse.md)
 
 ### Authorization
 
@@ -211,7 +211,7 @@ void (empty response body)
 ## `reassignDocumentRecipient()`
 
 ```php
-reassignDocumentRecipient($id, $recipientId, $documentRecipientCreateRequest): object
+reassignDocumentRecipient($id, $recipientId, $documentRecipientCreateRequest): \PandaDoc\Client\Model\DocumentRecipientResponse
 ```
 
 Reassign Document Recipient
@@ -262,7 +262,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**\PandaDoc\Client\Model\DocumentRecipientResponse**](../Model/DocumentRecipientResponse.md)
 
 ### Authorization
 

@@ -123,7 +123,7 @@ class DocumentRecipientsApi
      *
      * @throws \PandaDoc\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \PandaDoc\Client\Model\InlineResponse200|object|object|object|object|object
+     * @return \PandaDoc\Client\Model\DocumentRecipientResponse|object|object|object|object|object
      */
     public function addDocumentRecipient($id, $documentRecipientCreateRequest)
     {
@@ -141,7 +141,7 @@ class DocumentRecipientsApi
      *
      * @throws \PandaDoc\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \PandaDoc\Client\Model\InlineResponse200|object|object|object|object|object, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \PandaDoc\Client\Model\DocumentRecipientResponse|object|object|object|object|object, HTTP status code, HTTP response headers (array of strings)
      */
     public function addDocumentRecipientWithHttpInfo($id, $documentRecipientCreateRequest)
     {
@@ -184,14 +184,14 @@ class DocumentRecipientsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\PandaDoc\Client\Model\InlineResponse200' === '\SplFileObject') {
+                    if ('\PandaDoc\Client\Model\DocumentRecipientResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\PandaDoc\Client\Model\InlineResponse200', []),
+                        ObjectSerializer::deserialize($content, '\PandaDoc\Client\Model\DocumentRecipientResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -257,7 +257,7 @@ class DocumentRecipientsApi
                     ];
             }
 
-            $returnType = '\PandaDoc\Client\Model\InlineResponse200';
+            $returnType = '\PandaDoc\Client\Model\DocumentRecipientResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -275,7 +275,7 @@ class DocumentRecipientsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\PandaDoc\Client\Model\InlineResponse200',
+                        '\PandaDoc\Client\Model\DocumentRecipientResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -359,7 +359,7 @@ class DocumentRecipientsApi
      */
     public function addDocumentRecipientAsyncWithHttpInfo($id, $documentRecipientCreateRequest)
     {
-        $returnType = '\PandaDoc\Client\Model\InlineResponse200';
+        $returnType = '\PandaDoc\Client\Model\DocumentRecipientResponse';
         $request = $this->addDocumentRecipientRequest($id, $documentRecipientCreateRequest);
 
         return $this->client
@@ -1118,7 +1118,7 @@ class DocumentRecipientsApi
      *
      * @throws \PandaDoc\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return object|object|object|object|object|object
+     * @return \PandaDoc\Client\Model\DocumentRecipientResponse|object|object|object|object|object
      */
     public function reassignDocumentRecipient($id, $recipientId, $documentRecipientCreateRequest)
     {
@@ -1137,7 +1137,7 @@ class DocumentRecipientsApi
      *
      * @throws \PandaDoc\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of object|object|object|object|object|object, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \PandaDoc\Client\Model\DocumentRecipientResponse|object|object|object|object|object, HTTP status code, HTTP response headers (array of strings)
      */
     public function reassignDocumentRecipientWithHttpInfo($id, $recipientId, $documentRecipientCreateRequest)
     {
@@ -1180,14 +1180,14 @@ class DocumentRecipientsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('object' === '\SplFileObject') {
+                    if ('\PandaDoc\Client\Model\DocumentRecipientResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, 'object', []),
+                        ObjectSerializer::deserialize($content, '\PandaDoc\Client\Model\DocumentRecipientResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1253,7 +1253,7 @@ class DocumentRecipientsApi
                     ];
             }
 
-            $returnType = 'object';
+            $returnType = '\PandaDoc\Client\Model\DocumentRecipientResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1271,7 +1271,7 @@ class DocumentRecipientsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'object',
+                        '\PandaDoc\Client\Model\DocumentRecipientResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1357,7 +1357,7 @@ class DocumentRecipientsApi
      */
     public function reassignDocumentRecipientAsyncWithHttpInfo($id, $recipientId, $documentRecipientCreateRequest)
     {
-        $returnType = 'object';
+        $returnType = '\PandaDoc\Client\Model\DocumentRecipientResponse';
         $request = $this->reassignDocumentRecipientRequest($id, $recipientId, $documentRecipientCreateRequest);
 
         return $this->client

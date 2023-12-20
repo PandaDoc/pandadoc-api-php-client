@@ -50,6 +50,8 @@ class WebhookSubscriptionTriggerEnum
 
     const DOCUMENT_CREATION_FAILED = 'document_creation_failed';
 
+    const QUOTE_UPDATED = 'quote_updated';
+
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -62,7 +64,8 @@ class WebhookSubscriptionTriggerEnum
             self::DOCUMENT_UPDATED,
             self::DOCUMENT_DELETED,
             self::DOCUMENT_STATE_CHANGED,
-            self::DOCUMENT_CREATION_FAILED
+            self::DOCUMENT_CREATION_FAILED,
+            self::QUOTE_UPDATED
         ];
     }
 }

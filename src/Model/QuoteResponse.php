@@ -1,6 +1,6 @@
 <?php
 /**
- * PricingTablesResponseOptions
+ * QuoteResponse
  *
  * PHP version 7.3
  *
@@ -30,7 +30,7 @@ use \ArrayAccess;
 use \PandaDoc\Client\ObjectSerializer;
 
 /**
- * PricingTablesResponseOptions Class Doc Comment
+ * QuoteResponse Class Doc Comment
  *
  * @category Class
  * @package  PandaDoc\Client
@@ -40,7 +40,7 @@ use \PandaDoc\Client\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class PricingTablesResponseOptions implements ModelInterface, ArrayAccess, \JsonSerializable
+class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class PricingTablesResponseOptions implements ModelInterface, ArrayAccess, \Json
       *
       * @var string
       */
-    protected static $openAPIModelName = 'PricingTablesResponse_options';
+    protected static $openAPIModelName = 'QuoteResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,10 +57,12 @@ class PricingTablesResponseOptions implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
-        'optional' => 'bool',
-        'optionalSelected' => 'bool',
-        'multichoiceEnabled' => 'bool',
-        'multichoiceSelected' => 'bool'
+        'id' => 'string',
+        'currency' => 'string',
+        'total' => 'string',
+        'summary' => '\PandaDoc\Client\Model\QuoteResponseSummary',
+        'sections' => '\PandaDoc\Client\Model\QuoteResponseSections[]',
+        'mergeRules' => '\PandaDoc\Client\Model\QuoteResponseMergeRules[]'
     ];
 
     /**
@@ -71,10 +73,12 @@ class PricingTablesResponseOptions implements ModelInterface, ArrayAccess, \Json
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'optional' => null,
-        'optionalSelected' => null,
-        'multichoiceEnabled' => null,
-        'multichoiceSelected' => null
+        'id' => null,
+        'currency' => null,
+        'total' => null,
+        'summary' => null,
+        'sections' => null,
+        'mergeRules' => null
     ];
 
     /**
@@ -106,10 +110,12 @@ class PricingTablesResponseOptions implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $attributeMap = [
-        'optional' => 'optional',
-        'optionalSelected' => 'optional_selected',
-        'multichoiceEnabled' => 'multichoice_enabled',
-        'multichoiceSelected' => 'multichoice_selected'
+        'id' => 'id',
+        'currency' => 'currency',
+        'total' => 'total',
+        'summary' => 'summary',
+        'sections' => 'sections',
+        'mergeRules' => 'merge_rules'
     ];
 
     /**
@@ -118,10 +124,12 @@ class PricingTablesResponseOptions implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $setters = [
-        'optional' => 'setOptional',
-        'optionalSelected' => 'setOptionalSelected',
-        'multichoiceEnabled' => 'setMultichoiceEnabled',
-        'multichoiceSelected' => 'setMultichoiceSelected'
+        'id' => 'setId',
+        'currency' => 'setCurrency',
+        'total' => 'setTotal',
+        'summary' => 'setSummary',
+        'sections' => 'setSections',
+        'mergeRules' => 'setMergeRules'
     ];
 
     /**
@@ -130,10 +138,12 @@ class PricingTablesResponseOptions implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $getters = [
-        'optional' => 'getOptional',
-        'optionalSelected' => 'getOptionalSelected',
-        'multichoiceEnabled' => 'getMultichoiceEnabled',
-        'multichoiceSelected' => 'getMultichoiceSelected'
+        'id' => 'getId',
+        'currency' => 'getCurrency',
+        'total' => 'getTotal',
+        'summary' => 'getSummary',
+        'sections' => 'getSections',
+        'mergeRules' => 'getMergeRules'
     ];
 
     /**
@@ -197,10 +207,12 @@ class PricingTablesResponseOptions implements ModelInterface, ArrayAccess, \Json
      */
     public function __construct(array $data = null)
     {
-        $this->container['optional'] = $data['optional'] ?? null;
-        $this->container['optionalSelected'] = $data['optionalSelected'] ?? null;
-        $this->container['multichoiceEnabled'] = $data['multichoiceEnabled'] ?? null;
-        $this->container['multichoiceSelected'] = $data['multichoiceSelected'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['currency'] = $data['currency'] ?? null;
+        $this->container['total'] = $data['total'] ?? null;
+        $this->container['summary'] = $data['summary'] ?? null;
+        $this->container['sections'] = $data['sections'] ?? null;
+        $this->container['mergeRules'] = $data['mergeRules'] ?? null;
     }
 
     /**
@@ -230,105 +242,157 @@ class PricingTablesResponseOptions implements ModelInterface, ArrayAccess, \Json
 
 
     /**
-     * Gets optional
+     * Gets id
      *
-     * @return bool|null
+     * @return string|null
      */
     #[\ReturnTypeWillChange]
-    public function getOptional()
+    public function getId()
     {
-        return $this->container['optional'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets optional
+     * Sets id
      *
-     * @param bool|null $optional optional
+     * @param string|null $id id
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setOptional($optional)
+    public function setId($id)
     {
-        $this->container['optional'] = $optional;
+        $this->container['id'] = $id;
 
         return $this;
     }
 
     /**
-     * Gets optionalSelected
+     * Gets currency
      *
-     * @return bool|null
+     * @return string|null
      */
     #[\ReturnTypeWillChange]
-    public function getOptionalSelected()
+    public function getCurrency()
     {
-        return $this->container['optionalSelected'];
+        return $this->container['currency'];
     }
 
     /**
-     * Sets optionalSelected
+     * Sets currency
      *
-     * @param bool|null $optionalSelected optionalSelected
+     * @param string|null $currency currency
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setOptionalSelected($optionalSelected)
+    public function setCurrency($currency)
     {
-        $this->container['optionalSelected'] = $optionalSelected;
+        $this->container['currency'] = $currency;
 
         return $this;
     }
 
     /**
-     * Gets multichoiceEnabled
+     * Gets total
      *
-     * @return bool|null
+     * @return string|null
      */
     #[\ReturnTypeWillChange]
-    public function getMultichoiceEnabled()
+    public function getTotal()
     {
-        return $this->container['multichoiceEnabled'];
+        return $this->container['total'];
     }
 
     /**
-     * Sets multichoiceEnabled
+     * Sets total
      *
-     * @param bool|null $multichoiceEnabled multichoiceEnabled
+     * @param string|null $total total
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setMultichoiceEnabled($multichoiceEnabled)
+    public function setTotal($total)
     {
-        $this->container['multichoiceEnabled'] = $multichoiceEnabled;
+        $this->container['total'] = $total;
 
         return $this;
     }
 
     /**
-     * Gets multichoiceSelected
+     * Gets summary
      *
-     * @return bool|null
+     * @return \PandaDoc\Client\Model\QuoteResponseSummary|null
      */
     #[\ReturnTypeWillChange]
-    public function getMultichoiceSelected()
+    public function getSummary()
     {
-        return $this->container['multichoiceSelected'];
+        return $this->container['summary'];
     }
 
     /**
-     * Sets multichoiceSelected
+     * Sets summary
      *
-     * @param bool|null $multichoiceSelected multichoiceSelected
+     * @param \PandaDoc\Client\Model\QuoteResponseSummary|null $summary summary
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setMultichoiceSelected($multichoiceSelected)
+    public function setSummary($summary)
     {
-        $this->container['multichoiceSelected'] = $multichoiceSelected;
+        $this->container['summary'] = $summary;
+
+        return $this;
+    }
+
+    /**
+     * Gets sections
+     *
+     * @return \PandaDoc\Client\Model\QuoteResponseSections[]|null
+     */
+    #[\ReturnTypeWillChange]
+    public function getSections()
+    {
+        return $this->container['sections'];
+    }
+
+    /**
+     * Sets sections
+     *
+     * @param \PandaDoc\Client\Model\QuoteResponseSections[]|null $sections sections
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setSections($sections)
+    {
+        $this->container['sections'] = $sections;
+
+        return $this;
+    }
+
+    /**
+     * Gets mergeRules
+     *
+     * @return \PandaDoc\Client\Model\QuoteResponseMergeRules[]|null
+     */
+    #[\ReturnTypeWillChange]
+    public function getMergeRules()
+    {
+        return $this->container['mergeRules'];
+    }
+
+    /**
+     * Sets mergeRules
+     *
+     * @param \PandaDoc\Client\Model\QuoteResponseMergeRules[]|null $mergeRules mergeRules
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setMergeRules($mergeRules)
+    {
+        $this->container['mergeRules'] = $mergeRules;
 
         return $this;
     }

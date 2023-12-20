@@ -58,6 +58,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       */
     protected static $openAPITypes = [
         'name' => 'string',
+        'detectTitleVariables' => 'bool',
         'templateUuid' => 'string',
         'folderUuid' => 'string',
         'owner' => 'array<string,string>',
@@ -82,6 +83,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       */
     protected static $openAPIFormats = [
         'name' => null,
+        'detectTitleVariables' => null,
         'templateUuid' => null,
         'folderUuid' => null,
         'owner' => null,
@@ -127,6 +129,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     protected static $attributeMap = [
         'name' => 'name',
+        'detectTitleVariables' => 'detect_title_variables',
         'templateUuid' => 'template_uuid',
         'folderUuid' => 'folder_uuid',
         'owner' => 'owner',
@@ -149,6 +152,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     protected static $setters = [
         'name' => 'setName',
+        'detectTitleVariables' => 'setDetectTitleVariables',
         'templateUuid' => 'setTemplateUuid',
         'folderUuid' => 'setFolderUuid',
         'owner' => 'setOwner',
@@ -171,6 +175,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     protected static $getters = [
         'name' => 'getName',
+        'detectTitleVariables' => 'getDetectTitleVariables',
         'templateUuid' => 'getTemplateUuid',
         'folderUuid' => 'getFolderUuid',
         'owner' => 'getOwner',
@@ -248,6 +253,7 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     public function __construct(array $data = null)
     {
         $this->container['name'] = $data['name'] ?? null;
+        $this->container['detectTitleVariables'] = $data['detectTitleVariables'] ?? null;
         $this->container['templateUuid'] = $data['templateUuid'] ?? null;
         $this->container['folderUuid'] = $data['folderUuid'] ?? null;
         $this->container['owner'] = $data['owner'] ?? null;
@@ -311,6 +317,32 @@ class DocumentCreateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setName($name)
     {
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets detectTitleVariables
+     *
+     * @return bool|null
+     */
+    #[\ReturnTypeWillChange]
+    public function getDetectTitleVariables()
+    {
+        return $this->container['detectTitleVariables'];
+    }
+
+    /**
+     * Sets detectTitleVariables
+     *
+     * @param bool|null $detectTitleVariables Set this parameter as true if you want to detect title variables in the document.
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setDetectTitleVariables($detectTitleVariables)
+    {
+        $this->container['detectTitleVariables'] = $detectTitleVariables;
 
         return $this;
     }

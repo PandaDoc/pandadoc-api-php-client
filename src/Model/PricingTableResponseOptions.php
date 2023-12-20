@@ -1,6 +1,6 @@
 <?php
 /**
- * DocumentUpdateRequest
+ * PricingTableResponseOptions
  *
  * PHP version 7.3
  *
@@ -30,7 +30,7 @@ use \ArrayAccess;
 use \PandaDoc\Client\ObjectSerializer;
 
 /**
- * DocumentUpdateRequest Class Doc Comment
+ * PricingTableResponseOptions Class Doc Comment
  *
  * @category Class
  * @package  PandaDoc\Client
@@ -40,7 +40,7 @@ use \PandaDoc\Client\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class DocumentUpdateRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class PricingTableResponseOptions implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class DocumentUpdateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       *
       * @var string
       */
-    protected static $openAPIModelName = 'DocumentUpdateRequest';
+    protected static $openAPIModelName = 'PricingTableResponse_options';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,12 +57,10 @@ class DocumentUpdateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'name' => 'string',
-        'recipients' => '\PandaDoc\Client\Model\DocumentUpdateRequestRecipients[]',
-        'fields' => 'object',
-        'tokens' => '\PandaDoc\Client\Model\DocumentCreateByTemplateRequestTokens[]',
-        'metadata' => 'object',
-        'pricingTables' => '\PandaDoc\Client\Model\PricingTableRequest[]'
+        'optional' => 'bool',
+        'optionalSelected' => 'bool',
+        'multichoiceEnabled' => 'bool',
+        'multichoiceSelected' => 'bool'
     ];
 
     /**
@@ -73,12 +71,10 @@ class DocumentUpdateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'name' => null,
-        'recipients' => null,
-        'fields' => null,
-        'tokens' => null,
-        'metadata' => null,
-        'pricingTables' => null
+        'optional' => null,
+        'optionalSelected' => null,
+        'multichoiceEnabled' => null,
+        'multichoiceSelected' => null
     ];
 
     /**
@@ -110,12 +106,10 @@ class DocumentUpdateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
-        'recipients' => 'recipients',
-        'fields' => 'fields',
-        'tokens' => 'tokens',
-        'metadata' => 'metadata',
-        'pricingTables' => 'pricing_tables'
+        'optional' => 'optional',
+        'optionalSelected' => 'optional_selected',
+        'multichoiceEnabled' => 'multichoice_enabled',
+        'multichoiceSelected' => 'multichoice_selected'
     ];
 
     /**
@@ -124,12 +118,10 @@ class DocumentUpdateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'recipients' => 'setRecipients',
-        'fields' => 'setFields',
-        'tokens' => 'setTokens',
-        'metadata' => 'setMetadata',
-        'pricingTables' => 'setPricingTables'
+        'optional' => 'setOptional',
+        'optionalSelected' => 'setOptionalSelected',
+        'multichoiceEnabled' => 'setMultichoiceEnabled',
+        'multichoiceSelected' => 'setMultichoiceSelected'
     ];
 
     /**
@@ -138,12 +130,10 @@ class DocumentUpdateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'recipients' => 'getRecipients',
-        'fields' => 'getFields',
-        'tokens' => 'getTokens',
-        'metadata' => 'getMetadata',
-        'pricingTables' => 'getPricingTables'
+        'optional' => 'getOptional',
+        'optionalSelected' => 'getOptionalSelected',
+        'multichoiceEnabled' => 'getMultichoiceEnabled',
+        'multichoiceSelected' => 'getMultichoiceSelected'
     ];
 
     /**
@@ -207,12 +197,10 @@ class DocumentUpdateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = $data['name'] ?? null;
-        $this->container['recipients'] = $data['recipients'] ?? null;
-        $this->container['fields'] = $data['fields'] ?? null;
-        $this->container['tokens'] = $data['tokens'] ?? null;
-        $this->container['metadata'] = $data['metadata'] ?? null;
-        $this->container['pricingTables'] = $data['pricingTables'] ?? null;
+        $this->container['optional'] = $data['optional'] ?? null;
+        $this->container['optionalSelected'] = $data['optionalSelected'] ?? null;
+        $this->container['multichoiceEnabled'] = $data['multichoiceEnabled'] ?? null;
+        $this->container['multichoiceSelected'] = $data['multichoiceSelected'] ?? null;
     }
 
     /**
@@ -242,157 +230,105 @@ class DocumentUpdateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
 
 
     /**
-     * Gets name
+     * Gets optional
      *
-     * @return string|null
+     * @return bool|null
      */
     #[\ReturnTypeWillChange]
-    public function getName()
+    public function getOptional()
     {
-        return $this->container['name'];
+        return $this->container['optional'];
     }
 
     /**
-     * Sets name
+     * Sets optional
      *
-     * @param string|null $name The name of the document.
+     * @param bool|null $optional optional
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setName($name)
+    public function setOptional($optional)
     {
-        $this->container['name'] = $name;
+        $this->container['optional'] = $optional;
 
         return $this;
     }
 
     /**
-     * Gets recipients
+     * Gets optionalSelected
      *
-     * @return \PandaDoc\Client\Model\DocumentUpdateRequestRecipients[]|null
+     * @return bool|null
      */
     #[\ReturnTypeWillChange]
-    public function getRecipients()
+    public function getOptionalSelected()
     {
-        return $this->container['recipients'];
+        return $this->container['optionalSelected'];
     }
 
     /**
-     * Sets recipients
+     * Sets optionalSelected
      *
-     * @param \PandaDoc\Client\Model\DocumentUpdateRequestRecipients[]|null $recipients The list of recipients you're sending the document to. The ID or email are required. If the ID is passed, an existing recipient will be updated. If the email is passed, a new recipient will be added to CC.
+     * @param bool|null $optionalSelected optionalSelected
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setRecipients($recipients)
+    public function setOptionalSelected($optionalSelected)
     {
-        $this->container['recipients'] = $recipients;
+        $this->container['optionalSelected'] = $optionalSelected;
 
         return $this;
     }
 
     /**
-     * Gets fields
+     * Gets multichoiceEnabled
      *
-     * @return object|null
+     * @return bool|null
      */
     #[\ReturnTypeWillChange]
-    public function getFields()
+    public function getMultichoiceEnabled()
     {
-        return $this->container['fields'];
+        return $this->container['multichoiceEnabled'];
     }
 
     /**
-     * Sets fields
+     * Sets multichoiceEnabled
      *
-     * @param object|null $fields You may pass a list of fields/values which exist in a document. Please use `Merge Field` property of the fields like the key.
+     * @param bool|null $multichoiceEnabled multichoiceEnabled
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setFields($fields)
+    public function setMultichoiceEnabled($multichoiceEnabled)
     {
-        $this->container['fields'] = $fields;
+        $this->container['multichoiceEnabled'] = $multichoiceEnabled;
 
         return $this;
     }
 
     /**
-     * Gets tokens
+     * Gets multichoiceSelected
      *
-     * @return \PandaDoc\Client\Model\DocumentCreateByTemplateRequestTokens[]|null
+     * @return bool|null
      */
     #[\ReturnTypeWillChange]
-    public function getTokens()
+    public function getMultichoiceSelected()
     {
-        return $this->container['tokens'];
+        return $this->container['multichoiceSelected'];
     }
 
     /**
-     * Sets tokens
+     * Sets multichoiceSelected
      *
-     * @param \PandaDoc\Client\Model\DocumentCreateByTemplateRequestTokens[]|null $tokens You can pass a list of tokens/values. If a token name exists in a document then the value will be updated. Otherwise, a new token will be added to the document.
+     * @param bool|null $multichoiceSelected multichoiceSelected
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setTokens($tokens)
+    public function setMultichoiceSelected($multichoiceSelected)
     {
-        $this->container['tokens'] = $tokens;
-
-        return $this;
-    }
-
-    /**
-     * Gets metadata
-     *
-     * @return object|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getMetadata()
-    {
-        return $this->container['metadata'];
-    }
-
-    /**
-     * Sets metadata
-     *
-     * @param object|null $metadata You can pass arbitrary data in the key-value format to associate custom information with a document. This information is returned in any API requests for the document details by id. If metadata exists in a document then the value will be updated. Otherwise, metadata will be added to the document.
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setMetadata($metadata)
-    {
-        $this->container['metadata'] = $metadata;
-
-        return $this;
-    }
-
-    /**
-     * Gets pricingTables
-     *
-     * @return \PandaDoc\Client\Model\PricingTableRequest[]|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getPricingTables()
-    {
-        return $this->container['pricingTables'];
-    }
-
-    /**
-     * Sets pricingTables
-     *
-     * @param \PandaDoc\Client\Model\PricingTableRequest[]|null $pricingTables pricingTables
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setPricingTables($pricingTables)
-    {
-        $this->container['pricingTables'] = $pricingTables;
+        $this->container['multichoiceSelected'] = $multichoiceSelected;
 
         return $this;
     }

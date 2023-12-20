@@ -1083,14 +1083,15 @@ class ContactsApi
      *
      * List contacts
      *
+     * @param  string $email Optional search parameter. Filter results by exact match. (optional)
      *
      * @throws \PandaDoc\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \PandaDoc\Client\Model\ContactListResponse|object|object|object|object
      */
-    public function listContacts()
+    public function listContacts($email = null)
     {
-        list($response) = $this->listContactsWithHttpInfo();
+        list($response) = $this->listContactsWithHttpInfo($email);
         return $response;
     }
 
@@ -1099,14 +1100,15 @@ class ContactsApi
      *
      * List contacts
      *
+     * @param  string $email Optional search parameter. Filter results by exact match. (optional)
      *
      * @throws \PandaDoc\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \PandaDoc\Client\Model\ContactListResponse|object|object|object|object, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listContactsWithHttpInfo()
+    public function listContactsWithHttpInfo($email = null)
     {
-        $request = $this->listContactsRequest();
+        $request = $this->listContactsRequest($email);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1271,13 +1273,14 @@ class ContactsApi
      *
      * List contacts
      *
+     * @param  string $email Optional search parameter. Filter results by exact match. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listContactsAsync()
+    public function listContactsAsync($email = null)
     {
-        return $this->listContactsAsyncWithHttpInfo()
+        return $this->listContactsAsyncWithHttpInfo($email)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1290,14 +1293,15 @@ class ContactsApi
      *
      * List contacts
      *
+     * @param  string $email Optional search parameter. Filter results by exact match. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listContactsAsyncWithHttpInfo()
+    public function listContactsAsyncWithHttpInfo($email = null)
     {
         $returnType = '\PandaDoc\Client\Model\ContactListResponse';
-        $request = $this->listContactsRequest();
+        $request = $this->listContactsRequest($email);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1335,11 +1339,12 @@ class ContactsApi
     /**
      * Create request for operation 'listContacts'
      *
+     * @param  string $email Optional search parameter. Filter results by exact match. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listContactsRequest()
+    public function listContactsRequest($email = null)
     {
 
         $resourcePath = '/public/v1/contacts';
@@ -1349,6 +1354,17 @@ class ContactsApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($email !== null) {
+            if('form' === 'form' && is_array($email)) {
+                foreach($email as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['email'] = $email;
+            }
+        }
 
 
 
