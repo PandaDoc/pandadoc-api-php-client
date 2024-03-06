@@ -1,6 +1,6 @@
 <?php
 /**
- * QuoteResponse
+ * UploadSectionByPdfRequest
  *
  * PHP version 7.3
  *
@@ -30,7 +30,7 @@ use \ArrayAccess;
 use \PandaDoc\Client\ObjectSerializer;
 
 /**
- * QuoteResponse Class Doc Comment
+ * UploadSectionByPdfRequest Class Doc Comment
  *
  * @category Class
  * @package  PandaDoc\Client
@@ -40,7 +40,7 @@ use \PandaDoc\Client\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
+class UploadSectionByPdfRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'QuoteResponse';
+    protected static $openAPIModelName = 'UploadSectionByPdfRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,13 +57,12 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'string',
-        'currency' => 'string',
-        'total' => 'string',
-        'summary' => '\PandaDoc\Client\Model\QuoteResponseSummary',
-        'sections' => '\PandaDoc\Client\Model\QuoteResponseSections[]',
-        'mergeRules' => '\PandaDoc\Client\Model\QuoteResponseMergeRules[]',
-        'settings' => '\PandaDoc\Client\Model\QuoteResponseSettings'
+        'url' => 'string',
+        'recipients' => '\PandaDoc\Client\Model\DocumentCreateByTemplateRequestRecipients[]',
+        'parseFormFields' => 'bool',
+        'name' => 'string',
+        'tags' => 'string[]',
+        'fields' => 'object'
     ];
 
     /**
@@ -74,13 +73,12 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'currency' => null,
-        'total' => null,
-        'summary' => null,
-        'sections' => null,
-        'mergeRules' => null,
-        'settings' => null
+        'url' => null,
+        'recipients' => null,
+        'parseFormFields' => null,
+        'name' => null,
+        'tags' => null,
+        'fields' => null
     ];
 
     /**
@@ -112,13 +110,12 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'currency' => 'currency',
-        'total' => 'total',
-        'summary' => 'summary',
-        'sections' => 'sections',
-        'mergeRules' => 'merge_rules',
-        'settings' => 'settings'
+        'url' => 'url',
+        'recipients' => 'recipients',
+        'parseFormFields' => 'parse_form_fields',
+        'name' => 'name',
+        'tags' => 'tags',
+        'fields' => 'fields'
     ];
 
     /**
@@ -127,13 +124,12 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'currency' => 'setCurrency',
-        'total' => 'setTotal',
-        'summary' => 'setSummary',
-        'sections' => 'setSections',
-        'mergeRules' => 'setMergeRules',
-        'settings' => 'setSettings'
+        'url' => 'setUrl',
+        'recipients' => 'setRecipients',
+        'parseFormFields' => 'setParseFormFields',
+        'name' => 'setName',
+        'tags' => 'setTags',
+        'fields' => 'setFields'
     ];
 
     /**
@@ -142,13 +138,12 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'currency' => 'getCurrency',
-        'total' => 'getTotal',
-        'summary' => 'getSummary',
-        'sections' => 'getSections',
-        'mergeRules' => 'getMergeRules',
-        'settings' => 'getSettings'
+        'url' => 'getUrl',
+        'recipients' => 'getRecipients',
+        'parseFormFields' => 'getParseFormFields',
+        'name' => 'getName',
+        'tags' => 'getTags',
+        'fields' => 'getFields'
     ];
 
     /**
@@ -212,13 +207,12 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['currency'] = $data['currency'] ?? null;
-        $this->container['total'] = $data['total'] ?? null;
-        $this->container['summary'] = $data['summary'] ?? null;
-        $this->container['sections'] = $data['sections'] ?? null;
-        $this->container['mergeRules'] = $data['mergeRules'] ?? null;
-        $this->container['settings'] = $data['settings'] ?? null;
+        $this->container['url'] = $data['url'] ?? null;
+        $this->container['recipients'] = $data['recipients'] ?? null;
+        $this->container['parseFormFields'] = $data['parseFormFields'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['tags'] = $data['tags'] ?? null;
+        $this->container['fields'] = $data['fields'] ?? null;
     }
 
     /**
@@ -231,6 +225,12 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+        if ($this->container['url'] === null) {
+            $invalidProperties[] = "'url' can't be null";
+        }
+        if ($this->container['recipients'] === null) {
+            $invalidProperties[] = "'recipients' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -248,183 +248,157 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets id
+     * Gets url
+     *
+     * @return string
+     */
+    #[\ReturnTypeWillChange]
+    public function getUrl()
+    {
+        return $this->container['url'];
+    }
+
+    /**
+     * Sets url
+     *
+     * @param string $url Use a URL to specify the PDF. We support only URLs starting with https.
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setUrl($url)
+    {
+        $this->container['url'] = $url;
+
+        return $this;
+    }
+
+    /**
+     * Gets recipients
+     *
+     * @return \PandaDoc\Client\Model\DocumentCreateByTemplateRequestRecipients[]
+     */
+    #[\ReturnTypeWillChange]
+    public function getRecipients()
+    {
+        return $this->container['recipients'];
+    }
+
+    /**
+     * Sets recipients
+     *
+     * @param \PandaDoc\Client\Model\DocumentCreateByTemplateRequestRecipients[] $recipients The list of recipients you're sending the document to. Every object must contain the email parameter. The `role`, `first_name` and `last_name` parameters are optional. If the `role` parameter passed, a person is assigned all fields matching their corresponding role. If not passed, a person will receive a read-only link to view the document. If the `first_name` and `last_name` not passed the system 1. creates a new contact, if none exists with the given `email`; or 2. gets the existing contact with the given `email` that already exists.
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setRecipients($recipients)
+    {
+        $this->container['recipients'] = $recipients;
+
+        return $this;
+    }
+
+    /**
+     * Gets parseFormFields
+     *
+     * @return bool|null
+     */
+    #[\ReturnTypeWillChange]
+    public function getParseFormFields()
+    {
+        return $this->container['parseFormFields'];
+    }
+
+    /**
+     * Sets parseFormFields
+     *
+     * @param bool|null $parseFormFields Set this parameter as `true` if you create a document from a PDF with form fields and as `false` if you upload a PDF with field tags.
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setParseFormFields($parseFormFields)
+    {
+        $this->container['parseFormFields'] = $parseFormFields;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
      *
      * @return string|null
      */
     #[\ReturnTypeWillChange]
-    public function getId()
+    public function getName()
     {
-        return $this->container['id'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets id
+     * Sets name
      *
-     * @param string|null $id id
+     * @param string|null $name name
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setId($id)
+    public function setName($name)
     {
-        $this->container['id'] = $id;
+        $this->container['name'] = $name;
 
         return $this;
     }
 
     /**
-     * Gets currency
+     * Gets tags
      *
-     * @return string|null
+     * @return string[]|null
      */
     #[\ReturnTypeWillChange]
-    public function getCurrency()
+    public function getTags()
     {
-        return $this->container['currency'];
+        return $this->container['tags'];
     }
 
     /**
-     * Sets currency
+     * Sets tags
      *
-     * @param string|null $currency currency
+     * @param string[]|null $tags Mark your document with one or several tags.
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setCurrency($currency)
+    public function setTags($tags)
     {
-        $this->container['currency'] = $currency;
+        $this->container['tags'] = $tags;
 
         return $this;
     }
 
     /**
-     * Gets total
+     * Gets fields
      *
-     * @return string|null
+     * @return object|null
      */
     #[\ReturnTypeWillChange]
-    public function getTotal()
+    public function getFields()
     {
-        return $this->container['total'];
+        return $this->container['fields'];
     }
 
     /**
-     * Sets total
+     * Sets fields
      *
-     * @param string|null $total total
+     * @param object|null $fields If you are upload a section from a PDF with field tags, you can pass a list of the fields you'd like to pre-fill in the document. If you are upload a section from a PDF with form fields, list all the fields and provide the `role` parameter so that the fields are assigned to document recipients. You can provide empty value for the field so that it's not pre-filled: \"value\": \"\".
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setTotal($total)
+    public function setFields($fields)
     {
-        $this->container['total'] = $total;
-
-        return $this;
-    }
-
-    /**
-     * Gets summary
-     *
-     * @return \PandaDoc\Client\Model\QuoteResponseSummary|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getSummary()
-    {
-        return $this->container['summary'];
-    }
-
-    /**
-     * Sets summary
-     *
-     * @param \PandaDoc\Client\Model\QuoteResponseSummary|null $summary summary
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setSummary($summary)
-    {
-        $this->container['summary'] = $summary;
-
-        return $this;
-    }
-
-    /**
-     * Gets sections
-     *
-     * @return \PandaDoc\Client\Model\QuoteResponseSections[]|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getSections()
-    {
-        return $this->container['sections'];
-    }
-
-    /**
-     * Sets sections
-     *
-     * @param \PandaDoc\Client\Model\QuoteResponseSections[]|null $sections sections
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setSections($sections)
-    {
-        $this->container['sections'] = $sections;
-
-        return $this;
-    }
-
-    /**
-     * Gets mergeRules
-     *
-     * @return \PandaDoc\Client\Model\QuoteResponseMergeRules[]|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getMergeRules()
-    {
-        return $this->container['mergeRules'];
-    }
-
-    /**
-     * Sets mergeRules
-     *
-     * @param \PandaDoc\Client\Model\QuoteResponseMergeRules[]|null $mergeRules mergeRules
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setMergeRules($mergeRules)
-    {
-        $this->container['mergeRules'] = $mergeRules;
-
-        return $this;
-    }
-
-    /**
-     * Gets settings
-     *
-     * @return \PandaDoc\Client\Model\QuoteResponseSettings|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getSettings()
-    {
-        return $this->container['settings'];
-    }
-
-    /**
-     * Sets settings
-     *
-     * @param \PandaDoc\Client\Model\QuoteResponseSettings|null $settings settings
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setSettings($settings)
-    {
-        $this->container['settings'] = $settings;
+        $this->container['fields'] = $fields;
 
         return $this;
     }

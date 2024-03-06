@@ -1,6 +1,6 @@
 <?php
 /**
- * QuoteResponse
+ * RecipientVerificationSettingsPhoneVerification
  *
  * PHP version 7.3
  *
@@ -30,7 +30,7 @@ use \ArrayAccess;
 use \PandaDoc\Client\ObjectSerializer;
 
 /**
- * QuoteResponse Class Doc Comment
+ * RecipientVerificationSettingsPhoneVerification Class Doc Comment
  *
  * @category Class
  * @package  PandaDoc\Client
@@ -40,7 +40,7 @@ use \PandaDoc\Client\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
+class RecipientVerificationSettingsPhoneVerification implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'QuoteResponse';
+    protected static $openAPIModelName = 'RecipientVerificationSettings_phone_verification';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,13 +57,7 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'string',
-        'currency' => 'string',
-        'total' => 'string',
-        'summary' => '\PandaDoc\Client\Model\QuoteResponseSummary',
-        'sections' => '\PandaDoc\Client\Model\QuoteResponseSections[]',
-        'mergeRules' => '\PandaDoc\Client\Model\QuoteResponseMergeRules[]',
-        'settings' => '\PandaDoc\Client\Model\QuoteResponseSettings'
+        'phoneNumber' => 'string'
     ];
 
     /**
@@ -74,13 +68,7 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'currency' => null,
-        'total' => null,
-        'summary' => null,
-        'sections' => null,
-        'mergeRules' => null,
-        'settings' => null
+        'phoneNumber' => null
     ];
 
     /**
@@ -112,13 +100,7 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'currency' => 'currency',
-        'total' => 'total',
-        'summary' => 'summary',
-        'sections' => 'sections',
-        'mergeRules' => 'merge_rules',
-        'settings' => 'settings'
+        'phoneNumber' => 'phone_number'
     ];
 
     /**
@@ -127,13 +109,7 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'currency' => 'setCurrency',
-        'total' => 'setTotal',
-        'summary' => 'setSummary',
-        'sections' => 'setSections',
-        'mergeRules' => 'setMergeRules',
-        'settings' => 'setSettings'
+        'phoneNumber' => 'setPhoneNumber'
     ];
 
     /**
@@ -142,13 +118,7 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'currency' => 'getCurrency',
-        'total' => 'getTotal',
-        'summary' => 'getSummary',
-        'sections' => 'getSections',
-        'mergeRules' => 'getMergeRules',
-        'settings' => 'getSettings'
+        'phoneNumber' => 'getPhoneNumber'
     ];
 
     /**
@@ -212,13 +182,7 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['currency'] = $data['currency'] ?? null;
-        $this->container['total'] = $data['total'] ?? null;
-        $this->container['summary'] = $data['summary'] ?? null;
-        $this->container['sections'] = $data['sections'] ?? null;
-        $this->container['mergeRules'] = $data['mergeRules'] ?? null;
-        $this->container['settings'] = $data['settings'] ?? null;
+        $this->container['phoneNumber'] = $data['phoneNumber'] ?? null;
     }
 
     /**
@@ -230,6 +194,13 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        if ($this->container['phoneNumber'] === null) {
+            $invalidProperties[] = "'phoneNumber' can't be null";
+        }
+        if (!preg_match("/^\\+[1-9]\\d{0,4}\\d{2,14}$/", $this->container['phoneNumber'])) {
+            $invalidProperties[] = "invalid value for 'phoneNumber', must be conform to the pattern /^\\+[1-9]\\d{0,4}\\d{2,14}$/.";
+        }
 
         return $invalidProperties;
     }
@@ -248,183 +219,32 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets id
+     * Gets phoneNumber
      *
-     * @return string|null
+     * @return string
      */
     #[\ReturnTypeWillChange]
-    public function getId()
+    public function getPhoneNumber()
     {
-        return $this->container['id'];
+        return $this->container['phoneNumber'];
     }
 
     /**
-     * Sets id
+     * Sets phoneNumber
      *
-     * @param string|null $id id
+     * @param string $phoneNumber phoneNumber
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setId($id)
+    public function setPhoneNumber($phoneNumber)
     {
-        $this->container['id'] = $id;
 
-        return $this;
-    }
+        if ((!preg_match("/^\\+[1-9]\\d{0,4}\\d{2,14}$/", $phoneNumber))) {
+            throw new \InvalidArgumentException("invalid value for $phoneNumber when calling RecipientVerificationSettingsPhoneVerification., must conform to the pattern /^\\+[1-9]\\d{0,4}\\d{2,14}$/.");
+        }
 
-    /**
-     * Gets currency
-     *
-     * @return string|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getCurrency()
-    {
-        return $this->container['currency'];
-    }
-
-    /**
-     * Sets currency
-     *
-     * @param string|null $currency currency
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setCurrency($currency)
-    {
-        $this->container['currency'] = $currency;
-
-        return $this;
-    }
-
-    /**
-     * Gets total
-     *
-     * @return string|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getTotal()
-    {
-        return $this->container['total'];
-    }
-
-    /**
-     * Sets total
-     *
-     * @param string|null $total total
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setTotal($total)
-    {
-        $this->container['total'] = $total;
-
-        return $this;
-    }
-
-    /**
-     * Gets summary
-     *
-     * @return \PandaDoc\Client\Model\QuoteResponseSummary|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getSummary()
-    {
-        return $this->container['summary'];
-    }
-
-    /**
-     * Sets summary
-     *
-     * @param \PandaDoc\Client\Model\QuoteResponseSummary|null $summary summary
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setSummary($summary)
-    {
-        $this->container['summary'] = $summary;
-
-        return $this;
-    }
-
-    /**
-     * Gets sections
-     *
-     * @return \PandaDoc\Client\Model\QuoteResponseSections[]|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getSections()
-    {
-        return $this->container['sections'];
-    }
-
-    /**
-     * Sets sections
-     *
-     * @param \PandaDoc\Client\Model\QuoteResponseSections[]|null $sections sections
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setSections($sections)
-    {
-        $this->container['sections'] = $sections;
-
-        return $this;
-    }
-
-    /**
-     * Gets mergeRules
-     *
-     * @return \PandaDoc\Client\Model\QuoteResponseMergeRules[]|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getMergeRules()
-    {
-        return $this->container['mergeRules'];
-    }
-
-    /**
-     * Sets mergeRules
-     *
-     * @param \PandaDoc\Client\Model\QuoteResponseMergeRules[]|null $mergeRules mergeRules
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setMergeRules($mergeRules)
-    {
-        $this->container['mergeRules'] = $mergeRules;
-
-        return $this;
-    }
-
-    /**
-     * Gets settings
-     *
-     * @return \PandaDoc\Client\Model\QuoteResponseSettings|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getSettings()
-    {
-        return $this->container['settings'];
-    }
-
-    /**
-     * Sets settings
-     *
-     * @param \PandaDoc\Client\Model\QuoteResponseSettings|null $settings settings
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setSettings($settings)
-    {
-        $this->container['settings'] = $settings;
+        $this->container['phoneNumber'] = $phoneNumber;
 
         return $this;
     }

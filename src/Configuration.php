@@ -88,7 +88,7 @@ class Configuration
      *
      * @var string
      */
-    protected $userAgent = 'pandadoc_php_client/6.0.0';
+    protected $userAgent = 'pandadoc_php_client/6.1.0';
 
     /**
      * Debug switch (default set to false)
@@ -420,7 +420,7 @@ class Configuration
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
         $report .= '    The version of the OpenAPI document: 6.0.0' . PHP_EOL;
-        $report .= '    SDK Package Version: 6.0.0' . PHP_EOL;
+        $report .= '    SDK Package Version: 6.1.0' . PHP_EOL;
         $report .= '    Temp Folder Path: ' . self::getDefaultConfiguration()->getTempFolderPath() . PHP_EOL;
 
         return $report;

@@ -52,6 +52,10 @@ class WebhookEventTriggerEnum
 
     const QUOTE_UPDATED = 'quote_updated';
 
+    const TEMPLATE_CREATED = 'template_created';
+
+    const TEMPLATE_MODIFIED = 'template_modified';
+
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -65,7 +69,9 @@ class WebhookEventTriggerEnum
             self::DOCUMENT_DELETED,
             self::DOCUMENT_STATE_CHANGED,
             self::DOCUMENT_CREATION_FAILED,
-            self::QUOTE_UPDATED
+            self::QUOTE_UPDATED,
+            self::TEMPLATE_CREATED,
+            self::TEMPLATE_MODIFIED
         ];
     }
 }

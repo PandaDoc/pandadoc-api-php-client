@@ -1,6 +1,6 @@
 <?php
 /**
- * QuoteResponse
+ * UpdateIntegrationQuoteSection
  *
  * PHP version 7.3
  *
@@ -30,7 +30,7 @@ use \ArrayAccess;
 use \PandaDoc\Client\ObjectSerializer;
 
 /**
- * QuoteResponse Class Doc Comment
+ * UpdateIntegrationQuoteSection Class Doc Comment
  *
  * @category Class
  * @package  PandaDoc\Client
@@ -40,7 +40,7 @@ use \PandaDoc\Client\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
+class UpdateIntegrationQuoteSection implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'QuoteResponse';
+    protected static $openAPIModelName = 'UpdateIntegrationQuoteSection';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,12 +58,9 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'currency' => 'string',
-        'total' => 'string',
-        'summary' => '\PandaDoc\Client\Model\QuoteResponseSummary',
-        'sections' => '\PandaDoc\Client\Model\QuoteResponseSections[]',
-        'mergeRules' => '\PandaDoc\Client\Model\QuoteResponseMergeRules[]',
-        'settings' => '\PandaDoc\Client\Model\QuoteResponseSettings'
+        'name' => 'string',
+        'items' => '\PandaDoc\Client\Model\UpdateIntegrationQuoteSectionItem[]',
+        'settings' => '\PandaDoc\Client\Model\QuoteUpdateRequestSettings'
     ];
 
     /**
@@ -74,12 +71,9 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'currency' => null,
-        'total' => null,
-        'summary' => null,
-        'sections' => null,
-        'mergeRules' => null,
+        'id' => 'uuid',
+        'name' => null,
+        'items' => null,
         'settings' => null
     ];
 
@@ -113,11 +107,8 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'currency' => 'currency',
-        'total' => 'total',
-        'summary' => 'summary',
-        'sections' => 'sections',
-        'mergeRules' => 'merge_rules',
+        'name' => 'name',
+        'items' => 'items',
         'settings' => 'settings'
     ];
 
@@ -128,11 +119,8 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'id' => 'setId',
-        'currency' => 'setCurrency',
-        'total' => 'setTotal',
-        'summary' => 'setSummary',
-        'sections' => 'setSections',
-        'mergeRules' => 'setMergeRules',
+        'name' => 'setName',
+        'items' => 'setItems',
         'settings' => 'setSettings'
     ];
 
@@ -143,11 +131,8 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'id' => 'getId',
-        'currency' => 'getCurrency',
-        'total' => 'getTotal',
-        'summary' => 'getSummary',
-        'sections' => 'getSections',
-        'mergeRules' => 'getMergeRules',
+        'name' => 'getName',
+        'items' => 'getItems',
         'settings' => 'getSettings'
     ];
 
@@ -213,11 +198,8 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(array $data = null)
     {
         $this->container['id'] = $data['id'] ?? null;
-        $this->container['currency'] = $data['currency'] ?? null;
-        $this->container['total'] = $data['total'] ?? null;
-        $this->container['summary'] = $data['summary'] ?? null;
-        $this->container['sections'] = $data['sections'] ?? null;
-        $this->container['mergeRules'] = $data['mergeRules'] ?? null;
+        $this->container['name'] = $data['name'] ?? 'Section name';
+        $this->container['items'] = $data['items'] ?? null;
         $this->container['settings'] = $data['settings'] ?? null;
     }
 
@@ -261,7 +243,7 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets id
      *
-     * @param string|null $id id
+     * @param string|null $id Section ID to update. Invalid (or missing) ID causes creating a new section.
      *
      * @return self
      */
@@ -274,131 +256,53 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets currency
+     * Gets name
      *
      * @return string|null
      */
     #[\ReturnTypeWillChange]
-    public function getCurrency()
+    public function getName()
     {
-        return $this->container['currency'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets currency
+     * Sets name
      *
-     * @param string|null $currency currency
+     * @param string|null $name Name of the quotes section. If you create a section without providing a value, it will have the default value.
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setCurrency($currency)
+    public function setName($name)
     {
-        $this->container['currency'] = $currency;
+        $this->container['name'] = $name;
 
         return $this;
     }
 
     /**
-     * Gets total
+     * Gets items
      *
-     * @return string|null
+     * @return \PandaDoc\Client\Model\UpdateIntegrationQuoteSectionItem[]|null
      */
     #[\ReturnTypeWillChange]
-    public function getTotal()
+    public function getItems()
     {
-        return $this->container['total'];
+        return $this->container['items'];
     }
 
     /**
-     * Sets total
+     * Sets items
      *
-     * @param string|null $total total
+     * @param \PandaDoc\Client\Model\UpdateIntegrationQuoteSectionItem[]|null $items Section items - this property overrides the existing items in the order specified. If you want to change only one item, you must still pass other items IDs. Otherwise these items will be removed.
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setTotal($total)
+    public function setItems($items)
     {
-        $this->container['total'] = $total;
-
-        return $this;
-    }
-
-    /**
-     * Gets summary
-     *
-     * @return \PandaDoc\Client\Model\QuoteResponseSummary|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getSummary()
-    {
-        return $this->container['summary'];
-    }
-
-    /**
-     * Sets summary
-     *
-     * @param \PandaDoc\Client\Model\QuoteResponseSummary|null $summary summary
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setSummary($summary)
-    {
-        $this->container['summary'] = $summary;
-
-        return $this;
-    }
-
-    /**
-     * Gets sections
-     *
-     * @return \PandaDoc\Client\Model\QuoteResponseSections[]|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getSections()
-    {
-        return $this->container['sections'];
-    }
-
-    /**
-     * Sets sections
-     *
-     * @param \PandaDoc\Client\Model\QuoteResponseSections[]|null $sections sections
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setSections($sections)
-    {
-        $this->container['sections'] = $sections;
-
-        return $this;
-    }
-
-    /**
-     * Gets mergeRules
-     *
-     * @return \PandaDoc\Client\Model\QuoteResponseMergeRules[]|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getMergeRules()
-    {
-        return $this->container['mergeRules'];
-    }
-
-    /**
-     * Sets mergeRules
-     *
-     * @param \PandaDoc\Client\Model\QuoteResponseMergeRules[]|null $mergeRules mergeRules
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setMergeRules($mergeRules)
-    {
-        $this->container['mergeRules'] = $mergeRules;
+        $this->container['items'] = $items;
 
         return $this;
     }
@@ -406,7 +310,7 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets settings
      *
-     * @return \PandaDoc\Client\Model\QuoteResponseSettings|null
+     * @return \PandaDoc\Client\Model\QuoteUpdateRequestSettings|null
      */
     #[\ReturnTypeWillChange]
     public function getSettings()
@@ -417,7 +321,7 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets settings
      *
-     * @param \PandaDoc\Client\Model\QuoteResponseSettings|null $settings settings
+     * @param \PandaDoc\Client\Model\QuoteUpdateRequestSettings|null $settings settings
      *
      * @return self
      */

@@ -16,5 +16,6 @@ Name | Type | Description | Notes
 **hasCompleted** | **bool** |  | [optional]
 **sharedLink** | **string** |  | [optional]
 **signatureDate** | **string** |  | [optional]
+**verificationSettings** | [**\PandaDoc\Client\Model\RecipientVerificationSettings**](RecipientVerificationSettings.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

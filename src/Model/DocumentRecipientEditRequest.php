@@ -66,7 +66,8 @@ class DocumentRecipientEditRequest implements ModelInterface, ArrayAccess, \Json
         'state' => 'string',
         'streetAddress' => 'string',
         'city' => 'string',
-        'postalCode' => 'string'
+        'postalCode' => 'string',
+        'verificationSettings' => '\PandaDoc\Client\Model\RecipientVerificationSettings'
     ];
 
     /**
@@ -86,7 +87,8 @@ class DocumentRecipientEditRequest implements ModelInterface, ArrayAccess, \Json
         'state' => null,
         'streetAddress' => null,
         'city' => null,
-        'postalCode' => null
+        'postalCode' => null,
+        'verificationSettings' => null
     ];
 
     /**
@@ -127,7 +129,8 @@ class DocumentRecipientEditRequest implements ModelInterface, ArrayAccess, \Json
         'state' => 'state',
         'streetAddress' => 'street_address',
         'city' => 'city',
-        'postalCode' => 'postal_code'
+        'postalCode' => 'postal_code',
+        'verificationSettings' => 'verification_settings'
     ];
 
     /**
@@ -145,7 +148,8 @@ class DocumentRecipientEditRequest implements ModelInterface, ArrayAccess, \Json
         'state' => 'setState',
         'streetAddress' => 'setStreetAddress',
         'city' => 'setCity',
-        'postalCode' => 'setPostalCode'
+        'postalCode' => 'setPostalCode',
+        'verificationSettings' => 'setVerificationSettings'
     ];
 
     /**
@@ -163,7 +167,8 @@ class DocumentRecipientEditRequest implements ModelInterface, ArrayAccess, \Json
         'state' => 'getState',
         'streetAddress' => 'getStreetAddress',
         'city' => 'getCity',
-        'postalCode' => 'getPostalCode'
+        'postalCode' => 'getPostalCode',
+        'verificationSettings' => 'getVerificationSettings'
     ];
 
     /**
@@ -237,6 +242,7 @@ class DocumentRecipientEditRequest implements ModelInterface, ArrayAccess, \Json
         $this->container['streetAddress'] = $data['streetAddress'] ?? null;
         $this->container['city'] = $data['city'] ?? null;
         $this->container['postalCode'] = $data['postalCode'] ?? null;
+        $this->container['verificationSettings'] = $data['verificationSettings'] ?? null;
     }
 
     /**
@@ -521,6 +527,32 @@ class DocumentRecipientEditRequest implements ModelInterface, ArrayAccess, \Json
     public function setPostalCode($postalCode)
     {
         $this->container['postalCode'] = $postalCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets verificationSettings
+     *
+     * @return \PandaDoc\Client\Model\RecipientVerificationSettings|null
+     */
+    #[\ReturnTypeWillChange]
+    public function getVerificationSettings()
+    {
+        return $this->container['verificationSettings'];
+    }
+
+    /**
+     * Sets verificationSettings
+     *
+     * @param \PandaDoc\Client\Model\RecipientVerificationSettings|null $verificationSettings verificationSettings
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setVerificationSettings($verificationSettings)
+    {
+        $this->container['verificationSettings'] = $verificationSettings;
 
         return $this;
     }

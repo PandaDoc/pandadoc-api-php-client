@@ -22,6 +22,6 @@ Name | Type | Description | Notes
 **taxes** | **object** |  | [optional]
 **discounts** | **object** |  | [optional]
 **fees** | **object** |  | [optional]
-**mergedData** | **object** | Will contain all the fields in flat structure with external field names defined in the template. | [optional]
+**mergedData** | **object** | Contains all fields in a flat structure with external field names defined in the template. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

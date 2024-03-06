@@ -1,14 +1,15 @@
-# # TemplateListResponseResults
+# # UploadSectionStatusResponse
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **string** |  | [optional]
+**uuid** | **string** |  | [optional]
+**documentUuid** | **string** |  | [optional]
+**status** | [**\PandaDoc\Client\Model\UploadSectionStatusEnum**](UploadSectionStatusEnum.md) |  | [optional]
 **name** | **string** |  | [optional]
+**sectionsUuids** | **string[]** |  | [optional]
 **dateCreated** | **string** |  | [optional]
 **dateModified** | **string** |  | [optional]
-**version** | **string** |  | [optional]
-**contentDateModified** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -139,7 +139,7 @@ Name | Type | Description  | Notes
 ## `listTemplates()`
 
 ```php
-listTemplates($q, $shared, $deleted, $count, $page, $id, $folderUuid, $tag): \PandaDoc\Client\Model\TemplateListResponse
+listTemplates($q, $shared, $deleted, $count, $page, $id, $folderUuid, $tag, $fields): \PandaDoc\Client\Model\TemplateListResponse
 ```
 
 List Templates
@@ -176,9 +176,10 @@ $page = 56; // int | Optionally, specify which page of the dataset to return.
 $id = e9LxBesSL73AeZMzeYdfvV; // string | Optionally, specify template ID.
 $folderUuid = xDKHoJ8DkwhiTQSUzNveCJ; // string | UUID of the folder where the templates are stored.
 $tag = array('tag_example'); // string[] | Optional search tag. Filter by template tag.
+$fields = 'fields_example'; // string | A comma-separated list of additional fields to include in the response.  Each field must be a valid template property.  Currently, only one additional field, `content_date_modified`, is supported.  For example, `GET /templates?fields=content_date_modified`.
 
 try {
-    $result = $apiInstance->listTemplates($q, $shared, $deleted, $count, $page, $id, $folderUuid, $tag);
+    $result = $apiInstance->listTemplates($q, $shared, $deleted, $count, $page, $id, $folderUuid, $tag, $fields);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TemplatesApi->listTemplates: ', $e->getMessage(), PHP_EOL;
@@ -197,6 +198,7 @@ Name | Type | Description  | Notes
  **id** | **string**| Optionally, specify template ID. | [optional]
  **folderUuid** | **string**| UUID of the folder where the templates are stored. | [optional]
  **tag** | [**string[]**](../Model/string.md)| Optional search tag. Filter by template tag. | [optional]
+ **fields** | **string**| A comma-separated list of additional fields to include in the response.  Each field must be a valid template property.  Currently, only one additional field, &#x60;content_date_modified&#x60;, is supported.  For example, &#x60;GET /templates?fields&#x3D;content_date_modified&#x60;. | [optional]
 
 ### Return type
 

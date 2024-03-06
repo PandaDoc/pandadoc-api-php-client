@@ -761,14 +761,15 @@ class TemplatesApi
      * @param  string $id Optionally, specify template ID. (optional)
      * @param  string $folderUuid UUID of the folder where the templates are stored. (optional)
      * @param  string[] $tag Optional search tag. Filter by template tag. (optional)
+     * @param  string $fields A comma-separated list of additional fields to include in the response.  Each field must be a valid template property.  Currently, only one additional field, &#x60;content_date_modified&#x60;, is supported.  For example, &#x60;GET /templates?fields&#x3D;content_date_modified&#x60;. (optional)
      *
      * @throws \PandaDoc\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \PandaDoc\Client\Model\TemplateListResponse|object|object
      */
-    public function listTemplates($q = null, $shared = null, $deleted = null, $count = null, $page = null, $id = null, $folderUuid = null, $tag = null)
+    public function listTemplates($q = null, $shared = null, $deleted = null, $count = null, $page = null, $id = null, $folderUuid = null, $tag = null, $fields = null)
     {
-        list($response) = $this->listTemplatesWithHttpInfo($q, $shared, $deleted, $count, $page, $id, $folderUuid, $tag);
+        list($response) = $this->listTemplatesWithHttpInfo($q, $shared, $deleted, $count, $page, $id, $folderUuid, $tag, $fields);
         return $response;
     }
 
@@ -785,14 +786,15 @@ class TemplatesApi
      * @param  string $id Optionally, specify template ID. (optional)
      * @param  string $folderUuid UUID of the folder where the templates are stored. (optional)
      * @param  string[] $tag Optional search tag. Filter by template tag. (optional)
+     * @param  string $fields A comma-separated list of additional fields to include in the response.  Each field must be a valid template property.  Currently, only one additional field, &#x60;content_date_modified&#x60;, is supported.  For example, &#x60;GET /templates?fields&#x3D;content_date_modified&#x60;. (optional)
      *
      * @throws \PandaDoc\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \PandaDoc\Client\Model\TemplateListResponse|object|object, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listTemplatesWithHttpInfo($q = null, $shared = null, $deleted = null, $count = null, $page = null, $id = null, $folderUuid = null, $tag = null)
+    public function listTemplatesWithHttpInfo($q = null, $shared = null, $deleted = null, $count = null, $page = null, $id = null, $folderUuid = null, $tag = null, $fields = null)
     {
-        $request = $this->listTemplatesRequest($q, $shared, $deleted, $count, $page, $id, $folderUuid, $tag);
+        $request = $this->listTemplatesRequest($q, $shared, $deleted, $count, $page, $id, $folderUuid, $tag, $fields);
 
         try {
             $options = $this->createHttpClientOption();
@@ -925,13 +927,14 @@ class TemplatesApi
      * @param  string $id Optionally, specify template ID. (optional)
      * @param  string $folderUuid UUID of the folder where the templates are stored. (optional)
      * @param  string[] $tag Optional search tag. Filter by template tag. (optional)
+     * @param  string $fields A comma-separated list of additional fields to include in the response.  Each field must be a valid template property.  Currently, only one additional field, &#x60;content_date_modified&#x60;, is supported.  For example, &#x60;GET /templates?fields&#x3D;content_date_modified&#x60;. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listTemplatesAsync($q = null, $shared = null, $deleted = null, $count = null, $page = null, $id = null, $folderUuid = null, $tag = null)
+    public function listTemplatesAsync($q = null, $shared = null, $deleted = null, $count = null, $page = null, $id = null, $folderUuid = null, $tag = null, $fields = null)
     {
-        return $this->listTemplatesAsyncWithHttpInfo($q, $shared, $deleted, $count, $page, $id, $folderUuid, $tag)
+        return $this->listTemplatesAsyncWithHttpInfo($q, $shared, $deleted, $count, $page, $id, $folderUuid, $tag, $fields)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -952,14 +955,15 @@ class TemplatesApi
      * @param  string $id Optionally, specify template ID. (optional)
      * @param  string $folderUuid UUID of the folder where the templates are stored. (optional)
      * @param  string[] $tag Optional search tag. Filter by template tag. (optional)
+     * @param  string $fields A comma-separated list of additional fields to include in the response.  Each field must be a valid template property.  Currently, only one additional field, &#x60;content_date_modified&#x60;, is supported.  For example, &#x60;GET /templates?fields&#x3D;content_date_modified&#x60;. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listTemplatesAsyncWithHttpInfo($q = null, $shared = null, $deleted = null, $count = null, $page = null, $id = null, $folderUuid = null, $tag = null)
+    public function listTemplatesAsyncWithHttpInfo($q = null, $shared = null, $deleted = null, $count = null, $page = null, $id = null, $folderUuid = null, $tag = null, $fields = null)
     {
         $returnType = '\PandaDoc\Client\Model\TemplateListResponse';
-        $request = $this->listTemplatesRequest($q, $shared, $deleted, $count, $page, $id, $folderUuid, $tag);
+        $request = $this->listTemplatesRequest($q, $shared, $deleted, $count, $page, $id, $folderUuid, $tag, $fields);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1005,11 +1009,12 @@ class TemplatesApi
      * @param  string $id Optionally, specify template ID. (optional)
      * @param  string $folderUuid UUID of the folder where the templates are stored. (optional)
      * @param  string[] $tag Optional search tag. Filter by template tag. (optional)
+     * @param  string $fields A comma-separated list of additional fields to include in the response.  Each field must be a valid template property.  Currently, only one additional field, &#x60;content_date_modified&#x60;, is supported.  For example, &#x60;GET /templates?fields&#x3D;content_date_modified&#x60;. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listTemplatesRequest($q = null, $shared = null, $deleted = null, $count = null, $page = null, $id = null, $folderUuid = null, $tag = null)
+    public function listTemplatesRequest($q = null, $shared = null, $deleted = null, $count = null, $page = null, $id = null, $folderUuid = null, $tag = null, $fields = null)
     {
         if ($count !== null && $count < 1) {
             throw new \InvalidArgumentException('invalid value for "$count" when calling TemplatesApi.listTemplates, must be bigger than or equal to 1.');
@@ -1113,6 +1118,17 @@ class TemplatesApi
             }
             else {
                 $queryParams['tag'] = $tag;
+            }
+        }
+        // query params
+        if ($fields !== null) {
+            if('form' === 'form' && is_array($fields)) {
+                foreach($fields as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['fields'] = $fields;
             }
         }
 

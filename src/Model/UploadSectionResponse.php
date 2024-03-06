@@ -1,6 +1,6 @@
 <?php
 /**
- * QuoteResponse
+ * UploadSectionResponse
  *
  * PHP version 7.3
  *
@@ -30,7 +30,7 @@ use \ArrayAccess;
 use \PandaDoc\Client\ObjectSerializer;
 
 /**
- * QuoteResponse Class Doc Comment
+ * UploadSectionResponse Class Doc Comment
  *
  * @category Class
  * @package  PandaDoc\Client
@@ -40,7 +40,7 @@ use \PandaDoc\Client\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
+class UploadSectionResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'QuoteResponse';
+    protected static $openAPIModelName = 'UploadSectionResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,13 +57,15 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'string',
-        'currency' => 'string',
-        'total' => 'string',
-        'summary' => '\PandaDoc\Client\Model\QuoteResponseSummary',
-        'sections' => '\PandaDoc\Client\Model\QuoteResponseSections[]',
-        'mergeRules' => '\PandaDoc\Client\Model\QuoteResponseMergeRules[]',
-        'settings' => '\PandaDoc\Client\Model\QuoteResponseSettings'
+        'uuid' => 'string',
+        'name' => 'string',
+        'documentUuid' => 'string',
+        'status' => '\PandaDoc\Client\Model\UploadSectionStatusEnum',
+        'sectionsUuids' => 'string[]',
+        'dateCreated' => 'string',
+        'dateModified' => 'string',
+        'dateCompleted' => 'string',
+        'infoMessage' => 'string'
     ];
 
     /**
@@ -74,13 +76,15 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'currency' => null,
-        'total' => null,
-        'summary' => null,
-        'sections' => null,
-        'mergeRules' => null,
-        'settings' => null
+        'uuid' => null,
+        'name' => null,
+        'documentUuid' => null,
+        'status' => null,
+        'sectionsUuids' => null,
+        'dateCreated' => null,
+        'dateModified' => null,
+        'dateCompleted' => null,
+        'infoMessage' => null
     ];
 
     /**
@@ -112,13 +116,15 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'currency' => 'currency',
-        'total' => 'total',
-        'summary' => 'summary',
-        'sections' => 'sections',
-        'mergeRules' => 'merge_rules',
-        'settings' => 'settings'
+        'uuid' => 'uuid',
+        'name' => 'name',
+        'documentUuid' => 'document_uuid',
+        'status' => 'status',
+        'sectionsUuids' => 'sections_uuids',
+        'dateCreated' => 'date_created',
+        'dateModified' => 'date_modified',
+        'dateCompleted' => 'date_completed',
+        'infoMessage' => 'info_message'
     ];
 
     /**
@@ -127,13 +133,15 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'currency' => 'setCurrency',
-        'total' => 'setTotal',
-        'summary' => 'setSummary',
-        'sections' => 'setSections',
-        'mergeRules' => 'setMergeRules',
-        'settings' => 'setSettings'
+        'uuid' => 'setUuid',
+        'name' => 'setName',
+        'documentUuid' => 'setDocumentUuid',
+        'status' => 'setStatus',
+        'sectionsUuids' => 'setSectionsUuids',
+        'dateCreated' => 'setDateCreated',
+        'dateModified' => 'setDateModified',
+        'dateCompleted' => 'setDateCompleted',
+        'infoMessage' => 'setInfoMessage'
     ];
 
     /**
@@ -142,13 +150,15 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'currency' => 'getCurrency',
-        'total' => 'getTotal',
-        'summary' => 'getSummary',
-        'sections' => 'getSections',
-        'mergeRules' => 'getMergeRules',
-        'settings' => 'getSettings'
+        'uuid' => 'getUuid',
+        'name' => 'getName',
+        'documentUuid' => 'getDocumentUuid',
+        'status' => 'getStatus',
+        'sectionsUuids' => 'getSectionsUuids',
+        'dateCreated' => 'getDateCreated',
+        'dateModified' => 'getDateModified',
+        'dateCompleted' => 'getDateCompleted',
+        'infoMessage' => 'getInfoMessage'
     ];
 
     /**
@@ -212,13 +222,15 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['currency'] = $data['currency'] ?? null;
-        $this->container['total'] = $data['total'] ?? null;
-        $this->container['summary'] = $data['summary'] ?? null;
-        $this->container['sections'] = $data['sections'] ?? null;
-        $this->container['mergeRules'] = $data['mergeRules'] ?? null;
-        $this->container['settings'] = $data['settings'] ?? null;
+        $this->container['uuid'] = $data['uuid'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['documentUuid'] = $data['documentUuid'] ?? null;
+        $this->container['status'] = $data['status'] ?? null;
+        $this->container['sectionsUuids'] = $data['sectionsUuids'] ?? null;
+        $this->container['dateCreated'] = $data['dateCreated'] ?? null;
+        $this->container['dateModified'] = $data['dateModified'] ?? null;
+        $this->container['dateCompleted'] = $data['dateCompleted'] ?? null;
+        $this->container['infoMessage'] = $data['infoMessage'] ?? null;
     }
 
     /**
@@ -248,183 +260,235 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets id
+     * Gets uuid
      *
      * @return string|null
      */
     #[\ReturnTypeWillChange]
-    public function getId()
+    public function getUuid()
     {
-        return $this->container['id'];
+        return $this->container['uuid'];
     }
 
     /**
-     * Sets id
+     * Sets uuid
      *
-     * @param string|null $id id
+     * @param string|null $uuid uuid
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setId($id)
+    public function setUuid($uuid)
     {
-        $this->container['id'] = $id;
+        $this->container['uuid'] = $uuid;
 
         return $this;
     }
 
     /**
-     * Gets currency
+     * Gets name
      *
      * @return string|null
      */
     #[\ReturnTypeWillChange]
-    public function getCurrency()
+    public function getName()
     {
-        return $this->container['currency'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets currency
+     * Sets name
      *
-     * @param string|null $currency currency
+     * @param string|null $name name
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setCurrency($currency)
+    public function setName($name)
     {
-        $this->container['currency'] = $currency;
+        $this->container['name'] = $name;
 
         return $this;
     }
 
     /**
-     * Gets total
+     * Gets documentUuid
      *
      * @return string|null
      */
     #[\ReturnTypeWillChange]
-    public function getTotal()
+    public function getDocumentUuid()
     {
-        return $this->container['total'];
+        return $this->container['documentUuid'];
     }
 
     /**
-     * Sets total
+     * Sets documentUuid
      *
-     * @param string|null $total total
+     * @param string|null $documentUuid documentUuid
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setTotal($total)
+    public function setDocumentUuid($documentUuid)
     {
-        $this->container['total'] = $total;
+        $this->container['documentUuid'] = $documentUuid;
 
         return $this;
     }
 
     /**
-     * Gets summary
+     * Gets status
      *
-     * @return \PandaDoc\Client\Model\QuoteResponseSummary|null
+     * @return \PandaDoc\Client\Model\UploadSectionStatusEnum|null
      */
     #[\ReturnTypeWillChange]
-    public function getSummary()
+    public function getStatus()
     {
-        return $this->container['summary'];
+        return $this->container['status'];
     }
 
     /**
-     * Sets summary
+     * Sets status
      *
-     * @param \PandaDoc\Client\Model\QuoteResponseSummary|null $summary summary
+     * @param \PandaDoc\Client\Model\UploadSectionStatusEnum|null $status status
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setSummary($summary)
+    public function setStatus($status)
     {
-        $this->container['summary'] = $summary;
+        $this->container['status'] = $status;
 
         return $this;
     }
 
     /**
-     * Gets sections
+     * Gets sectionsUuids
      *
-     * @return \PandaDoc\Client\Model\QuoteResponseSections[]|null
+     * @return string[]|null
      */
     #[\ReturnTypeWillChange]
-    public function getSections()
+    public function getSectionsUuids()
     {
-        return $this->container['sections'];
+        return $this->container['sectionsUuids'];
     }
 
     /**
-     * Sets sections
+     * Sets sectionsUuids
      *
-     * @param \PandaDoc\Client\Model\QuoteResponseSections[]|null $sections sections
+     * @param string[]|null $sectionsUuids sectionsUuids
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setSections($sections)
+    public function setSectionsUuids($sectionsUuids)
     {
-        $this->container['sections'] = $sections;
+        $this->container['sectionsUuids'] = $sectionsUuids;
 
         return $this;
     }
 
     /**
-     * Gets mergeRules
+     * Gets dateCreated
      *
-     * @return \PandaDoc\Client\Model\QuoteResponseMergeRules[]|null
+     * @return string|null
      */
     #[\ReturnTypeWillChange]
-    public function getMergeRules()
+    public function getDateCreated()
     {
-        return $this->container['mergeRules'];
+        return $this->container['dateCreated'];
     }
 
     /**
-     * Sets mergeRules
+     * Sets dateCreated
      *
-     * @param \PandaDoc\Client\Model\QuoteResponseMergeRules[]|null $mergeRules mergeRules
+     * @param string|null $dateCreated dateCreated
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setMergeRules($mergeRules)
+    public function setDateCreated($dateCreated)
     {
-        $this->container['mergeRules'] = $mergeRules;
+        $this->container['dateCreated'] = $dateCreated;
 
         return $this;
     }
 
     /**
-     * Gets settings
+     * Gets dateModified
      *
-     * @return \PandaDoc\Client\Model\QuoteResponseSettings|null
+     * @return string|null
      */
     #[\ReturnTypeWillChange]
-    public function getSettings()
+    public function getDateModified()
     {
-        return $this->container['settings'];
+        return $this->container['dateModified'];
     }
 
     /**
-     * Sets settings
+     * Sets dateModified
      *
-     * @param \PandaDoc\Client\Model\QuoteResponseSettings|null $settings settings
+     * @param string|null $dateModified dateModified
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setSettings($settings)
+    public function setDateModified($dateModified)
     {
-        $this->container['settings'] = $settings;
+        $this->container['dateModified'] = $dateModified;
+
+        return $this;
+    }
+
+    /**
+     * Gets dateCompleted
+     *
+     * @return string|null
+     */
+    #[\ReturnTypeWillChange]
+    public function getDateCompleted()
+    {
+        return $this->container['dateCompleted'];
+    }
+
+    /**
+     * Sets dateCompleted
+     *
+     * @param string|null $dateCompleted dateCompleted
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setDateCompleted($dateCompleted)
+    {
+        $this->container['dateCompleted'] = $dateCompleted;
+
+        return $this;
+    }
+
+    /**
+     * Gets infoMessage
+     *
+     * @return string|null
+     */
+    #[\ReturnTypeWillChange]
+    public function getInfoMessage()
+    {
+        return $this->container['infoMessage'];
+    }
+
+    /**
+     * Sets infoMessage
+     *
+     * @param string|null $infoMessage infoMessage
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setInfoMessage($infoMessage)
+    {
+        $this->container['infoMessage'] = $infoMessage;
 
         return $this;
     }

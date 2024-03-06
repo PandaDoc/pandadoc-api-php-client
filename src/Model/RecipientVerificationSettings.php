@@ -1,6 +1,6 @@
 <?php
 /**
- * QuoteResponse
+ * RecipientVerificationSettings
  *
  * PHP version 7.3
  *
@@ -30,7 +30,7 @@ use \ArrayAccess;
 use \PandaDoc\Client\ObjectSerializer;
 
 /**
- * QuoteResponse Class Doc Comment
+ * RecipientVerificationSettings Class Doc Comment
  *
  * @category Class
  * @package  PandaDoc\Client
@@ -40,7 +40,7 @@ use \PandaDoc\Client\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
+class RecipientVerificationSettings implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'QuoteResponse';
+    protected static $openAPIModelName = 'RecipientVerificationSettings';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,13 +57,9 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'string',
-        'currency' => 'string',
-        'total' => 'string',
-        'summary' => '\PandaDoc\Client\Model\QuoteResponseSummary',
-        'sections' => '\PandaDoc\Client\Model\QuoteResponseSections[]',
-        'mergeRules' => '\PandaDoc\Client\Model\QuoteResponseMergeRules[]',
-        'settings' => '\PandaDoc\Client\Model\QuoteResponseSettings'
+        'verificationPlace' => 'string',
+        'passcodeVerification' => '\PandaDoc\Client\Model\RecipientVerificationSettingsPasscodeVerification',
+        'phoneVerification' => '\PandaDoc\Client\Model\RecipientVerificationSettingsPhoneVerification'
     ];
 
     /**
@@ -74,13 +70,9 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'currency' => null,
-        'total' => null,
-        'summary' => null,
-        'sections' => null,
-        'mergeRules' => null,
-        'settings' => null
+        'verificationPlace' => null,
+        'passcodeVerification' => null,
+        'phoneVerification' => null
     ];
 
     /**
@@ -112,13 +104,9 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'currency' => 'currency',
-        'total' => 'total',
-        'summary' => 'summary',
-        'sections' => 'sections',
-        'mergeRules' => 'merge_rules',
-        'settings' => 'settings'
+        'verificationPlace' => 'verification_place',
+        'passcodeVerification' => 'passcode_verification',
+        'phoneVerification' => 'phone_verification'
     ];
 
     /**
@@ -127,13 +115,9 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'currency' => 'setCurrency',
-        'total' => 'setTotal',
-        'summary' => 'setSummary',
-        'sections' => 'setSections',
-        'mergeRules' => 'setMergeRules',
-        'settings' => 'setSettings'
+        'verificationPlace' => 'setVerificationPlace',
+        'passcodeVerification' => 'setPasscodeVerification',
+        'phoneVerification' => 'setPhoneVerification'
     ];
 
     /**
@@ -142,13 +126,9 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'currency' => 'getCurrency',
-        'total' => 'getTotal',
-        'summary' => 'getSummary',
-        'sections' => 'getSections',
-        'mergeRules' => 'getMergeRules',
-        'settings' => 'getSettings'
+        'verificationPlace' => 'getVerificationPlace',
+        'passcodeVerification' => 'getPasscodeVerification',
+        'phoneVerification' => 'getPhoneVerification'
     ];
 
     /**
@@ -196,6 +176,22 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
+    const VERIFICATION_PLACE_OPEN = 'before_open';
+    const VERIFICATION_PLACE_SIGN = 'before_sign';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    #[\ReturnTypeWillChange]
+    public function getVerificationPlaceAllowableValues()
+    {
+        return [
+            self::VERIFICATION_PLACE_OPEN,
+            self::VERIFICATION_PLACE_SIGN,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -212,13 +208,9 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['currency'] = $data['currency'] ?? null;
-        $this->container['total'] = $data['total'] ?? null;
-        $this->container['summary'] = $data['summary'] ?? null;
-        $this->container['sections'] = $data['sections'] ?? null;
-        $this->container['mergeRules'] = $data['mergeRules'] ?? null;
-        $this->container['settings'] = $data['settings'] ?? null;
+        $this->container['verificationPlace'] = $data['verificationPlace'] ?? null;
+        $this->container['passcodeVerification'] = $data['passcodeVerification'] ?? null;
+        $this->container['phoneVerification'] = $data['phoneVerification'] ?? null;
     }
 
     /**
@@ -230,6 +222,15 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        $allowedValues = $this->getVerificationPlaceAllowableValues();
+        if (!is_null($this->container['verificationPlace']) && !in_array($this->container['verificationPlace'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'verificationPlace', must be one of '%s'",
+                $this->container['verificationPlace'],
+                implode("', '", $allowedValues)
+            );
+        }
 
         return $invalidProperties;
     }
@@ -248,183 +249,89 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets id
+     * Gets verificationPlace
      *
      * @return string|null
      */
     #[\ReturnTypeWillChange]
-    public function getId()
+    public function getVerificationPlace()
     {
-        return $this->container['id'];
+        return $this->container['verificationPlace'];
     }
 
     /**
-     * Sets id
+     * Sets verificationPlace
      *
-     * @param string|null $id id
+     * @param string|null $verificationPlace Verification place
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setId($id)
+    public function setVerificationPlace($verificationPlace)
     {
-        $this->container['id'] = $id;
+        $allowedValues = $this->getVerificationPlaceAllowableValues();
+        if (!is_null($verificationPlace) && !in_array($verificationPlace, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'verificationPlace', must be one of '%s'",
+                    $verificationPlace,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['verificationPlace'] = $verificationPlace;
 
         return $this;
     }
 
     /**
-     * Gets currency
+     * Gets passcodeVerification
      *
-     * @return string|null
+     * @return \PandaDoc\Client\Model\RecipientVerificationSettingsPasscodeVerification|null
      */
     #[\ReturnTypeWillChange]
-    public function getCurrency()
+    public function getPasscodeVerification()
     {
-        return $this->container['currency'];
+        return $this->container['passcodeVerification'];
     }
 
     /**
-     * Sets currency
+     * Sets passcodeVerification
      *
-     * @param string|null $currency currency
+     * @param \PandaDoc\Client\Model\RecipientVerificationSettingsPasscodeVerification|null $passcodeVerification passcodeVerification
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setCurrency($currency)
+    public function setPasscodeVerification($passcodeVerification)
     {
-        $this->container['currency'] = $currency;
+        $this->container['passcodeVerification'] = $passcodeVerification;
 
         return $this;
     }
 
     /**
-     * Gets total
+     * Gets phoneVerification
      *
-     * @return string|null
+     * @return \PandaDoc\Client\Model\RecipientVerificationSettingsPhoneVerification|null
      */
     #[\ReturnTypeWillChange]
-    public function getTotal()
+    public function getPhoneVerification()
     {
-        return $this->container['total'];
+        return $this->container['phoneVerification'];
     }
 
     /**
-     * Sets total
+     * Sets phoneVerification
      *
-     * @param string|null $total total
+     * @param \PandaDoc\Client\Model\RecipientVerificationSettingsPhoneVerification|null $phoneVerification phoneVerification
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setTotal($total)
+    public function setPhoneVerification($phoneVerification)
     {
-        $this->container['total'] = $total;
-
-        return $this;
-    }
-
-    /**
-     * Gets summary
-     *
-     * @return \PandaDoc\Client\Model\QuoteResponseSummary|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getSummary()
-    {
-        return $this->container['summary'];
-    }
-
-    /**
-     * Sets summary
-     *
-     * @param \PandaDoc\Client\Model\QuoteResponseSummary|null $summary summary
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setSummary($summary)
-    {
-        $this->container['summary'] = $summary;
-
-        return $this;
-    }
-
-    /**
-     * Gets sections
-     *
-     * @return \PandaDoc\Client\Model\QuoteResponseSections[]|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getSections()
-    {
-        return $this->container['sections'];
-    }
-
-    /**
-     * Sets sections
-     *
-     * @param \PandaDoc\Client\Model\QuoteResponseSections[]|null $sections sections
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setSections($sections)
-    {
-        $this->container['sections'] = $sections;
-
-        return $this;
-    }
-
-    /**
-     * Gets mergeRules
-     *
-     * @return \PandaDoc\Client\Model\QuoteResponseMergeRules[]|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getMergeRules()
-    {
-        return $this->container['mergeRules'];
-    }
-
-    /**
-     * Sets mergeRules
-     *
-     * @param \PandaDoc\Client\Model\QuoteResponseMergeRules[]|null $mergeRules mergeRules
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setMergeRules($mergeRules)
-    {
-        $this->container['mergeRules'] = $mergeRules;
-
-        return $this;
-    }
-
-    /**
-     * Gets settings
-     *
-     * @return \PandaDoc\Client\Model\QuoteResponseSettings|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getSettings()
-    {
-        return $this->container['settings'];
-    }
-
-    /**
-     * Sets settings
-     *
-     * @param \PandaDoc\Client\Model\QuoteResponseSettings|null $settings settings
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setSettings($settings)
-    {
-        $this->container['settings'] = $settings;
+        $this->container['phoneVerification'] = $phoneVerification;
 
         return $this;
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * QuoteResponse
+ * UploadSectionListResponseResults
  *
  * PHP version 7.3
  *
@@ -30,7 +30,7 @@ use \ArrayAccess;
 use \PandaDoc\Client\ObjectSerializer;
 
 /**
- * QuoteResponse Class Doc Comment
+ * UploadSectionListResponseResults Class Doc Comment
  *
  * @category Class
  * @package  PandaDoc\Client
@@ -40,7 +40,7 @@ use \PandaDoc\Client\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
+class UploadSectionListResponseResults implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'QuoteResponse';
+    protected static $openAPIModelName = 'UploadSectionListResponse_results';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,13 +57,8 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'string',
-        'currency' => 'string',
-        'total' => 'string',
-        'summary' => '\PandaDoc\Client\Model\QuoteResponseSummary',
-        'sections' => '\PandaDoc\Client\Model\QuoteResponseSections[]',
-        'mergeRules' => '\PandaDoc\Client\Model\QuoteResponseMergeRules[]',
-        'settings' => '\PandaDoc\Client\Model\QuoteResponseSettings'
+        'uuid' => 'string',
+        'name' => 'string'
     ];
 
     /**
@@ -74,13 +69,8 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'currency' => null,
-        'total' => null,
-        'summary' => null,
-        'sections' => null,
-        'mergeRules' => null,
-        'settings' => null
+        'uuid' => null,
+        'name' => null
     ];
 
     /**
@@ -112,13 +102,8 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'currency' => 'currency',
-        'total' => 'total',
-        'summary' => 'summary',
-        'sections' => 'sections',
-        'mergeRules' => 'merge_rules',
-        'settings' => 'settings'
+        'uuid' => 'uuid',
+        'name' => 'name'
     ];
 
     /**
@@ -127,13 +112,8 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'currency' => 'setCurrency',
-        'total' => 'setTotal',
-        'summary' => 'setSummary',
-        'sections' => 'setSections',
-        'mergeRules' => 'setMergeRules',
-        'settings' => 'setSettings'
+        'uuid' => 'setUuid',
+        'name' => 'setName'
     ];
 
     /**
@@ -142,13 +122,8 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'currency' => 'getCurrency',
-        'total' => 'getTotal',
-        'summary' => 'getSummary',
-        'sections' => 'getSections',
-        'mergeRules' => 'getMergeRules',
-        'settings' => 'getSettings'
+        'uuid' => 'getUuid',
+        'name' => 'getName'
     ];
 
     /**
@@ -212,13 +187,8 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['currency'] = $data['currency'] ?? null;
-        $this->container['total'] = $data['total'] ?? null;
-        $this->container['summary'] = $data['summary'] ?? null;
-        $this->container['sections'] = $data['sections'] ?? null;
-        $this->container['mergeRules'] = $data['mergeRules'] ?? null;
-        $this->container['settings'] = $data['settings'] ?? null;
+        $this->container['uuid'] = $data['uuid'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
     }
 
     /**
@@ -248,183 +218,53 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets id
+     * Gets uuid
      *
      * @return string|null
      */
     #[\ReturnTypeWillChange]
-    public function getId()
+    public function getUuid()
     {
-        return $this->container['id'];
+        return $this->container['uuid'];
     }
 
     /**
-     * Sets id
+     * Sets uuid
      *
-     * @param string|null $id id
+     * @param string|null $uuid uuid
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setId($id)
+    public function setUuid($uuid)
     {
-        $this->container['id'] = $id;
+        $this->container['uuid'] = $uuid;
 
         return $this;
     }
 
     /**
-     * Gets currency
+     * Gets name
      *
      * @return string|null
      */
     #[\ReturnTypeWillChange]
-    public function getCurrency()
+    public function getName()
     {
-        return $this->container['currency'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets currency
+     * Sets name
      *
-     * @param string|null $currency currency
+     * @param string|null $name name
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setCurrency($currency)
+    public function setName($name)
     {
-        $this->container['currency'] = $currency;
-
-        return $this;
-    }
-
-    /**
-     * Gets total
-     *
-     * @return string|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getTotal()
-    {
-        return $this->container['total'];
-    }
-
-    /**
-     * Sets total
-     *
-     * @param string|null $total total
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setTotal($total)
-    {
-        $this->container['total'] = $total;
-
-        return $this;
-    }
-
-    /**
-     * Gets summary
-     *
-     * @return \PandaDoc\Client\Model\QuoteResponseSummary|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getSummary()
-    {
-        return $this->container['summary'];
-    }
-
-    /**
-     * Sets summary
-     *
-     * @param \PandaDoc\Client\Model\QuoteResponseSummary|null $summary summary
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setSummary($summary)
-    {
-        $this->container['summary'] = $summary;
-
-        return $this;
-    }
-
-    /**
-     * Gets sections
-     *
-     * @return \PandaDoc\Client\Model\QuoteResponseSections[]|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getSections()
-    {
-        return $this->container['sections'];
-    }
-
-    /**
-     * Sets sections
-     *
-     * @param \PandaDoc\Client\Model\QuoteResponseSections[]|null $sections sections
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setSections($sections)
-    {
-        $this->container['sections'] = $sections;
-
-        return $this;
-    }
-
-    /**
-     * Gets mergeRules
-     *
-     * @return \PandaDoc\Client\Model\QuoteResponseMergeRules[]|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getMergeRules()
-    {
-        return $this->container['mergeRules'];
-    }
-
-    /**
-     * Sets mergeRules
-     *
-     * @param \PandaDoc\Client\Model\QuoteResponseMergeRules[]|null $mergeRules mergeRules
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setMergeRules($mergeRules)
-    {
-        $this->container['mergeRules'] = $mergeRules;
-
-        return $this;
-    }
-
-    /**
-     * Gets settings
-     *
-     * @return \PandaDoc\Client\Model\QuoteResponseSettings|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getSettings()
-    {
-        return $this->container['settings'];
-    }
-
-    /**
-     * Sets settings
-     *
-     * @param \PandaDoc\Client\Model\QuoteResponseSettings|null $settings settings
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setSettings($settings)
-    {
-        $this->container['settings'] = $settings;
+        $this->container['name'] = $name;
 
         return $this;
     }

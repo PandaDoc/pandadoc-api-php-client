@@ -1,6 +1,6 @@
 <?php
 /**
- * WebhookSubscriptionTriggerEnum
+ * UploadSectionStatusEnum
  *
  * PHP version 7.3
  *
@@ -28,33 +28,23 @@ namespace PandaDoc\Client\Model;
 use \PandaDoc\Client\ObjectSerializer;
 
 /**
- * WebhookSubscriptionTriggerEnum Class Doc Comment
+ * UploadSectionStatusEnum Class Doc Comment
  *
  * @category Class
  * @package  PandaDoc\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class WebhookSubscriptionTriggerEnum
+class UploadSectionStatusEnum
 {
     /**
      * Possible values of this enum
      */
-    const RECIPIENT_COMPLETED = 'recipient_completed';
+    const UPLOADED = 'document_sections_upload.UPLOADED';
 
-    const DOCUMENT_UPDATED = 'document_updated';
+    const PROCESSED = 'document_sections_upload.PROCESSED';
 
-    const DOCUMENT_DELETED = 'document_deleted';
-
-    const DOCUMENT_STATE_CHANGED = 'document_state_changed';
-
-    const DOCUMENT_CREATION_FAILED = 'document_creation_failed';
-
-    const QUOTE_UPDATED = 'quote_updated';
-
-    const TEMPLATE_CREATED = 'template_created';
-
-    const TEMPLATE_MODIFIED = 'template_modified';
+    const ERROR = 'document_sections_upload.ERROR';
 
     /**
      * Gets allowable values of the enum
@@ -64,14 +54,9 @@ class WebhookSubscriptionTriggerEnum
     public static function getAllowableEnumValues()
     {
         return [
-            self::RECIPIENT_COMPLETED,
-            self::DOCUMENT_UPDATED,
-            self::DOCUMENT_DELETED,
-            self::DOCUMENT_STATE_CHANGED,
-            self::DOCUMENT_CREATION_FAILED,
-            self::QUOTE_UPDATED,
-            self::TEMPLATE_CREATED,
-            self::TEMPLATE_MODIFIED
+            self::UPLOADED,
+            self::PROCESSED,
+            self::ERROR
         ];
     }
 }

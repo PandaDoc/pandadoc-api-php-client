@@ -60,8 +60,10 @@ class QuoteResponseSections implements ModelInterface, ArrayAccess, \JsonSeriali
         'id' => 'string',
         'name' => 'string',
         'summary' => '\PandaDoc\Client\Model\QuoteResponseSectionSummary',
+        'columns' => '\PandaDoc\Client\Model\QuoteResponseSectionColumn[]',
         'items' => '\PandaDoc\Client\Model\QuoteResponseSectionItem[]',
-        'total' => 'string'
+        'total' => 'string',
+        'settings' => '\PandaDoc\Client\Model\QuoteSectionSettings'
     ];
 
     /**
@@ -75,8 +77,10 @@ class QuoteResponseSections implements ModelInterface, ArrayAccess, \JsonSeriali
         'id' => null,
         'name' => null,
         'summary' => null,
+        'columns' => null,
         'items' => null,
-        'total' => null
+        'total' => null,
+        'settings' => null
     ];
 
     /**
@@ -111,8 +115,10 @@ class QuoteResponseSections implements ModelInterface, ArrayAccess, \JsonSeriali
         'id' => 'id',
         'name' => 'name',
         'summary' => 'summary',
+        'columns' => 'columns',
         'items' => 'items',
-        'total' => 'total'
+        'total' => 'total',
+        'settings' => 'settings'
     ];
 
     /**
@@ -124,8 +130,10 @@ class QuoteResponseSections implements ModelInterface, ArrayAccess, \JsonSeriali
         'id' => 'setId',
         'name' => 'setName',
         'summary' => 'setSummary',
+        'columns' => 'setColumns',
         'items' => 'setItems',
-        'total' => 'setTotal'
+        'total' => 'setTotal',
+        'settings' => 'setSettings'
     ];
 
     /**
@@ -137,8 +145,10 @@ class QuoteResponseSections implements ModelInterface, ArrayAccess, \JsonSeriali
         'id' => 'getId',
         'name' => 'getName',
         'summary' => 'getSummary',
+        'columns' => 'getColumns',
         'items' => 'getItems',
-        'total' => 'getTotal'
+        'total' => 'getTotal',
+        'settings' => 'getSettings'
     ];
 
     /**
@@ -205,8 +215,10 @@ class QuoteResponseSections implements ModelInterface, ArrayAccess, \JsonSeriali
         $this->container['id'] = $data['id'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
         $this->container['summary'] = $data['summary'] ?? null;
+        $this->container['columns'] = $data['columns'] ?? null;
         $this->container['items'] = $data['items'] ?? null;
         $this->container['total'] = $data['total'] ?? null;
+        $this->container['settings'] = $data['settings'] ?? null;
     }
 
     /**
@@ -314,6 +326,32 @@ class QuoteResponseSections implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
     /**
+     * Gets columns
+     *
+     * @return \PandaDoc\Client\Model\QuoteResponseSectionColumn[]|null
+     */
+    #[\ReturnTypeWillChange]
+    public function getColumns()
+    {
+        return $this->container['columns'];
+    }
+
+    /**
+     * Sets columns
+     *
+     * @param \PandaDoc\Client\Model\QuoteResponseSectionColumn[]|null $columns columns
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setColumns($columns)
+    {
+        $this->container['columns'] = $columns;
+
+        return $this;
+    }
+
+    /**
      * Gets items
      *
      * @return \PandaDoc\Client\Model\QuoteResponseSectionItem[]|null
@@ -361,6 +399,32 @@ class QuoteResponseSections implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setTotal($total)
     {
         $this->container['total'] = $total;
+
+        return $this;
+    }
+
+    /**
+     * Gets settings
+     *
+     * @return \PandaDoc\Client\Model\QuoteSectionSettings|null
+     */
+    #[\ReturnTypeWillChange]
+    public function getSettings()
+    {
+        return $this->container['settings'];
+    }
+
+    /**
+     * Sets settings
+     *
+     * @param \PandaDoc\Client\Model\QuoteSectionSettings|null $settings settings
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setSettings($settings)
+    {
+        $this->container['settings'] = $settings;
 
         return $this;
     }
