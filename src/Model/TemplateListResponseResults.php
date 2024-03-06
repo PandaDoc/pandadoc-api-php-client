@@ -61,7 +61,8 @@ class TemplateListResponseResults implements ModelInterface, ArrayAccess, \JsonS
         'name' => 'string',
         'dateCreated' => 'string',
         'dateModified' => 'string',
-        'version' => 'string'
+        'version' => 'string',
+        'contentDateModified' => 'string'
     ];
 
     /**
@@ -76,7 +77,8 @@ class TemplateListResponseResults implements ModelInterface, ArrayAccess, \JsonS
         'name' => null,
         'dateCreated' => null,
         'dateModified' => null,
-        'version' => null
+        'version' => null,
+        'contentDateModified' => null
     ];
 
     /**
@@ -112,7 +114,8 @@ class TemplateListResponseResults implements ModelInterface, ArrayAccess, \JsonS
         'name' => 'name',
         'dateCreated' => 'date_created',
         'dateModified' => 'date_modified',
-        'version' => 'version'
+        'version' => 'version',
+        'contentDateModified' => 'content_date_modified'
     ];
 
     /**
@@ -125,7 +128,8 @@ class TemplateListResponseResults implements ModelInterface, ArrayAccess, \JsonS
         'name' => 'setName',
         'dateCreated' => 'setDateCreated',
         'dateModified' => 'setDateModified',
-        'version' => 'setVersion'
+        'version' => 'setVersion',
+        'contentDateModified' => 'setContentDateModified'
     ];
 
     /**
@@ -138,7 +142,8 @@ class TemplateListResponseResults implements ModelInterface, ArrayAccess, \JsonS
         'name' => 'getName',
         'dateCreated' => 'getDateCreated',
         'dateModified' => 'getDateModified',
-        'version' => 'getVersion'
+        'version' => 'getVersion',
+        'contentDateModified' => 'getContentDateModified'
     ];
 
     /**
@@ -207,6 +212,7 @@ class TemplateListResponseResults implements ModelInterface, ArrayAccess, \JsonS
         $this->container['dateCreated'] = $data['dateCreated'] ?? null;
         $this->container['dateModified'] = $data['dateModified'] ?? null;
         $this->container['version'] = $data['version'] ?? null;
+        $this->container['contentDateModified'] = $data['contentDateModified'] ?? null;
     }
 
     /**
@@ -361,6 +367,32 @@ class TemplateListResponseResults implements ModelInterface, ArrayAccess, \JsonS
     public function setVersion($version)
     {
         $this->container['version'] = $version;
+
+        return $this;
+    }
+
+    /**
+     * Gets contentDateModified
+     *
+     * @return string|null
+     */
+    #[\ReturnTypeWillChange]
+    public function getContentDateModified()
+    {
+        return $this->container['contentDateModified'];
+    }
+
+    /**
+     * Sets contentDateModified
+     *
+     * @param string|null $contentDateModified contentDateModified
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setContentDateModified($contentDateModified)
+    {
+        $this->container['contentDateModified'] = $contentDateModified;
 
         return $this;
     }

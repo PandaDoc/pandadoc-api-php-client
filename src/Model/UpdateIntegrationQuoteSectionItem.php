@@ -1,6 +1,6 @@
 <?php
 /**
- * PricingTableResponseItems
+ * UpdateIntegrationQuoteSectionItem
  *
  * PHP version 7.3
  *
@@ -30,7 +30,7 @@ use \ArrayAccess;
 use \PandaDoc\Client\ObjectSerializer;
 
 /**
- * PricingTableResponseItems Class Doc Comment
+ * UpdateIntegrationQuoteSectionItem Class Doc Comment
  *
  * @category Class
  * @package  PandaDoc\Client
@@ -40,7 +40,7 @@ use \PandaDoc\Client\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class PricingTableResponseItems implements ModelInterface, ArrayAccess, \JsonSerializable
+class UpdateIntegrationQuoteSectionItem implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class PricingTableResponseItems implements ModelInterface, ArrayAccess, \JsonSer
       *
       * @var string
       */
-    protected static $openAPIModelName = 'PricingTableResponse_items';
+    protected static $openAPIModelName = 'UpdateIntegrationQuoteSectionItem';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,23 +59,21 @@ class PricingTableResponseItems implements ModelInterface, ArrayAccess, \JsonSer
     protected static $openAPITypes = [
         'id' => 'string',
         'sku' => 'string',
-        'qty' => 'string',
         'name' => 'string',
-        'cost' => 'string',
-        'price' => 'string',
         'description' => 'string',
-        'customFields' => 'object',
-        'customColumns' => 'object',
-        'discount' => '\PandaDoc\Client\Model\PricingTableResponseDiscount',
-        'taxFirst' => '\PandaDoc\Client\Model\PricingTableResponseDiscount',
-        'taxSecond' => '\PandaDoc\Client\Model\PricingTableResponseDiscount',
-        'subtotal' => 'string',
-        'options' => '\PandaDoc\Client\Model\PricingTableResponseOptions',
-        'salePrice' => 'string',
-        'taxes' => 'object',
-        'discounts' => 'object',
-        'fees' => 'object',
-        'mergedData' => 'object'
+        'qty' => 'int',
+        'price' => 'float',
+        'priceSettings' => '\PandaDoc\Client\Model\QuoteUpdateRequestPriceSettings',
+        'cost' => 'float',
+        'billingFrequency' => 'string',
+        'contractTerm' => 'int',
+        'referenceId' => 'string',
+        'options' => '\PandaDoc\Client\Model\QuoteUpdateRequestOptions',
+        'customColumns' => 'array<string,string>',
+        'discounts' => 'array<string,\PandaDoc\Client\Model\QuoteUpdateRequestDiscounts>',
+        'taxes' => 'array<string,\PandaDoc\Client\Model\QuoteUpdateRequestDiscounts>',
+        'fees' => 'array<string,\PandaDoc\Client\Model\QuoteUpdateRequestDiscounts>',
+        'multipliers' => 'array<string,float>'
     ];
 
     /**
@@ -86,25 +84,23 @@ class PricingTableResponseItems implements ModelInterface, ArrayAccess, \JsonSer
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
+        'id' => 'uuid',
         'sku' => null,
-        'qty' => null,
         'name' => null,
-        'cost' => null,
-        'price' => null,
         'description' => null,
-        'customFields' => null,
-        'customColumns' => null,
-        'discount' => null,
-        'taxFirst' => null,
-        'taxSecond' => null,
-        'subtotal' => null,
+        'qty' => null,
+        'price' => null,
+        'priceSettings' => null,
+        'cost' => null,
+        'billingFrequency' => null,
+        'contractTerm' => null,
+        'referenceId' => null,
         'options' => null,
-        'salePrice' => null,
-        'taxes' => null,
+        'customColumns' => null,
         'discounts' => null,
+        'taxes' => null,
         'fees' => null,
-        'mergedData' => null
+        'multipliers' => null
     ];
 
     /**
@@ -138,23 +134,21 @@ class PricingTableResponseItems implements ModelInterface, ArrayAccess, \JsonSer
     protected static $attributeMap = [
         'id' => 'id',
         'sku' => 'sku',
-        'qty' => 'qty',
         'name' => 'name',
-        'cost' => 'cost',
-        'price' => 'price',
         'description' => 'description',
-        'customFields' => 'custom_fields',
-        'customColumns' => 'custom_columns',
-        'discount' => 'discount',
-        'taxFirst' => 'tax_first',
-        'taxSecond' => 'tax_second',
-        'subtotal' => 'subtotal',
+        'qty' => 'qty',
+        'price' => 'price',
+        'priceSettings' => 'price_settings',
+        'cost' => 'cost',
+        'billingFrequency' => 'billing_frequency',
+        'contractTerm' => 'contract_term',
+        'referenceId' => 'reference_id',
         'options' => 'options',
-        'salePrice' => 'sale_price',
-        'taxes' => 'taxes',
+        'customColumns' => 'custom_columns',
         'discounts' => 'discounts',
+        'taxes' => 'taxes',
         'fees' => 'fees',
-        'mergedData' => 'merged_data'
+        'multipliers' => 'multipliers'
     ];
 
     /**
@@ -165,23 +159,21 @@ class PricingTableResponseItems implements ModelInterface, ArrayAccess, \JsonSer
     protected static $setters = [
         'id' => 'setId',
         'sku' => 'setSku',
-        'qty' => 'setQty',
         'name' => 'setName',
-        'cost' => 'setCost',
-        'price' => 'setPrice',
         'description' => 'setDescription',
-        'customFields' => 'setCustomFields',
-        'customColumns' => 'setCustomColumns',
-        'discount' => 'setDiscount',
-        'taxFirst' => 'setTaxFirst',
-        'taxSecond' => 'setTaxSecond',
-        'subtotal' => 'setSubtotal',
+        'qty' => 'setQty',
+        'price' => 'setPrice',
+        'priceSettings' => 'setPriceSettings',
+        'cost' => 'setCost',
+        'billingFrequency' => 'setBillingFrequency',
+        'contractTerm' => 'setContractTerm',
+        'referenceId' => 'setReferenceId',
         'options' => 'setOptions',
-        'salePrice' => 'setSalePrice',
-        'taxes' => 'setTaxes',
+        'customColumns' => 'setCustomColumns',
         'discounts' => 'setDiscounts',
+        'taxes' => 'setTaxes',
         'fees' => 'setFees',
-        'mergedData' => 'setMergedData'
+        'multipliers' => 'setMultipliers'
     ];
 
     /**
@@ -192,23 +184,21 @@ class PricingTableResponseItems implements ModelInterface, ArrayAccess, \JsonSer
     protected static $getters = [
         'id' => 'getId',
         'sku' => 'getSku',
-        'qty' => 'getQty',
         'name' => 'getName',
-        'cost' => 'getCost',
-        'price' => 'getPrice',
         'description' => 'getDescription',
-        'customFields' => 'getCustomFields',
-        'customColumns' => 'getCustomColumns',
-        'discount' => 'getDiscount',
-        'taxFirst' => 'getTaxFirst',
-        'taxSecond' => 'getTaxSecond',
-        'subtotal' => 'getSubtotal',
+        'qty' => 'getQty',
+        'price' => 'getPrice',
+        'priceSettings' => 'getPriceSettings',
+        'cost' => 'getCost',
+        'billingFrequency' => 'getBillingFrequency',
+        'contractTerm' => 'getContractTerm',
+        'referenceId' => 'getReferenceId',
         'options' => 'getOptions',
-        'salePrice' => 'getSalePrice',
-        'taxes' => 'getTaxes',
+        'customColumns' => 'getCustomColumns',
         'discounts' => 'getDiscounts',
+        'taxes' => 'getTaxes',
         'fees' => 'getFees',
-        'mergedData' => 'getMergedData'
+        'multipliers' => 'getMultipliers'
     ];
 
     /**
@@ -256,6 +246,28 @@ class PricingTableResponseItems implements ModelInterface, ArrayAccess, \JsonSer
         return self::$openAPIModelName;
     }
 
+    const BILLING_FREQUENCY_WEEKLY = 'weekly';
+    const BILLING_FREQUENCY_MONTHLY = 'monthly';
+    const BILLING_FREQUENCY_ANNUALLY = 'annually';
+    const BILLING_FREQUENCY_QUARTERLY = 'quarterly';
+    const BILLING_FREQUENCY_SEMIANNUALY = 'semiannualy';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    #[\ReturnTypeWillChange]
+    public function getBillingFrequencyAllowableValues()
+    {
+        return [
+            self::BILLING_FREQUENCY_WEEKLY,
+            self::BILLING_FREQUENCY_MONTHLY,
+            self::BILLING_FREQUENCY_ANNUALLY,
+            self::BILLING_FREQUENCY_QUARTERLY,
+            self::BILLING_FREQUENCY_SEMIANNUALY,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -273,24 +285,22 @@ class PricingTableResponseItems implements ModelInterface, ArrayAccess, \JsonSer
     public function __construct(array $data = null)
     {
         $this->container['id'] = $data['id'] ?? null;
-        $this->container['sku'] = $data['sku'] ?? null;
-        $this->container['qty'] = $data['qty'] ?? null;
-        $this->container['name'] = $data['name'] ?? null;
+        $this->container['sku'] = $data['sku'] ?? '#';
+        $this->container['name'] = $data['name'] ?? '';
+        $this->container['description'] = $data['description'] ?? '';
+        $this->container['qty'] = $data['qty'] ?? 1;
+        $this->container['price'] = $data['price'] ?? 0;
+        $this->container['priceSettings'] = $data['priceSettings'] ?? null;
         $this->container['cost'] = $data['cost'] ?? null;
-        $this->container['price'] = $data['price'] ?? null;
-        $this->container['description'] = $data['description'] ?? null;
-        $this->container['customFields'] = $data['customFields'] ?? null;
-        $this->container['customColumns'] = $data['customColumns'] ?? null;
-        $this->container['discount'] = $data['discount'] ?? null;
-        $this->container['taxFirst'] = $data['taxFirst'] ?? null;
-        $this->container['taxSecond'] = $data['taxSecond'] ?? null;
-        $this->container['subtotal'] = $data['subtotal'] ?? null;
+        $this->container['billingFrequency'] = $data['billingFrequency'] ?? null;
+        $this->container['contractTerm'] = $data['contractTerm'] ?? null;
+        $this->container['referenceId'] = $data['referenceId'] ?? null;
         $this->container['options'] = $data['options'] ?? null;
-        $this->container['salePrice'] = $data['salePrice'] ?? null;
-        $this->container['taxes'] = $data['taxes'] ?? null;
+        $this->container['customColumns'] = $data['customColumns'] ?? null;
         $this->container['discounts'] = $data['discounts'] ?? null;
+        $this->container['taxes'] = $data['taxes'] ?? null;
         $this->container['fees'] = $data['fees'] ?? null;
-        $this->container['mergedData'] = $data['mergedData'] ?? null;
+        $this->container['multipliers'] = $data['multipliers'] ?? null;
     }
 
     /**
@@ -302,6 +312,15 @@ class PricingTableResponseItems implements ModelInterface, ArrayAccess, \JsonSer
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        $allowedValues = $this->getBillingFrequencyAllowableValues();
+        if (!is_null($this->container['billingFrequency']) && !in_array($this->container['billingFrequency'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'billingFrequency', must be one of '%s'",
+                $this->container['billingFrequency'],
+                implode("', '", $allowedValues)
+            );
+        }
 
         return $invalidProperties;
     }
@@ -333,7 +352,7 @@ class PricingTableResponseItems implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets id
      *
-     * @param string|null $id id
+     * @param string|null $id Item ID to update. Invalid (or missing) ID causes creating a new item.
      *
      * @return self
      */
@@ -359,7 +378,7 @@ class PricingTableResponseItems implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets sku
      *
-     * @param string|null $sku sku
+     * @param string|null $sku Product SKU. If you create an item without providing a value, it will have the default value.
      *
      * @return self
      */
@@ -367,32 +386,6 @@ class PricingTableResponseItems implements ModelInterface, ArrayAccess, \JsonSer
     public function setSku($sku)
     {
         $this->container['sku'] = $sku;
-
-        return $this;
-    }
-
-    /**
-     * Gets qty
-     *
-     * @return string|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getQty()
-    {
-        return $this->container['qty'];
-    }
-
-    /**
-     * Sets qty
-     *
-     * @param string|null $qty qty
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setQty($qty)
-    {
-        $this->container['qty'] = $qty;
 
         return $this;
     }
@@ -411,7 +404,7 @@ class PricingTableResponseItems implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets name
      *
-     * @param string|null $name name
+     * @param string|null $name Item name. If you create an item without providing a value, it will have the default value.
      *
      * @return self
      */
@@ -419,58 +412,6 @@ class PricingTableResponseItems implements ModelInterface, ArrayAccess, \JsonSer
     public function setName($name)
     {
         $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets cost
-     *
-     * @return string|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getCost()
-    {
-        return $this->container['cost'];
-    }
-
-    /**
-     * Sets cost
-     *
-     * @param string|null $cost cost
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setCost($cost)
-    {
-        $this->container['cost'] = $cost;
-
-        return $this;
-    }
-
-    /**
-     * Gets price
-     *
-     * @return string|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getPrice()
-    {
-        return $this->container['price'];
-    }
-
-    /**
-     * Sets price
-     *
-     * @param string|null $price price
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setPrice($price)
-    {
-        $this->container['price'] = $price;
 
         return $this;
     }
@@ -489,7 +430,7 @@ class PricingTableResponseItems implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets description
      *
-     * @param string|null $description description
+     * @param string|null $description Item description. If you create an item without providing a value, it will have the default value.
      *
      * @return self
      */
@@ -502,157 +443,193 @@ class PricingTableResponseItems implements ModelInterface, ArrayAccess, \JsonSer
     }
 
     /**
-     * Gets customFields
+     * Gets qty
      *
-     * @return object|null
+     * @return int|null
      */
     #[\ReturnTypeWillChange]
-    public function getCustomFields()
+    public function getQty()
     {
-        return $this->container['customFields'];
+        return $this->container['qty'];
     }
 
     /**
-     * Sets customFields
+     * Sets qty
      *
-     * @param object|null $customFields customFields
+     * @param int|null $qty Item QTY. If you create an item without providing a value, it will have the default value.
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setCustomFields($customFields)
+    public function setQty($qty)
     {
-        $this->container['customFields'] = $customFields;
+        $this->container['qty'] = $qty;
 
         return $this;
     }
 
     /**
-     * Gets customColumns
+     * Gets price
      *
-     * @return object|null
+     * @return float|null
      */
     #[\ReturnTypeWillChange]
-    public function getCustomColumns()
+    public function getPrice()
     {
-        return $this->container['customColumns'];
+        return $this->container['price'];
     }
 
     /**
-     * Sets customColumns
+     * Sets price
      *
-     * @param object|null $customColumns customColumns
+     * @param float|null $price Item price. If you create an item without providing a value, it will have the default value. If `price_settings` is passed, this value may change after the quote is updated.
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setCustomColumns($customColumns)
+    public function setPrice($price)
     {
-        $this->container['customColumns'] = $customColumns;
+        $this->container['price'] = $price;
 
         return $this;
     }
 
     /**
-     * Gets discount
+     * Gets priceSettings
      *
-     * @return \PandaDoc\Client\Model\PricingTableResponseDiscount|null
+     * @return \PandaDoc\Client\Model\QuoteUpdateRequestPriceSettings|null
      */
     #[\ReturnTypeWillChange]
-    public function getDiscount()
+    public function getPriceSettings()
     {
-        return $this->container['discount'];
+        return $this->container['priceSettings'];
     }
 
     /**
-     * Sets discount
+     * Sets priceSettings
      *
-     * @param \PandaDoc\Client\Model\PricingTableResponseDiscount|null $discount discount
+     * @param \PandaDoc\Client\Model\QuoteUpdateRequestPriceSettings|null $priceSettings priceSettings
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setDiscount($discount)
+    public function setPriceSettings($priceSettings)
     {
-        $this->container['discount'] = $discount;
+        $this->container['priceSettings'] = $priceSettings;
 
         return $this;
     }
 
     /**
-     * Gets taxFirst
+     * Gets cost
      *
-     * @return \PandaDoc\Client\Model\PricingTableResponseDiscount|null
+     * @return float|null
      */
     #[\ReturnTypeWillChange]
-    public function getTaxFirst()
+    public function getCost()
     {
-        return $this->container['taxFirst'];
+        return $this->container['cost'];
     }
 
     /**
-     * Sets taxFirst
+     * Sets cost
      *
-     * @param \PandaDoc\Client\Model\PricingTableResponseDiscount|null $taxFirst taxFirst
+     * @param float|null $cost Item cost. If you create an item without providing a value, it will have the default value.
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setTaxFirst($taxFirst)
+    public function setCost($cost)
     {
-        $this->container['taxFirst'] = $taxFirst;
+        $this->container['cost'] = $cost;
 
         return $this;
     }
 
     /**
-     * Gets taxSecond
-     *
-     * @return \PandaDoc\Client\Model\PricingTableResponseDiscount|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getTaxSecond()
-    {
-        return $this->container['taxSecond'];
-    }
-
-    /**
-     * Sets taxSecond
-     *
-     * @param \PandaDoc\Client\Model\PricingTableResponseDiscount|null $taxSecond taxSecond
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setTaxSecond($taxSecond)
-    {
-        $this->container['taxSecond'] = $taxSecond;
-
-        return $this;
-    }
-
-    /**
-     * Gets subtotal
+     * Gets billingFrequency
      *
      * @return string|null
      */
     #[\ReturnTypeWillChange]
-    public function getSubtotal()
+    public function getBillingFrequency()
     {
-        return $this->container['subtotal'];
+        return $this->container['billingFrequency'];
     }
 
     /**
-     * Sets subtotal
+     * Sets billingFrequency
      *
-     * @param string|null $subtotal subtotal
+     * @param string|null $billingFrequency billingFrequency
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setSubtotal($subtotal)
+    public function setBillingFrequency($billingFrequency)
     {
-        $this->container['subtotal'] = $subtotal;
+        $allowedValues = $this->getBillingFrequencyAllowableValues();
+        if (!is_null($billingFrequency) && !in_array($billingFrequency, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'billingFrequency', must be one of '%s'",
+                    $billingFrequency,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['billingFrequency'] = $billingFrequency;
+
+        return $this;
+    }
+
+    /**
+     * Gets contractTerm
+     *
+     * @return int|null
+     */
+    #[\ReturnTypeWillChange]
+    public function getContractTerm()
+    {
+        return $this->container['contractTerm'];
+    }
+
+    /**
+     * Sets contractTerm
+     *
+     * @param int|null $contractTerm Contract term. Measured in units set in the `billing_frequency` parameter.
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setContractTerm($contractTerm)
+    {
+        $this->container['contractTerm'] = $contractTerm;
+
+        return $this;
+    }
+
+    /**
+     * Gets referenceId
+     *
+     * @return string|null
+     */
+    #[\ReturnTypeWillChange]
+    public function getReferenceId()
+    {
+        return $this->container['referenceId'];
+    }
+
+    /**
+     * Sets referenceId
+     *
+     * @param string|null $referenceId Use this field to pass an id that references this item in external systems.
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setReferenceId($referenceId)
+    {
+        $this->container['referenceId'] = $referenceId;
 
         return $this;
     }
@@ -660,7 +637,7 @@ class PricingTableResponseItems implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets options
      *
-     * @return \PandaDoc\Client\Model\PricingTableResponseOptions|null
+     * @return \PandaDoc\Client\Model\QuoteUpdateRequestOptions|null
      */
     #[\ReturnTypeWillChange]
     public function getOptions()
@@ -671,7 +648,7 @@ class PricingTableResponseItems implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets options
      *
-     * @param \PandaDoc\Client\Model\PricingTableResponseOptions|null $options options
+     * @param \PandaDoc\Client\Model\QuoteUpdateRequestOptions|null $options options
      *
      * @return self
      */
@@ -684,53 +661,27 @@ class PricingTableResponseItems implements ModelInterface, ArrayAccess, \JsonSer
     }
 
     /**
-     * Gets salePrice
+     * Gets customColumns
      *
-     * @return string|null
+     * @return array<string,string>|null
      */
     #[\ReturnTypeWillChange]
-    public function getSalePrice()
+    public function getCustomColumns()
     {
-        return $this->container['salePrice'];
+        return $this->container['customColumns'];
     }
 
     /**
-     * Sets salePrice
+     * Sets customColumns
      *
-     * @param string|null $salePrice salePrice
+     * @param array<string,string>|null $customColumns customColumns
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setSalePrice($salePrice)
+    public function setCustomColumns($customColumns)
     {
-        $this->container['salePrice'] = $salePrice;
-
-        return $this;
-    }
-
-    /**
-     * Gets taxes
-     *
-     * @return object|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getTaxes()
-    {
-        return $this->container['taxes'];
-    }
-
-    /**
-     * Sets taxes
-     *
-     * @param object|null $taxes taxes
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setTaxes($taxes)
-    {
-        $this->container['taxes'] = $taxes;
+        $this->container['customColumns'] = $customColumns;
 
         return $this;
     }
@@ -738,7 +689,7 @@ class PricingTableResponseItems implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets discounts
      *
-     * @return object|null
+     * @return array<string,\PandaDoc\Client\Model\QuoteUpdateRequestDiscounts>|null
      */
     #[\ReturnTypeWillChange]
     public function getDiscounts()
@@ -749,7 +700,7 @@ class PricingTableResponseItems implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets discounts
      *
-     * @param object|null $discounts discounts
+     * @param array<string,\PandaDoc\Client\Model\QuoteUpdateRequestDiscounts>|null $discounts Item discounts.
      *
      * @return self
      */
@@ -762,9 +713,35 @@ class PricingTableResponseItems implements ModelInterface, ArrayAccess, \JsonSer
     }
 
     /**
+     * Gets taxes
+     *
+     * @return array<string,\PandaDoc\Client\Model\QuoteUpdateRequestDiscounts>|null
+     */
+    #[\ReturnTypeWillChange]
+    public function getTaxes()
+    {
+        return $this->container['taxes'];
+    }
+
+    /**
+     * Sets taxes
+     *
+     * @param array<string,\PandaDoc\Client\Model\QuoteUpdateRequestDiscounts>|null $taxes Item taxes.
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setTaxes($taxes)
+    {
+        $this->container['taxes'] = $taxes;
+
+        return $this;
+    }
+
+    /**
      * Gets fees
      *
-     * @return object|null
+     * @return array<string,\PandaDoc\Client\Model\QuoteUpdateRequestDiscounts>|null
      */
     #[\ReturnTypeWillChange]
     public function getFees()
@@ -775,7 +752,7 @@ class PricingTableResponseItems implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets fees
      *
-     * @param object|null $fees fees
+     * @param array<string,\PandaDoc\Client\Model\QuoteUpdateRequestDiscounts>|null $fees Item fees.
      *
      * @return self
      */
@@ -788,27 +765,27 @@ class PricingTableResponseItems implements ModelInterface, ArrayAccess, \JsonSer
     }
 
     /**
-     * Gets mergedData
+     * Gets multipliers
      *
-     * @return object|null
+     * @return array<string,float>|null
      */
     #[\ReturnTypeWillChange]
-    public function getMergedData()
+    public function getMultipliers()
     {
-        return $this->container['mergedData'];
+        return $this->container['multipliers'];
     }
 
     /**
-     * Sets mergedData
+     * Sets multipliers
      *
-     * @param object|null $mergedData Contains all fields in a flat structure with external field names defined in the template.
+     * @param array<string,float>|null $multipliers Item multipliers.
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setMergedData($mergedData)
+    public function setMultipliers($multipliers)
     {
-        $this->container['mergedData'] = $mergedData;
+        $this->container['multipliers'] = $multipliers;
 
         return $this;
     }

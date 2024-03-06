@@ -1,6 +1,6 @@
 <?php
 /**
- * QuoteResponse
+ * UploadSectionByTemplateRequest
  *
  * PHP version 7.3
  *
@@ -30,7 +30,7 @@ use \ArrayAccess;
 use \PandaDoc\Client\ObjectSerializer;
 
 /**
- * QuoteResponse Class Doc Comment
+ * UploadSectionByTemplateRequest Class Doc Comment
  *
  * @category Class
  * @package  PandaDoc\Client
@@ -40,7 +40,7 @@ use \PandaDoc\Client\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
+class UploadSectionByTemplateRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'QuoteResponse';
+    protected static $openAPIModelName = 'UploadSectionByTemplateRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,13 +57,12 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'string',
-        'currency' => 'string',
-        'total' => 'string',
-        'summary' => '\PandaDoc\Client\Model\QuoteResponseSummary',
-        'sections' => '\PandaDoc\Client\Model\QuoteResponseSections[]',
-        'mergeRules' => '\PandaDoc\Client\Model\QuoteResponseMergeRules[]',
-        'settings' => '\PandaDoc\Client\Model\QuoteResponseSettings'
+        'templateUuid' => 'string',
+        'recipients' => '\PandaDoc\Client\Model\DocumentCreateByTemplateRequestRecipients[]',
+        'tokens' => '\PandaDoc\Client\Model\DocumentCreateByTemplateRequestTokens[]',
+        'fields' => 'object',
+        'pricingTables' => '\PandaDoc\Client\Model\PricingTableRequest[]',
+        'contentPlaceholders' => '\PandaDoc\Client\Model\DocumentCreateByTemplateRequestContentPlaceholders[]'
     ];
 
     /**
@@ -74,13 +73,12 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'currency' => null,
-        'total' => null,
-        'summary' => null,
-        'sections' => null,
-        'mergeRules' => null,
-        'settings' => null
+        'templateUuid' => null,
+        'recipients' => null,
+        'tokens' => null,
+        'fields' => null,
+        'pricingTables' => null,
+        'contentPlaceholders' => null
     ];
 
     /**
@@ -112,13 +110,12 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'currency' => 'currency',
-        'total' => 'total',
-        'summary' => 'summary',
-        'sections' => 'sections',
-        'mergeRules' => 'merge_rules',
-        'settings' => 'settings'
+        'templateUuid' => 'template_uuid',
+        'recipients' => 'recipients',
+        'tokens' => 'tokens',
+        'fields' => 'fields',
+        'pricingTables' => 'pricing_tables',
+        'contentPlaceholders' => 'content_placeholders'
     ];
 
     /**
@@ -127,13 +124,12 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'currency' => 'setCurrency',
-        'total' => 'setTotal',
-        'summary' => 'setSummary',
-        'sections' => 'setSections',
-        'mergeRules' => 'setMergeRules',
-        'settings' => 'setSettings'
+        'templateUuid' => 'setTemplateUuid',
+        'recipients' => 'setRecipients',
+        'tokens' => 'setTokens',
+        'fields' => 'setFields',
+        'pricingTables' => 'setPricingTables',
+        'contentPlaceholders' => 'setContentPlaceholders'
     ];
 
     /**
@@ -142,13 +138,12 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'currency' => 'getCurrency',
-        'total' => 'getTotal',
-        'summary' => 'getSummary',
-        'sections' => 'getSections',
-        'mergeRules' => 'getMergeRules',
-        'settings' => 'getSettings'
+        'templateUuid' => 'getTemplateUuid',
+        'recipients' => 'getRecipients',
+        'tokens' => 'getTokens',
+        'fields' => 'getFields',
+        'pricingTables' => 'getPricingTables',
+        'contentPlaceholders' => 'getContentPlaceholders'
     ];
 
     /**
@@ -212,13 +207,12 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['currency'] = $data['currency'] ?? null;
-        $this->container['total'] = $data['total'] ?? null;
-        $this->container['summary'] = $data['summary'] ?? null;
-        $this->container['sections'] = $data['sections'] ?? null;
-        $this->container['mergeRules'] = $data['mergeRules'] ?? null;
-        $this->container['settings'] = $data['settings'] ?? null;
+        $this->container['templateUuid'] = $data['templateUuid'] ?? null;
+        $this->container['recipients'] = $data['recipients'] ?? null;
+        $this->container['tokens'] = $data['tokens'] ?? null;
+        $this->container['fields'] = $data['fields'] ?? null;
+        $this->container['pricingTables'] = $data['pricingTables'] ?? null;
+        $this->container['contentPlaceholders'] = $data['contentPlaceholders'] ?? null;
     }
 
     /**
@@ -231,6 +225,12 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+        if ($this->container['templateUuid'] === null) {
+            $invalidProperties[] = "'templateUuid' can't be null";
+        }
+        if ($this->container['recipients'] === null) {
+            $invalidProperties[] = "'recipients' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -248,183 +248,157 @@ class QuoteResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets id
+     * Gets templateUuid
      *
-     * @return string|null
+     * @return string
      */
     #[\ReturnTypeWillChange]
-    public function getId()
+    public function getTemplateUuid()
     {
-        return $this->container['id'];
+        return $this->container['templateUuid'];
     }
 
     /**
-     * Sets id
+     * Sets templateUuid
      *
-     * @param string|null $id id
+     * @param string $templateUuid The ID of a template you want to use. You can copy it from an in app template url such as `https://app.pandadoc.com/a/#/templates/{ID}/content`. A template ID is also obtained by listing templates.
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setId($id)
+    public function setTemplateUuid($templateUuid)
     {
-        $this->container['id'] = $id;
+        $this->container['templateUuid'] = $templateUuid;
 
         return $this;
     }
 
     /**
-     * Gets currency
+     * Gets recipients
      *
-     * @return string|null
+     * @return \PandaDoc\Client\Model\DocumentCreateByTemplateRequestRecipients[]
      */
     #[\ReturnTypeWillChange]
-    public function getCurrency()
+    public function getRecipients()
     {
-        return $this->container['currency'];
+        return $this->container['recipients'];
     }
 
     /**
-     * Sets currency
+     * Sets recipients
      *
-     * @param string|null $currency currency
+     * @param \PandaDoc\Client\Model\DocumentCreateByTemplateRequestRecipients[] $recipients The list of recipients you're sending the document to. Every object must contain the email parameter. The `role`, `first_name` and `last_name` parameters are optional. If the `role` parameter passed, a person is assigned all fields matching their corresponding role. If not passed, a person will receive a read-only link to view the document. If the `first_name` and `last_name` not passed the system 1. creates a new contact, if none exists with the given `email`; or 2. gets the existing contact with the given `email` that already exists.
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setCurrency($currency)
+    public function setRecipients($recipients)
     {
-        $this->container['currency'] = $currency;
+        $this->container['recipients'] = $recipients;
 
         return $this;
     }
 
     /**
-     * Gets total
+     * Gets tokens
      *
-     * @return string|null
+     * @return \PandaDoc\Client\Model\DocumentCreateByTemplateRequestTokens[]|null
      */
     #[\ReturnTypeWillChange]
-    public function getTotal()
+    public function getTokens()
     {
-        return $this->container['total'];
+        return $this->container['tokens'];
     }
 
     /**
-     * Sets total
+     * Sets tokens
      *
-     * @param string|null $total total
+     * @param \PandaDoc\Client\Model\DocumentCreateByTemplateRequestTokens[]|null $tokens You can pass a list of tokens/values to pre-fill tokens used in a template. Name is a token name in a template. Value is a real value you would like to replace a token with.
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setTotal($total)
+    public function setTokens($tokens)
     {
-        $this->container['total'] = $total;
+        $this->container['tokens'] = $tokens;
 
         return $this;
     }
 
     /**
-     * Gets summary
+     * Gets fields
      *
-     * @return \PandaDoc\Client\Model\QuoteResponseSummary|null
+     * @return object|null
      */
     #[\ReturnTypeWillChange]
-    public function getSummary()
+    public function getFields()
     {
-        return $this->container['summary'];
+        return $this->container['fields'];
     }
 
     /**
-     * Sets summary
+     * Sets fields
      *
-     * @param \PandaDoc\Client\Model\QuoteResponseSummary|null $summary summary
+     * @param object|null $fields You can pass a list of fields/values to pre-fill fields used in a template. Note that the Signature field can't be pre-filled.
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setSummary($summary)
+    public function setFields($fields)
     {
-        $this->container['summary'] = $summary;
+        $this->container['fields'] = $fields;
 
         return $this;
     }
 
     /**
-     * Gets sections
+     * Gets pricingTables
      *
-     * @return \PandaDoc\Client\Model\QuoteResponseSections[]|null
+     * @return \PandaDoc\Client\Model\PricingTableRequest[]|null
      */
     #[\ReturnTypeWillChange]
-    public function getSections()
+    public function getPricingTables()
     {
-        return $this->container['sections'];
+        return $this->container['pricingTables'];
     }
 
     /**
-     * Sets sections
+     * Sets pricingTables
      *
-     * @param \PandaDoc\Client\Model\QuoteResponseSections[]|null $sections sections
+     * @param \PandaDoc\Client\Model\PricingTableRequest[]|null $pricingTables Information to construct or populate a pricing table can be passed when creating a document. All product information must be passed when creating a new document. Products stored in PandaDoc cannot be used to populate table rows at this time. Keep in mind that this is an array, so multiple table objects can be passed to a document. Make sure that \"Automatically add products to this table\" is enabled in the PandaDoc template pricing tables you wish to populate via API.
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setSections($sections)
+    public function setPricingTables($pricingTables)
     {
-        $this->container['sections'] = $sections;
+        $this->container['pricingTables'] = $pricingTables;
 
         return $this;
     }
 
     /**
-     * Gets mergeRules
+     * Gets contentPlaceholders
      *
-     * @return \PandaDoc\Client\Model\QuoteResponseMergeRules[]|null
+     * @return \PandaDoc\Client\Model\DocumentCreateByTemplateRequestContentPlaceholders[]|null
      */
     #[\ReturnTypeWillChange]
-    public function getMergeRules()
+    public function getContentPlaceholders()
     {
-        return $this->container['mergeRules'];
+        return $this->container['contentPlaceholders'];
     }
 
     /**
-     * Sets mergeRules
+     * Sets contentPlaceholders
      *
-     * @param \PandaDoc\Client\Model\QuoteResponseMergeRules[]|null $mergeRules mergeRules
+     * @param \PandaDoc\Client\Model\DocumentCreateByTemplateRequestContentPlaceholders[]|null $contentPlaceholders You may replace Content Library Item Placeholders with a few content library items each and pre-fill fields/variables values, pricing table items, and assign recipients to roles from there.
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setMergeRules($mergeRules)
+    public function setContentPlaceholders($contentPlaceholders)
     {
-        $this->container['mergeRules'] = $mergeRules;
-
-        return $this;
-    }
-
-    /**
-     * Gets settings
-     *
-     * @return \PandaDoc\Client\Model\QuoteResponseSettings|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getSettings()
-    {
-        return $this->container['settings'];
-    }
-
-    /**
-     * Sets settings
-     *
-     * @param \PandaDoc\Client\Model\QuoteResponseSettings|null $settings settings
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setSettings($settings)
-    {
-        $this->container['settings'] = $settings;
+        $this->container['contentPlaceholders'] = $contentPlaceholders;
 
         return $this;
     }

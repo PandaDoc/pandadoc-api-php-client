@@ -14,5 +14,6 @@ Name | Type | Description | Notes
 **streetAddress** | **string** |  | [optional]
 **city** | **string** |  | [optional]
 **postalCode** | **string** |  | [optional]
+**verificationSettings** | [**\PandaDoc\Client\Model\RecipientVerificationSettings**](RecipientVerificationSettings.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

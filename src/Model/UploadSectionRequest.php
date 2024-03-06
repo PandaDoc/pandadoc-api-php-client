@@ -1,6 +1,6 @@
 <?php
 /**
- * DocumentDetailsResponseRecipients
+ * UploadSectionRequest
  *
  * PHP version 7.3
  *
@@ -30,7 +30,7 @@ use \ArrayAccess;
 use \PandaDoc\Client\ObjectSerializer;
 
 /**
- * DocumentDetailsResponseRecipients Class Doc Comment
+ * UploadSectionRequest Class Doc Comment
  *
  * @category Class
  * @package  PandaDoc\Client
@@ -40,7 +40,7 @@ use \PandaDoc\Client\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, \JsonSerializable
+class UploadSectionRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
       *
       * @var string
       */
-    protected static $openAPIModelName = 'DocumentDetailsResponse_recipients';
+    protected static $openAPIModelName = 'UploadSectionRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,19 +57,16 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
       * @var string[]
       */
     protected static $openAPITypes = [
-        'recipientType' => 'string',
-        'role' => 'string',
-        'roles' => 'string[]',
-        'lastName' => 'string',
-        'signingOrder' => 'mixed',
-        'id' => 'string',
-        'contactId' => 'string',
-        'firstName' => 'string',
-        'email' => 'string',
-        'hasCompleted' => 'bool',
-        'sharedLink' => 'string',
-        'signatureDate' => 'string',
-        'verificationSettings' => '\PandaDoc\Client\Model\RecipientVerificationSettings'
+        'name' => 'string',
+        'templateUuid' => 'string',
+        'recipients' => '\PandaDoc\Client\Model\DocumentCreateRequestRecipients[]',
+        'tokens' => '\PandaDoc\Client\Model\DocumentCreateByTemplateRequestTokens[]',
+        'fields' => 'object',
+        'tags' => 'string[]',
+        'pricingTables' => '\PandaDoc\Client\Model\PricingTableRequest[]',
+        'contentPlaceholders' => '\PandaDoc\Client\Model\DocumentCreateRequestContentPlaceholders[]',
+        'url' => 'string',
+        'parseFormFields' => 'bool'
     ];
 
     /**
@@ -80,19 +77,16 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'recipientType' => null,
-        'role' => null,
-        'roles' => null,
-        'lastName' => null,
-        'signingOrder' => null,
-        'id' => null,
-        'contactId' => null,
-        'firstName' => null,
-        'email' => null,
-        'hasCompleted' => null,
-        'sharedLink' => null,
-        'signatureDate' => null,
-        'verificationSettings' => null
+        'name' => null,
+        'templateUuid' => null,
+        'recipients' => null,
+        'tokens' => null,
+        'fields' => null,
+        'tags' => null,
+        'pricingTables' => null,
+        'contentPlaceholders' => null,
+        'url' => null,
+        'parseFormFields' => null
     ];
 
     /**
@@ -124,19 +118,16 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $attributeMap = [
-        'recipientType' => 'recipient_type',
-        'role' => 'role',
-        'roles' => 'roles',
-        'lastName' => 'last_name',
-        'signingOrder' => 'signing_order',
-        'id' => 'id',
-        'contactId' => 'contact_id',
-        'firstName' => 'first_name',
-        'email' => 'email',
-        'hasCompleted' => 'has_completed',
-        'sharedLink' => 'shared_link',
-        'signatureDate' => 'signature_date',
-        'verificationSettings' => 'verification_settings'
+        'name' => 'name',
+        'templateUuid' => 'template_uuid',
+        'recipients' => 'recipients',
+        'tokens' => 'tokens',
+        'fields' => 'fields',
+        'tags' => 'tags',
+        'pricingTables' => 'pricing_tables',
+        'contentPlaceholders' => 'content_placeholders',
+        'url' => 'url',
+        'parseFormFields' => 'parse_form_fields'
     ];
 
     /**
@@ -145,19 +136,16 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
-        'recipientType' => 'setRecipientType',
-        'role' => 'setRole',
-        'roles' => 'setRoles',
-        'lastName' => 'setLastName',
-        'signingOrder' => 'setSigningOrder',
-        'id' => 'setId',
-        'contactId' => 'setContactId',
-        'firstName' => 'setFirstName',
-        'email' => 'setEmail',
-        'hasCompleted' => 'setHasCompleted',
-        'sharedLink' => 'setSharedLink',
-        'signatureDate' => 'setSignatureDate',
-        'verificationSettings' => 'setVerificationSettings'
+        'name' => 'setName',
+        'templateUuid' => 'setTemplateUuid',
+        'recipients' => 'setRecipients',
+        'tokens' => 'setTokens',
+        'fields' => 'setFields',
+        'tags' => 'setTags',
+        'pricingTables' => 'setPricingTables',
+        'contentPlaceholders' => 'setContentPlaceholders',
+        'url' => 'setUrl',
+        'parseFormFields' => 'setParseFormFields'
     ];
 
     /**
@@ -166,19 +154,16 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $getters = [
-        'recipientType' => 'getRecipientType',
-        'role' => 'getRole',
-        'roles' => 'getRoles',
-        'lastName' => 'getLastName',
-        'signingOrder' => 'getSigningOrder',
-        'id' => 'getId',
-        'contactId' => 'getContactId',
-        'firstName' => 'getFirstName',
-        'email' => 'getEmail',
-        'hasCompleted' => 'getHasCompleted',
-        'sharedLink' => 'getSharedLink',
-        'signatureDate' => 'getSignatureDate',
-        'verificationSettings' => 'getVerificationSettings'
+        'name' => 'getName',
+        'templateUuid' => 'getTemplateUuid',
+        'recipients' => 'getRecipients',
+        'tokens' => 'getTokens',
+        'fields' => 'getFields',
+        'tags' => 'getTags',
+        'pricingTables' => 'getPricingTables',
+        'contentPlaceholders' => 'getContentPlaceholders',
+        'url' => 'getUrl',
+        'parseFormFields' => 'getParseFormFields'
     ];
 
     /**
@@ -242,19 +227,16 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
      */
     public function __construct(array $data = null)
     {
-        $this->container['recipientType'] = $data['recipientType'] ?? null;
-        $this->container['role'] = $data['role'] ?? null;
-        $this->container['roles'] = $data['roles'] ?? null;
-        $this->container['lastName'] = $data['lastName'] ?? null;
-        $this->container['signingOrder'] = $data['signingOrder'] ?? null;
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['contactId'] = $data['contactId'] ?? null;
-        $this->container['firstName'] = $data['firstName'] ?? null;
-        $this->container['email'] = $data['email'] ?? null;
-        $this->container['hasCompleted'] = $data['hasCompleted'] ?? null;
-        $this->container['sharedLink'] = $data['sharedLink'] ?? null;
-        $this->container['signatureDate'] = $data['signatureDate'] ?? null;
-        $this->container['verificationSettings'] = $data['verificationSettings'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['templateUuid'] = $data['templateUuid'] ?? null;
+        $this->container['recipients'] = $data['recipients'] ?? null;
+        $this->container['tokens'] = $data['tokens'] ?? null;
+        $this->container['fields'] = $data['fields'] ?? null;
+        $this->container['tags'] = $data['tags'] ?? null;
+        $this->container['pricingTables'] = $data['pricingTables'] ?? null;
+        $this->container['contentPlaceholders'] = $data['contentPlaceholders'] ?? null;
+        $this->container['url'] = $data['url'] ?? null;
+        $this->container['parseFormFields'] = $data['parseFormFields'] ?? null;
     }
 
     /**
@@ -284,341 +266,261 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
 
 
     /**
-     * Gets recipientType
+     * Gets name
      *
      * @return string|null
      */
     #[\ReturnTypeWillChange]
-    public function getRecipientType()
+    public function getName()
     {
-        return $this->container['recipientType'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets recipientType
+     * Sets name
      *
-     * @param string|null $recipientType recipientType
+     * @param string|null $name Name the section you are creating.
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setRecipientType($recipientType)
+    public function setName($name)
     {
-        $this->container['recipientType'] = $recipientType;
+        $this->container['name'] = $name;
 
         return $this;
     }
 
     /**
-     * Gets role
+     * Gets templateUuid
      *
      * @return string|null
-     * @deprecated
      */
     #[\ReturnTypeWillChange]
-    public function getRole()
+    public function getTemplateUuid()
     {
-        return $this->container['role'];
+        return $this->container['templateUuid'];
     }
 
     /**
-     * Sets role
+     * Sets templateUuid
      *
-     * @param string|null $role role
+     * @param string|null $templateUuid ID of the template you want to use. You can copy it from an in-app template URL such as `https://app.pandadoc.com/a/#/templates/{ID}/content`. A template ID is also obtained by listing templates.
      *
      * @return self
-     * @deprecated
      */
     #[\ReturnTypeWillChange]
-    public function setRole($role)
+    public function setTemplateUuid($templateUuid)
     {
-        $this->container['role'] = $role;
+        $this->container['templateUuid'] = $templateUuid;
 
         return $this;
     }
 
     /**
-     * Gets roles
+     * Gets recipients
+     *
+     * @return \PandaDoc\Client\Model\DocumentCreateRequestRecipients[]|null
+     */
+    #[\ReturnTypeWillChange]
+    public function getRecipients()
+    {
+        return $this->container['recipients'];
+    }
+
+    /**
+     * Sets recipients
+     *
+     * @param \PandaDoc\Client\Model\DocumentCreateRequestRecipients[]|null $recipients The list of recipients you're sending the document to. Every object must contain the `email` parameter. The `role`, `first_name` and `last_name` parameters are optional. If the `role` parameter is passed, a person is assigned all fields matching their corresponding role. If a role was not passed, a person receives a read-only link to view the document. If the `first_name` and `last_name` are not passed, the system does this 1. Creates a new contact, if none exists with the given `email`; or 2. Gets the existing contact with the given `email` that already exists.
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setRecipients($recipients)
+    {
+        $this->container['recipients'] = $recipients;
+
+        return $this;
+    }
+
+    /**
+     * Gets tokens
+     *
+     * @return \PandaDoc\Client\Model\DocumentCreateByTemplateRequestTokens[]|null
+     */
+    #[\ReturnTypeWillChange]
+    public function getTokens()
+    {
+        return $this->container['tokens'];
+    }
+
+    /**
+     * Sets tokens
+     *
+     * @param \PandaDoc\Client\Model\DocumentCreateByTemplateRequestTokens[]|null $tokens You can pass a list of tokens/values to pre-fill tokens used in a template. Name is a token name in a template. Value is a real value you would like to replace a token with.
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setTokens($tokens)
+    {
+        $this->container['tokens'] = $tokens;
+
+        return $this;
+    }
+
+    /**
+     * Gets fields
+     *
+     * @return object|null
+     */
+    #[\ReturnTypeWillChange]
+    public function getFields()
+    {
+        return $this->container['fields'];
+    }
+
+    /**
+     * Sets fields
+     *
+     * @param object|null $fields You can pass a list of fields/values to pre-fill fields used in a template. Please note Signature field can't be pre-filled.
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setFields($fields)
+    {
+        $this->container['fields'] = $fields;
+
+        return $this;
+    }
+
+    /**
+     * Gets tags
      *
      * @return string[]|null
      */
     #[\ReturnTypeWillChange]
-    public function getRoles()
+    public function getTags()
     {
-        return $this->container['roles'];
+        return $this->container['tags'];
     }
 
     /**
-     * Sets roles
+     * Sets tags
      *
-     * @param string[]|null $roles roles
+     * @param string[]|null $tags Mark your document with one or several tags.
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setRoles($roles)
+    public function setTags($tags)
     {
-        $this->container['roles'] = $roles;
+        $this->container['tags'] = $tags;
 
         return $this;
     }
 
     /**
-     * Gets lastName
+     * Gets pricingTables
+     *
+     * @return \PandaDoc\Client\Model\PricingTableRequest[]|null
+     */
+    #[\ReturnTypeWillChange]
+    public function getPricingTables()
+    {
+        return $this->container['pricingTables'];
+    }
+
+    /**
+     * Sets pricingTables
+     *
+     * @param \PandaDoc\Client\Model\PricingTableRequest[]|null $pricingTables Information to construct or populate a pricing table can be passed when creating a document. All product information must be passed when creating a new document. Products stored in PandaDoc cannot be used to populate table rows at this time. Keep in mind that this is an array, so multiple table objects can be passed to a document.
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setPricingTables($pricingTables)
+    {
+        $this->container['pricingTables'] = $pricingTables;
+
+        return $this;
+    }
+
+    /**
+     * Gets contentPlaceholders
+     *
+     * @return \PandaDoc\Client\Model\DocumentCreateRequestContentPlaceholders[]|null
+     */
+    #[\ReturnTypeWillChange]
+    public function getContentPlaceholders()
+    {
+        return $this->container['contentPlaceholders'];
+    }
+
+    /**
+     * Sets contentPlaceholders
+     *
+     * @param \PandaDoc\Client\Model\DocumentCreateRequestContentPlaceholders[]|null $contentPlaceholders You may replace Content Library Item Placeholders with a few content library items each and pre-fill fields/variables values, pricing table items, and assign recipients to roles from there.
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setContentPlaceholders($contentPlaceholders)
+    {
+        $this->container['contentPlaceholders'] = $contentPlaceholders;
+
+        return $this;
+    }
+
+    /**
+     * Gets url
      *
      * @return string|null
      */
     #[\ReturnTypeWillChange]
-    public function getLastName()
+    public function getUrl()
     {
-        return $this->container['lastName'];
+        return $this->container['url'];
     }
 
     /**
-     * Sets lastName
+     * Sets url
      *
-     * @param string|null $lastName lastName
+     * @param string|null $url Use a URL to specify the PDF. We support only URLs starting with https.
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setLastName($lastName)
+    public function setUrl($url)
     {
-        $this->container['lastName'] = $lastName;
+        $this->container['url'] = $url;
 
         return $this;
     }
 
     /**
-     * Gets signingOrder
-     *
-     * @return mixed|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getSigningOrder()
-    {
-        return $this->container['signingOrder'];
-    }
-
-    /**
-     * Sets signingOrder
-     *
-     * @param mixed|null $signingOrder signingOrder
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setSigningOrder($signingOrder)
-    {
-        $this->container['signingOrder'] = $signingOrder;
-
-        return $this;
-    }
-
-    /**
-     * Gets id
-     *
-     * @return string|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param string|null $id id
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets contactId
-     *
-     * @return string|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getContactId()
-    {
-        return $this->container['contactId'];
-    }
-
-    /**
-     * Sets contactId
-     *
-     * @param string|null $contactId contactId
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setContactId($contactId)
-    {
-        $this->container['contactId'] = $contactId;
-
-        return $this;
-    }
-
-    /**
-     * Gets firstName
-     *
-     * @return string|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getFirstName()
-    {
-        return $this->container['firstName'];
-    }
-
-    /**
-     * Sets firstName
-     *
-     * @param string|null $firstName firstName
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setFirstName($firstName)
-    {
-        $this->container['firstName'] = $firstName;
-
-        return $this;
-    }
-
-    /**
-     * Gets email
-     *
-     * @return string|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getEmail()
-    {
-        return $this->container['email'];
-    }
-
-    /**
-     * Sets email
-     *
-     * @param string|null $email email
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setEmail($email)
-    {
-        $this->container['email'] = $email;
-
-        return $this;
-    }
-
-    /**
-     * Gets hasCompleted
+     * Gets parseFormFields
      *
      * @return bool|null
      */
     #[\ReturnTypeWillChange]
-    public function getHasCompleted()
+    public function getParseFormFields()
     {
-        return $this->container['hasCompleted'];
+        return $this->container['parseFormFields'];
     }
 
     /**
-     * Sets hasCompleted
+     * Sets parseFormFields
      *
-     * @param bool|null $hasCompleted hasCompleted
+     * @param bool|null $parseFormFields Set this parameter as true if you create a document from a PDF with form fields and as false if you upload a PDF with field tags.
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setHasCompleted($hasCompleted)
+    public function setParseFormFields($parseFormFields)
     {
-        $this->container['hasCompleted'] = $hasCompleted;
-
-        return $this;
-    }
-
-    /**
-     * Gets sharedLink
-     *
-     * @return string|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getSharedLink()
-    {
-        return $this->container['sharedLink'];
-    }
-
-    /**
-     * Sets sharedLink
-     *
-     * @param string|null $sharedLink sharedLink
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setSharedLink($sharedLink)
-    {
-        $this->container['sharedLink'] = $sharedLink;
-
-        return $this;
-    }
-
-    /**
-     * Gets signatureDate
-     *
-     * @return string|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getSignatureDate()
-    {
-        return $this->container['signatureDate'];
-    }
-
-    /**
-     * Sets signatureDate
-     *
-     * @param string|null $signatureDate signatureDate
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setSignatureDate($signatureDate)
-    {
-        $this->container['signatureDate'] = $signatureDate;
-
-        return $this;
-    }
-
-    /**
-     * Gets verificationSettings
-     *
-     * @return \PandaDoc\Client\Model\RecipientVerificationSettings|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getVerificationSettings()
-    {
-        return $this->container['verificationSettings'];
-    }
-
-    /**
-     * Sets verificationSettings
-     *
-     * @param \PandaDoc\Client\Model\RecipientVerificationSettings|null $verificationSettings verificationSettings
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setVerificationSettings($verificationSettings)
-    {
-        $this->container['verificationSettings'] = $verificationSettings;
+        $this->container['parseFormFields'] = $parseFormFields;
 
         return $this;
     }

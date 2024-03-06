@@ -19,7 +19,7 @@ or add the following to `composer.json`:
 ```json
 {
   "require": {
-    "pandadoc/php-client": "6.0.0"
+    "pandadoc/php-client": "6.1.0"
   }
 }
 ```
@@ -127,6 +127,11 @@ Class | Method | HTTP request | Description
 *MembersApi* | [**detailsMember**](docs/Api/MembersApi.md#detailsmember) | **GET** /public/v1/members/{id} | Member details
 *MembersApi* | [**listMembers**](docs/Api/MembersApi.md#listmembers) | **GET** /public/v1/members | List members
 *OAuth20AuthenticationApi* | [**accessToken**](docs/Api/OAuth20AuthenticationApi.md#accesstoken) | **POST** /oauth2/access_token | Create/Refresh Access Token
+*QuotesApi* | [**quoteUpdate**](docs/Api/QuotesApi.md#quoteupdate) | **PUT** /public/v1/documents/{document_id}/quotes/{quote_id} | Quote update
+*SectionsApi* | [**listSections**](docs/Api/SectionsApi.md#listsections) | **GET** /public/v1/documents/{document_id}/sections | List sections
+*SectionsApi* | [**sectionDetails**](docs/Api/SectionsApi.md#sectiondetails) | **GET** /public/v1/documents/{document_id}/sections/uploads/{upload_id} | Section details
+*SectionsApi* | [**sectionInfo**](docs/Api/SectionsApi.md#sectioninfo) | **GET** /public/v1/documents/{document_id}/sections/{section_id} | Section Info
+*SectionsApi* | [**uploadSection**](docs/Api/SectionsApi.md#uploadsection) | **POST** /public/v1/documents/{document_id}/sections/uploads | Upload section
 *TemplatesApi* | [**deleteTemplate**](docs/Api/TemplatesApi.md#deletetemplate) | **DELETE** /public/v1/templates/{id} | Delete Template
 *TemplatesApi* | [**detailsTemplate**](docs/Api/TemplatesApi.md#detailstemplate) | **GET** /public/v1/templates/{id}/details | Details Template
 *TemplatesApi* | [**listTemplates**](docs/Api/TemplatesApi.md#listtemplates) | **GET** /public/v1/templates | List Templates
