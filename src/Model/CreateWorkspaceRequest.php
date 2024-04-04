@@ -1,6 +1,6 @@
 <?php
 /**
- * DocumentUpdateRequestRecipients
+ * CreateWorkspaceRequest
  *
  * PHP version 7.3
  *
@@ -30,7 +30,7 @@ use \ArrayAccess;
 use \PandaDoc\Client\ObjectSerializer;
 
 /**
- * DocumentUpdateRequestRecipients Class Doc Comment
+ * CreateWorkspaceRequest Class Doc Comment
  *
  * @category Class
  * @package  PandaDoc\Client
@@ -40,7 +40,7 @@ use \PandaDoc\Client\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class DocumentUpdateRequestRecipients implements ModelInterface, ArrayAccess, \JsonSerializable
+class CreateWorkspaceRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class DocumentUpdateRequestRecipients implements ModelInterface, ArrayAccess, \J
       *
       * @var string
       */
-    protected static $openAPIModelName = 'DocumentUpdateRequest_recipients';
+    protected static $openAPIModelName = 'CreateWorkspaceRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,13 +57,7 @@ class DocumentUpdateRequestRecipients implements ModelInterface, ArrayAccess, \J
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'string',
-        'email' => 'string',
-        'phone' => 'string',
-        'firstName' => 'string',
-        'lastName' => 'string',
-        'deliveryMethods' => '\PandaDoc\Client\Model\RicipientDeliveryMethods',
-        'redirect' => '\PandaDoc\Client\Model\RecipientRedirect'
+        'name' => 'string'
     ];
 
     /**
@@ -74,13 +68,7 @@ class DocumentUpdateRequestRecipients implements ModelInterface, ArrayAccess, \J
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'email' => null,
-        'phone' => null,
-        'firstName' => null,
-        'lastName' => null,
-        'deliveryMethods' => null,
-        'redirect' => null
+        'name' => null
     ];
 
     /**
@@ -112,13 +100,7 @@ class DocumentUpdateRequestRecipients implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'email' => 'email',
-        'phone' => 'phone',
-        'firstName' => 'first_name',
-        'lastName' => 'last_name',
-        'deliveryMethods' => 'delivery_methods',
-        'redirect' => 'redirect'
+        'name' => 'name'
     ];
 
     /**
@@ -127,13 +109,7 @@ class DocumentUpdateRequestRecipients implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'email' => 'setEmail',
-        'phone' => 'setPhone',
-        'firstName' => 'setFirstName',
-        'lastName' => 'setLastName',
-        'deliveryMethods' => 'setDeliveryMethods',
-        'redirect' => 'setRedirect'
+        'name' => 'setName'
     ];
 
     /**
@@ -142,13 +118,7 @@ class DocumentUpdateRequestRecipients implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'email' => 'getEmail',
-        'phone' => 'getPhone',
-        'firstName' => 'getFirstName',
-        'lastName' => 'getLastName',
-        'deliveryMethods' => 'getDeliveryMethods',
-        'redirect' => 'getRedirect'
+        'name' => 'getName'
     ];
 
     /**
@@ -212,13 +182,7 @@ class DocumentUpdateRequestRecipients implements ModelInterface, ArrayAccess, \J
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['email'] = $data['email'] ?? null;
-        $this->container['phone'] = $data['phone'] ?? null;
-        $this->container['firstName'] = $data['firstName'] ?? null;
-        $this->container['lastName'] = $data['lastName'] ?? null;
-        $this->container['deliveryMethods'] = $data['deliveryMethods'] ?? null;
-        $this->container['redirect'] = $data['redirect'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
     }
 
     /**
@@ -231,6 +195,9 @@ class DocumentUpdateRequestRecipients implements ModelInterface, ArrayAccess, \J
     {
         $invalidProperties = [];
 
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -248,183 +215,27 @@ class DocumentUpdateRequestRecipients implements ModelInterface, ArrayAccess, \J
 
 
     /**
-     * Gets id
+     * Gets name
      *
-     * @return string|null
+     * @return string
      */
     #[\ReturnTypeWillChange]
-    public function getId()
+    public function getName()
     {
-        return $this->container['id'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets id
+     * Sets name
      *
-     * @param string|null $id id
+     * @param string $name name
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setId($id)
+    public function setName($name)
     {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets email
-     *
-     * @return string|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getEmail()
-    {
-        return $this->container['email'];
-    }
-
-    /**
-     * Sets email
-     *
-     * @param string|null $email email
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setEmail($email)
-    {
-        $this->container['email'] = $email;
-
-        return $this;
-    }
-
-    /**
-     * Gets phone
-     *
-     * @return string|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getPhone()
-    {
-        return $this->container['phone'];
-    }
-
-    /**
-     * Sets phone
-     *
-     * @param string|null $phone phone
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setPhone($phone)
-    {
-        $this->container['phone'] = $phone;
-
-        return $this;
-    }
-
-    /**
-     * Gets firstName
-     *
-     * @return string|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getFirstName()
-    {
-        return $this->container['firstName'];
-    }
-
-    /**
-     * Sets firstName
-     *
-     * @param string|null $firstName firstName
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setFirstName($firstName)
-    {
-        $this->container['firstName'] = $firstName;
-
-        return $this;
-    }
-
-    /**
-     * Gets lastName
-     *
-     * @return string|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getLastName()
-    {
-        return $this->container['lastName'];
-    }
-
-    /**
-     * Sets lastName
-     *
-     * @param string|null $lastName lastName
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setLastName($lastName)
-    {
-        $this->container['lastName'] = $lastName;
-
-        return $this;
-    }
-
-    /**
-     * Gets deliveryMethods
-     *
-     * @return \PandaDoc\Client\Model\RicipientDeliveryMethods|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getDeliveryMethods()
-    {
-        return $this->container['deliveryMethods'];
-    }
-
-    /**
-     * Sets deliveryMethods
-     *
-     * @param \PandaDoc\Client\Model\RicipientDeliveryMethods|null $deliveryMethods deliveryMethods
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setDeliveryMethods($deliveryMethods)
-    {
-        $this->container['deliveryMethods'] = $deliveryMethods;
-
-        return $this;
-    }
-
-    /**
-     * Gets redirect
-     *
-     * @return \PandaDoc\Client\Model\RecipientRedirect|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getRedirect()
-    {
-        return $this->container['redirect'];
-    }
-
-    /**
-     * Sets redirect
-     *
-     * @param \PandaDoc\Client\Model\RecipientRedirect|null $redirect redirect
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setRedirect($redirect)
-    {
-        $this->container['redirect'] = $redirect;
+        $this->container['name'] = $name;
 
         return $this;
     }

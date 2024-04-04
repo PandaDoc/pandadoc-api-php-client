@@ -58,16 +58,18 @@ class DocumentRecipientEditRequest implements ModelInterface, ArrayAccess, \Json
       */
     protected static $openAPITypes = [
         'email' => 'string',
+        'phone' => 'string',
+        'deliveryMethods' => '\PandaDoc\Client\Model\RicipientDeliveryMethods',
         'firstName' => 'string',
         'lastName' => 'string',
         'company' => 'string',
         'jobTitle' => 'string',
-        'phone' => 'string',
         'state' => 'string',
         'streetAddress' => 'string',
         'city' => 'string',
         'postalCode' => 'string',
-        'verificationSettings' => '\PandaDoc\Client\Model\RecipientVerificationSettings'
+        'verificationSettings' => '\PandaDoc\Client\Model\RecipientVerificationSettings',
+        'redirect' => '\PandaDoc\Client\Model\RecipientRedirect'
     ];
 
     /**
@@ -79,16 +81,18 @@ class DocumentRecipientEditRequest implements ModelInterface, ArrayAccess, \Json
       */
     protected static $openAPIFormats = [
         'email' => null,
+        'phone' => null,
+        'deliveryMethods' => null,
         'firstName' => null,
         'lastName' => null,
         'company' => null,
         'jobTitle' => null,
-        'phone' => null,
         'state' => null,
         'streetAddress' => null,
         'city' => null,
         'postalCode' => null,
-        'verificationSettings' => null
+        'verificationSettings' => null,
+        'redirect' => null
     ];
 
     /**
@@ -121,16 +125,18 @@ class DocumentRecipientEditRequest implements ModelInterface, ArrayAccess, \Json
      */
     protected static $attributeMap = [
         'email' => 'email',
+        'phone' => 'phone',
+        'deliveryMethods' => 'delivery_methods',
         'firstName' => 'first_name',
         'lastName' => 'last_name',
         'company' => 'company',
         'jobTitle' => 'job_title',
-        'phone' => 'phone',
         'state' => 'state',
         'streetAddress' => 'street_address',
         'city' => 'city',
         'postalCode' => 'postal_code',
-        'verificationSettings' => 'verification_settings'
+        'verificationSettings' => 'verification_settings',
+        'redirect' => 'redirect'
     ];
 
     /**
@@ -140,16 +146,18 @@ class DocumentRecipientEditRequest implements ModelInterface, ArrayAccess, \Json
      */
     protected static $setters = [
         'email' => 'setEmail',
+        'phone' => 'setPhone',
+        'deliveryMethods' => 'setDeliveryMethods',
         'firstName' => 'setFirstName',
         'lastName' => 'setLastName',
         'company' => 'setCompany',
         'jobTitle' => 'setJobTitle',
-        'phone' => 'setPhone',
         'state' => 'setState',
         'streetAddress' => 'setStreetAddress',
         'city' => 'setCity',
         'postalCode' => 'setPostalCode',
-        'verificationSettings' => 'setVerificationSettings'
+        'verificationSettings' => 'setVerificationSettings',
+        'redirect' => 'setRedirect'
     ];
 
     /**
@@ -159,16 +167,18 @@ class DocumentRecipientEditRequest implements ModelInterface, ArrayAccess, \Json
      */
     protected static $getters = [
         'email' => 'getEmail',
+        'phone' => 'getPhone',
+        'deliveryMethods' => 'getDeliveryMethods',
         'firstName' => 'getFirstName',
         'lastName' => 'getLastName',
         'company' => 'getCompany',
         'jobTitle' => 'getJobTitle',
-        'phone' => 'getPhone',
         'state' => 'getState',
         'streetAddress' => 'getStreetAddress',
         'city' => 'getCity',
         'postalCode' => 'getPostalCode',
-        'verificationSettings' => 'getVerificationSettings'
+        'verificationSettings' => 'getVerificationSettings',
+        'redirect' => 'getRedirect'
     ];
 
     /**
@@ -233,16 +243,18 @@ class DocumentRecipientEditRequest implements ModelInterface, ArrayAccess, \Json
     public function __construct(array $data = null)
     {
         $this->container['email'] = $data['email'] ?? null;
+        $this->container['phone'] = $data['phone'] ?? null;
+        $this->container['deliveryMethods'] = $data['deliveryMethods'] ?? null;
         $this->container['firstName'] = $data['firstName'] ?? null;
         $this->container['lastName'] = $data['lastName'] ?? null;
         $this->container['company'] = $data['company'] ?? null;
         $this->container['jobTitle'] = $data['jobTitle'] ?? null;
-        $this->container['phone'] = $data['phone'] ?? null;
         $this->container['state'] = $data['state'] ?? null;
         $this->container['streetAddress'] = $data['streetAddress'] ?? null;
         $this->container['city'] = $data['city'] ?? null;
         $this->container['postalCode'] = $data['postalCode'] ?? null;
         $this->container['verificationSettings'] = $data['verificationSettings'] ?? null;
+        $this->container['redirect'] = $data['redirect'] ?? null;
     }
 
     /**
@@ -293,6 +305,58 @@ class DocumentRecipientEditRequest implements ModelInterface, ArrayAccess, \Json
     public function setEmail($email)
     {
         $this->container['email'] = $email;
+
+        return $this;
+    }
+
+    /**
+     * Gets phone
+     *
+     * @return string|null
+     */
+    #[\ReturnTypeWillChange]
+    public function getPhone()
+    {
+        return $this->container['phone'];
+    }
+
+    /**
+     * Sets phone
+     *
+     * @param string|null $phone phone
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setPhone($phone)
+    {
+        $this->container['phone'] = $phone;
+
+        return $this;
+    }
+
+    /**
+     * Gets deliveryMethods
+     *
+     * @return \PandaDoc\Client\Model\RicipientDeliveryMethods|null
+     */
+    #[\ReturnTypeWillChange]
+    public function getDeliveryMethods()
+    {
+        return $this->container['deliveryMethods'];
+    }
+
+    /**
+     * Sets deliveryMethods
+     *
+     * @param \PandaDoc\Client\Model\RicipientDeliveryMethods|null $deliveryMethods deliveryMethods
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setDeliveryMethods($deliveryMethods)
+    {
+        $this->container['deliveryMethods'] = $deliveryMethods;
 
         return $this;
     }
@@ -397,32 +461,6 @@ class DocumentRecipientEditRequest implements ModelInterface, ArrayAccess, \Json
     public function setJobTitle($jobTitle)
     {
         $this->container['jobTitle'] = $jobTitle;
-
-        return $this;
-    }
-
-    /**
-     * Gets phone
-     *
-     * @return string|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getPhone()
-    {
-        return $this->container['phone'];
-    }
-
-    /**
-     * Sets phone
-     *
-     * @param string|null $phone phone
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setPhone($phone)
-    {
-        $this->container['phone'] = $phone;
 
         return $this;
     }
@@ -553,6 +591,32 @@ class DocumentRecipientEditRequest implements ModelInterface, ArrayAccess, \Json
     public function setVerificationSettings($verificationSettings)
     {
         $this->container['verificationSettings'] = $verificationSettings;
+
+        return $this;
+    }
+
+    /**
+     * Gets redirect
+     *
+     * @return \PandaDoc\Client\Model\RecipientRedirect|null
+     */
+    #[\ReturnTypeWillChange]
+    public function getRedirect()
+    {
+        return $this->container['redirect'];
+    }
+
+    /**
+     * Sets redirect
+     *
+     * @param \PandaDoc\Client\Model\RecipientRedirect|null $redirect redirect
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setRedirect($redirect)
+    {
+        $this->container['redirect'] = $redirect;
 
         return $this;
     }

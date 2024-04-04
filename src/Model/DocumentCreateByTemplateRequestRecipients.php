@@ -58,10 +58,13 @@ class DocumentCreateByTemplateRequestRecipients implements ModelInterface, Array
       */
     protected static $openAPITypes = [
         'email' => 'string',
+        'phone' => 'string',
+        'deliveryMethods' => '\PandaDoc\Client\Model\RicipientDeliveryMethods',
         'firstName' => 'string',
         'lastName' => 'string',
         'role' => 'string',
-        'signingOrder' => 'int'
+        'signingOrder' => 'int',
+        'redirect' => '\PandaDoc\Client\Model\RecipientRedirect'
     ];
 
     /**
@@ -73,10 +76,13 @@ class DocumentCreateByTemplateRequestRecipients implements ModelInterface, Array
       */
     protected static $openAPIFormats = [
         'email' => null,
+        'phone' => null,
+        'deliveryMethods' => null,
         'firstName' => null,
         'lastName' => null,
         'role' => null,
-        'signingOrder' => null
+        'signingOrder' => null,
+        'redirect' => null
     ];
 
     /**
@@ -109,10 +115,13 @@ class DocumentCreateByTemplateRequestRecipients implements ModelInterface, Array
      */
     protected static $attributeMap = [
         'email' => 'email',
+        'phone' => 'phone',
+        'deliveryMethods' => 'delivery_methods',
         'firstName' => 'first_name',
         'lastName' => 'last_name',
         'role' => 'role',
-        'signingOrder' => 'signing_order'
+        'signingOrder' => 'signing_order',
+        'redirect' => 'redirect'
     ];
 
     /**
@@ -122,10 +131,13 @@ class DocumentCreateByTemplateRequestRecipients implements ModelInterface, Array
      */
     protected static $setters = [
         'email' => 'setEmail',
+        'phone' => 'setPhone',
+        'deliveryMethods' => 'setDeliveryMethods',
         'firstName' => 'setFirstName',
         'lastName' => 'setLastName',
         'role' => 'setRole',
-        'signingOrder' => 'setSigningOrder'
+        'signingOrder' => 'setSigningOrder',
+        'redirect' => 'setRedirect'
     ];
 
     /**
@@ -135,10 +147,13 @@ class DocumentCreateByTemplateRequestRecipients implements ModelInterface, Array
      */
     protected static $getters = [
         'email' => 'getEmail',
+        'phone' => 'getPhone',
+        'deliveryMethods' => 'getDeliveryMethods',
         'firstName' => 'getFirstName',
         'lastName' => 'getLastName',
         'role' => 'getRole',
-        'signingOrder' => 'getSigningOrder'
+        'signingOrder' => 'getSigningOrder',
+        'redirect' => 'getRedirect'
     ];
 
     /**
@@ -203,10 +218,13 @@ class DocumentCreateByTemplateRequestRecipients implements ModelInterface, Array
     public function __construct(array $data = null)
     {
         $this->container['email'] = $data['email'] ?? null;
+        $this->container['phone'] = $data['phone'] ?? null;
+        $this->container['deliveryMethods'] = $data['deliveryMethods'] ?? null;
         $this->container['firstName'] = $data['firstName'] ?? null;
         $this->container['lastName'] = $data['lastName'] ?? null;
         $this->container['role'] = $data['role'] ?? null;
         $this->container['signingOrder'] = $data['signingOrder'] ?? null;
+        $this->container['redirect'] = $data['redirect'] ?? null;
     }
 
     /**
@@ -219,9 +237,6 @@ class DocumentCreateByTemplateRequestRecipients implements ModelInterface, Array
     {
         $invalidProperties = [];
 
-        if ($this->container['email'] === null) {
-            $invalidProperties[] = "'email' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -241,7 +256,7 @@ class DocumentCreateByTemplateRequestRecipients implements ModelInterface, Array
     /**
      * Gets email
      *
-     * @return string
+     * @return string|null
      */
     #[\ReturnTypeWillChange]
     public function getEmail()
@@ -252,7 +267,7 @@ class DocumentCreateByTemplateRequestRecipients implements ModelInterface, Array
     /**
      * Sets email
      *
-     * @param string $email email
+     * @param string|null $email email
      *
      * @return self
      */
@@ -260,6 +275,58 @@ class DocumentCreateByTemplateRequestRecipients implements ModelInterface, Array
     public function setEmail($email)
     {
         $this->container['email'] = $email;
+
+        return $this;
+    }
+
+    /**
+     * Gets phone
+     *
+     * @return string|null
+     */
+    #[\ReturnTypeWillChange]
+    public function getPhone()
+    {
+        return $this->container['phone'];
+    }
+
+    /**
+     * Sets phone
+     *
+     * @param string|null $phone phone
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setPhone($phone)
+    {
+        $this->container['phone'] = $phone;
+
+        return $this;
+    }
+
+    /**
+     * Gets deliveryMethods
+     *
+     * @return \PandaDoc\Client\Model\RicipientDeliveryMethods|null
+     */
+    #[\ReturnTypeWillChange]
+    public function getDeliveryMethods()
+    {
+        return $this->container['deliveryMethods'];
+    }
+
+    /**
+     * Sets deliveryMethods
+     *
+     * @param \PandaDoc\Client\Model\RicipientDeliveryMethods|null $deliveryMethods deliveryMethods
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setDeliveryMethods($deliveryMethods)
+    {
+        $this->container['deliveryMethods'] = $deliveryMethods;
 
         return $this;
     }
@@ -364,6 +431,32 @@ class DocumentCreateByTemplateRequestRecipients implements ModelInterface, Array
     public function setSigningOrder($signingOrder)
     {
         $this->container['signingOrder'] = $signingOrder;
+
+        return $this;
+    }
+
+    /**
+     * Gets redirect
+     *
+     * @return \PandaDoc\Client\Model\RecipientRedirect|null
+     */
+    #[\ReturnTypeWillChange]
+    public function getRedirect()
+    {
+        return $this->container['redirect'];
+    }
+
+    /**
+     * Sets redirect
+     *
+     * @param \PandaDoc\Client\Model\RecipientRedirect|null $redirect redirect
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setRedirect($redirect)
+    {
+        $this->container['redirect'] = $redirect;
 
         return $this;
     }

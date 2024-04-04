@@ -66,10 +66,13 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
         'contactId' => 'string',
         'firstName' => 'string',
         'email' => 'string',
+        'phone' => 'string',
+        'deliveryMethods' => '\PandaDoc\Client\Model\RicipientDeliveryMethods',
         'hasCompleted' => 'bool',
         'sharedLink' => 'string',
         'signatureDate' => 'string',
-        'verificationSettings' => '\PandaDoc\Client\Model\RecipientVerificationSettings'
+        'verificationSettings' => '\PandaDoc\Client\Model\RecipientVerificationSettings',
+        'redirect' => '\PandaDoc\Client\Model\RecipientRedirect'
     ];
 
     /**
@@ -89,10 +92,13 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
         'contactId' => null,
         'firstName' => null,
         'email' => null,
+        'phone' => null,
+        'deliveryMethods' => null,
         'hasCompleted' => null,
         'sharedLink' => null,
         'signatureDate' => null,
-        'verificationSettings' => null
+        'verificationSettings' => null,
+        'redirect' => null
     ];
 
     /**
@@ -133,10 +139,13 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
         'contactId' => 'contact_id',
         'firstName' => 'first_name',
         'email' => 'email',
+        'phone' => 'phone',
+        'deliveryMethods' => 'delivery_methods',
         'hasCompleted' => 'has_completed',
         'sharedLink' => 'shared_link',
         'signatureDate' => 'signature_date',
-        'verificationSettings' => 'verification_settings'
+        'verificationSettings' => 'verification_settings',
+        'redirect' => 'redirect'
     ];
 
     /**
@@ -154,10 +163,13 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
         'contactId' => 'setContactId',
         'firstName' => 'setFirstName',
         'email' => 'setEmail',
+        'phone' => 'setPhone',
+        'deliveryMethods' => 'setDeliveryMethods',
         'hasCompleted' => 'setHasCompleted',
         'sharedLink' => 'setSharedLink',
         'signatureDate' => 'setSignatureDate',
-        'verificationSettings' => 'setVerificationSettings'
+        'verificationSettings' => 'setVerificationSettings',
+        'redirect' => 'setRedirect'
     ];
 
     /**
@@ -175,10 +187,13 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
         'contactId' => 'getContactId',
         'firstName' => 'getFirstName',
         'email' => 'getEmail',
+        'phone' => 'getPhone',
+        'deliveryMethods' => 'getDeliveryMethods',
         'hasCompleted' => 'getHasCompleted',
         'sharedLink' => 'getSharedLink',
         'signatureDate' => 'getSignatureDate',
-        'verificationSettings' => 'getVerificationSettings'
+        'verificationSettings' => 'getVerificationSettings',
+        'redirect' => 'getRedirect'
     ];
 
     /**
@@ -251,10 +266,13 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
         $this->container['contactId'] = $data['contactId'] ?? null;
         $this->container['firstName'] = $data['firstName'] ?? null;
         $this->container['email'] = $data['email'] ?? null;
+        $this->container['phone'] = $data['phone'] ?? null;
+        $this->container['deliveryMethods'] = $data['deliveryMethods'] ?? null;
         $this->container['hasCompleted'] = $data['hasCompleted'] ?? null;
         $this->container['sharedLink'] = $data['sharedLink'] ?? null;
         $this->container['signatureDate'] = $data['signatureDate'] ?? null;
         $this->container['verificationSettings'] = $data['verificationSettings'] ?? null;
+        $this->container['redirect'] = $data['redirect'] ?? null;
     }
 
     /**
@@ -520,6 +538,58 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
     }
 
     /**
+     * Gets phone
+     *
+     * @return string|null
+     */
+    #[\ReturnTypeWillChange]
+    public function getPhone()
+    {
+        return $this->container['phone'];
+    }
+
+    /**
+     * Sets phone
+     *
+     * @param string|null $phone phone
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setPhone($phone)
+    {
+        $this->container['phone'] = $phone;
+
+        return $this;
+    }
+
+    /**
+     * Gets deliveryMethods
+     *
+     * @return \PandaDoc\Client\Model\RicipientDeliveryMethods|null
+     */
+    #[\ReturnTypeWillChange]
+    public function getDeliveryMethods()
+    {
+        return $this->container['deliveryMethods'];
+    }
+
+    /**
+     * Sets deliveryMethods
+     *
+     * @param \PandaDoc\Client\Model\RicipientDeliveryMethods|null $deliveryMethods deliveryMethods
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setDeliveryMethods($deliveryMethods)
+    {
+        $this->container['deliveryMethods'] = $deliveryMethods;
+
+        return $this;
+    }
+
+    /**
      * Gets hasCompleted
      *
      * @return bool|null
@@ -619,6 +689,32 @@ class DocumentDetailsResponseRecipients implements ModelInterface, ArrayAccess, 
     public function setVerificationSettings($verificationSettings)
     {
         $this->container['verificationSettings'] = $verificationSettings;
+
+        return $this;
+    }
+
+    /**
+     * Gets redirect
+     *
+     * @return \PandaDoc\Client\Model\RecipientRedirect|null
+     */
+    #[\ReturnTypeWillChange]
+    public function getRedirect()
+    {
+        return $this->container['redirect'];
+    }
+
+    /**
+     * Sets redirect
+     *
+     * @param \PandaDoc\Client\Model\RecipientRedirect|null $redirect redirect
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setRedirect($redirect)
+    {
+        $this->container['redirect'] = $redirect;
 
         return $this;
     }

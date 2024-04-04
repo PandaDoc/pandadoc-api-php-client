@@ -1,6 +1,6 @@
 <?php
 /**
- * ContactCreateRequest
+ * AddMemberResponse
  *
  * PHP version 7.3
  *
@@ -30,7 +30,7 @@ use \ArrayAccess;
 use \PandaDoc\Client\ObjectSerializer;
 
 /**
- * ContactCreateRequest Class Doc Comment
+ * AddMemberResponse Class Doc Comment
  *
  * @category Class
  * @package  PandaDoc\Client
@@ -40,7 +40,7 @@ use \PandaDoc\Client\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class ContactCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class AddMemberResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class ContactCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ContactCreateRequest';
+    protected static $openAPIModelName = 'AddMemberResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,16 +57,12 @@ class ContactCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
+        'memberId' => 'string',
+        'workspaceId' => 'string',
+        'role' => 'string',
         'email' => 'string',
         'firstName' => 'string',
-        'lastName' => 'string',
-        'company' => 'string',
-        'jobTitle' => 'string',
-        'phone' => 'string',
-        'state' => 'string',
-        'streetAddress' => 'string',
-        'city' => 'string',
-        'postalCode' => 'string'
+        'lastName' => 'string'
     ];
 
     /**
@@ -77,16 +73,12 @@ class ContactCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'memberId' => null,
+        'workspaceId' => null,
+        'role' => null,
         'email' => null,
         'firstName' => null,
-        'lastName' => null,
-        'company' => null,
-        'jobTitle' => null,
-        'phone' => null,
-        'state' => null,
-        'streetAddress' => null,
-        'city' => null,
-        'postalCode' => null
+        'lastName' => null
     ];
 
     /**
@@ -118,16 +110,12 @@ class ContactCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $attributeMap = [
+        'memberId' => 'member_id',
+        'workspaceId' => 'workspace_id',
+        'role' => 'role',
         'email' => 'email',
         'firstName' => 'first_name',
-        'lastName' => 'last_name',
-        'company' => 'company',
-        'jobTitle' => 'job_title',
-        'phone' => 'phone',
-        'state' => 'state',
-        'streetAddress' => 'street_address',
-        'city' => 'city',
-        'postalCode' => 'postal_code'
+        'lastName' => 'last_name'
     ];
 
     /**
@@ -136,16 +124,12 @@ class ContactCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
+        'memberId' => 'setMemberId',
+        'workspaceId' => 'setWorkspaceId',
+        'role' => 'setRole',
         'email' => 'setEmail',
         'firstName' => 'setFirstName',
-        'lastName' => 'setLastName',
-        'company' => 'setCompany',
-        'jobTitle' => 'setJobTitle',
-        'phone' => 'setPhone',
-        'state' => 'setState',
-        'streetAddress' => 'setStreetAddress',
-        'city' => 'setCity',
-        'postalCode' => 'setPostalCode'
+        'lastName' => 'setLastName'
     ];
 
     /**
@@ -154,16 +138,12 @@ class ContactCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $getters = [
+        'memberId' => 'getMemberId',
+        'workspaceId' => 'getWorkspaceId',
+        'role' => 'getRole',
         'email' => 'getEmail',
         'firstName' => 'getFirstName',
-        'lastName' => 'getLastName',
-        'company' => 'getCompany',
-        'jobTitle' => 'getJobTitle',
-        'phone' => 'getPhone',
-        'state' => 'getState',
-        'streetAddress' => 'getStreetAddress',
-        'city' => 'getCity',
-        'postalCode' => 'getPostalCode'
+        'lastName' => 'getLastName'
     ];
 
     /**
@@ -211,6 +191,26 @@ class ContactCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializ
         return self::$openAPIModelName;
     }
 
+    const ROLE_ADMIN = 'Admin';
+    const ROLE_MANAGER = 'Manager';
+    const ROLE_MEMBER = 'Member';
+    const ROLE_COLLABORATOR = 'Collaborator';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    #[\ReturnTypeWillChange]
+    public function getRoleAllowableValues()
+    {
+        return [
+            self::ROLE_ADMIN,
+            self::ROLE_MANAGER,
+            self::ROLE_MEMBER,
+            self::ROLE_COLLABORATOR,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -227,16 +227,12 @@ class ContactCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function __construct(array $data = null)
     {
+        $this->container['memberId'] = $data['memberId'] ?? null;
+        $this->container['workspaceId'] = $data['workspaceId'] ?? null;
+        $this->container['role'] = $data['role'] ?? null;
         $this->container['email'] = $data['email'] ?? null;
         $this->container['firstName'] = $data['firstName'] ?? null;
         $this->container['lastName'] = $data['lastName'] ?? null;
-        $this->container['company'] = $data['company'] ?? null;
-        $this->container['jobTitle'] = $data['jobTitle'] ?? null;
-        $this->container['phone'] = $data['phone'] ?? null;
-        $this->container['state'] = $data['state'] ?? null;
-        $this->container['streetAddress'] = $data['streetAddress'] ?? null;
-        $this->container['city'] = $data['city'] ?? null;
-        $this->container['postalCode'] = $data['postalCode'] ?? null;
     }
 
     /**
@@ -248,6 +244,15 @@ class ContactCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        $allowedValues = $this->getRoleAllowableValues();
+        if (!is_null($this->container['role']) && !in_array($this->container['role'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'role', must be one of '%s'",
+                $this->container['role'],
+                implode("', '", $allowedValues)
+            );
+        }
 
         return $invalidProperties;
     }
@@ -264,6 +269,94 @@ class ContactCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializ
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets memberId
+     *
+     * @return string|null
+     */
+    #[\ReturnTypeWillChange]
+    public function getMemberId()
+    {
+        return $this->container['memberId'];
+    }
+
+    /**
+     * Sets memberId
+     *
+     * @param string|null $memberId memberId
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setMemberId($memberId)
+    {
+        $this->container['memberId'] = $memberId;
+
+        return $this;
+    }
+
+    /**
+     * Gets workspaceId
+     *
+     * @return string|null
+     */
+    #[\ReturnTypeWillChange]
+    public function getWorkspaceId()
+    {
+        return $this->container['workspaceId'];
+    }
+
+    /**
+     * Sets workspaceId
+     *
+     * @param string|null $workspaceId workspaceId
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setWorkspaceId($workspaceId)
+    {
+        $this->container['workspaceId'] = $workspaceId;
+
+        return $this;
+    }
+
+    /**
+     * Gets role
+     *
+     * @return string|null
+     */
+    #[\ReturnTypeWillChange]
+    public function getRole()
+    {
+        return $this->container['role'];
+    }
+
+    /**
+     * Sets role
+     *
+     * @param string|null $role role
+     *
+     * @return self
+     */
+    #[\ReturnTypeWillChange]
+    public function setRole($role)
+    {
+        $allowedValues = $this->getRoleAllowableValues();
+        if (!is_null($role) && !in_array($role, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'role', must be one of '%s'",
+                    $role,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['role'] = $role;
+
+        return $this;
+    }
 
     /**
      * Gets email
@@ -339,188 +432,6 @@ class ContactCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     public function setLastName($lastName)
     {
         $this->container['lastName'] = $lastName;
-
-        return $this;
-    }
-
-    /**
-     * Gets company
-     *
-     * @return string|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getCompany()
-    {
-        return $this->container['company'];
-    }
-
-    /**
-     * Sets company
-     *
-     * @param string|null $company company
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setCompany($company)
-    {
-        $this->container['company'] = $company;
-
-        return $this;
-    }
-
-    /**
-     * Gets jobTitle
-     *
-     * @return string|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getJobTitle()
-    {
-        return $this->container['jobTitle'];
-    }
-
-    /**
-     * Sets jobTitle
-     *
-     * @param string|null $jobTitle jobTitle
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setJobTitle($jobTitle)
-    {
-        $this->container['jobTitle'] = $jobTitle;
-
-        return $this;
-    }
-
-    /**
-     * Gets phone
-     *
-     * @return string|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getPhone()
-    {
-        return $this->container['phone'];
-    }
-
-    /**
-     * Sets phone
-     *
-     * @param string|null $phone phone
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setPhone($phone)
-    {
-        $this->container['phone'] = $phone;
-
-        return $this;
-    }
-
-    /**
-     * Gets state
-     *
-     * @return string|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getState()
-    {
-        return $this->container['state'];
-    }
-
-    /**
-     * Sets state
-     *
-     * @param string|null $state state
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setState($state)
-    {
-        $this->container['state'] = $state;
-
-        return $this;
-    }
-
-    /**
-     * Gets streetAddress
-     *
-     * @return string|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getStreetAddress()
-    {
-        return $this->container['streetAddress'];
-    }
-
-    /**
-     * Sets streetAddress
-     *
-     * @param string|null $streetAddress streetAddress
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setStreetAddress($streetAddress)
-    {
-        $this->container['streetAddress'] = $streetAddress;
-
-        return $this;
-    }
-
-    /**
-     * Gets city
-     *
-     * @return string|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getCity()
-    {
-        return $this->container['city'];
-    }
-
-    /**
-     * Sets city
-     *
-     * @param string|null $city city
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setCity($city)
-    {
-        $this->container['city'] = $city;
-
-        return $this;
-    }
-
-    /**
-     * Gets postalCode
-     *
-     * @return string|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getPostalCode()
-    {
-        return $this->container['postalCode'];
-    }
-
-    /**
-     * Sets postalCode
-     *
-     * @param string|null $postalCode postalCode
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setPostalCode($postalCode)
-    {
-        $this->container['postalCode'] = $postalCode;
 
         return $this;
     }

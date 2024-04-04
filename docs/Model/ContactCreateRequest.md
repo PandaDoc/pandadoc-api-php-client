@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**email** | **string** |  |
+**email** | **string** |  | [optional]
 **firstName** | **string** |  | [optional]
 **lastName** | **string** |  | [optional]
 **company** | **string** |  | [optional]

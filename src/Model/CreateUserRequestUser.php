@@ -1,6 +1,6 @@
 <?php
 /**
- * ContactCreateRequest
+ * CreateUserRequestUser
  *
  * PHP version 7.3
  *
@@ -30,9 +30,10 @@ use \ArrayAccess;
 use \PandaDoc\Client\ObjectSerializer;
 
 /**
- * ContactCreateRequest Class Doc Comment
+ * CreateUserRequestUser Class Doc Comment
  *
  * @category Class
+ * @description User info
  * @package  PandaDoc\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -40,7 +41,7 @@ use \PandaDoc\Client\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class ContactCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class CreateUserRequestUser implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +50,7 @@ class ContactCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ContactCreateRequest';
+    protected static $openAPIModelName = 'CreateUserRequest_user';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -60,13 +61,7 @@ class ContactCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializ
         'email' => 'string',
         'firstName' => 'string',
         'lastName' => 'string',
-        'company' => 'string',
-        'jobTitle' => 'string',
-        'phone' => 'string',
-        'state' => 'string',
-        'streetAddress' => 'string',
-        'city' => 'string',
-        'postalCode' => 'string'
+        'phoneNumber' => 'string'
     ];
 
     /**
@@ -80,13 +75,7 @@ class ContactCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializ
         'email' => null,
         'firstName' => null,
         'lastName' => null,
-        'company' => null,
-        'jobTitle' => null,
-        'phone' => null,
-        'state' => null,
-        'streetAddress' => null,
-        'city' => null,
-        'postalCode' => null
+        'phoneNumber' => null
     ];
 
     /**
@@ -121,13 +110,7 @@ class ContactCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializ
         'email' => 'email',
         'firstName' => 'first_name',
         'lastName' => 'last_name',
-        'company' => 'company',
-        'jobTitle' => 'job_title',
-        'phone' => 'phone',
-        'state' => 'state',
-        'streetAddress' => 'street_address',
-        'city' => 'city',
-        'postalCode' => 'postal_code'
+        'phoneNumber' => 'phone_number'
     ];
 
     /**
@@ -139,13 +122,7 @@ class ContactCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializ
         'email' => 'setEmail',
         'firstName' => 'setFirstName',
         'lastName' => 'setLastName',
-        'company' => 'setCompany',
-        'jobTitle' => 'setJobTitle',
-        'phone' => 'setPhone',
-        'state' => 'setState',
-        'streetAddress' => 'setStreetAddress',
-        'city' => 'setCity',
-        'postalCode' => 'setPostalCode'
+        'phoneNumber' => 'setPhoneNumber'
     ];
 
     /**
@@ -157,13 +134,7 @@ class ContactCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializ
         'email' => 'getEmail',
         'firstName' => 'getFirstName',
         'lastName' => 'getLastName',
-        'company' => 'getCompany',
-        'jobTitle' => 'getJobTitle',
-        'phone' => 'getPhone',
-        'state' => 'getState',
-        'streetAddress' => 'getStreetAddress',
-        'city' => 'getCity',
-        'postalCode' => 'getPostalCode'
+        'phoneNumber' => 'getPhoneNumber'
     ];
 
     /**
@@ -230,13 +201,7 @@ class ContactCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializ
         $this->container['email'] = $data['email'] ?? null;
         $this->container['firstName'] = $data['firstName'] ?? null;
         $this->container['lastName'] = $data['lastName'] ?? null;
-        $this->container['company'] = $data['company'] ?? null;
-        $this->container['jobTitle'] = $data['jobTitle'] ?? null;
-        $this->container['phone'] = $data['phone'] ?? null;
-        $this->container['state'] = $data['state'] ?? null;
-        $this->container['streetAddress'] = $data['streetAddress'] ?? null;
-        $this->container['city'] = $data['city'] ?? null;
-        $this->container['postalCode'] = $data['postalCode'] ?? null;
+        $this->container['phoneNumber'] = $data['phoneNumber'] ?? null;
     }
 
     /**
@@ -344,183 +309,27 @@ class ContactCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     }
 
     /**
-     * Gets company
+     * Gets phoneNumber
      *
      * @return string|null
      */
     #[\ReturnTypeWillChange]
-    public function getCompany()
+    public function getPhoneNumber()
     {
-        return $this->container['company'];
+        return $this->container['phoneNumber'];
     }
 
     /**
-     * Sets company
+     * Sets phoneNumber
      *
-     * @param string|null $company company
+     * @param string|null $phoneNumber phoneNumber
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setCompany($company)
+    public function setPhoneNumber($phoneNumber)
     {
-        $this->container['company'] = $company;
-
-        return $this;
-    }
-
-    /**
-     * Gets jobTitle
-     *
-     * @return string|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getJobTitle()
-    {
-        return $this->container['jobTitle'];
-    }
-
-    /**
-     * Sets jobTitle
-     *
-     * @param string|null $jobTitle jobTitle
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setJobTitle($jobTitle)
-    {
-        $this->container['jobTitle'] = $jobTitle;
-
-        return $this;
-    }
-
-    /**
-     * Gets phone
-     *
-     * @return string|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getPhone()
-    {
-        return $this->container['phone'];
-    }
-
-    /**
-     * Sets phone
-     *
-     * @param string|null $phone phone
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setPhone($phone)
-    {
-        $this->container['phone'] = $phone;
-
-        return $this;
-    }
-
-    /**
-     * Gets state
-     *
-     * @return string|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getState()
-    {
-        return $this->container['state'];
-    }
-
-    /**
-     * Sets state
-     *
-     * @param string|null $state state
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setState($state)
-    {
-        $this->container['state'] = $state;
-
-        return $this;
-    }
-
-    /**
-     * Gets streetAddress
-     *
-     * @return string|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getStreetAddress()
-    {
-        return $this->container['streetAddress'];
-    }
-
-    /**
-     * Sets streetAddress
-     *
-     * @param string|null $streetAddress streetAddress
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setStreetAddress($streetAddress)
-    {
-        $this->container['streetAddress'] = $streetAddress;
-
-        return $this;
-    }
-
-    /**
-     * Gets city
-     *
-     * @return string|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getCity()
-    {
-        return $this->container['city'];
-    }
-
-    /**
-     * Sets city
-     *
-     * @param string|null $city city
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setCity($city)
-    {
-        $this->container['city'] = $city;
-
-        return $this;
-    }
-
-    /**
-     * Gets postalCode
-     *
-     * @return string|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getPostalCode()
-    {
-        return $this->container['postalCode'];
-    }
-
-    /**
-     * Sets postalCode
-     *
-     * @param string|null $postalCode postalCode
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setPostalCode($postalCode)
-    {
-        $this->container['postalCode'] = $postalCode;
+        $this->container['phoneNumber'] = $phoneNumber;
 
         return $this;
     }
