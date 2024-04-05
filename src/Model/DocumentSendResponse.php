@@ -65,7 +65,7 @@ class DocumentSendResponse implements ModelInterface, ArrayAccess, \JsonSerializ
         'expirationDate' => 'string',
         'version' => 'string',
         'uuid' => 'string',
-        'sharedLink' => 'string'
+        'recipients' => '\PandaDoc\Client\Model\DocumentSendResponseRecipients[]'
     ];
 
     /**
@@ -84,7 +84,7 @@ class DocumentSendResponse implements ModelInterface, ArrayAccess, \JsonSerializ
         'expirationDate' => null,
         'version' => null,
         'uuid' => null,
-        'sharedLink' => null
+        'recipients' => null
     ];
 
     /**
@@ -124,7 +124,7 @@ class DocumentSendResponse implements ModelInterface, ArrayAccess, \JsonSerializ
         'expirationDate' => 'expiration_date',
         'version' => 'version',
         'uuid' => 'uuid',
-        'sharedLink' => 'shared_link'
+        'recipients' => 'recipients'
     ];
 
     /**
@@ -141,7 +141,7 @@ class DocumentSendResponse implements ModelInterface, ArrayAccess, \JsonSerializ
         'expirationDate' => 'setExpirationDate',
         'version' => 'setVersion',
         'uuid' => 'setUuid',
-        'sharedLink' => 'setSharedLink'
+        'recipients' => 'setRecipients'
     ];
 
     /**
@@ -158,7 +158,7 @@ class DocumentSendResponse implements ModelInterface, ArrayAccess, \JsonSerializ
         'expirationDate' => 'getExpirationDate',
         'version' => 'getVersion',
         'uuid' => 'getUuid',
-        'sharedLink' => 'getSharedLink'
+        'recipients' => 'getRecipients'
     ];
 
     /**
@@ -230,7 +230,7 @@ class DocumentSendResponse implements ModelInterface, ArrayAccess, \JsonSerializ
         $this->container['expirationDate'] = $data['expirationDate'] ?? null;
         $this->container['version'] = $data['version'] ?? null;
         $this->container['uuid'] = $data['uuid'] ?? null;
-        $this->container['sharedLink'] = $data['sharedLink'] ?? null;
+        $this->container['recipients'] = $data['recipients'] ?? null;
     }
 
     /**
@@ -468,27 +468,27 @@ class DocumentSendResponse implements ModelInterface, ArrayAccess, \JsonSerializ
     }
 
     /**
-     * Gets sharedLink
+     * Gets recipients
      *
-     * @return string|null
+     * @return \PandaDoc\Client\Model\DocumentSendResponseRecipients[]|null
      */
     #[\ReturnTypeWillChange]
-    public function getSharedLink()
+    public function getRecipients()
     {
-        return $this->container['sharedLink'];
+        return $this->container['recipients'];
     }
 
     /**
-     * Sets sharedLink
+     * Sets recipients
      *
-     * @param string|null $sharedLink sharedLink
+     * @param \PandaDoc\Client\Model\DocumentSendResponseRecipients[]|null $recipients recipients
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setSharedLink($sharedLink)
+    public function setRecipients($recipients)
     {
-        $this->container['sharedLink'] = $sharedLink;
+        $this->container['recipients'] = $recipients;
 
         return $this;
     }

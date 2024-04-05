@@ -1,6 +1,6 @@
 <?php
 /**
- * ContactCreateRequest
+ * DocumentSendResponseRecipients
  *
  * PHP version 7.3
  *
@@ -30,7 +30,7 @@ use \ArrayAccess;
 use \PandaDoc\Client\ObjectSerializer;
 
 /**
- * ContactCreateRequest Class Doc Comment
+ * DocumentSendResponseRecipients Class Doc Comment
  *
  * @category Class
  * @package  PandaDoc\Client
@@ -40,7 +40,7 @@ use \PandaDoc\Client\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class ContactCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class DocumentSendResponseRecipients implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class ContactCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ContactCreateRequest';
+    protected static $openAPIModelName = 'DocumentSendResponse_recipients';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,16 +57,15 @@ class ContactCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'email' => 'string',
+        'id' => 'string',
         'firstName' => 'string',
         'lastName' => 'string',
-        'company' => 'string',
-        'jobTitle' => 'string',
+        'recipientType' => 'string',
+        'email' => 'string',
         'phone' => 'string',
-        'state' => 'string',
-        'streetAddress' => 'string',
-        'city' => 'string',
-        'postalCode' => 'string'
+        'deliveryMethods' => '\PandaDoc\Client\Model\RicipientDeliveryMethods',
+        'signingOrder' => 'mixed',
+        'sharedLink' => 'string'
     ];
 
     /**
@@ -77,16 +76,15 @@ class ContactCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'email' => null,
+        'id' => null,
         'firstName' => null,
         'lastName' => null,
-        'company' => null,
-        'jobTitle' => null,
+        'recipientType' => null,
+        'email' => null,
         'phone' => null,
-        'state' => null,
-        'streetAddress' => null,
-        'city' => null,
-        'postalCode' => null
+        'deliveryMethods' => null,
+        'signingOrder' => null,
+        'sharedLink' => null
     ];
 
     /**
@@ -118,16 +116,15 @@ class ContactCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $attributeMap = [
-        'email' => 'email',
+        'id' => 'id',
         'firstName' => 'first_name',
         'lastName' => 'last_name',
-        'company' => 'company',
-        'jobTitle' => 'job_title',
+        'recipientType' => 'recipient_type',
+        'email' => 'email',
         'phone' => 'phone',
-        'state' => 'state',
-        'streetAddress' => 'street_address',
-        'city' => 'city',
-        'postalCode' => 'postal_code'
+        'deliveryMethods' => 'delivery_methods',
+        'signingOrder' => 'signing_order',
+        'sharedLink' => 'shared_link'
     ];
 
     /**
@@ -136,16 +133,15 @@ class ContactCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
-        'email' => 'setEmail',
+        'id' => 'setId',
         'firstName' => 'setFirstName',
         'lastName' => 'setLastName',
-        'company' => 'setCompany',
-        'jobTitle' => 'setJobTitle',
+        'recipientType' => 'setRecipientType',
+        'email' => 'setEmail',
         'phone' => 'setPhone',
-        'state' => 'setState',
-        'streetAddress' => 'setStreetAddress',
-        'city' => 'setCity',
-        'postalCode' => 'setPostalCode'
+        'deliveryMethods' => 'setDeliveryMethods',
+        'signingOrder' => 'setSigningOrder',
+        'sharedLink' => 'setSharedLink'
     ];
 
     /**
@@ -154,16 +150,15 @@ class ContactCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $getters = [
-        'email' => 'getEmail',
+        'id' => 'getId',
         'firstName' => 'getFirstName',
         'lastName' => 'getLastName',
-        'company' => 'getCompany',
-        'jobTitle' => 'getJobTitle',
+        'recipientType' => 'getRecipientType',
+        'email' => 'getEmail',
         'phone' => 'getPhone',
-        'state' => 'getState',
-        'streetAddress' => 'getStreetAddress',
-        'city' => 'getCity',
-        'postalCode' => 'getPostalCode'
+        'deliveryMethods' => 'getDeliveryMethods',
+        'signingOrder' => 'getSigningOrder',
+        'sharedLink' => 'getSharedLink'
     ];
 
     /**
@@ -227,16 +222,15 @@ class ContactCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function __construct(array $data = null)
     {
-        $this->container['email'] = $data['email'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
         $this->container['firstName'] = $data['firstName'] ?? null;
         $this->container['lastName'] = $data['lastName'] ?? null;
-        $this->container['company'] = $data['company'] ?? null;
-        $this->container['jobTitle'] = $data['jobTitle'] ?? null;
+        $this->container['recipientType'] = $data['recipientType'] ?? null;
+        $this->container['email'] = $data['email'] ?? null;
         $this->container['phone'] = $data['phone'] ?? null;
-        $this->container['state'] = $data['state'] ?? null;
-        $this->container['streetAddress'] = $data['streetAddress'] ?? null;
-        $this->container['city'] = $data['city'] ?? null;
-        $this->container['postalCode'] = $data['postalCode'] ?? null;
+        $this->container['deliveryMethods'] = $data['deliveryMethods'] ?? null;
+        $this->container['signingOrder'] = $data['signingOrder'] ?? null;
+        $this->container['sharedLink'] = $data['sharedLink'] ?? null;
     }
 
     /**
@@ -266,27 +260,27 @@ class ContactCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializ
 
 
     /**
-     * Gets email
+     * Gets id
      *
      * @return string|null
      */
     #[\ReturnTypeWillChange]
-    public function getEmail()
+    public function getId()
     {
-        return $this->container['email'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets email
+     * Sets id
      *
-     * @param string|null $email email
+     * @param string|null $id id
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setEmail($email)
+    public function setId($id)
     {
-        $this->container['email'] = $email;
+        $this->container['id'] = $id;
 
         return $this;
     }
@@ -344,53 +338,53 @@ class ContactCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     }
 
     /**
-     * Gets company
+     * Gets recipientType
      *
      * @return string|null
      */
     #[\ReturnTypeWillChange]
-    public function getCompany()
+    public function getRecipientType()
     {
-        return $this->container['company'];
+        return $this->container['recipientType'];
     }
 
     /**
-     * Sets company
+     * Sets recipientType
      *
-     * @param string|null $company company
+     * @param string|null $recipientType recipientType
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setCompany($company)
+    public function setRecipientType($recipientType)
     {
-        $this->container['company'] = $company;
+        $this->container['recipientType'] = $recipientType;
 
         return $this;
     }
 
     /**
-     * Gets jobTitle
+     * Gets email
      *
      * @return string|null
      */
     #[\ReturnTypeWillChange]
-    public function getJobTitle()
+    public function getEmail()
     {
-        return $this->container['jobTitle'];
+        return $this->container['email'];
     }
 
     /**
-     * Sets jobTitle
+     * Sets email
      *
-     * @param string|null $jobTitle jobTitle
+     * @param string|null $email email
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setJobTitle($jobTitle)
+    public function setEmail($email)
     {
-        $this->container['jobTitle'] = $jobTitle;
+        $this->container['email'] = $email;
 
         return $this;
     }
@@ -422,105 +416,79 @@ class ContactCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     }
 
     /**
-     * Gets state
+     * Gets deliveryMethods
      *
-     * @return string|null
+     * @return \PandaDoc\Client\Model\RicipientDeliveryMethods|null
      */
     #[\ReturnTypeWillChange]
-    public function getState()
+    public function getDeliveryMethods()
     {
-        return $this->container['state'];
+        return $this->container['deliveryMethods'];
     }
 
     /**
-     * Sets state
+     * Sets deliveryMethods
      *
-     * @param string|null $state state
+     * @param \PandaDoc\Client\Model\RicipientDeliveryMethods|null $deliveryMethods deliveryMethods
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setState($state)
+    public function setDeliveryMethods($deliveryMethods)
     {
-        $this->container['state'] = $state;
+        $this->container['deliveryMethods'] = $deliveryMethods;
 
         return $this;
     }
 
     /**
-     * Gets streetAddress
+     * Gets signingOrder
      *
-     * @return string|null
+     * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function getStreetAddress()
+    public function getSigningOrder()
     {
-        return $this->container['streetAddress'];
+        return $this->container['signingOrder'];
     }
 
     /**
-     * Sets streetAddress
+     * Sets signingOrder
      *
-     * @param string|null $streetAddress streetAddress
+     * @param mixed|null $signingOrder signingOrder
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setStreetAddress($streetAddress)
+    public function setSigningOrder($signingOrder)
     {
-        $this->container['streetAddress'] = $streetAddress;
+        $this->container['signingOrder'] = $signingOrder;
 
         return $this;
     }
 
     /**
-     * Gets city
+     * Gets sharedLink
      *
      * @return string|null
      */
     #[\ReturnTypeWillChange]
-    public function getCity()
+    public function getSharedLink()
     {
-        return $this->container['city'];
+        return $this->container['sharedLink'];
     }
 
     /**
-     * Sets city
+     * Sets sharedLink
      *
-     * @param string|null $city city
+     * @param string|null $sharedLink sharedLink
      *
      * @return self
      */
     #[\ReturnTypeWillChange]
-    public function setCity($city)
+    public function setSharedLink($sharedLink)
     {
-        $this->container['city'] = $city;
-
-        return $this;
-    }
-
-    /**
-     * Gets postalCode
-     *
-     * @return string|null
-     */
-    #[\ReturnTypeWillChange]
-    public function getPostalCode()
-    {
-        return $this->container['postalCode'];
-    }
-
-    /**
-     * Sets postalCode
-     *
-     * @param string|null $postalCode postalCode
-     *
-     * @return self
-     */
-    #[\ReturnTypeWillChange]
-    public function setPostalCode($postalCode)
-    {
-        $this->container['postalCode'] = $postalCode;
+        $this->container['sharedLink'] = $sharedLink;
 
         return $this;
     }

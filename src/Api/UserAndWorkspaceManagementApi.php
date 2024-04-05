@@ -1,6 +1,6 @@
 <?php
 /**
- * SectionsApi
+ * UserAndWorkspaceManagementApi
  * PHP version 7.3
  *
  * @category Class
@@ -38,14 +38,14 @@ use PandaDoc\Client\HeaderSelector;
 use PandaDoc\Client\ObjectSerializer;
 
 /**
- * SectionsApi Class Doc Comment
+ * UserAndWorkspaceManagementApi Class Doc Comment
  *
  * @category Class
  * @package  PandaDoc\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class SectionsApi
+class UserAndWorkspaceManagementApi
 {
     /**
      * @var ClientInterface
@@ -114,1198 +114,42 @@ class SectionsApi
     }
 
     /**
-     * Operation listSections
+     * Operation addMember
      *
-     * List sections
+     * Add member
      *
-     * @param  string $documentId Document ID (required)
+     * @param  string $workspaceId workspaceId (required)
+     * @param  \PandaDoc\Client\Model\AddMemberRequest $addMemberRequest addMemberRequest (required)
+     * @param  bool $notifyUser Send a confirmation email to the user that was added to workspace(s). (optional)
+     * @param  bool $notifyWsAdmins Send a confirmation email to all workspace admins indicating that the user has been added to the workspace. (optional)
      *
      * @throws \PandaDoc\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \PandaDoc\Client\Model\UploadSectionListResponse|object|object|object|object
+     * @return \PandaDoc\Client\Model\AddMemberResponse|object|object|object|object|object
      */
-    public function listSections($documentId)
+    public function addMember($workspaceId, $addMemberRequest, $notifyUser = null, $notifyWsAdmins = null)
     {
-        list($response) = $this->listSectionsWithHttpInfo($documentId);
+        list($response) = $this->addMemberWithHttpInfo($workspaceId, $addMemberRequest, $notifyUser, $notifyWsAdmins);
         return $response;
     }
 
     /**
-     * Operation listSectionsWithHttpInfo
+     * Operation addMemberWithHttpInfo
      *
-     * List sections
+     * Add member
      *
-     * @param  string $documentId Document ID (required)
-     *
-     * @throws \PandaDoc\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \PandaDoc\Client\Model\UploadSectionListResponse|object|object|object|object, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function listSectionsWithHttpInfo($documentId)
-    {
-        $request = $this->listSectionsRequest($documentId);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch($statusCode) {
-                case 200:
-                    if ('\PandaDoc\Client\Model\UploadSectionListResponse' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\PandaDoc\Client\Model\UploadSectionListResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 400:
-                    if ('object' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, 'object', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 401:
-                    if ('object' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, 'object', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 403:
-                    if ('object' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, 'object', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 429:
-                    if ('object' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, 'object', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\PandaDoc\Client\Model\UploadSectionListResponse';
-            if ($returnType === '\SplFileObject') {
-                $content = $response->getBody(); //stream goes to serializer
-            } else {
-                $content = (string) $response->getBody();
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\PandaDoc\Client\Model\UploadSectionListResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 400:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        'object',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 401:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        'object',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 403:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        'object',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 429:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        'object',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation listSectionsAsync
-     *
-     * List sections
-     *
-     * @param  string $documentId Document ID (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function listSectionsAsync($documentId)
-    {
-        return $this->listSectionsAsyncWithHttpInfo($documentId)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation listSectionsAsyncWithHttpInfo
-     *
-     * List sections
-     *
-     * @param  string $documentId Document ID (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function listSectionsAsyncWithHttpInfo($documentId)
-    {
-        $returnType = '\PandaDoc\Client\Model\UploadSectionListResponse';
-        $request = $this->listSectionsRequest($documentId);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'listSections'
-     *
-     * @param  string $documentId Document ID (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function listSectionsRequest($documentId)
-    {
-        // verify the required parameter 'documentId' is set
-        if ($documentId === null || (is_array($documentId) && count($documentId) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $documentId when calling listSections'
-            );
-        }
-
-        $resourcePath = '/public/v1/documents/{document_id}/sections';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($documentId !== null) {
-            $resourcePath = str_replace(
-                '{' . 'document_id' . '}',
-                ObjectSerializer::toPathValue($documentId),
-                $resourcePath
-            );
-        }
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
-            }
-        }
-
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires OAuth (access token)
-        if ($this->config->getAccessToken() != null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation sectionDetails
-     *
-     * Section details
-     *
-     * @param  string $documentId Document ID (required)
-     * @param  string $uploadId Upload ID (required)
+     * @param  string $workspaceId (required)
+     * @param  \PandaDoc\Client\Model\AddMemberRequest $addMemberRequest (required)
+     * @param  bool $notifyUser Send a confirmation email to the user that was added to workspace(s). (optional)
+     * @param  bool $notifyWsAdmins Send a confirmation email to all workspace admins indicating that the user has been added to the workspace. (optional)
      *
      * @throws \PandaDoc\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \PandaDoc\Client\Model\UploadSectionStatusResponse|object|object|object|object|object
+     * @return array of \PandaDoc\Client\Model\AddMemberResponse|object|object|object|object|object, HTTP status code, HTTP response headers (array of strings)
      */
-    public function sectionDetails($documentId, $uploadId)
+    public function addMemberWithHttpInfo($workspaceId, $addMemberRequest, $notifyUser = null, $notifyWsAdmins = null)
     {
-        list($response) = $this->sectionDetailsWithHttpInfo($documentId, $uploadId);
-        return $response;
-    }
-
-    /**
-     * Operation sectionDetailsWithHttpInfo
-     *
-     * Section details
-     *
-     * @param  string $documentId Document ID (required)
-     * @param  string $uploadId Upload ID (required)
-     *
-     * @throws \PandaDoc\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \PandaDoc\Client\Model\UploadSectionStatusResponse|object|object|object|object|object, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function sectionDetailsWithHttpInfo($documentId, $uploadId)
-    {
-        $request = $this->sectionDetailsRequest($documentId, $uploadId);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch($statusCode) {
-                case 200:
-                    if ('\PandaDoc\Client\Model\UploadSectionStatusResponse' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\PandaDoc\Client\Model\UploadSectionStatusResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 401:
-                    if ('object' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, 'object', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 403:
-                    if ('object' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, 'object', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 404:
-                    if ('object' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, 'object', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 409:
-                    if ('object' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, 'object', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 429:
-                    if ('object' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, 'object', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\PandaDoc\Client\Model\UploadSectionStatusResponse';
-            if ($returnType === '\SplFileObject') {
-                $content = $response->getBody(); //stream goes to serializer
-            } else {
-                $content = (string) $response->getBody();
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\PandaDoc\Client\Model\UploadSectionStatusResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 401:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        'object',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 403:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        'object',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 404:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        'object',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 409:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        'object',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 429:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        'object',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation sectionDetailsAsync
-     *
-     * Section details
-     *
-     * @param  string $documentId Document ID (required)
-     * @param  string $uploadId Upload ID (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function sectionDetailsAsync($documentId, $uploadId)
-    {
-        return $this->sectionDetailsAsyncWithHttpInfo($documentId, $uploadId)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation sectionDetailsAsyncWithHttpInfo
-     *
-     * Section details
-     *
-     * @param  string $documentId Document ID (required)
-     * @param  string $uploadId Upload ID (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function sectionDetailsAsyncWithHttpInfo($documentId, $uploadId)
-    {
-        $returnType = '\PandaDoc\Client\Model\UploadSectionStatusResponse';
-        $request = $this->sectionDetailsRequest($documentId, $uploadId);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'sectionDetails'
-     *
-     * @param  string $documentId Document ID (required)
-     * @param  string $uploadId Upload ID (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function sectionDetailsRequest($documentId, $uploadId)
-    {
-        // verify the required parameter 'documentId' is set
-        if ($documentId === null || (is_array($documentId) && count($documentId) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $documentId when calling sectionDetails'
-            );
-        }
-        // verify the required parameter 'uploadId' is set
-        if ($uploadId === null || (is_array($uploadId) && count($uploadId) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $uploadId when calling sectionDetails'
-            );
-        }
-
-        $resourcePath = '/public/v1/documents/{document_id}/sections/uploads/{upload_id}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($documentId !== null) {
-            $resourcePath = str_replace(
-                '{' . 'document_id' . '}',
-                ObjectSerializer::toPathValue($documentId),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($uploadId !== null) {
-            $resourcePath = str_replace(
-                '{' . 'upload_id' . '}',
-                ObjectSerializer::toPathValue($uploadId),
-                $resourcePath
-            );
-        }
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
-            }
-        }
-
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires OAuth (access token)
-        if ($this->config->getAccessToken() != null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation sectionInfo
-     *
-     * Section Info
-     *
-     * @param  string $documentId Document ID (required)
-     * @param  string $sectionId Section ID (required)
-     *
-     * @throws \PandaDoc\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \PandaDoc\Client\Model\SectionInfoResponse|object|object|object|object|object
-     */
-    public function sectionInfo($documentId, $sectionId)
-    {
-        list($response) = $this->sectionInfoWithHttpInfo($documentId, $sectionId);
-        return $response;
-    }
-
-    /**
-     * Operation sectionInfoWithHttpInfo
-     *
-     * Section Info
-     *
-     * @param  string $documentId Document ID (required)
-     * @param  string $sectionId Section ID (required)
-     *
-     * @throws \PandaDoc\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \PandaDoc\Client\Model\SectionInfoResponse|object|object|object|object|object, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function sectionInfoWithHttpInfo($documentId, $sectionId)
-    {
-        $request = $this->sectionInfoRequest($documentId, $sectionId);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch($statusCode) {
-                case 200:
-                    if ('\PandaDoc\Client\Model\SectionInfoResponse' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\PandaDoc\Client\Model\SectionInfoResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 401:
-                    if ('object' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, 'object', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 403:
-                    if ('object' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, 'object', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 404:
-                    if ('object' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, 'object', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 409:
-                    if ('object' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, 'object', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 429:
-                    if ('object' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, 'object', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\PandaDoc\Client\Model\SectionInfoResponse';
-            if ($returnType === '\SplFileObject') {
-                $content = $response->getBody(); //stream goes to serializer
-            } else {
-                $content = (string) $response->getBody();
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\PandaDoc\Client\Model\SectionInfoResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 401:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        'object',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 403:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        'object',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 404:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        'object',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 409:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        'object',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 429:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        'object',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation sectionInfoAsync
-     *
-     * Section Info
-     *
-     * @param  string $documentId Document ID (required)
-     * @param  string $sectionId Section ID (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function sectionInfoAsync($documentId, $sectionId)
-    {
-        return $this->sectionInfoAsyncWithHttpInfo($documentId, $sectionId)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation sectionInfoAsyncWithHttpInfo
-     *
-     * Section Info
-     *
-     * @param  string $documentId Document ID (required)
-     * @param  string $sectionId Section ID (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function sectionInfoAsyncWithHttpInfo($documentId, $sectionId)
-    {
-        $returnType = '\PandaDoc\Client\Model\SectionInfoResponse';
-        $request = $this->sectionInfoRequest($documentId, $sectionId);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'sectionInfo'
-     *
-     * @param  string $documentId Document ID (required)
-     * @param  string $sectionId Section ID (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function sectionInfoRequest($documentId, $sectionId)
-    {
-        // verify the required parameter 'documentId' is set
-        if ($documentId === null || (is_array($documentId) && count($documentId) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $documentId when calling sectionInfo'
-            );
-        }
-        // verify the required parameter 'sectionId' is set
-        if ($sectionId === null || (is_array($sectionId) && count($sectionId) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $sectionId when calling sectionInfo'
-            );
-        }
-
-        $resourcePath = '/public/v1/documents/{document_id}/sections/{section_id}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($documentId !== null) {
-            $resourcePath = str_replace(
-                '{' . 'document_id' . '}',
-                ObjectSerializer::toPathValue($documentId),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($sectionId !== null) {
-            $resourcePath = str_replace(
-                '{' . 'section_id' . '}',
-                ObjectSerializer::toPathValue($sectionId),
-                $resourcePath
-            );
-        }
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
-            }
-        }
-
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires OAuth (access token)
-        if ($this->config->getAccessToken() != null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation uploadSection
-     *
-     * Upload section
-     *
-     * @param  string $documentId Document ID (required)
-     * @param  \PandaDoc\Client\Model\UploadSectionRequest $uploadSectionRequest Use a PandaDoc template or an existing PDF to upload a section. See the creation request examples [by template](/schemas/UploadSectionByTemplateRequest) and [by pdf](/schemas/UploadSectionByPdfRequest) (required)
-     * @param  string $mergeFieldScope Determines how the fields are mapped when creating a section.   * document: Default value. The fields of the entire document are updated.   * upload: Only the fields from the created section are updated. The merge field is appended with the upload ID. (optional)
-     *
-     * @throws \PandaDoc\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \PandaDoc\Client\Model\UploadSectionResponse|object|object|object
-     */
-    public function uploadSection($documentId, $uploadSectionRequest, $mergeFieldScope = null)
-    {
-        list($response) = $this->uploadSectionWithHttpInfo($documentId, $uploadSectionRequest, $mergeFieldScope);
-        return $response;
-    }
-
-    /**
-     * Operation uploadSectionWithHttpInfo
-     *
-     * Upload section
-     *
-     * @param  string $documentId Document ID (required)
-     * @param  \PandaDoc\Client\Model\UploadSectionRequest $uploadSectionRequest Use a PandaDoc template or an existing PDF to upload a section. See the creation request examples [by template](/schemas/UploadSectionByTemplateRequest) and [by pdf](/schemas/UploadSectionByPdfRequest) (required)
-     * @param  string $mergeFieldScope Determines how the fields are mapped when creating a section.   * document: Default value. The fields of the entire document are updated.   * upload: Only the fields from the created section are updated. The merge field is appended with the upload ID. (optional)
-     *
-     * @throws \PandaDoc\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \PandaDoc\Client\Model\UploadSectionResponse|object|object|object, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function uploadSectionWithHttpInfo($documentId, $uploadSectionRequest, $mergeFieldScope = null)
-    {
-        $request = $this->uploadSectionRequest($documentId, $uploadSectionRequest, $mergeFieldScope);
+        $request = $this->addMemberRequest($workspaceId, $addMemberRequest, $notifyUser, $notifyWsAdmins);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1344,14 +188,14 @@ class SectionsApi
 
             switch($statusCode) {
                 case 201:
-                    if ('\PandaDoc\Client\Model\UploadSectionResponse' === '\SplFileObject') {
+                    if ('\PandaDoc\Client\Model\AddMemberResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\PandaDoc\Client\Model\UploadSectionResponse', []),
+                        ObjectSerializer::deserialize($content, '\PandaDoc\Client\Model\AddMemberResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1368,6 +212,30 @@ class SectionsApi
                         $response->getHeaders()
                     ];
                 case 401:
+                    if ('object' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, 'object', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('object' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, 'object', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
                     if ('object' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
@@ -1393,7 +261,7 @@ class SectionsApi
                     ];
             }
 
-            $returnType = '\PandaDoc\Client\Model\UploadSectionResponse';
+            $returnType = '\PandaDoc\Client\Model\AddMemberResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1411,7 +279,7 @@ class SectionsApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\PandaDoc\Client\Model\UploadSectionResponse',
+                        '\PandaDoc\Client\Model\AddMemberResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1425,6 +293,22 @@ class SectionsApi
                     $e->setResponseObject($data);
                     break;
                 case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'object',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'object',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         'object',
@@ -1446,20 +330,21 @@ class SectionsApi
     }
 
     /**
-     * Operation uploadSectionAsync
+     * Operation addMemberAsync
      *
-     * Upload section
+     * Add member
      *
-     * @param  string $documentId Document ID (required)
-     * @param  \PandaDoc\Client\Model\UploadSectionRequest $uploadSectionRequest Use a PandaDoc template or an existing PDF to upload a section. See the creation request examples [by template](/schemas/UploadSectionByTemplateRequest) and [by pdf](/schemas/UploadSectionByPdfRequest) (required)
-     * @param  string $mergeFieldScope Determines how the fields are mapped when creating a section.   * document: Default value. The fields of the entire document are updated.   * upload: Only the fields from the created section are updated. The merge field is appended with the upload ID. (optional)
+     * @param  string $workspaceId (required)
+     * @param  \PandaDoc\Client\Model\AddMemberRequest $addMemberRequest (required)
+     * @param  bool $notifyUser Send a confirmation email to the user that was added to workspace(s). (optional)
+     * @param  bool $notifyWsAdmins Send a confirmation email to all workspace admins indicating that the user has been added to the workspace. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function uploadSectionAsync($documentId, $uploadSectionRequest, $mergeFieldScope = null)
+    public function addMemberAsync($workspaceId, $addMemberRequest, $notifyUser = null, $notifyWsAdmins = null)
     {
-        return $this->uploadSectionAsyncWithHttpInfo($documentId, $uploadSectionRequest, $mergeFieldScope)
+        return $this->addMemberAsyncWithHttpInfo($workspaceId, $addMemberRequest, $notifyUser, $notifyWsAdmins)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1468,21 +353,22 @@ class SectionsApi
     }
 
     /**
-     * Operation uploadSectionAsyncWithHttpInfo
+     * Operation addMemberAsyncWithHttpInfo
      *
-     * Upload section
+     * Add member
      *
-     * @param  string $documentId Document ID (required)
-     * @param  \PandaDoc\Client\Model\UploadSectionRequest $uploadSectionRequest Use a PandaDoc template or an existing PDF to upload a section. See the creation request examples [by template](/schemas/UploadSectionByTemplateRequest) and [by pdf](/schemas/UploadSectionByPdfRequest) (required)
-     * @param  string $mergeFieldScope Determines how the fields are mapped when creating a section.   * document: Default value. The fields of the entire document are updated.   * upload: Only the fields from the created section are updated. The merge field is appended with the upload ID. (optional)
+     * @param  string $workspaceId (required)
+     * @param  \PandaDoc\Client\Model\AddMemberRequest $addMemberRequest (required)
+     * @param  bool $notifyUser Send a confirmation email to the user that was added to workspace(s). (optional)
+     * @param  bool $notifyWsAdmins Send a confirmation email to all workspace admins indicating that the user has been added to the workspace. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function uploadSectionAsyncWithHttpInfo($documentId, $uploadSectionRequest, $mergeFieldScope = null)
+    public function addMemberAsyncWithHttpInfo($workspaceId, $addMemberRequest, $notifyUser = null, $notifyWsAdmins = null)
     {
-        $returnType = '\PandaDoc\Client\Model\UploadSectionResponse';
-        $request = $this->uploadSectionRequest($documentId, $uploadSectionRequest, $mergeFieldScope);
+        $returnType = '\PandaDoc\Client\Model\AddMemberResponse';
+        $request = $this->addMemberRequest($workspaceId, $addMemberRequest, $notifyUser, $notifyWsAdmins);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1518,31 +404,32 @@ class SectionsApi
     }
 
     /**
-     * Create request for operation 'uploadSection'
+     * Create request for operation 'addMember'
      *
-     * @param  string $documentId Document ID (required)
-     * @param  \PandaDoc\Client\Model\UploadSectionRequest $uploadSectionRequest Use a PandaDoc template or an existing PDF to upload a section. See the creation request examples [by template](/schemas/UploadSectionByTemplateRequest) and [by pdf](/schemas/UploadSectionByPdfRequest) (required)
-     * @param  string $mergeFieldScope Determines how the fields are mapped when creating a section.   * document: Default value. The fields of the entire document are updated.   * upload: Only the fields from the created section are updated. The merge field is appended with the upload ID. (optional)
+     * @param  string $workspaceId (required)
+     * @param  \PandaDoc\Client\Model\AddMemberRequest $addMemberRequest (required)
+     * @param  bool $notifyUser Send a confirmation email to the user that was added to workspace(s). (optional)
+     * @param  bool $notifyWsAdmins Send a confirmation email to all workspace admins indicating that the user has been added to the workspace. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function uploadSectionRequest($documentId, $uploadSectionRequest, $mergeFieldScope = null)
+    public function addMemberRequest($workspaceId, $addMemberRequest, $notifyUser = null, $notifyWsAdmins = null)
     {
-        // verify the required parameter 'documentId' is set
-        if ($documentId === null || (is_array($documentId) && count($documentId) === 0)) {
+        // verify the required parameter 'workspaceId' is set
+        if ($workspaceId === null || (is_array($workspaceId) && count($workspaceId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $documentId when calling uploadSection'
+                'Missing the required parameter $workspaceId when calling addMember'
             );
         }
-        // verify the required parameter 'uploadSectionRequest' is set
-        if ($uploadSectionRequest === null || (is_array($uploadSectionRequest) && count($uploadSectionRequest) === 0)) {
+        // verify the required parameter 'addMemberRequest' is set
+        if ($addMemberRequest === null || (is_array($addMemberRequest) && count($addMemberRequest) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $uploadSectionRequest when calling uploadSection'
+                'Missing the required parameter $addMemberRequest when calling addMember'
             );
         }
 
-        $resourcePath = '/public/v1/documents/{document_id}/sections/uploads';
+        $resourcePath = '/public/v1/workspaces/{workspace_id}/members';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1550,23 +437,34 @@ class SectionsApi
         $multipart = false;
 
         // query params
-        if ($mergeFieldScope !== null) {
-            if('form' === 'form' && is_array($mergeFieldScope)) {
-                foreach($mergeFieldScope as $key => $value) {
+        if ($notifyUser !== null) {
+            if('form' === 'form' && is_array($notifyUser)) {
+                foreach($notifyUser as $key => $value) {
                     $queryParams[$key] = $value;
                 }
             }
             else {
-                $queryParams['merge_field_scope'] = $mergeFieldScope;
+                $queryParams['notify_user'] = $notifyUser;
+            }
+        }
+        // query params
+        if ($notifyWsAdmins !== null) {
+            if('form' === 'form' && is_array($notifyWsAdmins)) {
+                foreach($notifyWsAdmins as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['notify_ws_admins'] = $notifyWsAdmins;
             }
         }
 
 
         // path params
-        if ($documentId !== null) {
+        if ($workspaceId !== null) {
             $resourcePath = str_replace(
-                '{' . 'document_id' . '}',
-                ObjectSerializer::toPathValue($documentId),
+                '{' . 'workspace_id' . '}',
+                ObjectSerializer::toPathValue($workspaceId),
                 $resourcePath
             );
         }
@@ -1579,16 +477,784 @@ class SectionsApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                ['application/json', 'multipart/form-data']
+                ['application/json']
             );
         }
 
         // for model (json/xml)
-        if (isset($uploadSectionRequest)) {
+        if (isset($addMemberRequest)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($uploadSectionRequest));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($addMemberRequest));
             } else {
-                $httpBody = $uploadSectionRequest;
+                $httpBody = $addMemberRequest;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires OAuth (access token)
+        if ($this->config->getAccessToken() != null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation createUser
+     *
+     * Create User
+     *
+     * @param  \PandaDoc\Client\Model\CreateUserRequest $createUserRequest createUserRequest (required)
+     * @param  bool $notifyUser Send a confirmation email to the user that was added to workspace(s). (optional)
+     * @param  bool $notifyWsAdmins Send a confirmation email to all workspace admins indicating that the user has been added to the workspace. (optional)
+     *
+     * @throws \PandaDoc\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \PandaDoc\Client\Model\CreateUserResponse|object|object|object|object|object
+     */
+    public function createUser($createUserRequest, $notifyUser = null, $notifyWsAdmins = null)
+    {
+        list($response) = $this->createUserWithHttpInfo($createUserRequest, $notifyUser, $notifyWsAdmins);
+        return $response;
+    }
+
+    /**
+     * Operation createUserWithHttpInfo
+     *
+     * Create User
+     *
+     * @param  \PandaDoc\Client\Model\CreateUserRequest $createUserRequest (required)
+     * @param  bool $notifyUser Send a confirmation email to the user that was added to workspace(s). (optional)
+     * @param  bool $notifyWsAdmins Send a confirmation email to all workspace admins indicating that the user has been added to the workspace. (optional)
+     *
+     * @throws \PandaDoc\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \PandaDoc\Client\Model\CreateUserResponse|object|object|object|object|object, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function createUserWithHttpInfo($createUserRequest, $notifyUser = null, $notifyWsAdmins = null)
+    {
+        $request = $this->createUserRequest($createUserRequest, $notifyUser, $notifyWsAdmins);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 201:
+                    if ('\PandaDoc\Client\Model\CreateUserResponse' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\PandaDoc\Client\Model\CreateUserResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('object' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, 'object', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('object' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, 'object', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('object' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, 'object', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('object' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, 'object', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('object' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, 'object', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\PandaDoc\Client\Model\CreateUserResponse';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 201:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\PandaDoc\Client\Model\CreateUserResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'object',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'object',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'object',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'object',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'object',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation createUserAsync
+     *
+     * Create User
+     *
+     * @param  \PandaDoc\Client\Model\CreateUserRequest $createUserRequest (required)
+     * @param  bool $notifyUser Send a confirmation email to the user that was added to workspace(s). (optional)
+     * @param  bool $notifyWsAdmins Send a confirmation email to all workspace admins indicating that the user has been added to the workspace. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createUserAsync($createUserRequest, $notifyUser = null, $notifyWsAdmins = null)
+    {
+        return $this->createUserAsyncWithHttpInfo($createUserRequest, $notifyUser, $notifyWsAdmins)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation createUserAsyncWithHttpInfo
+     *
+     * Create User
+     *
+     * @param  \PandaDoc\Client\Model\CreateUserRequest $createUserRequest (required)
+     * @param  bool $notifyUser Send a confirmation email to the user that was added to workspace(s). (optional)
+     * @param  bool $notifyWsAdmins Send a confirmation email to all workspace admins indicating that the user has been added to the workspace. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createUserAsyncWithHttpInfo($createUserRequest, $notifyUser = null, $notifyWsAdmins = null)
+    {
+        $returnType = '\PandaDoc\Client\Model\CreateUserResponse';
+        $request = $this->createUserRequest($createUserRequest, $notifyUser, $notifyWsAdmins);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'createUser'
+     *
+     * @param  \PandaDoc\Client\Model\CreateUserRequest $createUserRequest (required)
+     * @param  bool $notifyUser Send a confirmation email to the user that was added to workspace(s). (optional)
+     * @param  bool $notifyWsAdmins Send a confirmation email to all workspace admins indicating that the user has been added to the workspace. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function createUserRequest($createUserRequest, $notifyUser = null, $notifyWsAdmins = null)
+    {
+        // verify the required parameter 'createUserRequest' is set
+        if ($createUserRequest === null || (is_array($createUserRequest) && count($createUserRequest) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $createUserRequest when calling createUser'
+            );
+        }
+
+        $resourcePath = '/public/v1/users';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($notifyUser !== null) {
+            if('form' === 'form' && is_array($notifyUser)) {
+                foreach($notifyUser as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['notify_user'] = $notifyUser;
+            }
+        }
+        // query params
+        if ($notifyWsAdmins !== null) {
+            if('form' === 'form' && is_array($notifyWsAdmins)) {
+                foreach($notifyWsAdmins as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['notify_ws_admins'] = $notifyWsAdmins;
+            }
+        }
+
+
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($createUserRequest)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($createUserRequest));
+            } else {
+                $httpBody = $createUserRequest;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires OAuth (access token)
+        if ($this->config->getAccessToken() != null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation createWorkspace
+     *
+     * Create Workspace
+     *
+     * @param  \PandaDoc\Client\Model\CreateWorkspaceRequest $createWorkspaceRequest createWorkspaceRequest (required)
+     *
+     * @throws \PandaDoc\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \PandaDoc\Client\Model\CreateWorkspaceResponse|object|object|object|object
+     */
+    public function createWorkspace($createWorkspaceRequest)
+    {
+        list($response) = $this->createWorkspaceWithHttpInfo($createWorkspaceRequest);
+        return $response;
+    }
+
+    /**
+     * Operation createWorkspaceWithHttpInfo
+     *
+     * Create Workspace
+     *
+     * @param  \PandaDoc\Client\Model\CreateWorkspaceRequest $createWorkspaceRequest (required)
+     *
+     * @throws \PandaDoc\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \PandaDoc\Client\Model\CreateWorkspaceResponse|object|object|object|object, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function createWorkspaceWithHttpInfo($createWorkspaceRequest)
+    {
+        $request = $this->createWorkspaceRequest($createWorkspaceRequest);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 201:
+                    if ('\PandaDoc\Client\Model\CreateWorkspaceResponse' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\PandaDoc\Client\Model\CreateWorkspaceResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('object' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, 'object', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('object' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, 'object', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('object' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, 'object', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('object' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, 'object', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\PandaDoc\Client\Model\CreateWorkspaceResponse';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 201:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\PandaDoc\Client\Model\CreateWorkspaceResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'object',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'object',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'object',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'object',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation createWorkspaceAsync
+     *
+     * Create Workspace
+     *
+     * @param  \PandaDoc\Client\Model\CreateWorkspaceRequest $createWorkspaceRequest (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createWorkspaceAsync($createWorkspaceRequest)
+    {
+        return $this->createWorkspaceAsyncWithHttpInfo($createWorkspaceRequest)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation createWorkspaceAsyncWithHttpInfo
+     *
+     * Create Workspace
+     *
+     * @param  \PandaDoc\Client\Model\CreateWorkspaceRequest $createWorkspaceRequest (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createWorkspaceAsyncWithHttpInfo($createWorkspaceRequest)
+    {
+        $returnType = '\PandaDoc\Client\Model\CreateWorkspaceResponse';
+        $request = $this->createWorkspaceRequest($createWorkspaceRequest);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'createWorkspace'
+     *
+     * @param  \PandaDoc\Client\Model\CreateWorkspaceRequest $createWorkspaceRequest (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function createWorkspaceRequest($createWorkspaceRequest)
+    {
+        // verify the required parameter 'createWorkspaceRequest' is set
+        if ($createWorkspaceRequest === null || (is_array($createWorkspaceRequest) && count($createWorkspaceRequest) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $createWorkspaceRequest when calling createWorkspace'
+            );
+        }
+
+        $resourcePath = '/public/v1/workspaces';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($createWorkspaceRequest)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($createWorkspaceRequest));
+            } else {
+                $httpBody = $createWorkspaceRequest;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

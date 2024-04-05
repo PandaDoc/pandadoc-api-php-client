@@ -1008,7 +1008,7 @@ class DocumentRecipientsApi
             );
         }
 
-        $resourcePath = '/public/v1/documents/{id}/recipients/{recipient_id}';
+        $resourcePath = '/public/v1/documents/{id}/recipients/recipient/{recipient_id}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

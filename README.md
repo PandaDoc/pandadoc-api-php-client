@@ -19,7 +19,7 @@ or add the following to `composer.json`:
 ```json
 {
   "require": {
-    "pandadoc/php-client": "6.1.0"
+    "pandadoc/php-client": "6.2.0"
   }
 }
 ```
@@ -97,7 +97,7 @@ Class | Method | HTTP request | Description
 *DocumentAttachmentsApi* | [**listDocumentAttachments**](docs/Api/DocumentAttachmentsApi.md#listdocumentattachments) | **GET** /public/v1/documents/{id}/attachments | Document Attachment List
 *DocumentRecipientsApi* | [**addDocumentRecipient**](docs/Api/DocumentRecipientsApi.md#adddocumentrecipient) | **POST** /public/v1/documents/{id}/recipients | Add Document Recipient
 *DocumentRecipientsApi* | [**deleteDocumentRecipient**](docs/Api/DocumentRecipientsApi.md#deletedocumentrecipient) | **DELETE** /public/v1/documents/{id}/recipients/{recipient_id} | Delete Document Recipient
-*DocumentRecipientsApi* | [**editDocumentRecipient**](docs/Api/DocumentRecipientsApi.md#editdocumentrecipient) | **PATCH** /public/v1/documents/{id}/recipients/{recipient_id} | Edit Document Recipient
+*DocumentRecipientsApi* | [**editDocumentRecipient**](docs/Api/DocumentRecipientsApi.md#editdocumentrecipient) | **PATCH** /public/v1/documents/{id}/recipients/recipient/{recipient_id} | Edit Document Recipient
 *DocumentRecipientsApi* | [**reassignDocumentRecipient**](docs/Api/DocumentRecipientsApi.md#reassigndocumentrecipient) | **POST** /public/v1/documents/{id}/recipients/{recipient_id}/reassign | Reassign Document Recipient
 *DocumentsApi* | [**changeDocumentStatus**](docs/Api/DocumentsApi.md#changedocumentstatus) | **PATCH** /public/v1/documents/{id}/status | Document status change
 *DocumentsApi* | [**createDocument**](docs/Api/DocumentsApi.md#createdocument) | **POST** /public/v1/documents | Create document
@@ -135,6 +135,9 @@ Class | Method | HTTP request | Description
 *TemplatesApi* | [**deleteTemplate**](docs/Api/TemplatesApi.md#deletetemplate) | **DELETE** /public/v1/templates/{id} | Delete Template
 *TemplatesApi* | [**detailsTemplate**](docs/Api/TemplatesApi.md#detailstemplate) | **GET** /public/v1/templates/{id}/details | Details Template
 *TemplatesApi* | [**listTemplates**](docs/Api/TemplatesApi.md#listtemplates) | **GET** /public/v1/templates | List Templates
+*UserAndWorkspaceManagementApi* | [**addMember**](docs/Api/UserAndWorkspaceManagementApi.md#addmember) | **POST** /public/v1/workspaces/{workspace_id}/members | Add member
+*UserAndWorkspaceManagementApi* | [**createUser**](docs/Api/UserAndWorkspaceManagementApi.md#createuser) | **POST** /public/v1/users | Create User
+*UserAndWorkspaceManagementApi* | [**createWorkspace**](docs/Api/UserAndWorkspaceManagementApi.md#createworkspace) | **POST** /public/v1/workspaces | Create Workspace
 *WebhookEventsApi* | [**detailsWebhookEvent**](docs/Api/WebhookEventsApi.md#detailswebhookevent) | **GET** /public/v1/webhook-events/{id} | Get webhook event by uuid
 *WebhookEventsApi* | [**listWebhookEvent**](docs/Api/WebhookEventsApi.md#listwebhookevent) | **GET** /public/v1/webhook-events | Get webhook event page
 *WebhookSubscriptionsApi* | [**createWebhookSubscription**](docs/Api/WebhookSubscriptionsApi.md#createwebhooksubscription) | **POST** /public/v1/webhook-subscriptions | Create webhook subscription

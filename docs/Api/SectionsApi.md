@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 ## `uploadSection()`
 
 ```php
-uploadSection($documentId, $uploadSectionRequest): \PandaDoc\Client\Model\UploadSectionResponse
+uploadSection($documentId, $uploadSectionRequest, $mergeFieldScope): \PandaDoc\Client\Model\UploadSectionResponse
 ```
 
 Upload section
@@ -232,9 +232,10 @@ $apiInstance = new PandaDoc\Client\Api\SectionsApi(
 );
 $documentId = BhVzRcxH9Z2LgfPPGXFUBa; // string | Document ID
 $uploadSectionRequest = {"template_uuid":"hryJY9mqYZHjQCYQuSjRQg","recipients":[{"email":"josh@example.com","first_name":"Josh","last_name":"Ron","role":"user"}],"fields":{"Favorite.Color":{"value":"PandaDoc green"},"Delivery":{"value":"Same Day Delivery"},"Like":{"value":true},"Date":{"value":"2019-12-31T00:00:00.000Z"}},"pricing_tables":[{"name":"Pricing Table 1","data_merge":true,"options":{"Tax":{"type":"percent","name":"Tax","value":10}},"sections":[{"title":"Sample Section","default":true,"rows":[{"options":{"optional":true,"optional_selected":true,"qty_editable":true},"data":{"Name":"Toy Panda","Description":"Fluffy!","Price":10,"QTY":3,"Tax":{"value":20,"type":"percent"}},"custom_fields":{"Fluffiness":"5 / 5"}}]}]}],"content_placeholders":[{"block_id":"{block_id}","content_library_items":[{"id":"{cli_id}","pricing_tables":[{"name":"Pricing Table 1","data_merge":false,"options":{"discount":{"type":"absolute","name":"Discount","value":2.26}},"sections":[{"title":"Sample Section","default":true,"rows":[{"options":{"optional":true,"optional_selected":true,"qty_editable":true},"data":{"name":"Placeholder Panda","price":10,"qty":3}}]}]}]},{"id":"{cli_id_2}","recipients":[{"email":"john@example.com","first_name":"John","last_name":"Roe","role":"Signer","signing_order":2}],"fields":{"Date":{"value":"2019-12-31T00:00:00.000Z"}}}]}]}; // \PandaDoc\Client\Model\UploadSectionRequest | Use a PandaDoc template or an existing PDF to upload a section. See the creation request examples [by template](/schemas/UploadSectionByTemplateRequest) and [by pdf](/schemas/UploadSectionByPdfRequest)
+$mergeFieldScope = 'mergeFieldScope_example'; // string | Determines how the fields are mapped when creating a section.   * document: Default value. The fields of the entire document are updated.   * upload: Only the fields from the created section are updated. The merge field is appended with the upload ID.
 
 try {
-    $result = $apiInstance->uploadSection($documentId, $uploadSectionRequest);
+    $result = $apiInstance->uploadSection($documentId, $uploadSectionRequest, $mergeFieldScope);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SectionsApi->uploadSection: ', $e->getMessage(), PHP_EOL;
@@ -247,6 +248,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **documentId** | **string**| Document ID |
  **uploadSectionRequest** | [**\PandaDoc\Client\Model\UploadSectionRequest**](../Model/UploadSectionRequest.md)| Use a PandaDoc template or an existing PDF to upload a section. See the creation request examples [by template](/schemas/UploadSectionByTemplateRequest) and [by pdf](/schemas/UploadSectionByPdfRequest) |
+ **mergeFieldScope** | **string**| Determines how the fields are mapped when creating a section.   * document: Default value. The fields of the entire document are updated.   * upload: Only the fields from the created section are updated. The merge field is appended with the upload ID. | [optional]
 
 ### Return type
 

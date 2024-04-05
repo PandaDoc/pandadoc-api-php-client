@@ -1,6 +1,6 @@
 {
     "name": "pandadoc/php-client",
-    "version": "6.1.0",
+    "version": "6.2.0",
     "description": "The Official PandaDoc PHP client SDK",
     "keywords": [
         "openapi",
